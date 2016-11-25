@@ -2,7 +2,260 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
+    <title>Бабулькин огород</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
+<input type="checkbox" id="circle">
+<label for="circle">Сменить вид</label>
+
+<input type="radio" name="imput-for-foto" id="eggplant">
+<input type="radio" name="imput-for-foto" id="peas">
+<input type="radio" name="imput-for-foto" id="cabbage">
+<input type="radio" checked name="imput-for-foto" id="corn">
+<input type="radio" name="imput-for-foto" id="onion">
+<input type="radio" name="imput-for-foto" id="carrot">
+<input type="radio" name="imput-for-foto" id="cucumber">
+
+<input type="radio" name="reciept" id="eggplant-reciept">
+<input type="radio" name="reciept" id="peas-reciept">
+<input type="radio" name="reciept" id="cabbage-reciept">
+<input type="radio" name="reciept" id="corn-reciept">
+<input type="radio" name="reciept" id="onion-reciept">
+<input type="radio" name="reciept" id="carrot-reciept">
+<input type="radio" name="reciept" id="cucumber-reciept">
+
+<input type="radio" name="reciept" id="eggplant-reciept-close">
+<input type="radio" name="reciept" id="peas-reciept-close">
+<input type="radio" name="reciept" id="cabbage-reciept-close">
+<input type="radio" name="reciept" id="corn-reciept-close">
+<input type="radio" name="reciept" id="onion-reciept-close">
+<input type="radio" name="reciept" id="carrot-reciept-close">
+<input type="radio" name="reciept" id="cucumber-reciept-close">
+<main>
+    <div class="vegetable eggplant">
+        <label for="eggplant-reciept-close" class="close-reciept" title="Баклажан">&times;</label>
+        <div class="front">
+            <label for="eggplant" class="img-label eggplant" title="Баклажан">
+                <img class="foto" src="img/baklazhan.jpg" title="Баклажан" alt="Баклажан">
+            </label>
+            <div class="reciept-loading"></div>
+            <label for="eggplant-reciept" class="load-text eggplant">РЕЦЕПТ</label>
+        </div>
+        <div class="description back">
+            <h2>Салат из баклажанов</h2>
+            <div class="ingredients">
+                <p><span class="bold">Сладкий баклажан</span> (3 шт)</p>
+                <p><span class="bold">Сладкий перец</span> (3 шт)</p>
+                <p><span class="bold">Зубчик чеснока</span> (2 шт)</p>
+                <p><span class="bold">Соль</span> (по вкусу)</p>
+                <p><span class="bold">Оливковое масло</span> (по вкусу)</p>
+                <p><span class="bold">Брынза</span> (100 грамм)</p>
+                <p><span class="bold">Сушеный тимьян</span> (2 щепотки)</p>
+            </div>
+            <div class="reciept">
+                <h3>Инструкция</h3>
+                <p>1. Разогрейте духовку до 180 °С. Нарежьте баклажаны вдоль пластинами толщиной 1,5
+                    см, смажьте оливковым маслом, посыпьте солью и тимьяном, уложите на застеленный
+                    бумагой для выпечки противень.</p>
+                <p>2. Разрежьте вдоль на четвертинки перец, очистите от перегородок и семян. Смажьте
+                    оливковым маслом, посолите, уложите перцы рядом с баклажанами. Запекайте до
+                    мягкости овощей, примерно 20 мин.</p>
+                <p>3. Остудите овощи, нарежьте удобными для еды кусочками, заправьте толченым с
+                    зеленью чесноком и еще оливковым маслом, посыпьте раскрошенной брынзой и
+                    подавайте.</p>
+                <p>Хорошо сочетается со стейками</p>
+            </div>
+        </div>
+    </div>
+    <div class="vegetable peas">
+        <label for="peas-reciept-close" class="close-reciept" title="Горох">&times;</label>
+        <div class="front">
+            <label for="peas" class="img-label peas" title="Горох">
+                <img class="foto" src="img/goroh.jpg" title="Горох" alt="Горох">
+            </label>
+            <div class="reciept-loading"></div>
+            <label for="peas-reciept" class="load-text peas">РЕЦЕПТ</label>
+        </div>
+        <div class="description back">
+            <h2>Сокка</h2>
+            <div class="ingredients">
+                <p><span class="bold">Сухой горох</span> (50 грамм)</p>
+                <p><span class="bold">Оливковое масло</span> (для смазывания)</p>
+                <p><span class="bold">Соль</span> (по вкусу)</p>
+                <p><span class="bold">Оливковое масло</span> (2 ст. л.)</p>
+            </div>
+            <div class="reciept">
+                <h3>Инструкция</h3>
+                <p>1. Горох измельчить в муку. Выложить в миску, влить 500 мл теплой воды и масло.
+                    Посолить и вымесить тесто. Пропустить тесто через сито.</p>
+                <p>2. Противень смазать маслом и накрыть листом пергамента, вылить на него тесто
+                    тонким слоем. Дать постоять 10 мин., затем поместить в разогретую до 220°C
+                    духовку на несколько минут. Сокка должна стать темно-коричневой и в некоторых
+                    местах даже чуть подгоревшей. Присыпать свежемолотым черным перцем, нарезать
+                    квадратами и подавать горячей.</p>
+                <p>Хорошо сочетается с паштетами</p>
+            </div>
+        </div>
+    </div>
+    <div class="vegetable cabbage">
+        <label for="cabbage-reciept-close" class="close-reciept" title="Капуста">&times;</label>
+        <div class="front">
+            <label for="cabbage" class="img-label cabbage" title="Капуста">
+                <img class="foto" src="img/kapusta.jpg" title="Капуста" alt="Капуста">
+            </label>
+            <div class="reciept-loading"></div>
+            <label for="cabbage-reciept" class="load-text cabbage">РЕЦЕПТ</label>
+        </div>
+        <div class="description back">
+            <h2>Колбасный суп</h2>
+            <div class="ingredients">
+                <p><span class="bold">Красная фасоль</span> (250 гр)</p>
+                <p><span class="bold">Сосиски и ветчинная колбаса</span> (по 150 гр)</p>
+                <p><span class="bold">Говяжий бульон</span> (1 литр)</p>
+                <p><span class="bold">Белокочанная капуста</span> (150 гр)</p>
+                <p><span class="bold">Соль, перец</span> (по вкусу)</p>
+                <p><span class="bold">Молотый тмин</span> (0,5 ч. л.)</p>
+                <p><span class="bold">Картофель</span> (2 шт)</p>
+            </div>
+            <div class="reciept">
+                <h3>Инструкция</h3>
+                <p>1. Картофель и лук очистить, сельдерей промыть. Нарезать овощи мелкими кубиками.
+                    Капусту нашинковать. Консервированные помидоры раздавить.</p>
+                    <p>2. Положить овощи и тмин в разогретый бульон. Довести до кипения и варить
+                        под крышкой 20 мин. Добавить фасоль и капусту, варить на медленном огне
+                        еще 15 мин.</p>
+                    <p>3. Сосиски и колбасу нарезать небольшими кусочками, добавить в суп.
+                        Приправить солью и перцем, варить 4–5 мин. Разлить по тарелкам и подать к
+                        столу.</p>
+                <p>Хорошо сочетается с батоном</p>
+            </div>
+        </div>
+    </div>
+    <div class="vegetable corn">
+        <label for="corn-reciept-close" class="close-reciept" title="Капуста">&times;</label>
+        <div class="front">
+            <label for="corn" class="img-label corn" title="Капуста">
+                <img class="foto" src="img/kukuruza.jpg" title="Капуста" alt="Капуста">
+            </label>
+            <div class="reciept-loading"></div>
+            <label for="corn-reciept" class="load-text corn">РЕЦЕПТ</label>
+        </div>
+        <div class="description desc4 back">
+            <h2>Салат с капустой</h2>
+            <div class="ingredients">
+                <p><span class="bold">Крабоые палочки</span> (400 гр)</p>
+                <p><span class="bold">Консервированной кукурузы</span> (300 гр)</p>
+                <p><span class="bold">Яйцо</span> (4 шт)</p>
+                <p><span class="bold">Майонез</span> (4 ст. л.)</p>
+                <p><span class="bold">Средний огурец</span> (2 шт)</p>
+                <p><span class="bold">Соль, укроп, свежемолотый черный перец</span> (по вкусу)</p>
+            </div>
+            <div class="reciept">
+                <h3>Инструкция</h3>
+                <p>1. Сварите яйца вкрутую, остудите, очистите и мелко нарежьте.</p>
+                <p>2. Кукурузу откиньте на дуршлаг и промойте в холодной воде.</p>
+                <p>3. Нарежьте огурцы и крабовые палочки мелкими кубиками.</p>
+                <p>4. Тонко нашинкуйте китайскую капусту. Нарежьте укроп.</p>
+                <p>5. В миске смешайте все составляющие салата, посолите и поперчите. Сразу же
+                    подавайте к столу.</p>
+                <p>Хорошо сочетается с бзакусками</p>
+            </div>
+        </div>
+    </div>
+    <div class="vegetable onion">
+        <label for="onion-reciept-close" class="close-reciept" title="Лук">&times;</label>
+        <div class="front">
+            <label for="onion" class="img-label onion" title="Лук">
+                <img class="foto" src="img/luk.jpg" title="Лук" alt="Лук">
+            </label>
+            <div class="reciept-loading"></div>
+            <label for="onion-reciept" class="load-text onion">РЕЦЕПТ</label>
+        </div>
+        <div class="description back">
+            <h2>Оладьи из кабачков</h2>
+            <div class="ingredients">
+                <p><span class="bold">Кабачки</span> (2шт)</p>
+                <p><span class="bold">Лук репчатый</span> (1 шт)</p>
+                <p><span class="bold">Чеснок</span> (3 зубчика)</p>
+                <p><span class="bold">Яйцо</span> (4 шт)</p>
+                <p><span class="bold">Мука</span> (100 гр)</p>
+                <p><span class="bold">Соль, масло</span> (по вкусу)</p>
+            </div>
+            <div class="reciept">
+                <h3>Инструкция</h3>
+                <p>1. Кабачки очистить от кожицы и натереть на крупной терке. Отжать лишний сок.
+                    Лук и чеснок очистить, измельчить. Зелень вымыть, обсушить и мелко
+                    нарезать.</p>
+                <p>2. Смешать кабачки с луком и зеленью. Добавить яйца, муку, соль и перец.
+                    Тщательно перемешать.</p>
+                <p>3. Хорошо разогреть сковороду с растительным маслом. Кабачковую смесь вливать
+                    столовой ложкой; оладьи обжаривать по 1,5 мин. с каждой стороны.</p>
+                <p>Хорошо сочетается со сметаной</p>
+            </div>
+        </div>
+    </div>
+    <div class="vegetable carrot">
+        <label for="carrot-reciept-close" class="close-reciept" title="Морковь">&times;</label>
+        <div class="front">
+            <label for="carrot" class="img-label carrot" title="Морковь">
+                <img class="foto" src="img/morkov.jpeg" title="Морковь" alt="Морковь">
+            </label>
+            <div class="reciept-loading"></div>
+            <label for="carrot-reciept" class="load-text carrot">РЕЦЕПТ</label>
+        </div>
+        <div class="description back">
+            <h2>Овощные палочки со сметанным соусом</h2>
+            <div class="ingredients">
+                <p><span class="bold">Морковь, огурец, красный перец</span> (по желанию)</p>
+                <p><span class="bold">Сметана 20%</span> (180 мл)</p>
+                <p><span class="bold">Оливковое масло</span></p>
+                <p><span class="bold">Чеснок</span> (2 зубчика)</p>
+                <p><span class="bold">Петрушка</span> (5 веточек)</p>
+                <p><span class="bold">Соль, черный перец</span> (по вкусу)</p>
+            </div>
+            <div class="reciept">
+                <h3>Инструкция</h3>
+                <p>1. Свежие сырые овощи (сельдерей, морковь, огурец, красный перец) нарежьте
+                    брусочками толщиной 1,5 см и длиной 5–7 см. Переложите на блюдо. Рядом
+                    поставьте соусник.</p>
+                <p>2. Для приготовления соуса чеснок и петрушку мелко нарежьте, смешайте со
+                    сметаной и оливковым маслом, приправьте солью и перцем.</p>
+                <p>Хорошо сочетается с мясом</p>
+            </div>
+        </div>
+    </div>
+    <div class="vegetable cucumber">
+        <label for="cucumber-reciept-close" class="close-reciept" title="Огурец">&times;</label>
+        <div class="front">
+            <label for="cucumber" class="img-label cucumber" title="Огурец">
+                <img class="foto" src="img/ogurec.jpeg" title="Огурец" alt="Огурец">
+            </label>
+            <div class="reciept-loading"></div>
+            <label for="cucumber-reciept" class="load-text cucumber">РЕЦЕПТ</label>
+        </div>
+        <div class="description desc7 back">
+            <h2>Овощные палочки со сметанным соусом</h2>
+            <div class="ingredients">
+                <p><span class="bold">Морковь, огурец, красный перец</span> (по желанию)</p>
+                <p><span class="bold">Сметана 20%</span> (180 мл)</p>
+                <p><span class="bold">Оливковое масло</span></p>
+                <p><span class="bold">Чеснок</span> (2 зубчика)</p>
+                <p><span class="bold">Петрушка</span> (5 веточек)</p>
+                <p><span class="bold">Соль, черный перец</span> (по вкусу)</p>
+            </div>
+            <div class="reciept">
+                <h3>Инструкция</h3>
+                <p>1. Свежие сырые овощи (сельдерей, морковь, огурец, красный перец) нарежьте
+                    брусочками толщиной 1,5 см и длиной 5–7 см. Переложите на блюдо. Рядом
+                    поставьте соусник.</p>
+                <p>2. Для приготовления соуса чеснок и петрушку мелко нарежьте, смешайте со
+                    сметаной и оливковым маслом, приправьте солью и перцем.</p>
+                <p>Хорошо сочетается с мясом</p>
+            </div>
+        </div>
+    </div>
+    <div class="paranja"></div>
+</main>
 </body>
 </html>
