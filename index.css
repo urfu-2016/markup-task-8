@@ -33,6 +33,7 @@ main
 
 .description
 {
+    visibility: hidden;
     position: absolute;
     background: #fff;
     box-shadow: 0 0 10px #fff;
@@ -40,7 +41,7 @@ main
     left: -134%;
     width: 650px;
     height: 400px;
-    display: none;
+    display: grid;
     grid-template-columns: 190px 440px;
     grid-template-areas: 'a a'
         'b c';
@@ -320,7 +321,6 @@ input[id='onion-reciept']:checked ~ main > .vegetable.onion .description,
 input[id='carrot-reciept']:checked ~ main > .vegetable.carrot .description,
 input[id='cucumber-reciept']:checked ~ main > .vegetable.cucumber .description
 {
-    display: grid;
     animation-name: visibility;
     animation-duration: 1s;
     animation-delay: .55s;
@@ -534,6 +534,8 @@ input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .eggplant
     }
     to
     {
+
+        visibility: hidden;
         overflow: hidden;
         transform: scale(1.4) translateY(0);
     }
@@ -543,12 +545,14 @@ input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .eggplant
 {
     from
     {
+        visibility: hidden;
         backface-visibility: hidden;
         z-index: -10;
         opacity: 0;
     }
     to
     {
+        visibility: visible;
         backface-visibility: visible;
         z-index: 10;
         opacity: 1;
@@ -559,12 +563,14 @@ input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .eggplant
 {
     from
     {
+        visibility: visible;
         backface-visibility: visible;
         z-index: 10;
         opacity: 1;
     }
     to
     {
+        visibility: hidden;
         backface-visibility: hidden;
         z-index: -10;
         opacity: 0;
