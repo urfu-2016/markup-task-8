@@ -40,7 +40,7 @@ main
     left: -134%;
     width: 650px;
     height: 400px;
-    display: grid;
+    display: none;
     grid-template-columns: 190px 440px;
     grid-template-areas: 'a a'
         'b c';
@@ -320,6 +320,7 @@ input[id='onion-reciept']:checked ~ main > .vegetable.onion .description,
 input[id='carrot-reciept']:checked ~ main > .vegetable.carrot .description,
 input[id='cucumber-reciept']:checked ~ main > .vegetable.cucumber .description
 {
+    display: grid;
     animation-name: visibility;
     animation-duration: 1s;
     animation-delay: .55s;
