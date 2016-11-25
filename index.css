@@ -3,6 +3,7 @@ body
     font-family: Verdana, sans-serif;
     font-size: 14px;
     margin: 0;
+    overflow: hidden;
 }
 
 h1
@@ -32,14 +33,14 @@ main input
     visibility: hidden;
     background: rgba(0, 0, 0, .4);
     transition-property: opacity, visibility;
-    transition-duration: 1s, 0s;
-    transition-delay: 0s, 1s;
+    transition-duration: .7s, 0s;
+    transition-delay: 0s, .7s;
     z-index: 1;
 }
 
 article:target ~ .shade
 {
-    transition-delay: 1s, 1s;
+    transition-delay: .7s, .7s;
     visibility: visible;
     opacity: 1;
 }
@@ -165,7 +166,7 @@ input[id='select-carrot']:checked ~ article[id='corn'],
 input[id='select-tomato']:checked ~ article[id='cabbage'],
 input[id='select-garlic']:checked ~ article[id='pepper']
 {
-    transform: perspective(500px) rotateY(-180deg) translateZ(640px);
+    transform: perspective(500px) rotateY(180deg) translateZ(640px);
     z-index: -3;
 }
 
@@ -177,7 +178,7 @@ article img
     height: 100%;
     width: 100%;
     object-fit: cover;
-    transition: transform 1s linear 1s;
+    transition: transform .7s linear .7s;
     transform: perspective(250px);
 }
 
@@ -188,7 +189,7 @@ article:target
 
 article:target img
 {
-    transition: transform 1s linear;
+    transition: transform .7s linear;
     transform: perspective(250px) rotateX(90deg) scale(1.2);
 }
 
@@ -269,12 +270,12 @@ article:hover .show-recipe span
     border: 1px solid #777;
     background: #fff;
     transform: perspective(250px) rotateX(-90deg) scale(.5);
-    transition: transform 1s linear;
+    transition: transform .7s linear;
 }
 
 article:target .recipe
 {
-    transition: transform 1s linear 1s;
+    transition: transform .7s linear .7s;
     transform: perspective(250px) rotateX(0deg);
 }
 
