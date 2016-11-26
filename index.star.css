@@ -1,0 +1,88 @@
+.star:checked ~ main > article
+{
+    opacity: .5;
+    width: 20%;
+}
+
+.star:checked ~ main > .pick-img:nth-child(1):checked ~ article:nth-of-type(1),
+.star:checked ~ main > .pick-img:nth-child(2):checked ~ article:nth-of-type(2),
+.star:checked ~ main > .pick-img:nth-child(3):checked ~ article:nth-of-type(3),
+.star:checked ~ main > .pick-img:nth-child(4):checked ~ article:nth-of-type(4),
+.star:checked ~ main > .pick-img:nth-child(5):checked ~ article:nth-of-type(5),
+.star:checked ~ main > .pick-img:nth-child(6):checked ~ article:nth-of-type(6),
+.star:checked ~ main > .pick-img:nth-child(7):checked ~ article:nth-of-type(7)
+{
+    transform: translate(-50%) rotate(0deg);
+}
+
+.star:checked ~ main > .pick-img:nth-child(1):checked ~ article:nth-of-type(7),
+.star:checked ~ main > .pick-img:nth-child(2):checked ~ article:nth-of-type(1),
+.star:checked ~ main > .pick-img:nth-child(3):checked ~ article:nth-of-type(2),
+.star:checked ~ main > .pick-img:nth-child(4):checked ~ article:nth-of-type(3),
+.star:checked ~ main > .pick-img:nth-child(5):checked ~ article:nth-of-type(4),
+.star:checked ~ main > .pick-img:nth-child(6):checked ~ article:nth-of-type(5),
+.star:checked ~ main > .pick-img:nth-child(7):checked ~ article:nth-of-type(6)
+{
+    transform: rotateY(-90deg) translateX(-25%) rotateY(90deg)
+        translateX(-150%) rotateY(-30deg);
+}
+
+.star:checked ~ main > .pick-img:nth-child(1):checked ~ article:nth-of-type(2),
+.star:checked ~ main > .pick-img:nth-child(2):checked ~ article:nth-of-type(3),
+.star:checked ~ main > .pick-img:nth-child(3):checked ~ article:nth-of-type(4),
+.star:checked ~ main > .pick-img:nth-child(4):checked ~ article:nth-of-type(5),
+.star:checked ~ main > .pick-img:nth-child(5):checked ~ article:nth-of-type(6),
+.star:checked ~ main > .pick-img:nth-child(6):checked ~ article:nth-of-type(7),
+.star:checked ~ main > .pick-img:nth-child(7):checked ~ article:nth-of-type(1)
+{
+    transform: rotateY(-90deg) translateX(-25%) rotateY(90deg)
+        translateX(50%) rotateY(30deg);
+}
+
+.star:checked ~ main > .pick-img:nth-child(1):checked ~ article:nth-of-type(3),
+.star:checked ~ main > .pick-img:nth-child(2):checked ~ article:nth-of-type(4),
+.star:checked ~ main > .pick-img:nth-child(3):checked ~ article:nth-of-type(5),
+.star:checked ~ main > .pick-img:nth-child(4):checked ~ article:nth-of-type(6),
+.star:checked ~ main > .pick-img:nth-child(5):checked ~ article:nth-of-type(7),
+.star:checked ~ main > .pick-img:nth-child(6):checked ~ article:nth-of-type(1),
+.star:checked ~ main > .pick-img:nth-child(7):checked ~ article:nth-of-type(2)
+{
+    transform: rotateY(-90deg) translateX(-90%) rotateY(90deg)
+        translateX(70%) rotateY(-60deg);
+}
+
+.star:checked ~ main > .pick-img:nth-child(1):checked ~ article:nth-of-type(6),
+.star:checked ~ main > .pick-img:nth-child(2):checked ~ article:nth-of-type(7),
+.star:checked ~ main > .pick-img:nth-child(3):checked ~ article:nth-of-type(1),
+.star:checked ~ main > .pick-img:nth-child(4):checked ~ article:nth-of-type(2),
+.star:checked ~ main > .pick-img:nth-child(5):checked ~ article:nth-of-type(3),
+.star:checked ~ main > .pick-img:nth-child(6):checked ~ article:nth-of-type(4),
+.star:checked ~ main > .pick-img:nth-child(7):checked ~ article:nth-of-type(5)
+{
+    transform: rotateY(-90deg) translateX(-90%) rotateY(90deg)
+        translateX(-170%) rotateY(60deg);
+}
+
+.star:checked ~ main > .pick-img:nth-child(1):checked ~ article:nth-of-type(5),
+.star:checked ~ main > .pick-img:nth-child(2):checked ~ article:nth-of-type(6),
+.star:checked ~ main > .pick-img:nth-child(3):checked ~ article:nth-of-type(7),
+.star:checked ~ main > .pick-img:nth-child(4):checked ~ article:nth-of-type(1),
+.star:checked ~ main > .pick-img:nth-child(5):checked ~ article:nth-of-type(2),
+.star:checked ~ main > .pick-img:nth-child(6):checked ~ article:nth-of-type(3),
+.star:checked ~ main > .pick-img:nth-child(7):checked ~ article:nth-of-type(4)
+{
+    transform: rotateY(-90deg) translateX(-165%) rotateY(90deg)
+        translateX(-100%) rotateY(15deg);
+}
+
+.star:checked ~ main > .pick-img:nth-child(1):checked ~ article:nth-of-type(4),
+.star:checked ~ main > .pick-img:nth-child(2):checked ~ article:nth-of-type(5),
+.star:checked ~ main > .pick-img:nth-child(3):checked ~ article:nth-of-type(6),
+.star:checked ~ main > .pick-img:nth-child(4):checked ~ article:nth-of-type(7),
+.star:checked ~ main > .pick-img:nth-child(5):checked ~ article:nth-of-type(1),
+.star:checked ~ main > .pick-img:nth-child(6):checked ~ article:nth-of-type(2),
+.star:checked ~ main > .pick-img:nth-child(7):checked ~ article:nth-of-type(3)
+{
+    transform: rotateY(-90deg) translateX(-165%) rotateY(90deg)
+        translateX(0%) rotateY(-15deg);
+}

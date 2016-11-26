@@ -1,0 +1,141 @@
+*
+{
+    transition: .2s ease-in-out;
+}
+
+main
+{
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    margin: auto;
+    width: 100%;
+}
+
+input
+{
+    /*display: none;*/
+}
+
+article
+{
+    position: absolute;
+    left: 50%;
+    transform-style: preserve-3d;
+    width: 12.5%;
+    height: 200px;
+    background: #777;
+}
+
+article > label
+{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+input:nth-child(1):checked ~ article:nth-of-type(1),
+input:nth-child(2):checked ~ article:nth-of-type(2),
+input:nth-child(3):checked ~ article:nth-of-type(3),
+input:nth-child(4):checked ~ article:nth-of-type(4),
+input:nth-child(5):checked ~ article:nth-of-type(5),
+input:nth-child(6):checked ~ article:nth-of-type(6),
+input:nth-child(7):checked ~ article:nth-of-type(7)
+{
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+input:nth-child(2):checked ~ article:nth-of-type(1),
+input:nth-child(3):checked ~ article:nth-of-type(2),
+input:nth-child(4):checked ~ article:nth-of-type(3),
+input:nth-child(5):checked ~ article:nth-of-type(4),
+input:nth-child(6):checked ~ article:nth-of-type(5),
+input:nth-child(7):checked ~ article:nth-of-type(6)
+{
+    transform: translateX(-100%) rotateY(30deg);
+}
+
+input:nth-child(3):checked ~ article:nth-of-type(1),
+input:nth-child(4):checked ~ article:nth-of-type(2),
+input:nth-child(5):checked ~ article:nth-of-type(3),
+input:nth-child(6):checked ~ article:nth-of-type(4),
+input:nth-child(7):checked ~ article:nth-of-type(5)
+{
+    transform: translateX(-150%) rotateY(40deg);
+}
+
+input:nth-child(4):checked ~ article:nth-of-type(1),
+input:nth-child(5):checked ~ article:nth-of-type(2),
+input:nth-child(6):checked ~ article:nth-of-type(3),
+input:nth-child(7):checked ~ article:nth-of-type(4)
+{
+    transform: translateX(-200%) rotateY(50deg);
+}
+
+input:nth-child(5):checked ~ article:nth-of-type(1),
+input:nth-child(6):checked ~ article:nth-of-type(2),
+input:nth-child(7):checked ~ article:nth-of-type(3)
+{
+    transform: translateX(-250%) rotateY(50deg);
+}
+
+input:nth-child(6):checked ~ article:nth-of-type(1),
+input:nth-child(7):checked ~ article:nth-of-type(2)
+{
+    transform: translateX(-300%) rotateY(60deg);
+}
+
+input:nth-child(7):checked ~ article:nth-of-type(1)
+{
+    transform: translateX(-350%) rotateY(70deg);
+}
+
+input:nth-child(1):checked ~ article:nth-of-type(2),
+input:nth-child(2):checked ~ article:nth-of-type(3),
+input:nth-child(3):checked ~ article:nth-of-type(4),
+input:nth-child(4):checked ~ article:nth-of-type(5),
+input:nth-child(5):checked ~ article:nth-of-type(6),
+input:nth-child(6):checked ~ article:nth-of-type(7)
+{
+    transform: translateX(0) rotateY(-30deg);
+}
+
+input:nth-child(1):checked ~ article:nth-of-type(3),
+input:nth-child(2):checked ~ article:nth-of-type(4),
+input:nth-child(3):checked ~ article:nth-of-type(5),
+input:nth-child(4):checked ~ article:nth-of-type(6),
+input:nth-child(5):checked ~ article:nth-of-type(7)
+{
+    transform: translateX(50%) rotateY(-40deg);
+}
+
+input:nth-child(1):checked ~ article:nth-of-type(4),
+input:nth-child(2):checked ~ article:nth-of-type(5),
+input:nth-child(3):checked ~ article:nth-of-type(6),
+input:nth-child(4):checked ~ article:nth-of-type(7)
+{
+    transform: translateX(100%) rotateY(-50deg);
+}
+
+input:nth-child(1):checked ~ article:nth-of-type(5),
+input:nth-child(2):checked ~ article:nth-of-type(6),
+input:nth-child(3):checked ~ article:nth-of-type(7)
+{
+    transform: translateX(150%) rotateY(-60deg);
+}
+
+input:nth-child(1):checked ~ article:nth-of-type(6),
+input:nth-child(2):checked ~ article:nth-of-type(7)
+{
+    transform: translateX(200%) rotateY(-70deg);
+}
+
+input:nth-child(1):checked ~ article:nth-of-type(7)
+{
+    transform: translateX(250%) rotateY(-80deg);
+}
