@@ -96,7 +96,7 @@ input[id='tomato']:checked ~ .tomato:hover .receipt
 
 .instructions
 {
-    color: red;
+    color: #ff0;
     font: bold 7px arial;
 }
 
