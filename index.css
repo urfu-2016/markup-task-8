@@ -1,0 +1,306 @@
+.container
+{
+    position: absolute;
+    top: 30%;
+    left: 45%;
+}
+
+input
+{
+    display: none;
+}
+
+input[id='broccoli']:checked ~ .broccoli .front:not(:target):hover .shadow,
+input[id='squash']:checked ~ .squash .front:not(:target):hover .shadow,
+input[id='onion']:checked ~ .onion .front:not(:target):hover .shadow,
+input[id='cucumbers']:checked ~ .cucumbers .front:not(:target):hover .shadow,
+input[id='redis']:checked ~ .redis .front:not(:target):hover .shadow,
+input[id='cabbage']:checked ~ .cabbage .front:not(:target):hover .shadow,
+input[id='tomato']:checked ~ .tomato .front:not(:target):hover .shadow
+{
+    z-index: 10;
+    opacity: .5;
+    background-color: #000;
+}
+
+input[id='broccoli']:checked ~ .broccoli:hover .receipt,
+input[id='squash']:checked ~ .squash:hover .receipt,
+input[id='onion']:checked ~ .onion:hover .receipt,
+input[id='cucumbers']:checked ~ .cucumbers:hover .receipt,
+input[id='redis']:checked ~ .redis:hover .receipt,
+input[id='cabbage']:checked ~ .cabbage:hover .receipt,
+input[id='tomato']:checked ~ .tomato:hover .receipt
+{
+    display: block;
+    z-index: 11;
+}
+
+.vegetable:target ~ .background-shadow
+{
+    display: block;
+
+}
+
+.receipt
+{
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    display: none;
+    position: absolute;
+    bottom: 50%;
+    left: 33%;
+    z-index: -2;
+}
+
+.front:target
+{
+    backface-visibility: hidden;
+    transform: rotateX(180deg) scale(2.5);
+}
+
+.front:target ~ .back .close
+{
+    display: block;
+}
+
+.name
+{
+    font-size: 20px;
+    color: #ccc;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+
+.front:target ~ .back
+{
+    backface-visibility: visible;
+    transform: rotateX(180deg) scale(2.5, -2.5);
+}
+
+.description,
+.ingredients
+{
+    vertical-align: top;
+    display: inline-block;
+    width: 45%;
+    font-size: 5px;
+}
+
+.product
+{
+    padding-left: 5px;
+    font-weight: bold;
+    font-size: 6px;
+}
+
+.instructions
+{
+    color: red;
+    font: bold 7px arial;
+}
+
+.close img
+{
+    width: 15px;
+    height: auto;
+}
+
+.front,
+.back 
+{
+    transition-property: transform, display;
+    transition-duration: 3000ms;
+    position: absolute;
+}
+
+.back
+{
+    background-color: #fff;
+}
+
+.close
+{
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    right: -2px;
+    z-index: 15;
+}
+
+.close:hover
+{
+    box-shadow: 0 0 1px #000;
+}
+
+.front
+{
+    z-index: 12;
+}
+
+.front,
+.back 
+{
+    backface-visibility: hidden;
+    width: 200px;
+    height: 150px;
+}
+
+.vegetable .front
+{
+    box-shadow: 0 0 10px #000;
+}
+
+.vegetable
+{
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    transition: transform .8s ease;
+}
+
+.background-shadow
+{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: .6;
+    background: #000;
+}
+
+.shadow
+{
+    z-index: -1;
+    bottom: 0;
+    width: 200px;
+    height: 154px;
+    position: absolute;
+    transition-property: background-color, opacity;
+    transition-duration: 3000ms;
+}
+
+.img-vegetable
+{
+    width: 200px;
+    height: 150px;
+}
+
+input[id='tomato']:checked ~ .broccoli
+{
+    z-index: 0;
+    transform: perspective(1100px) rotateY(25deg) translateX(-600px);
+}
+
+input[id='cabbage']:checked ~ .broccoli,
+input[id='tomato']:checked ~ .squash
+{
+    z-index: 1;
+    transform: perspective(1000px) rotateY(25deg) translateX(-500px);
+}
+
+input[id='redis']:checked ~ .broccoli,
+input[id='cabbage']:checked ~ .squash,
+input[id='tomato']:checked ~ .onion
+{
+    z-index: 2;
+    transform: perspective(900px) rotateY(25deg) translateX(-400px);
+}
+
+input[id='redis']:checked ~ .squash,
+input[id='cabbage']:checked ~ .onion,
+input[id='tomato']:checked ~ .cucumbers,
+input[id='cucumbers']:checked ~ .broccoli
+{
+    z-index: 3;
+    transform: perspective(800px) rotateY(25deg) translateX(-300px);
+}
+
+input[id='onion']:checked ~ .broccoli,
+input[id='redis']:checked ~ .onion,
+input[id='cabbage']:checked ~ .cucumbers,
+input[id='tomato']:checked ~ .redis,
+input[id='cucumbers']:checked ~ .squash
+{
+    z-index: 4;
+    transform: perspective(700px) rotateY(25deg) translateX(-200px);
+}
+
+input[id='squash']:checked ~ .broccoli,
+input[id='onion']:checked ~ .squash,
+input[id='redis']:checked ~ .cucumbers,
+input[id='cabbage']:checked ~ .redis,
+input[id='tomato']:checked ~ .cabbage,
+input[id='cucumbers']:checked ~ .onion
+{
+    z-index: 5;
+    transform: perspective(600px) rotateY(25deg) translateX(-100px);
+}
+
+input[id='broccoli']:checked ~ .broccoli,
+input[id='squash']:checked ~ .squash,
+input[id='onion']:checked ~ .onion,
+input[id='redis']:checked ~ .redis,
+input[id='cabbage']:checked ~ .cabbage,
+input[id='tomato']:checked ~ .tomato,
+input[id='cucumbers']:checked ~ .cucumbers
+{
+    z-index: 6;
+    transform: perspective(500px) scale(1.2);
+}
+
+input[id='broccoli']:checked ~ .squash,
+input[id='squash']:checked ~ .onion,
+input[id='onion']:checked ~ .cucumbers,
+input[id='redis']:checked ~ .cabbage,
+input[id='cabbage']:checked ~ .tomato,
+input[id='cucumbers']:checked ~ .redis
+{
+    z-index: 5;
+    transform: perspective(600px) rotateY(-25deg) translateX(100px);
+}
+
+input[id='broccoli']:checked ~ .onion,
+input[id='squash']:checked ~ .cucumbers,
+input[id='onion']:checked ~ .redis,
+input[id='redis']:checked ~ .tomato,
+input[id='cucumbers']:checked ~ .cabbage
+{
+    z-index: 4;
+    transform: perspective(700px) rotateY(-25deg) translateX(200px);
+}
+
+input[id='broccoli']:checked ~ .cucumbers,
+input[id='squash']:checked ~ .redis,
+input[id='onion']:checked ~ .cabbage,
+input[id='cucumbers']:checked ~ .tomato
+{
+    z-index: 3;
+    transform: perspective(800px) rotateY(-25deg) translateX(300px);
+}
+
+input[id='broccoli']:checked ~ .redis,
+input[id='squash']:checked ~ .cabbage,
+input[id='onion']:checked ~ .tomato
+{
+    z-index: 2;
+    transform: perspective(900px) rotateY(-25deg) translateX(400px);
+}
+
+input[id='broccoli']:checked ~ .cabbage,
+input[id='squash']:checked ~ .tomato
+{
+    z-index: 1;
+    transform: perspective(1000px) rotateY(-25deg) translateX(500px);
+}
+
+input[id='broccoli']:checked ~ .tomato
+{
+    z-index: 0;
+    transform: perspective(1100px) rotateY(-25deg) translateX(600px);
+}
