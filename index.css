@@ -1,9 +1,15 @@
+html
+{
+    height: 100%;
+    width: 100%;
+}
+
 body
 {
     background: #eee;
     font-family: 'Roboto', sans-serif;
-    height: 100%;
     width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
     position: relative;
@@ -240,10 +246,15 @@ main
 
 .ingredients
 {
-    width: 300px;
+    flex: 1;
     margin: 0;
     padding: 0;
     list-style-type: none;
+}
+
+.instructions
+{
+    flex: 3;
 }
 
 .instructions h4
