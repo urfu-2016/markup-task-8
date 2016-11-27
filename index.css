@@ -1,0 +1,341 @@
+html,
+body
+{
+    font-family: sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.item-label
+{
+    background: #fff;
+    visibility: hidden;
+    color: #000;
+    padding-top: calc(30vw / 7 - 10px);
+    box-sizing: border-box;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: calc(10vw / 7);
+    width: calc(60vw / 7);
+    height: calc(60vw / 7);
+    border-radius: calc(80vw / 7);
+    transform: translateY(calc(-80vw / 7 - 4px));
+}
+
+.view-type-label:hover
+{
+    color: #fff;
+    background-color: #000;
+}
+
+.view-type-label:after
+{
+    content: 'Макет 1';
+}
+
+.view-type:checked ~ .view-type-label:after
+{
+    content: 'Макет 2';
+}
+
+.view-type,
+.radio
+{
+    display: none;
+}
+
+.content
+{
+    text-align: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.cross-image
+{
+    position: fixed;
+    width: 7px;
+    right: 2px;
+    top: 2px;
+}
+
+.veg-block
+{
+    transition: transform .5s ease-out;
+    position: fixed;
+    display: inline-block;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .8);
+    top: calc(50% - 40vw / 7);
+    left: calc(50% - 40vw / 7);
+    width: calc(80vw / 7);
+    height: calc(80vw / 7);
+}
+
+.veg-image
+{
+    width: 100%;
+    height: 100%;
+}
+
+.recipe-view
+{
+    z-index: 10;
+    visibility: hidden;
+    font-size: 2em;
+    transform-origin: top;
+    border: 1px solid #000;
+    position: fixed;
+    top: calc(80vw / 7);
+    width: calc(80vw / 7);
+    height: calc(80vw / 7);
+    background: #f0f0f0;
+}
+
+.content
+{
+    width: 90%;
+    height: calc(80vw / 7);
+}
+
+/* Recipe */
+
+.recipe-header
+{
+    color: #999;
+    border-bottom: 2px solid #999;
+    margin: 3px;
+    font-size: 1vw;
+    text-align: left;
+}
+
+.ingredients > li
+{
+    font-weight: bold;
+}
+
+.ingredients
+{
+    text-align: left;
+    list-style: none;
+    display: inline-block;
+    width: calc(4 * 100% / 10 - 10px);
+    float: left;
+    padding: 0;
+    margin: 3px;
+    font-size: .4vw;
+}
+
+.instruction
+{
+    margin: 3px;
+    text-align: left;
+    display: inline-block;
+    width: calc(6 * 100% / 10 - 15px);
+    float: right;
+    padding: 0;
+    font-size: .4vw;
+}
+
+.count
+{
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.count:before
+{
+    content: ' ';
+}
+
+.instruction:before
+{
+    color: #f88;
+    content: 'Инструкция:';
+}
+
+.comment
+{
+    border-top: 1px solid #000;
+    color: #999;
+    list-style: none;
+    margin-top: 5px;
+}
+
+/* Radio */
+
+input[id='pepper-item']:checked ~ article[id='pepper']:target > .recipe-view,
+input[id='carrot-item']:checked ~ article[id='carrot']:target > .recipe-view,
+input[id='tomato-item']:checked ~ article[id='tomato']:target > .recipe-view,
+input[id='chilly-item']:checked ~ article[id='chilly']:target > .recipe-view,
+input[id='onion-item']:checked ~ article[id='onion']:target > .recipe-view,
+input[id='garlic-item']:checked ~ article[id='garlic']:target > .recipe-view,
+input[id='cucumber-item']:checked ~ article[id='cucumber']:target > .recipe-view
+{
+    z-index: 2;
+    visibility: visible;
+    animation: fold 2s linear forwards;
+}
+
+input[id='pepper-item']:checked ~ article[id='pepper']:hover > .item-label,
+input[id='carrot-item']:checked ~ article[id='carrot']:hover > .item-label,
+input[id='tomato-item']:checked ~ article[id='tomato']:hover > .item-label,
+input[id='chilly-item']:checked ~ article[id='chilly']:hover > .item-label,
+input[id='onion-item']:checked ~ article[id='onion']:hover > .item-label,
+input[id='garlic-item']:checked ~ article[id='garlic']:hover > .item-label,
+input[id='cucumber-item']:checked ~ article[id='cucumber']:hover > .item-label
+{
+    display: inline-block;
+    visibility: visible;
+    z-index: -3;
+    background: linear-gradient(rgba(153, 150, 241, .6), rgba(52, 71, 255, 1));
+    transition: background 1s ease-out;
+}
+
+/* Animations */
+
+@keyframes fold
+{
+    from
+    {
+        transform: rotateX(-90deg);
+    }
+    25%
+    {
+        transform: perspective(calc(80vw / 7)) rotateX(0deg);
+    }
+    50%
+    {
+        transform: translateY(calc(-80vw / 7));
+        top: calc(80vw / 7);
+        width: calc(80vw / 7);
+        height: calc(80vw / 7);
+    }
+    to
+    {
+        transform: translateY(calc(-160vw / 7)) scale(3, 2.5);
+    }
+}
+
+/* Макет 1 */
+
+input[id='cucumber-item']:checked ~ .pepper
+{
+    z-index: 0;
+    transform: perspective(550px) rotateY(25deg) translateX(-300px);
+}
+
+input[id='garlic-item']:checked ~ .pepper,
+input[id='cucumber-item']:checked ~ .carrot
+{
+    z-index: 1;
+    transform: perspective(500px) rotateY(25deg) translateX(-250px);
+}
+
+input[id='onion-item']:checked ~ .pepper,
+input[id='garlic-item']:checked ~ .carrot,
+input[id='cucumber-item']:checked ~ .tomato
+{
+    z-index: 2;
+    transform: perspective(450px) rotateY(25deg) translateX(-200px);
+}
+
+input[id='onion-item']:checked ~ .carrot,
+input[id='garlic-item']:checked ~ .tomato,
+input[id='cucumber-item']:checked ~ .chilly,
+input[id='chilly-item']:checked ~ .pepper
+{
+    z-index: 3;
+    transform: perspective(400px) rotateY(25deg) translateX(-150px);
+}
+
+input[id='tomato-item']:checked ~ .pepper,
+input[id='onion-item']:checked ~ .tomato,
+input[id='garlic-item']:checked ~ .chilly,
+input[id='cucumber-item']:checked ~ .onion,
+input[id='chilly-item']:checked ~ .carrot
+{
+    z-index: 4;
+    transform: perspective(350px) rotateY(25deg) translateX(-100px);
+}
+
+input[id='carrot-item']:checked ~ .pepper,
+input[id='tomato-item']:checked ~ .carrot,
+input[id='onion-item']:checked ~ .chilly,
+input[id='garlic-item']:checked ~ .onion,
+input[id='cucumber-item']:checked ~ .garlic,
+input[id='chilly-item']:checked ~ .tomato
+{
+    z-index: 5;
+    transform: perspective(300px) rotateY(25deg) translateX(-50px);
+}
+
+input[id='pepper-item']:checked ~ .pepper,
+input[id='carrot-item']:checked ~ .carrot,
+input[id='tomato-item']:checked ~ .tomato,
+input[id='onion-item']:checked ~ .onion,
+input[id='garlic-item']:checked ~ .garlic,
+input[id='cucumber-item']:checked ~ .cucumber,
+input[id='chilly-item']:checked ~ .chilly
+{
+    z-index: 6;
+    transform: perspective(250px) scale(1.2);
+}
+
+input[id='pepper-item']:checked ~ .carrot,
+input[id='carrot-item']:checked ~ .tomato,
+input[id='tomato-item']:checked ~ .chilly,
+input[id='onion-item']:checked ~ .garlic,
+input[id='garlic-item']:checked ~ .cucumber,
+input[id='chilly-item']:checked ~ .onion
+{
+    z-index: 5;
+    transform: perspective(300px) rotateY(-25deg) translateX(50px);
+}
+
+input[id='pepper-item']:checked ~ .tomato,
+input[id='carrot-item']:checked ~ .chilly,
+input[id='tomato-item']:checked ~ .onion,
+input[id='onion-item']:checked ~ .cucumber,
+input[id='chilly-item']:checked ~ .garlic
+{
+    z-index: 4;
+    transform: perspective(350px) rotateY(-25deg) translateX(100px);
+}
+
+input[id='pepper-item']:checked ~ .chilly,
+input[id='carrot-item']:checked ~ .onion,
+input[id='tomato-item']:checked ~ .garlic,
+input[id='chilly-item']:checked ~ .cucumber
+{
+    z-index: 3;
+    transform: perspective(400px) rotateY(-25deg) translateX(150px);
+}
+
+input[id='pepper-item']:checked ~ .onion,
+input[id='carrot-item']:checked ~ .garlic,
+input[id='tomato-item']:checked ~ .cucumber
+{
+    z-index: 2;
+    transform: perspective(450px) rotateY(-25deg) translateX(200px);
+}
+
+input[id='pepper-item']:checked ~ .garlic,
+input[id='carrot-item']:checked ~ .cucumber
+{
+    z-index: 1;
+    transform: perspective(500px) rotateY(-25deg) translateX(250px);
+}
+
+input[id='pepper-item']:checked ~ .cucumber
+{
+    z-index: 0;
+    transform: perspective(550px) rotateY(-25deg) translateX(300px);
+}
+
+/* Макет 2 Work in progress */

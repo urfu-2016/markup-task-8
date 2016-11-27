@@ -2,7 +2,189 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
+    <title>АйБабка</title>
+    <link rel="stylesheet" type="text/css" href="index.css" class="veg-link">
 </head>
 <body>
+    <input type="checkbox" id="view" name="view" class="view-type">
+    <label for="view" class="view-type-label"></label>
+    <main class="content">
+        <input type="radio" id="pepper-item" name="item" class="radio">
+        <input type="radio" id="carrot-item" name="item" class="radio">
+        <input type="radio" id="tomato-item" name="item" class="radio">
+        <input type="radio" id="chilly-item" name="item" class="radio" checked>
+        <input type="radio" id="onion-item" name="item" class="radio">
+        <input type="radio" id="garlic-item" name="item" class="radio">
+        <input type="radio" id="cucumber-item" name="item" class="radio">
+        <article class="veg-block pepper" id="pepper">
+            <label class="veg-link" for="pepper-item">
+                <img src="images/1.png" alt="Перец" title="Перец" class="veg-image">
+            </label>
+            <div class="recipe-view">
+                <header class="recipe-header">Фаршированный перец</header>
+                <ul class="ingredients">
+                    <li>Перец<span class="count">(1 штука)</span></li>
+                    <li>Фарш<span class="count">(штук по вкусу)</span></li>
+                </ul>
+                <ol class="instruction">
+                    <li>Разрезаешь перец</li>
+                    <li>Толкаешь туда фарш</li>
+                    <li>...</li>
+                    <li>PROFIT!</li>
+                    <li class="comment">Чего-то не понятно...</li>
+                </ol>
+                <a href="#" class="cross">
+                    <img src="images/cross.png"
+                         alt="Крестик" title="Закрыть" class="cross-image">
+                </a>
+            </div>
+            <a href="#pepper" class="item-label">Рецепт</a>
+        </article>
+        <article class="veg-block carrot" id="carrot">
+            <label class="veg-link" for="carrot-item">
+                <img src="images/2.png" alt="Морковка" title="Морковка" class="veg-image">
+            </label>
+            <div class="recipe-view">
+                <header class="recipe-header">Корейская морковка</header>
+                <ul class="ingredients">
+                    <li>Морковка<span class="count">(10 штук)</span></li>
+                    <li>Корея<span class="count">(2 штуки)</span></li>
+                </ul>
+                <ol class="instruction">
+                    <li>Едешь в Корею</li>
+                    <li>Покупаешь землю</li>
+                    <li>Выращиваешь морковку</li>
+                    <li>...</li>
+                    <li>PROFIT!</li>
+                    <li class="comment">В Северную или Южную?</li>
+                </ol>
+                <a href="#" class="cross">
+                    <img src="images/cross.png"
+                         alt="Крестик" title="Закрыть" class="cross-image">
+                </a>
+            </div>
+            <a href="#carrot" class="item-label">Рецепт</a>
+        </article>
+        <article class="veg-block tomato" id="tomato">
+            <label class="veg-link" for="tomato-item">
+                <img src="images/3.png" alt="Томат" title="Томат" class="veg-image">
+            </label>
+            <div class="recipe-view">
+                <header class="recipe-header">Кетчуп</header>
+                <ul class="ingredients">
+                    <li>Кепчук<span class="count">(1 штука)</span></li>
+                    <li>Кетчуп<span class="count">(1 штука)</span></li>
+                    <li>Помидорка<span class="count">(n штук)</span></li>
+                </ul>
+                <ol class="instruction">
+                    <li>Добавляешь кетчуп</li>
+                    <li>Добавляешь кепчук</li>
+                    <li>Добавляешь помидорку</li>
+                    <li>Перемешиваешь</li>
+                    <li>...</li>
+                    <li>PROFIT!</li>
+                    <li class="comment">Сложно...</li>
+                </ol>
+                <a href="#" class="cross">
+                    <img src="images/cross.png"
+                         alt="Крестик" title="Закрыть" class="cross-image">
+                </a>
+            </div>
+            <a href="#tomato" class="item-label">Рецепт</a>
+        </article>
+        <article class="veg-block chilly" id="chilly">
+            <label class="veg-link" for="chilly-item">
+                <img src="images/4.png" alt="Чили" title="Чили" class="veg-image">
+            </label>
+            <div class="recipe-view">
+                <header class="recipe-header">Перец Чили</header>
+                <ul class="ingredients">
+                    <li>Перец<span class="count">(1 штука)</span></li>
+                    <li>Чили<span class="count">(1 штука)</span></li>
+                </ul>
+                <ol class="instruction">
+                    <li>Ну вы поняли...</li>
+                    <li>...</li>
+                    <li>PROFIT!</li>
+                    <li class="comment">Как с корейской морковкой?</li>
+                </ol>
+                <a href="#" class="cross">
+                    <img src="images/cross.png"
+                         alt="Крестик" title="Закрыть" class="cross-image">
+                </a>
+            </div>
+            <a href="#chilly" class="item-label">Рецепт</a>
+        </article>
+        <article class="veg-block onion" id="onion">
+            <label class="veg-link" for="onion-item">
+                <img src="images/5.png" alt="Лук" title="Лук" class="veg-image">
+            </label>
+            <div class="recipe-view">
+                <header class="recipe-header">Луковые кольца</header>
+                <ul class="ingredients">
+                    <li>Лук<span class="count">(1 штука)</span></li>
+                </ul>
+                <ol class="instruction">
+                    <li>Нарезаешь лук в форме колец</li>
+                    <li>...</li>
+                    <li>PROFIT!</li>
+                    <li class="comment">Легко готовить дома!</li>
+                </ol>
+                <a href="#" class="cross">
+                    <img src="images/cross.png"
+                         alt="Крестик" title="Закрыть" class="cross-image">
+                </a>
+            </div>
+            <a href="#onion" class="item-label">Рецепт</a>
+        </article>
+        <article class="veg-block garlic" id="garlic">
+            <label class="veg-link" for="garlic-item">
+                <img src="images/6.png" alt="Чеснок" title="Чеснок" class="veg-image">
+            </label>
+            <div class="recipe-view">
+                <header class="recipe-header">Чесночный салат</header>
+                <ul class="ingredients">
+                    <li>Чеснок<span class="count">(999 штук)</span></li>
+                </ul>
+                <ol class="instruction">
+                    <li>Чеснок нужно очистить</li>
+                    <li>Растолочь</li>
+                    <li>Приготовить, как нравится</li>
+                    <li>...</li>
+                    <li>PROFIT!</li>
+                    <li class="comment">Эффективно против вампиров</li>
+                </ol>
+                <a href="#" class="cross">
+                    <img src="images/cross.png"
+                         alt="Крестик" title="Закрыть" class="cross-image">
+                </a>
+            </div>
+            <a href="#garlic" class="item-label">Рецепт</a>
+        </article>
+        <article class="veg-block cucumber" id="cucumber">
+            <label class="veg-link" for="cucumber-item">
+                <img src="images/7.png" alt="Огурец" title="Огурец" class="veg-image">
+            </label>
+            <div class="recipe-view">
+                <header class="recipe-header">Огуречный салат</header>
+                <ul class="ingredients">
+                    <li>Огурцы<span class="count">(10 штук)</span></li>
+                    <li>Салат<span class="count">(штук по вкусу)</span></li>
+                </ul>
+                <ol class="instruction">
+                    <li>Нарезаешь огурцы</li>
+                    <li>Кладешь огурцы и салат в одну кучу</li>
+                    <li>...</li>
+                    <li>PROFIT!</li>
+                    <li class="comment">Автор похоже не умеет готовить...</li>
+                </ol>
+                <a href="#" class="cross">
+                    <img src="images/cross.png"
+                         alt="Крестик" title="Закрыть" class="cross-image">
+                </a>
+            </div>
+            <a href="#cucumber" class="item-label">Рецепт</a>
+        </article>
+    </main>
 </body>
 </html>
