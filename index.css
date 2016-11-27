@@ -1,0 +1,349 @@
+/* stylelint-disable  selector-combinator-space-before */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body
+{
+    background: url('img/bg.png');
+    overflow-x: hidden;
+    font: 12px 'Roboto', sans-serif;
+    margin: 0;
+    overflow: hidden;
+}
+
+header
+{
+    border-bottom: 1px solid black;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1::first-letter,
+h2::first-letter,
+h3::first-letter
+{
+    color: #f00;
+}
+
+.content
+{
+    margin-top: 100px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transform: rotateX(-5deg);
+}
+
+.gallery-container
+{
+    position: relative;
+    transform-style: preserve-3d;
+    transition-property: transform;
+    transition-duration: .5s;
+    transform-origin: 50% 50% -700px;
+}
+
+.item-container .item
+{
+    display: block;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition-property: transform;
+    transition-duration: 1s;
+    transform: rotateX(0deg);
+    transform-origin: 50% 25% 100px;
+    width: 400px;
+    height: 300px;
+}
+
+.item-label
+{
+    opacity: 0;
+    position: absolute;
+    background: red;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    z-index: 1;
+}
+
+.item img
+{
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+}
+
+.black
+{
+    transform-style: preserve-3d;
+    transform-origin: 50% 50% -700px;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: -500px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    height: 2000px;
+    background: rgba(0, 0, 0, .6);
+    overflow: hidden;
+    cursor: default;
+}
+
+input[type='radio'].show-recepie
+{
+    display: none;
+}
+
+div[id='img1']
+{
+    transform: rotateY(0deg);
+}
+
+div[id='img2']
+{
+    transform: rotateY(45deg);
+}
+
+div[id='img3']
+{
+    transform: rotateY(90deg);
+}
+
+div[id='img4']
+{
+    transform: rotateY(135deg);
+}
+
+div[id='img5']
+{
+    transform: rotateY(-180deg);
+}
+
+div[id='img6']
+{
+    transform: rotateY(-135deg);
+}
+
+div[id='img7']
+{
+    transform: rotateY(-90deg);
+}
+
+div[id='img8']
+{
+    transform: rotateY(-45deg);
+}
+
+input[type='radio'][id='item1'].show-recepie:checked ~ .gallery-container
+{
+    transform: rotateY(0deg);
+}
+
+input[type='radio'][id='item2'].show-recepie:checked ~ .gallery-container,
+input[type='radio'][id='item8'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: rotateY(-45deg);
+}
+
+input[type='radio'][id='item3'].show-recepie:checked ~ .gallery-container,
+input[type='radio'][id='item7'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: rotateY(-90deg);
+}
+
+input[type='radio'][id='item4'].show-recepie:checked ~ .gallery-container,
+input[type='radio'][id='item6'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: rotateY(-135deg);
+}
+
+input[type='radio'][id='item5'].show-recepie:checked ~ .gallery-container,
+input[type='radio'][id='item5'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: rotateY(-180deg);
+}
+
+input[type='radio'][id='item6'].show-recepie:checked ~ .gallery-container,
+input[type='radio'][id='item4'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: rotateY(135deg);
+}
+
+input[type='radio'][id='item7'].show-recepie:checked ~ .gallery-container,
+input[type='radio'][id='item3'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: rotateY(90deg);
+}
+
+input[type='radio'][id='item8'].show-recepie:checked ~ .gallery-container,
+input[type='radio'][id='item2'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: rotateY(45deg);
+}
+
+.item-container
+{
+    transform-origin: 50% 50% -700px;
+    transform-style: preserve-3d;
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    transition-duration: .5s;
+    cursor: pointer;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+label.recepie-show
+{
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+}
+
+input[type='radio'][id='item1']:checked
+~ .gallery-container div.item-container[id='img1']:hover .recepie-show,
+input[type='radio'][id='item2']:checked
+~ .gallery-container div.item-container[id='img2']:hover .recepie-show,
+input[type='radio'][id='item3']:checked
+~ .gallery-container div.item-container[id='img3']:hover .recepie-show,
+input[type='radio'][id='item4']:checked
+~ .gallery-container div.item-container[id='img4']:hover .recepie-show,
+input[type='radio'][id='item5']:checked
+~ .gallery-container div.item-container[id='img5']:hover .recepie-show,
+input[type='radio'][id='item6']:checked
+~ .gallery-container div.item-container[id='img6']:hover .recepie-show,
+input[type='radio'][id='item7']:checked
+~ .gallery-container div.item-container[id='img7']:hover .recepie-show,
+input[type='radio'][id='item8']:checked
+~ .gallery-container div.item-container[id='img8']:hover .recepie-show
+{
+    display: block;
+}
+
+input[type='radio'][id='item1']:checked
+~ .gallery-container div.item-container[id='img1']:hover .item-label,
+input[type='radio'][id='item2']:checked
+~ .gallery-container div.item-container[id='img2']:hover .item-label,
+input[type='radio'][id='item3']:checked
+~ .gallery-container div.item-container[id='img3']:hover .item-label,
+input[type='radio'][id='item4']:checked
+~ .gallery-container div.item-container[id='img4']:hover .item-label,
+input[type='radio'][id='item5']:checked
+~ .gallery-container div.item-container[id='img5']:hover .item-label,
+input[type='radio'][id='item6']:checked
+~ .gallery-container div.item-container[id='img6']:hover .item-label,
+input[type='radio'][id='item7']:checked
+~ .gallery-container div.item-container[id='img7']:hover .item-label,
+input[type='radio'][id='item8']:checked
+~ .gallery-container div.item-container[id='img8']:hover .item-label
+{
+    display: none;
+}
+
+input[type='checkbox'].recepie-check:checked ~ .black
+{
+    transition-delay: .5s;
+    transition-duration: .5s;
+    opacity: 1;
+    visibility: visible;
+}
+
+input[type='checkbox'].recepie-check:checked
++ div.item-container .recepie
+{
+    opacity: 1;
+}
+
+input[type='checkbox'].recepie-check:checked + div.item-container .item
+{
+    transform: rotateX(-180deg) perspective(250px) scale(2) translateY(-100px);
+    font-size: 12px;
+}
+
+.recepie-check
+{
+    display: none;
+}
+
+input[type='checkbox'].recepie-check:checked ~ .black
+{
+    opacity: 1;
+    z-index: 0;
+}
+
+.recepie
+{
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    position: absolute;
+    background: white;
+    transform: rotateY(180deg) rotateZ(180deg)
+        translateX(-650px) translateZ(2px);
+    width: calc(100% - 25px);
+    height: calc(100% - 25px);
+    padding: 15px;
+    top: 0;
+    left: 650px;
+    cursor: default;
+}
+
+.recepie h3
+{
+    color: #ababab;
+    border-bottom: 2px solid #ababab;
+}
+
+.recepie .description
+{
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+}
+
+.recepie .ingredients
+{
+    flex: 0 0 30%;
+    text-indent: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.recepie .instruction
+{
+    flex: 1 0 70%;
+}
+
+.instruction h2
+{
+    color: red;
+    font-size: 10px;
+}
+
+.instruction p
+{
+    border-top: 2px solid #ababab;
+    text-indent: 10px;
+    color: #ababab;
+    font-size: 10px;
+}
+
+.exit
+{
+    position: absolute;
+    font-size: 40px;
+    color: #000;
+    top: 0;
+    right: 10px;
+    z-index: 1;
+    cursor: pointer;
+}
+
