@@ -1,0 +1,277 @@
+body
+{
+    background-color: beige;
+}
+
+input
+{
+    display: none;
+}
+
+label
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.link
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    background-color: darkgray;
+    z-index: -500;
+    display: none;
+}
+
+.cont
+{
+    position: relative;
+    perspective: 600px;
+    top: 200px;
+    left: 25%;
+    width: auto;
+    height: auto;
+}
+
+.first_pic,
+.second_pic,
+.third_pic,
+.fourth_pic,
+.fifth_pic
+{
+    display: none;
+    z-index: -100;
+}
+
+.gallery
+{
+    width: auto;
+    height: auto;
+}
+
+.pic,
+.pic2,
+.pic3,
+.pic4,
+.pic5
+{
+    transform-style: preserve-3d;
+    transition: .6s;
+    position: relative;
+}
+
+.gallery > .pic > div,
+.gallery > .pic2 > div,
+.gallery > .pic3 > div,
+.gallery > .pic4 > div,
+.gallery > .pic5 > div
+{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+}
+
+.gallery > .pic > .first_l_pic,
+.gallery > .pic2 > .second_l_pic,
+.gallery > .pic3 > .middle_pic
+{
+    background-size: 150px 150px;
+    transform: rotateY(90deg);
+}
+
+.gallery > .pic4 > .first_r_pic,
+.gallery > .pic5 > .second_r_pic
+{
+    background-size: 150px 150px;
+    transform: rotateY(145deg);
+}
+
+.one:checked ~ .cont > .gallery > .pic > .first_l_pic,
+.two:checked ~ .cont > .gallery > .pic2 > .second_l_pic,
+.three:checked ~ .cont > .gallery > .pic3 > .middle_pic,
+.four:checked ~ .cont > .gallery > .pic4 > .first_r_pic,
+.five:checked ~ .cont > .gallery > .pic5 > .second_r_pic
+{
+    transform: rotateY(0deg);
+}
+
+.one:checked ~ .cont > .gallery > .pic > .first_l_pic:hover > .first_pic,
+.two:checked ~ .cont > .gallery > .pic2 > .second_l_pic:hover > .second_pic,
+.three:checked ~ .cont > .gallery > .pic3 > .middle_pic:hover > .third_pic,
+.four:checked ~ .cont > .gallery > .pic4 > .first_r_pic:hover > .fourth_pic,
+.five:checked ~ .cont > .gallery > .pic5 > .second_r_pic:hover > .fifth_pic
+{
+    display: block;
+    z-index: 100;
+    left: 40%;
+    top: 40%;
+    color: chartreuse;
+}
+
+.one:checked ~ .cont > .gallery > .pic > .first_l_pic:hover > .link,
+.two:checked ~ .cont > .gallery > .pic2 > .second_l_pic:hover > .link,
+.three:checked ~ .cont > .gallery > .pic3 > .middle_pic:hover > .link,
+.four:checked ~ .cont > .gallery > .pic4 > .first_r_pic:hover > .link,
+.five:checked ~ .cont > .gallery > .pic5 > .second_r_pic:hover > .link
+{
+    display: block;
+}
+
+.first_l_pic
+{
+    z-index: 2;
+    background-image: url(img/Апельсин.jpg);
+}
+
+.second_l_pic
+{
+    left: 150px;
+    z-index: 2;
+    background-image: url(img/Вишня.jpg);
+}
+
+.middle_pic
+{
+    left: 300px;
+    z-index: 2;
+    background-image: url(img/Виноград.jpg);
+}
+
+.first_r_pic
+{
+    left: 450px;
+    z-index: 2;
+    background-image: url(img/Яжевика.jpeg);
+}
+
+.second_r_pic
+{
+    left: 600px;
+    z-index: 2;
+    background-image: url(img/Клубника.jpg);
+}
+
+.first_text,
+.second_text,
+.third_text,
+.fourth_text,
+.fifth_text
+{
+    display: none;
+    background-color: azure;
+}
+
+.first_text
+{
+    transform: rotateY(180deg);
+}
+
+.second_text
+{
+    transform: rotateY(180deg);
+    left: 150px;
+}
+
+.third_text
+{
+    transform: rotateY(180deg);
+    left: 300px;
+}
+
+.fourth_text
+{
+    transform: rotateY(180deg);
+    left: 450px;
+}
+
+.fifth_text
+{
+    transform: rotateY(180deg);
+    left: 600px;
+}
+
+.text5:checked ~ .cont > .gallery > .pic5
+{
+    transform: rotateY(180deg) translateX(300px) scale(2);
+    z-index: 20;
+}
+
+.text4:checked ~ .cont > .gallery > .pic4
+{
+    transform: rotateY(180deg) translateX(600px) scale(2);
+    z-index: 20;
+}
+
+.text1:checked ~ .cont > .gallery > .pic
+{
+    transform: rotateY(180deg) translateX(1500px) scale(2);
+    z-index: 20;
+}
+
+.text2:checked ~ .cont > .gallery > .pic2
+{
+    transform: rotateY(180deg) translateX(1200px) scale(2);
+    z-index: 20;
+}
+
+.text3:checked ~ .cont > .gallery > .pic3
+{
+    transform: rotateY(180deg) translateX(900px) scale(2);
+    z-index: 20;
+}
+
+.text5:checked ~ .cont > .gallery > .pic5 > .second_r_pic,
+.not_text5:checked ~ .cont > .gallery > .pic5 > .fifth_text,
+.text4:checked ~ .cont > .gallery > .pic4 > .first_r_pic,
+.not_text4:checked ~ .cont > .gallery > .pic4 > .fourth_text,
+.text3:checked ~ .cont > .gallery > .pic3 > .middle_pic,
+.not_text3:checked ~ .cont > .gallery > .pic3 > .third_text,
+.text2:checked ~ .cont > .gallery > .pic2 > .second_l_pic,
+.not_text2:checked ~ .cont > .gallery > .pic2 > .second_text,
+.text1:checked ~ .cont > .gallery > .pic > .first_l_pic,
+.not_text1:checked ~ .cont > .gallery > .pic > .first_text
+{
+    display: none;
+}
+
+.text5:checked ~ .cont > .gallery > .pic5 > .fifth_text,
+.not_text5:checked ~ .cont > .gallery > .pic5 > .second_r_pic,
+.text4:checked ~ .cont > .gallery > .pic4 > .fourth_text,
+.not_text4:checked ~ .cont > .gallery > .pic4 > .first_r_pic,
+.text3:checked ~ .cont > .gallery > .pic3 > .third_text,
+.not_text3:checked ~ .cont > .gallery > .pic3 > .middle_pic,
+.text2:checked ~ .cont > .gallery > .pic2 > .second_text,
+.not_text2:checked ~ .cont > .gallery > .pic2 > .second_l_pic,
+.text1:checked ~ .cont > .gallery > .pic > .first_text,
+.not_text1:checked ~ .cont > .gallery > .pic > .first_l_pic
+{
+    display: block;
+}
+
+.exit
+{
+    float: right;
+    top: 0;
+}
+
+h3
+{
+    text-align: center;
+}
+
+.first_text div,
+.second_text div,
+.third_text div,
+.fourth_text div,
+.fifth_text div
+{
+    display: inline-table;
+}
+
+.r
+{
+    float: right;
+}
