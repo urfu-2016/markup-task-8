@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=cyrillic');
+
+body
+{
+    background-color: #e1e1e1;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+html,
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+main,
+.entries
+{
+    height: 100%;
+    width: 100%;
+}
+
+label[for]
+{
+    cursor: pointer;
+}
+
+.hidden,
+.recipe-show
+{
+    display: none;
+}
+
+.entries
+{
+    overflow: hidden;
+    position: relative;
+    perspective: 2000px;
+}
+
+.entry
+{
+    height: 240px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    perspective: 600px;
+    position: absolute;
+    transition: transform .4s ease-in-out;
+    width: 320px;
+    z-index: 7;
+}
+
+.card-selected-1:checked ~ .entries .entry:nth-child(2),
+.card-selected-2:checked ~ .entries .entry:nth-child(3),
+.card-selected-3:checked ~ .entries .entry:nth-child(4),
+.card-selected-4:checked ~ .entries .entry:nth-child(5),
+.card-selected-5:checked ~ .entries .entry:nth-child(6),
+.card-selected-6:checked ~ .entries .entry:nth-child(7)
+{
+    transform: translateX(52%) scale(.90) rotateY(-60deg);
+}
+
+.card-selected-1:checked ~ .entries .entry:nth-child(3),
+.card-selected-2:checked ~ .entries .entry:nth-child(4),
+.card-selected-3:checked ~ .entries .entry:nth-child(5),
+.card-selected-4:checked ~ .entries .entry:nth-child(6),
+.card-selected-5:checked ~ .entries .entry:nth-child(7)
+{
+    transform: translateX(70%) scale(.85) rotateY(-50deg);
+}
+
+.card-selected-1:checked ~ .entries .entry:nth-child(4),
+.card-selected-2:checked ~ .entries .entry:nth-child(5),
+.card-selected-3:checked ~ .entries .entry:nth-child(6),
+.card-selected-4:checked ~ .entries .entry:nth-child(7)
+{
+    transform: translateX(87%) scale(.80) rotateY(-40deg);
+}
+
+.card-selected-1:checked ~ .entries .entry:nth-child(5),
+.card-selected-2:checked ~ .entries .entry:nth-child(6),
+.card-selected-3:checked ~ .entries .entry:nth-child(7)
+{
+    transform: translateX(102%) scale(.75) rotateY(-30deg);
+}
+
+.card-selected-1:checked ~ .entries .entry:nth-child(6),
+.card-selected-2:checked ~ .entries .entry:nth-child(7)
+{
+    transform: translateX(118%) scale(.70) rotateY(-20deg);
+}
+
+.card-selected-1:checked ~ .entries .entry:nth-child(7)
+{
+    transform: translateX(134%) scale(.65) rotateY(-10deg);
+}
+
+.card-selected-2:checked ~ .entries .entry:nth-child(1),
+.card-selected-3:checked ~ .entries .entry:nth-child(2),
+.card-selected-4:checked ~ .entries .entry:nth-child(3),
+.card-selected-5:checked ~ .entries .entry:nth-child(4),
+.card-selected-6:checked ~ .entries .entry:nth-child(5),
+.card-selected-7:checked ~ .entries .entry:nth-child(6)
+{
+    transform: translateX(-52%) scale(.90) rotateY(60deg);
+}
+
+.card-selected-3:checked ~ .entries .entry:nth-child(1),
+.card-selected-4:checked ~ .entries .entry:nth-child(2),
+.card-selected-5:checked ~ .entries .entry:nth-child(3),
+.card-selected-6:checked ~ .entries .entry:nth-child(4),
+.card-selected-7:checked ~ .entries .entry:nth-child(5)
+{
+    transform: translateX(-70%) scale(.85) rotateY(50deg);
+}
+
+.card-selected-4:checked ~ .entries .entry:nth-child(1),
+.card-selected-5:checked ~ .entries .entry:nth-child(2),
+.card-selected-6:checked ~ .entries .entry:nth-child(3),
+.card-selected-7:checked ~ .entries .entry:nth-child(4)
+{
+    transform: translateX(-87%) scale(.80) rotateY(40deg);
+}
+
+.card-selected-5:checked ~ .entries .entry:nth-child(1),
+.card-selected-6:checked ~ .entries .entry:nth-child(2),
+.card-selected-7:checked ~ .entries .entry:nth-child(3)
+{
+    transform: translateX(-102%) scale(.75) rotateY(30deg);
+}
+
+.card-selected-6:checked ~ .entries .entry:nth-child(1),
+.card-selected-7:checked ~ .entries .entry:nth-child(2)
+{
+    transform: translateX(-118%) scale(.70) rotateY(20deg);
+}
+
+.card-selected-7:checked ~ .entries .entry:nth-child(1)
+{
+    transform: translateX(-134%) scale(.65) rotateY(10deg);
+}
+
+.card-selected-1:checked ~ .entries .entry:nth-child(2)
+{
+    z-index: 6;
+}
+
+.card-selected-1:checked ~ .entries .entry:nth-child(3),
+.card-selected-2:checked ~ .entries .entry:nth-child(3)
+{
+    z-index: 5;
+}
+
+.card-selected-1:checked ~ .entries .entry:nth-child(4),
+.card-selected-2:checked ~ .entries .entry:nth-child(4),
+.card-selected-3:checked ~ .entries .entry:nth-child(4)
+{
+    z-index: 4;
+}
+
+.card-selected-1:checked ~ .entries .entry:nth-child(5),
+.card-selected-2:checked ~ .entries .entry:nth-child(5),
+.card-selected-3:checked ~ .entries .entry:nth-child(5),
+.card-selected-4:checked ~ .entries .entry:nth-child(5)
+{
+    z-index: 3;
+}
+
+.card-selected-1:checked ~ .entries .entry:nth-child(6),
+.card-selected-2:checked ~ .entries .entry:nth-child(6),
+.card-selected-3:checked ~ .entries .entry:nth-child(6),
+.card-selected-4:checked ~ .entries .entry:nth-child(6),
+.card-selected-5:checked ~ .entries .entry:nth-child(6)
+{
+    z-index: 2;
+}
+
+.card-selected-1:checked ~ .entries .entry:nth-child(7),
+.card-selected-2:checked ~ .entries .entry:nth-child(7),
+.card-selected-3:checked ~ .entries .entry:nth-child(7),
+.card-selected-4:checked ~ .entries .entry:nth-child(7),
+.card-selected-5:checked ~ .entries .entry:nth-child(7),
+.card-selected-6:checked ~ .entries .entry:nth-child(7)
+{
+    z-index: 1;
+}
+
+.card-selected-1:checked ~ .entries .entry:nth-child(1),
+.card-selected-2:checked ~ .entries .entry:nth-child(2),
+.card-selected-3:checked ~ .entries .entry:nth-child(3),
+.card-selected-4:checked ~ .entries .entry:nth-child(4),
+.card-selected-5:checked ~ .entries .entry:nth-child(5),
+.card-selected-6:checked ~ .entries .entry:nth-child(6),
+.card-selected-7:checked ~ .entries .entry:nth-child(7)
+{
+    z-index: 10;
+}
+
+.card-selected-1:checked ~ .entries .entry:nth-child(1) .recipe-show-button,
+.card-selected-2:checked ~ .entries .entry:nth-child(2) .recipe-show-button,
+.card-selected-3:checked ~ .entries .entry:nth-child(3) .recipe-show-button,
+.card-selected-4:checked ~ .entries .entry:nth-child(4) .recipe-show-button,
+.card-selected-5:checked ~ .entries .entry:nth-child(5) .recipe-show-button,
+.card-selected-6:checked ~ .entries .entry:nth-child(6) .recipe-show-button,
+.card-selected-7:checked ~ .entries .entry:nth-child(7) .recipe-show-button
+{
+    z-index: 1;
+}
+
+.card-selected-1:checked ~ .entries .entry:nth-child(1) .card:hover .recipe-show-button,
+.card-selected-2:checked ~ .entries .entry:nth-child(2) .card:hover .recipe-show-button,
+.card-selected-3:checked ~ .entries .entry:nth-child(3) .card:hover .recipe-show-button,
+.card-selected-4:checked ~ .entries .entry:nth-child(4) .card:hover .recipe-show-button,
+.card-selected-5:checked ~ .entries .entry:nth-child(5) .card:hover .recipe-show-button,
+.card-selected-6:checked ~ .entries .entry:nth-child(6) .card:hover .recipe-show-button,
+.card-selected-7:checked ~ .entries .entry:nth-child(7) .card:hover .recipe-show-button
+{
+    opacity: 1;
+}
+
+.card
+{
+    backface-visibility: hidden;
+    background-color: #fff;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, .2);
+    height: 240px;
+    position: relative;
+    transition: transform .25s ease-out .4s;
+    width: 320px;
+}
+
+.recipe-show-1:checked ~ .entries .entry:nth-child(1) .card,
+.recipe-show-2:checked ~ .entries .entry:nth-child(2) .card,
+.recipe-show-3:checked ~ .entries .entry:nth-child(3) .card,
+.recipe-show-4:checked ~ .entries .entry:nth-child(4) .card,
+.recipe-show-5:checked ~ .entries .entry:nth-child(5) .card,
+.recipe-show-6:checked ~ .entries .entry:nth-child(6) .card,
+.recipe-show-7:checked ~ .entries .entry:nth-child(7) .card
+{
+    transition: transform .3s ease-in;
+    transform: rotateX(-91deg);
+}
+
+.recipe-show-button
+{
+    background: rgba(0, 0, 0, .65);
+    display: block;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    transition: opacity .2s ease-in-out;
+    width: 100%;
+}
+
+.recipe-show-1:checked ~ .entries .entry:nth-child(1) .recipe-show-button,
+.recipe-show-2:checked ~ .entries .entry:nth-child(2) .recipe-show-button,
+.recipe-show-3:checked ~ .entries .entry:nth-child(3) .recipe-show-button,
+.recipe-show-4:checked ~ .entries .entry:nth-child(4) .recipe-show-button,
+.recipe-show-5:checked ~ .entries .entry:nth-child(5) .recipe-show-button,
+.recipe-show-6:checked ~ .entries .entry:nth-child(6) .recipe-show-button,
+.recipe-show-7:checked ~ .entries .entry:nth-child(7) .recipe-show-button
+{
+    display: none;
+}
+
+.recipe-button-shape,
+.recipe-button
+{
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.recipe-button-shape
+{
+    border: 3px solid #fff;
+    height: 100px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    width: 100px;
+}
+
+.recipe-button
+{
+    color: #fff;
+    display: inline-block;
+    font-size: 1.43em;
+    height: 1.75em;
+    line-height: 1.75em;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100px;
+}
+
+.card-image-container {
+    display: block;
+    height: 240px;
+    line-height: 240px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.card-image-container img
+{
+    margin: auto;
+    max-width: 90%;
+    max-height: 90%;
+    vertical-align: middle;
+}
+
+.recipe-bg
+{
+    background: rgba(0, 0, 0, .75);
+    height: 100%;
+    opacity: 0;
+    position: fixed;
+    transition: opacity .4s;
+    width: 100%;
+    z-index: -1;
+}
+
+.recipe-show:checked ~ .entries .recipe-bg
+{
+    opacity: 1;
+    z-index: 9;
+}
+
+.recipe-card
+{
+    align-content: flex-start;
+    backface-visibility: hidden;
+    background-color: #fff;
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, .2);
+    display: flex;
+    flex-wrap: wrap;
+    height: 160%;
+    margin: auto;
+    position: absolute;
+    transition: transform .4s ease-in;
+    transform: rotateX(91deg) scale(.5, .66);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: -50%;
+    width: 200%;
+    z-index: 2;
+}
+
+.recipe-show-1:checked ~ .entries .entry:nth-child(1) .recipe-card,
+.recipe-show-2:checked ~ .entries .entry:nth-child(2) .recipe-card,
+.recipe-show-3:checked ~ .entries .entry:nth-child(3) .recipe-card,
+.recipe-show-4:checked ~ .entries .entry:nth-child(4) .recipe-card,
+.recipe-show-5:checked ~ .entries .entry:nth-child(5) .recipe-card,
+.recipe-show-6:checked ~ .entries .entry:nth-child(6) .recipe-card,
+.recipe-show-7:checked ~ .entries .entry:nth-child(7) .recipe-card
+{
+    transition: transform .4s ease-out .3s;
+    transform: rotateX(0deg) scale(1, 1);
+}
+
+.recipe-card .header
+{
+    background-color: #3f51b5;
+    color: #fff;
+    display: flex;
+    flex-basis: 100%;
+}
+
+.recipe-card .header h3
+{
+    flex-shrink: 1;
+    flex-grow: 1;
+    font-size: 1.43em;
+    font-weight: 400;
+    line-height: 56px;
+    margin: 0;
+    padding: 0 24px;
+}
+
+.recipe-card .hide-recipe-button
+{
+    background: #303f9f url('img/ic_close.svg') no-repeat 50% 50%;
+    background-size: 24px 24px;
+    display: block;
+    flex-basis: 56px;
+    height: 56px;
+}
+
+.recipe-card .hide-recipe-button:hover
+{
+    background-color: #283593;
+}
+
+.recipe-card h6
+{
+    color: #616161;
+    font-size: 1em;
+    margin: 2em 24px 1em;
+}
+
+.recipe-card .ingredients
+{
+    align-self: flex-start;
+    flex-basis: 40%;
+}
+
+.recipe-card .cooking-method
+{
+    align-self: flex-start;
+    flex-basis: 60%;
+}
+
+.recipe-card ul li,
+.recipe-card ol li
+{
+    padding: 4px 16px 4px 0;
+}
