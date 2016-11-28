@@ -169,26 +169,26 @@ body
 
 /* Radio */
 
-input[id='pepper-item']:checked ~ article[id='pepper']:target > .recipe-view,
-input[id='carrot-item']:checked ~ article[id='carrot']:target > .recipe-view,
-input[id='tomato-item']:checked ~ article[id='tomato']:target > .recipe-view,
-input[id='chilly-item']:checked ~ article[id='chilly']:target > .recipe-view,
-input[id='onion-item']:checked ~ article[id='onion']:target > .recipe-view,
-input[id='garlic-item']:checked ~ article[id='garlic']:target > .recipe-view,
-input[id='cucumber-item']:checked ~ article[id='cucumber']:target > .recipe-view
+.pepper-item:checked ~ .pepper:target > .recipe-view,
+.carrot-item:checked ~ .carrot:target > .recipe-view,
+.tomato-item:checked ~ .tomato:target > .recipe-view,
+.chilly-item:checked ~ .chilly:target > .recipe-view,
+.onion-item:checked ~ .onion:target > .recipe-view,
+.garlic-item:checked ~ .garlic:target > .recipe-view,
+.cucumber-item:checked ~ .cucumber:target > .recipe-view
 {
     z-index: 2;
     visibility: visible;
     animation: fold 2s linear forwards;
 }
 
-input[id='pepper-item']:checked ~ article[id='pepper']:hover > .item-label,
-input[id='carrot-item']:checked ~ article[id='carrot']:hover > .item-label,
-input[id='tomato-item']:checked ~ article[id='tomato']:hover > .item-label,
-input[id='chilly-item']:checked ~ article[id='chilly']:hover > .item-label,
-input[id='onion-item']:checked ~ article[id='onion']:hover > .item-label,
-input[id='garlic-item']:checked ~ article[id='garlic']:hover > .item-label,
-input[id='cucumber-item']:checked ~ article[id='cucumber']:hover > .item-label
+.pepper-item:checked ~ .pepper:hover > .item-label,
+.carrot-item:checked ~ .carrot:hover > .item-label,
+.tomato-item:checked ~ .tomato:hover > .item-label,
+.chilly-item:checked ~ .chilly:hover > .item-label,
+.onion-item:checked ~ .onion:hover > .item-label,
+.garlic-item:checked ~ .garlic:hover > .item-label,
+.cucumber-item:checked ~ .cucumber:hover > .item-label
 {
     display: inline-block;
     visibility: visible;
@@ -224,118 +224,232 @@ input[id='cucumber-item']:checked ~ article[id='cucumber']:hover > .item-label
 
 /* Макет 1 */
 
-input[id='cucumber-item']:checked ~ .pepper
+.cucumber-item:checked ~ .pepper
 {
     z-index: 0;
-    transform: perspective(550px) rotateY(25deg) translateX(-300px);
+    transform: translateX(-300px) perspective(550px) rotateY(25deg);
 }
 
-input[id='garlic-item']:checked ~ .pepper,
-input[id='cucumber-item']:checked ~ .carrot
+.garlic-item:checked ~ .pepper,
+.cucumber-item:checked ~ .carrot
 {
     z-index: 1;
-    transform: perspective(500px) rotateY(25deg) translateX(-250px);
+    transform: translateX(-250px) perspective(500px) rotateY(25deg);
 }
 
-input[id='onion-item']:checked ~ .pepper,
-input[id='garlic-item']:checked ~ .carrot,
-input[id='cucumber-item']:checked ~ .tomato
+.onion-item:checked ~ .pepper,
+.garlic-item:checked ~ .carrot,
+.cucumber-item:checked ~ .tomato
 {
     z-index: 2;
-    transform: perspective(450px) rotateY(25deg) translateX(-200px);
+    transform: translateX(-200px) perspective(450px) rotateY(25deg);
 }
 
-input[id='onion-item']:checked ~ .carrot,
-input[id='garlic-item']:checked ~ .tomato,
-input[id='cucumber-item']:checked ~ .chilly,
-input[id='chilly-item']:checked ~ .pepper
+.onion-item:checked ~ .carrot,
+.garlic-item:checked ~ .tomato,
+.cucumber-item:checked ~ .chilly,
+.chilly-item:checked ~ .pepper
 {
     z-index: 3;
-    transform: perspective(400px) rotateY(25deg) translateX(-150px);
+    transform: translateX(-150px) perspective(400px) rotateY(25deg);
 }
 
-input[id='tomato-item']:checked ~ .pepper,
-input[id='onion-item']:checked ~ .tomato,
-input[id='garlic-item']:checked ~ .chilly,
-input[id='cucumber-item']:checked ~ .onion,
-input[id='chilly-item']:checked ~ .carrot
+.tomato-item:checked ~ .pepper,
+.onion-item:checked ~ .tomato,
+.garlic-item:checked ~ .chilly,
+.cucumber-item:checked ~ .onion,
+.chilly-item:checked ~ .carrot
 {
     z-index: 4;
-    transform: perspective(350px) rotateY(25deg) translateX(-100px);
+    transform: translateX(-100px) perspective(350px) rotateY(25deg);
 }
 
-input[id='carrot-item']:checked ~ .pepper,
-input[id='tomato-item']:checked ~ .carrot,
-input[id='onion-item']:checked ~ .chilly,
-input[id='garlic-item']:checked ~ .onion,
-input[id='cucumber-item']:checked ~ .garlic,
-input[id='chilly-item']:checked ~ .tomato
+.carrot-item:checked ~ .pepper,
+.tomato-item:checked ~ .carrot,
+.onion-item:checked ~ .chilly,
+.garlic-item:checked ~ .onion,
+.cucumber-item:checked ~ .garlic,
+.chilly-item:checked ~ .tomato
 {
     z-index: 5;
-    transform: perspective(300px) rotateY(25deg) translateX(-50px);
+    transform: translateX(-50px) perspective(300px) rotateY(25deg);
 }
 
-input[id='pepper-item']:checked ~ .pepper,
-input[id='carrot-item']:checked ~ .carrot,
-input[id='tomato-item']:checked ~ .tomato,
-input[id='onion-item']:checked ~ .onion,
-input[id='garlic-item']:checked ~ .garlic,
-input[id='cucumber-item']:checked ~ .cucumber,
-input[id='chilly-item']:checked ~ .chilly
+.pepper-item:checked ~ .pepper,
+.carrot-item:checked ~ .carrot,
+.tomato-item:checked ~ .tomato,
+.onion-item:checked ~ .onion,
+.garlic-item:checked ~ .garlic,
+.cucumber-item:checked ~ .cucumber,
+.chilly-item:checked ~ .chilly
 {
     z-index: 6;
     transform: perspective(250px) scale(1.2);
 }
 
-input[id='pepper-item']:checked ~ .carrot,
-input[id='carrot-item']:checked ~ .tomato,
-input[id='tomato-item']:checked ~ .chilly,
-input[id='onion-item']:checked ~ .garlic,
-input[id='garlic-item']:checked ~ .cucumber,
-input[id='chilly-item']:checked ~ .onion
+.pepper-item:checked ~ .carrot,
+.carrot-item:checked ~ .tomato,
+.tomato-item:checked ~ .chilly,
+.onion-item:checked ~ .garlic,
+.garlic-item:checked ~ .cucumber,
+.chilly-item:checked ~ .onion
 {
     z-index: 5;
-    transform: perspective(300px) rotateY(-25deg) translateX(50px);
+    transform: translateX(50px) perspective(300px) rotateY(-25deg);
 }
 
-input[id='pepper-item']:checked ~ .tomato,
-input[id='carrot-item']:checked ~ .chilly,
-input[id='tomato-item']:checked ~ .onion,
-input[id='onion-item']:checked ~ .cucumber,
-input[id='chilly-item']:checked ~ .garlic
+.pepper-item:checked ~ .tomato,
+.carrot-item:checked ~ .chilly,
+.tomato-item:checked ~ .onion,
+.onion-item:checked ~ .cucumber,
+.chilly-item:checked ~ .garlic
 {
     z-index: 4;
-    transform: perspective(350px) rotateY(-25deg) translateX(100px);
+    transform: translateX(100px) perspective(350px) rotateY(-25deg);
 }
 
-input[id='pepper-item']:checked ~ .chilly,
-input[id='carrot-item']:checked ~ .onion,
-input[id='tomato-item']:checked ~ .garlic,
-input[id='chilly-item']:checked ~ .cucumber
+.pepper-item:checked ~ .chilly,
+.carrot-item:checked ~ .onion,
+.tomato-item:checked ~ .garlic,
+.chilly-item:checked ~ .cucumber
 {
     z-index: 3;
-    transform: perspective(400px) rotateY(-25deg) translateX(150px);
+    transform: translateX(150px) perspective(400px) rotateY(-25deg);
 }
 
-input[id='pepper-item']:checked ~ .onion,
-input[id='carrot-item']:checked ~ .garlic,
-input[id='tomato-item']:checked ~ .cucumber
+.pepper-item:checked ~ .onion,
+.carrot-item:checked ~ .garlic,
+.tomato-item:checked ~ .cucumber
 {
     z-index: 2;
-    transform: perspective(450px) rotateY(-25deg) translateX(200px);
+    transform: translateX(200px) perspective(450px) rotateY(-25deg);
 }
 
-input[id='pepper-item']:checked ~ .garlic,
-input[id='carrot-item']:checked ~ .cucumber
+.pepper-item:checked ~ .garlic,
+.carrot-item:checked ~ .cucumber
 {
     z-index: 1;
-    transform: perspective(500px) rotateY(-25deg) translateX(250px);
+    transform: translateX(250px) perspective(500px) rotateY(-25deg);
 }
 
-input[id='pepper-item']:checked ~ .cucumber
+.pepper-item:checked ~ .cucumber
 {
     z-index: 0;
-    transform: perspective(550px) rotateY(-25deg) translateX(300px);
+    transform: translateX(300px) perspective(550px) rotateY(-25deg);
 }
 
 /* Макет 2 Work in progress */
+
+.view-type:checked ~ .content .cucumber-item:checked ~ .pepper
+{
+    z-index: 0;
+    transform: translateX(0) perspective(550px) rotateY(25deg);
+}
+
+.view-type:checked ~ .content .garlic-item:checked ~ .pepper,
+.view-type:checked ~ .content .cucumber-item:checked ~ .carrot
+{
+    z-index: 1;
+    transform: translateX(0) perspective(500px) rotateY(25deg);
+}
+
+.view-type:checked ~ .content .onion-item:checked ~ .pepper,
+.view-type:checked ~ .content .garlic-item:checked ~ .carrot,
+.view-type:checked ~ .content .cucumber-item:checked ~ .tomato
+{
+    z-index: 2;
+    transform: translateX(0) perspective(450px) rotateY(25deg);
+}
+
+.view-type:checked ~ .content .onion-item:checked ~ .carrot,
+.view-type:checked ~ .content .garlic-item:checked ~ .tomato,
+.view-type:checked ~ .content .cucumber-item:checked ~ .chilly,
+.view-type:checked ~ .content .chilly-item:checked ~ .pepper
+{
+    z-index: 3;
+    transform: translateX(0) perspective(400px) rotateY(25deg);
+}
+
+.view-type:checked ~ .content .tomato-item:checked ~ .pepper,
+.view-type:checked ~ .content .onion-item:checked ~ .tomato,
+.view-type:checked ~ .content .garlic-item:checked ~ .chilly,
+.view-type:checked ~ .content .cucumber-item:checked ~ .onion,
+.view-type:checked ~ .content .chilly-item:checked ~ .carrot
+{
+    z-index: 4;
+    transform: translateX(0) perspective(350px) rotateY(25deg);
+}
+
+.view-type:checked ~ .content .carrot-item:checked ~ .pepper,
+.view-type:checked ~ .content .tomato-item:checked ~ .carrot,
+.view-type:checked ~ .content .onion-item:checked ~ .chilly,
+.view-type:checked ~ .content .garlic-item:checked ~ .onion,
+.view-type:checked ~ .content .cucumber-item:checked ~ .garlic,
+.view-type:checked ~ .content .chilly-item:checked ~ .tomato
+{
+    z-index: 5;
+    transform: translateX(0) perspective(300px) rotateY(25deg);
+}
+
+.view-type:checked ~ .content .pepper-item:checked ~ .pepper,
+.view-type:checked ~ .content .carrot-item:checked ~ .carrot,
+.view-type:checked ~ .content .tomato-item:checked ~ .tomato,
+.view-type:checked ~ .content .onion-item:checked ~ .onion,
+.view-type:checked ~ .content .garlic-item:checked ~ .garlic,
+.view-type:checked ~ .content .cucumber-item:checked ~ .cucumber,
+.view-type:checked ~ .content .chilly-item:checked ~ .chilly
+{
+    z-index: 6;
+    transform: perspective(0) scale(1.2);
+}
+
+.view-type:checked ~ .content .pepper-item:checked ~ .carrot,
+.view-type:checked ~ .content .carrot-item:checked ~ .tomato,
+.view-type:checked ~ .content .tomato-item:checked ~ .chilly,
+.view-type:checked ~ .content .onion-item:checked ~ .garlic,
+.view-type:checked ~ .content .garlic-item:checked ~ .cucumber,
+.view-type:checked ~ .content .chilly-item:checked ~ .onion
+{
+    z-index: 5;
+    transform: translateX(0) perspective(300px) rotateY(-25deg);
+}
+
+.view-type:checked ~ .content .pepper-item:checked ~ .tomato,
+.view-type:checked ~ .content .carrot-item:checked ~ .chilly,
+.view-type:checked ~ .content .tomato-item:checked ~ .onion,
+.view-type:checked ~ .content .onion-item:checked ~ .cucumber,
+.view-type:checked ~ .content .chilly-item:checked ~ .garlic
+{
+    z-index: 4;
+    transform: translateX(0) perspective(350px) rotateY(-25deg);
+}
+
+.view-type:checked ~ .content .pepper-item:checked ~ .chilly,
+.view-type:checked ~ .content .carrot-item:checked ~ .onion,
+.view-type:checked ~ .content .tomato-item:checked ~ .garlic,
+.view-type:checked ~ .content .chilly-item:checked ~ .cucumber
+{
+    z-index: 3;
+    transform: translateX(0) perspective(400px) rotateY(-25deg);
+}
+
+.view-type:checked ~ .content .pepper-item:checked ~ .onion,
+.view-type:checked ~ .content .carrot-item:checked ~ .garlic,
+.view-type:checked ~ .content .tomato-item:checked ~ .cucumber
+{
+    z-index: 2;
+    transform: translateX(0) perspective(450px) rotateY(-25deg);
+}
+
+.view-type:checked ~ .content .pepper-item:checked ~ .garlic,
+.view-type:checked ~ .content .carrot-item:checked ~ .cucumber
+{
+    z-index: 1;
+    transform: translateX(0) perspective(500px) rotateY(-25deg);
+}
+
+.view-type:checked ~ .content .pepper-item:checked ~ .cucumber
+{
+    z-index: 0;
+    transform: translateX(0) perspective(550px) rotateY(-25deg);
+}
