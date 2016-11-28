@@ -44,7 +44,7 @@ main
 
 input[id='one-photo']:checked ~ .card[id='one'] .to-info,
 input[id='two-photo']:checked ~ .card[id='two'] .to-info,
-input[id="three-photo"]:checked ~ .card[id='three'] .to-info,
+input[id='three-photo']:checked ~ .card[id='three'] .to-info,
 input[id='four-photo']:checked ~ .card[id='four'] .to-info,
 input[id='five-photo']:checked ~ .card[id='five'] .to-info,
 input[id='six-photo']:checked ~ .card[id='six'] .to-info,
