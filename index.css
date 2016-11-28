@@ -1,0 +1,311 @@
+body
+{
+    margin-top: 200px;
+}
+
+img,
+card
+{
+    width: 200px;
+    height: 200px;
+}
+
+input
+{
+    display:none;
+}
+
+.card
+{
+    position: absolute;
+    background: #fff;
+    box-shadow: 0 0 10px 5px #aaa;
+    transition: z-index 0s, transform .5s;
+}
+
+div.card-1
+{
+    z-index: 1;
+    left: 100px;
+}
+
+div.card-7
+{
+    z-index: 1;
+    left: 700px;
+}
+
+div.card-2
+{
+    z-index: 2;
+    left: 200px;
+}
+
+div.card-6
+{
+    z-index: 2;
+    left: 600px;
+}
+
+div.card-3
+{
+    z-index: 3;
+    left: 300px;
+}
+
+div.card-5
+{
+    z-index: 3;
+    left: 500px;
+}
+
+div.card-4
+{
+    z-index: 4;
+    left: 400px;
+}
+
+input.card-1:checked ~ .card-2,
+input.card-7:checked ~ .card-6
+{
+    z-index: 9;
+}
+
+input.card-1:checked ~ .card-3,
+input.card-7:checked ~ .card-5
+{
+    z-index: 8;
+}
+
+input.card-2:checked ~ .card-3,
+input.card-6:checked ~ .card-5
+{
+    z-index: 7;
+}
+
+/* card-1 */
+
+input.card-1:checked ~ .card-7,
+input.card-1:checked ~ .card-6,
+input.card-1:checked ~ .card-5,
+input.card-1:checked ~ .card-4,
+input.card-1:checked ~ .card-3,
+input.card-1:checked ~ .card-2
+{
+    transform: perspective(300px) rotateY(-50deg);
+}
+
+/* card-2 */
+
+input.card-2:checked ~ .card-7,
+input.card-2:checked ~ .card-6,
+input.card-2:checked ~ .card-5,
+input.card-2:checked ~ .card-4,
+input.card-2:checked ~ .card-3
+{
+    transform: perspective(300px) rotateY(-50deg);
+}
+
+input.card-2:checked ~ .card-1
+{
+    transform: perspective(300px) rotateY(50deg);
+}
+
+/* card-3 */
+
+input.card-3:checked ~ .card-7,
+input.card-3:checked ~ .card-6,
+input.card-3:checked ~ .card-5,
+input.card-3:checked ~ .card-4
+{
+    transform: perspective(300px) rotateY(-50deg);
+}
+
+input.card-3:checked ~ .card-1,
+input.card-3:checked ~ .card-2
+{
+    transform: perspective(300px) rotateY(50deg);
+}
+
+/* card-4 */
+
+input.card-4:checked ~ .card-7,
+input.card-4:checked ~ .card-6,
+input.card-4:checked ~ .card-5
+{
+    transform: perspective(300px) rotateY(-50deg);
+}
+
+input.card-4:checked ~ .card-1,
+input.card-4:checked ~ .card-2,
+input.card-4:checked ~ .card-3
+{
+    transform: perspective(300px) rotateY(50deg);
+}
+
+/* card-5 */
+
+input.card-5:checked ~ .card-6,
+input.card-5:checked ~ .card-7
+{
+    transform: perspective(300px) rotateY(-50deg);
+}
+
+input.card-5:checked ~ .card-1,
+input.card-5:checked ~ .card-2,
+input.card-5:checked ~ .card-3,
+input.card-5:checked ~ .card-4
+{
+    transform: perspective(300px) rotateY(50deg);
+}
+
+/* card-6 */
+
+input.card-6:checked ~ .card-7
+{
+    transform: perspective(300px) rotateY(-50deg);
+}
+
+input.card-6:checked ~ .card-1,
+input.card-6:checked ~ .card-2,
+input.card-6:checked ~ .card-3,
+input.card-6:checked ~ .card-4,
+input.card-6:checked ~ .card-5
+{
+    transform: perspective(300px) rotateY(50deg);
+}
+
+/* card-7 */
+
+input.card-7:checked ~ .card-1,
+input.card-7:checked ~ .card-2,
+input.card-7:checked ~ .card-3,
+input.card-7:checked ~ .card-4,
+input.card-7:checked ~ .card-5,
+input.card-7:checked ~ .card-6
+{
+    transform: perspective(300px) rotateY(50deg);
+}
+
+/* */
+
+input.card-1:checked ~ .card-1,
+input.card-2:checked ~ .card-2,
+input.card-3:checked ~ .card-3,
+input.card-4:checked ~ .card-4,
+input.card-5:checked ~ .card-5,
+input.card-6:checked ~ .card-6,
+input.card-7:checked ~ .card-7
+{
+    z-index: 10;
+}
+
+body
+{
+    position: relative;
+}
+
+
+.content
+{
+    position: relative;
+
+}
+
+.recipe
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    margin: 10%;
+    box-shadow: 0 0 1px #000;
+    border: 5px solid #000;
+    border-radius: 50%;
+    height: 80%;
+    width: 80%;
+    text-align: center;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease-in-out;
+    box-sizing: border-box;
+    padding-top: 30%;
+    z-index: -1;
+    color: #fff;
+}
+
+.recipe label,
+.recipe-description label
+{
+    cursor: pointer;
+}
+
+.recipe-description
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 200px;
+    width: 200px;
+    opacity: 0;
+    z-index: -2;
+    background: #f5f5dc;
+    transform: rotateX(-180deg);
+}
+
+.card input:checked ~ .content .recipe-description
+{
+    height: 400px;
+    width: 400px;
+    opacity: 1;
+    z-index: 20;
+    transition: all 1s;
+    transform: perspective(200px) rotateX(0deg) translate(-100px, -100px);
+}
+
+.card input:checked ~ .content img
+{
+    transform: perspective(200px) rotateX(-180deg);
+    transition: all 1s;
+}
+
+.card-1:checked ~.card-1:hover .recipe,
+.card-2:checked ~.card-2:hover .recipe,
+.card-3:checked ~.card-3:hover .recipe,
+.card-4:checked ~.card-4:hover .recipe,
+.card-5:checked ~.card-5:hover .recipe,
+.card-6:checked ~.card-6:hover .recipe,
+.card-7:checked ~.card-7:hover .recipe
+{
+	opacity: 1;
+    transition-delay: .5s;
+    z-index: 11;
+}
+
+.recipe-description
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-description > div
+{
+    display: flex;
+}
+
+h1
+{
+    font: 20px arial;
+    padding-left: 10px;
+}
+
+.ingredients,
+.steps
+{
+    width: 50%;
+}
+
+.close
+{
+    text-align: right;
+}
