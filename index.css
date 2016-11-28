@@ -1,0 +1,365 @@
+.photo-radio
+{
+    display: none;
+}
+
+.slide
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    margin-top: -100px;
+    margin-left: -100px;
+    border: 1px solid gray;
+    box-shadow: 0 5px 30px #808080;
+    transition: transform 1s ease-in 0s;
+}
+
+.image
+{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.recipe
+{
+    position: absolute;
+    z-index: 10;
+    display: none;
+    background: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100%;
+    color: white;
+
+}
+
+.text
+{
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.apple:checked ~ .gallery .apple:hover .recipe,
+.banana:checked ~ .gallery .banana:hover .recipe,
+.grapes:checked ~ .gallery .grapes:hover .recipe,
+.kiwi:checked ~ .gallery .kiwi:hover .recipe,
+.pine:checked ~ .gallery .pine:hover .recipe,
+.tange:checked ~ .gallery .tange:hover .recipe,
+.watermelon:checked ~ .gallery .watermelon:hover .recipe
+{
+    display: table;
+}
+
+.kiwi:checked ~ .gallery .kiwi
+{
+    z-index: 5;
+}
+
+.kiwi:checked ~ .gallery .apple
+{
+    transform: translateX(-130%) rotateY(30deg) scale(.8);
+}
+
+.kiwi:checked ~ .gallery .banana
+{
+    transform: translateX(-90%) rotateY(30deg) scale(.85);
+}
+
+.kiwi:checked ~ .gallery .grapes
+{
+    transform: translateX(-50%) rotateY(30deg) scale(.9);
+}
+
+.kiwi:checked ~ .gallery .pine
+{
+    transform: translateX(50%) rotateY(-30deg) scale(.9);
+    z-index: 3;
+}
+
+.kiwi:checked ~ .gallery .tange
+{
+    transform: translateX(90%) rotateY(-30deg) scale(.85);
+    z-index: 2;
+}
+
+.kiwi:checked ~ .gallery .watermelon
+{
+    transform: translateX(130%) rotateY(-30deg) scale(.8);
+    z-index: 1;
+}
+
+.apple:checked ~ .gallery .apple
+{
+    z-index: 7;
+}
+
+.apple:checked ~ .gallery .banana
+{
+    transform: translateX(50%) rotateY(-30deg) scale(.9);
+    z-index: 6;
+}
+
+.apple:checked ~ .gallery .grapes
+{
+    transform: translateX(90%) rotateY(-30deg) scale(.85);
+    z-index: 5;
+}
+
+.apple:checked ~ .gallery .kiwi
+{
+    transform: translateX(130%) rotateY(-30deg) scale(.8);
+    z-index: 4;
+}
+
+.apple:checked ~ .gallery .pine
+{
+    transform: translateX(160%) rotateY(-30deg) scale(.75);
+    z-index: 3;
+}
+
+.apple:checked ~ .gallery .tange
+{
+    transform: translateX(180%) rotateY(-30deg) scale(.7);
+    z-index: 2;
+}
+
+.apple:checked ~ .gallery .watermelon
+{
+    transform: translateX(200%) rotateY(-30deg) scale(.65);
+    z-index: 1;
+}
+
+.banana:checked ~ .gallery .banana
+{
+    z-index: 7;
+}
+
+.banana:checked ~ .gallery .apple
+{
+    z-index: 6;
+    transform: translateX(-50%) rotateY(30deg) scale(.9);
+}
+
+.banana:checked ~ .gallery .grapes
+{
+    z-index: 6;
+    transform: translateX(50%) rotateY(-30deg) scale(.9);
+}
+
+.banana:checked ~ .gallery .kiwi
+{
+    z-index: 5;
+    transform: translateX(90%) rotateY(-30deg) scale(.85);
+}
+
+.banana:checked ~ .gallery .pine
+{
+    z-index: 4;
+    transform: translateX(130%) rotateY(-30deg) scale(.8);
+}
+
+.banana:checked ~ .gallery .tange
+{
+    z-index: 3;
+    transform: translateX(160%) rotateY(-30deg) scale(.75);
+}
+
+.banana:checked ~ .gallery .watermelon
+{
+    z-index: 2;
+    transform: translateX(180%) rotateY(-30deg) scale(.7);
+}
+
+.grapes:checked ~ .gallery .grapes
+{
+    z-index: 7;
+}
+
+.grapes:checked ~ .gallery .apple
+{
+    z-index: 5;
+    transform: translateX(-90%) rotateY(30deg) scale(.85);
+}
+
+.grapes:checked ~ .gallery .banana
+{
+    z-index: 6;
+}
+
+.grapes:checked ~ .gallery .kiwi
+{
+    z-index: 6;
+    transform: translateX(50%) rotateY(-30deg) scale(.9);
+}
+
+.grapes:checked ~ .gallery .pine
+{
+    z-index: 5;
+    transform: translateX(90%) rotateY(-30deg) scale(.8);
+}
+
+.grapes:checked ~ .gallery .tange
+{
+    z-index: 4;
+    transform: translateX(130%) rotateY(-30deg) scale(.75);
+}
+
+.grapes:checked ~ .gallery .watermelon
+{
+    z-index: 3;
+    transform: translateX(160%) rotateY(-30deg) scale(.7);
+}
+
+.pine:checked ~ .gallery .pine
+{
+    z-index: 7;
+}
+
+.pine:checked ~ .gallery .apple
+{
+    z-index: 3;
+    transform: translateX(-160%) rotateY(30deg) scale(.75);
+}
+
+.pine:checked ~ .gallery .banana
+{
+    z-index: 4;
+    transform: translateX(-130%) rotateY(-30deg) scale(.8);
+}
+
+.pine:checked ~ .gallery .grapes
+{
+    z-index: 5;
+}
+
+.pine:checked ~ .gallery .kiwi
+{
+    z-index: 6;
+}
+
+.pine:checked ~ .gallery .tange
+{
+    z-index: 6;
+    transform: translateX(50%) rotateY(-30deg) scale(.9);
+}
+
+.pine:checked ~ .gallery .watermelon
+{
+    z-index: 5;
+    transform: translateX(90%) rotateY(-30deg) scale(.85);
+}
+
+.tange:checked ~ .gallery .tange
+{
+    z-index: 7;
+}
+
+.tange:checked ~ .gallery .apple
+{
+    z-index: 2;
+    transform: translateX(-180%) rotateY(30deg) scale(.7);
+}
+
+.tange:checked ~ .gallery .banana
+{
+    z-index: 3;
+    transform: translateX(-160%) rotateY(-30deg) scale(.75);
+}
+
+.tange:checked ~ .gallery .grapes
+{
+    z-index: 4;
+}
+
+.tange:checked ~ .gallery .kiwi
+{
+    z-index: 5;
+}
+
+.tange:checked ~ .gallery .pine
+{
+    z-index: 6;
+}
+
+.tange:checked ~ .gallery .watermelon
+{
+    z-index: 6;
+    transform: translateX(50%) rotateY(-30deg) scale(.9);
+}
+
+.watermelon:checked ~ .gallery .watermelon
+{
+    z-index: 7;
+}
+
+.watermelon:checked ~ .gallery .apple
+{
+    z-index: 1;
+    transform: translateX(-200%) rotateY(30deg) scale(.65);
+}
+
+.watermelon:checked ~ .gallery .banana
+{
+    z-index: 2;
+    transform: translateX(-180%) rotateY(-30deg) scale(.7);
+}
+
+.watermelon:checked ~ .gallery .grapes
+{
+    z-index: 3;
+    transform: translateX(-160%) rotateY(-30deg) scale(.75);
+}
+
+.watermelon:checked ~ .gallery .kiwi
+{
+    z-index: 4;
+}
+
+.watermelon:checked ~ .gallery .pine
+{
+    z-index: 5;
+}
+
+.watermelon:checked ~ .gallery .tange
+{
+    z-index: 6;
+}
+
+.apple:checked ~ .gallery .apple,
+.banana:checked ~ .gallery .banana,
+.kiwi:checked ~ .gallery .kiwi,
+.grapes:checked ~ .gallery .grapes,
+.pine:checked ~ .gallery .pine,
+.watermelon:checked ~ .gallery .watermelon,
+.tange:checked ~ .gallery .tange
+{
+    transform: translateX(0%) rotateY(0deg) scale(1);
+}
+
+.pine:checked ~ .gallery .grapes,
+.tange:checked ~ .gallery .kiwi,
+.watermelon:checked ~ .gallery .pine
+{
+
+    transform: translateX(-90%) rotateY(-30deg) scale(.85);
+}
+
+.grapes:checked ~ .gallery .banana,
+.pine:checked ~ .gallery .kiwi,
+.tange:checked ~ .gallery .pine,
+.watermelon:checked ~ .gallery .tange
+{
+    transform: translateX(-50%) rotateY(-30deg) scale(.9);
+}
+
+.watermelon:checked ~ .gallery .kiwi,
+.tange:checked ~ .gallery .grapes
+{
+    transform: translateX(-130%) rotateY(-30deg) scale(.8);
+}
