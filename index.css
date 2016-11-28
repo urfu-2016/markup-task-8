@@ -56,170 +56,170 @@ label[for]
     z-index: 7;
 }
 
-.card-selected-1:checked ~ .entries .entry:nth-child(2),
-.card-selected-2:checked ~ .entries .entry:nth-child(3),
-.card-selected-3:checked ~ .entries .entry:nth-child(4),
-.card-selected-4:checked ~ .entries .entry:nth-child(5),
-.card-selected-5:checked ~ .entries .entry:nth-child(6),
-.card-selected-6:checked ~ .entries .entry:nth-child(7)
+.card-selected-1:checked ~ .entries .entry-2,
+.card-selected-2:checked ~ .entries .entry-3,
+.card-selected-3:checked ~ .entries .entry-4,
+.card-selected-4:checked ~ .entries .entry-5,
+.card-selected-5:checked ~ .entries .entry-6,
+.card-selected-6:checked ~ .entries .entry-7
 {
-    transform: translateX(52%) scale(.90) rotateY(-60deg);
+    transform: translateX(52%) scale(.9) rotateY(-60deg);
 }
 
-.card-selected-1:checked ~ .entries .entry:nth-child(3),
-.card-selected-2:checked ~ .entries .entry:nth-child(4),
-.card-selected-3:checked ~ .entries .entry:nth-child(5),
-.card-selected-4:checked ~ .entries .entry:nth-child(6),
-.card-selected-5:checked ~ .entries .entry:nth-child(7)
+.card-selected-1:checked ~ .entries .entry-3,
+.card-selected-2:checked ~ .entries .entry-4,
+.card-selected-3:checked ~ .entries .entry-5,
+.card-selected-4:checked ~ .entries .entry-6,
+.card-selected-5:checked ~ .entries .entry-7
 {
     transform: translateX(70%) scale(.85) rotateY(-50deg);
 }
 
-.card-selected-1:checked ~ .entries .entry:nth-child(4),
-.card-selected-2:checked ~ .entries .entry:nth-child(5),
-.card-selected-3:checked ~ .entries .entry:nth-child(6),
-.card-selected-4:checked ~ .entries .entry:nth-child(7)
+.card-selected-1:checked ~ .entries .entry-4,
+.card-selected-2:checked ~ .entries .entry-5,
+.card-selected-3:checked ~ .entries .entry-6,
+.card-selected-4:checked ~ .entries .entry-7
 {
-    transform: translateX(87%) scale(.80) rotateY(-40deg);
+    transform: translateX(87%) scale(.8) rotateY(-40deg);
 }
 
-.card-selected-1:checked ~ .entries .entry:nth-child(5),
-.card-selected-2:checked ~ .entries .entry:nth-child(6),
-.card-selected-3:checked ~ .entries .entry:nth-child(7)
+.card-selected-1:checked ~ .entries .entry-5,
+.card-selected-2:checked ~ .entries .entry-6,
+.card-selected-3:checked ~ .entries .entry-7
 {
     transform: translateX(102%) scale(.75) rotateY(-30deg);
 }
 
-.card-selected-1:checked ~ .entries .entry:nth-child(6),
-.card-selected-2:checked ~ .entries .entry:nth-child(7)
+.card-selected-1:checked ~ .entries .entry-6,
+.card-selected-2:checked ~ .entries .entry-7
 {
-    transform: translateX(118%) scale(.70) rotateY(-20deg);
+    transform: translateX(118%) scale(.7) rotateY(-20deg);
 }
 
-.card-selected-1:checked ~ .entries .entry:nth-child(7)
+.card-selected-1:checked ~ .entries .entry-7
 {
     transform: translateX(134%) scale(.65) rotateY(-10deg);
 }
 
-.card-selected-2:checked ~ .entries .entry:nth-child(1),
-.card-selected-3:checked ~ .entries .entry:nth-child(2),
-.card-selected-4:checked ~ .entries .entry:nth-child(3),
-.card-selected-5:checked ~ .entries .entry:nth-child(4),
-.card-selected-6:checked ~ .entries .entry:nth-child(5),
-.card-selected-7:checked ~ .entries .entry:nth-child(6)
+.card-selected-2:checked ~ .entries .entry-1,
+.card-selected-3:checked ~ .entries .entry-2,
+.card-selected-4:checked ~ .entries .entry-3,
+.card-selected-5:checked ~ .entries .entry-4,
+.card-selected-6:checked ~ .entries .entry-5,
+.card-selected-7:checked ~ .entries .entry-6
 {
-    transform: translateX(-52%) scale(.90) rotateY(60deg);
+    transform: translateX(-52%) scale(.9) rotateY(60deg);
 }
 
-.card-selected-3:checked ~ .entries .entry:nth-child(1),
-.card-selected-4:checked ~ .entries .entry:nth-child(2),
-.card-selected-5:checked ~ .entries .entry:nth-child(3),
-.card-selected-6:checked ~ .entries .entry:nth-child(4),
-.card-selected-7:checked ~ .entries .entry:nth-child(5)
+.card-selected-3:checked ~ .entries .entry-1,
+.card-selected-4:checked ~ .entries .entry-2,
+.card-selected-5:checked ~ .entries .entry-3,
+.card-selected-6:checked ~ .entries .entry-4,
+.card-selected-7:checked ~ .entries .entry-5
 {
     transform: translateX(-70%) scale(.85) rotateY(50deg);
 }
 
-.card-selected-4:checked ~ .entries .entry:nth-child(1),
-.card-selected-5:checked ~ .entries .entry:nth-child(2),
-.card-selected-6:checked ~ .entries .entry:nth-child(3),
-.card-selected-7:checked ~ .entries .entry:nth-child(4)
+.card-selected-4:checked ~ .entries .entry-1,
+.card-selected-5:checked ~ .entries .entry-2,
+.card-selected-6:checked ~ .entries .entry-3,
+.card-selected-7:checked ~ .entries .entry-4
 {
-    transform: translateX(-87%) scale(.80) rotateY(40deg);
+    transform: translateX(-87%) scale(.8) rotateY(40deg);
 }
 
-.card-selected-5:checked ~ .entries .entry:nth-child(1),
-.card-selected-6:checked ~ .entries .entry:nth-child(2),
-.card-selected-7:checked ~ .entries .entry:nth-child(3)
+.card-selected-5:checked ~ .entries .entry-1,
+.card-selected-6:checked ~ .entries .entry-2,
+.card-selected-7:checked ~ .entries .entry-3
 {
     transform: translateX(-102%) scale(.75) rotateY(30deg);
 }
 
-.card-selected-6:checked ~ .entries .entry:nth-child(1),
-.card-selected-7:checked ~ .entries .entry:nth-child(2)
+.card-selected-6:checked ~ .entries .entry-1,
+.card-selected-7:checked ~ .entries .entry-2
 {
-    transform: translateX(-118%) scale(.70) rotateY(20deg);
+    transform: translateX(-118%) scale(.7) rotateY(20deg);
 }
 
-.card-selected-7:checked ~ .entries .entry:nth-child(1)
+.card-selected-7:checked ~ .entries .entry-1
 {
     transform: translateX(-134%) scale(.65) rotateY(10deg);
 }
 
-.card-selected-1:checked ~ .entries .entry:nth-child(2)
+.card-selected-1:checked ~ .entries .entry-2
 {
     z-index: 6;
 }
 
-.card-selected-1:checked ~ .entries .entry:nth-child(3),
-.card-selected-2:checked ~ .entries .entry:nth-child(3)
+.card-selected-1:checked ~ .entries .entry-3,
+.card-selected-2:checked ~ .entries .entry-3
 {
     z-index: 5;
 }
 
-.card-selected-1:checked ~ .entries .entry:nth-child(4),
-.card-selected-2:checked ~ .entries .entry:nth-child(4),
-.card-selected-3:checked ~ .entries .entry:nth-child(4)
+.card-selected-1:checked ~ .entries .entry-4,
+.card-selected-2:checked ~ .entries .entry-4,
+.card-selected-3:checked ~ .entries .entry-4
 {
     z-index: 4;
 }
 
-.card-selected-1:checked ~ .entries .entry:nth-child(5),
-.card-selected-2:checked ~ .entries .entry:nth-child(5),
-.card-selected-3:checked ~ .entries .entry:nth-child(5),
-.card-selected-4:checked ~ .entries .entry:nth-child(5)
+.card-selected-1:checked ~ .entries .entry-5,
+.card-selected-2:checked ~ .entries .entry-5,
+.card-selected-3:checked ~ .entries .entry-5,
+.card-selected-4:checked ~ .entries .entry-5
 {
     z-index: 3;
 }
 
-.card-selected-1:checked ~ .entries .entry:nth-child(6),
-.card-selected-2:checked ~ .entries .entry:nth-child(6),
-.card-selected-3:checked ~ .entries .entry:nth-child(6),
-.card-selected-4:checked ~ .entries .entry:nth-child(6),
-.card-selected-5:checked ~ .entries .entry:nth-child(6)
+.card-selected-1:checked ~ .entries .entry-6,
+.card-selected-2:checked ~ .entries .entry-6,
+.card-selected-3:checked ~ .entries .entry-6,
+.card-selected-4:checked ~ .entries .entry-6,
+.card-selected-5:checked ~ .entries .entry-6
 {
     z-index: 2;
 }
 
-.card-selected-1:checked ~ .entries .entry:nth-child(7),
-.card-selected-2:checked ~ .entries .entry:nth-child(7),
-.card-selected-3:checked ~ .entries .entry:nth-child(7),
-.card-selected-4:checked ~ .entries .entry:nth-child(7),
-.card-selected-5:checked ~ .entries .entry:nth-child(7),
-.card-selected-6:checked ~ .entries .entry:nth-child(7)
+.card-selected-1:checked ~ .entries .entry-7,
+.card-selected-2:checked ~ .entries .entry-7,
+.card-selected-3:checked ~ .entries .entry-7,
+.card-selected-4:checked ~ .entries .entry-7,
+.card-selected-5:checked ~ .entries .entry-7,
+.card-selected-6:checked ~ .entries .entry-7
 {
     z-index: 1;
 }
 
-.card-selected-1:checked ~ .entries .entry:nth-child(1),
-.card-selected-2:checked ~ .entries .entry:nth-child(2),
-.card-selected-3:checked ~ .entries .entry:nth-child(3),
-.card-selected-4:checked ~ .entries .entry:nth-child(4),
-.card-selected-5:checked ~ .entries .entry:nth-child(5),
-.card-selected-6:checked ~ .entries .entry:nth-child(6),
-.card-selected-7:checked ~ .entries .entry:nth-child(7)
+.card-selected-1:checked ~ .entries .entry-1,
+.card-selected-2:checked ~ .entries .entry-2,
+.card-selected-3:checked ~ .entries .entry-3,
+.card-selected-4:checked ~ .entries .entry-4,
+.card-selected-5:checked ~ .entries .entry-5,
+.card-selected-6:checked ~ .entries .entry-6,
+.card-selected-7:checked ~ .entries .entry-7
 {
     z-index: 10;
 }
 
-.card-selected-1:checked ~ .entries .entry:nth-child(1) .recipe-show-button,
-.card-selected-2:checked ~ .entries .entry:nth-child(2) .recipe-show-button,
-.card-selected-3:checked ~ .entries .entry:nth-child(3) .recipe-show-button,
-.card-selected-4:checked ~ .entries .entry:nth-child(4) .recipe-show-button,
-.card-selected-5:checked ~ .entries .entry:nth-child(5) .recipe-show-button,
-.card-selected-6:checked ~ .entries .entry:nth-child(6) .recipe-show-button,
-.card-selected-7:checked ~ .entries .entry:nth-child(7) .recipe-show-button
+.card-selected-1:checked ~ .entries .entry-1 .recipe-show-button,
+.card-selected-2:checked ~ .entries .entry-2 .recipe-show-button,
+.card-selected-3:checked ~ .entries .entry-3 .recipe-show-button,
+.card-selected-4:checked ~ .entries .entry-4 .recipe-show-button,
+.card-selected-5:checked ~ .entries .entry-5 .recipe-show-button,
+.card-selected-6:checked ~ .entries .entry-6 .recipe-show-button,
+.card-selected-7:checked ~ .entries .entry-7 .recipe-show-button
 {
     z-index: 1;
 }
 
-.card-selected-1:checked ~ .entries .entry:nth-child(1) .card:hover .recipe-show-button,
-.card-selected-2:checked ~ .entries .entry:nth-child(2) .card:hover .recipe-show-button,
-.card-selected-3:checked ~ .entries .entry:nth-child(3) .card:hover .recipe-show-button,
-.card-selected-4:checked ~ .entries .entry:nth-child(4) .card:hover .recipe-show-button,
-.card-selected-5:checked ~ .entries .entry:nth-child(5) .card:hover .recipe-show-button,
-.card-selected-6:checked ~ .entries .entry:nth-child(6) .card:hover .recipe-show-button,
-.card-selected-7:checked ~ .entries .entry:nth-child(7) .card:hover .recipe-show-button
+.card-selected-1:checked ~ .entries .entry-1 .card:hover .recipe-show-button,
+.card-selected-2:checked ~ .entries .entry-2 .card:hover .recipe-show-button,
+.card-selected-3:checked ~ .entries .entry-3 .card:hover .recipe-show-button,
+.card-selected-4:checked ~ .entries .entry-4 .card:hover .recipe-show-button,
+.card-selected-5:checked ~ .entries .entry-5 .card:hover .recipe-show-button,
+.card-selected-6:checked ~ .entries .entry-6 .card:hover .recipe-show-button,
+.card-selected-7:checked ~ .entries .entry-7 .card:hover .recipe-show-button
 {
     opacity: 1;
 }
@@ -235,13 +235,13 @@ label[for]
     width: 320px;
 }
 
-.recipe-show-1:checked ~ .entries .entry:nth-child(1) .card,
-.recipe-show-2:checked ~ .entries .entry:nth-child(2) .card,
-.recipe-show-3:checked ~ .entries .entry:nth-child(3) .card,
-.recipe-show-4:checked ~ .entries .entry:nth-child(4) .card,
-.recipe-show-5:checked ~ .entries .entry:nth-child(5) .card,
-.recipe-show-6:checked ~ .entries .entry:nth-child(6) .card,
-.recipe-show-7:checked ~ .entries .entry:nth-child(7) .card
+.recipe-show-1:checked ~ .entries .entry-1 .card,
+.recipe-show-2:checked ~ .entries .entry-2 .card,
+.recipe-show-3:checked ~ .entries .entry-3 .card,
+.recipe-show-4:checked ~ .entries .entry-4 .card,
+.recipe-show-5:checked ~ .entries .entry-5 .card,
+.recipe-show-6:checked ~ .entries .entry-6 .card,
+.recipe-show-7:checked ~ .entries .entry-7 .card
 {
     transition: transform .3s ease-in;
     transform: rotateX(-91deg);
@@ -258,13 +258,13 @@ label[for]
     width: 100%;
 }
 
-.recipe-show-1:checked ~ .entries .entry:nth-child(1) .recipe-show-button,
-.recipe-show-2:checked ~ .entries .entry:nth-child(2) .recipe-show-button,
-.recipe-show-3:checked ~ .entries .entry:nth-child(3) .recipe-show-button,
-.recipe-show-4:checked ~ .entries .entry:nth-child(4) .recipe-show-button,
-.recipe-show-5:checked ~ .entries .entry:nth-child(5) .recipe-show-button,
-.recipe-show-6:checked ~ .entries .entry:nth-child(6) .recipe-show-button,
-.recipe-show-7:checked ~ .entries .entry:nth-child(7) .recipe-show-button
+.recipe-show-1:checked ~ .entries .entry-1 .recipe-show-button,
+.recipe-show-2:checked ~ .entries .entry-2 .recipe-show-button,
+.recipe-show-3:checked ~ .entries .entry-3 .recipe-show-button,
+.recipe-show-4:checked ~ .entries .entry-4 .recipe-show-button,
+.recipe-show-5:checked ~ .entries .entry-5 .recipe-show-button,
+.recipe-show-6:checked ~ .entries .entry-6 .recipe-show-button,
+.recipe-show-7:checked ~ .entries .entry-7 .recipe-show-button
 {
     display: none;
 }
@@ -304,7 +304,8 @@ label[for]
     width: 100px;
 }
 
-.card-image-container {
+.card-image-container
+{
     display: block;
     height: 240px;
     line-height: 240px;
@@ -359,13 +360,13 @@ label[for]
     z-index: 2;
 }
 
-.recipe-show-1:checked ~ .entries .entry:nth-child(1) .recipe-card,
-.recipe-show-2:checked ~ .entries .entry:nth-child(2) .recipe-card,
-.recipe-show-3:checked ~ .entries .entry:nth-child(3) .recipe-card,
-.recipe-show-4:checked ~ .entries .entry:nth-child(4) .recipe-card,
-.recipe-show-5:checked ~ .entries .entry:nth-child(5) .recipe-card,
-.recipe-show-6:checked ~ .entries .entry:nth-child(6) .recipe-card,
-.recipe-show-7:checked ~ .entries .entry:nth-child(7) .recipe-card
+.recipe-show-1:checked ~ .entries .entry-1 .recipe-card,
+.recipe-show-2:checked ~ .entries .entry-2 .recipe-card,
+.recipe-show-3:checked ~ .entries .entry-3 .recipe-card,
+.recipe-show-4:checked ~ .entries .entry-4 .recipe-card,
+.recipe-show-5:checked ~ .entries .entry-5 .recipe-card,
+.recipe-show-6:checked ~ .entries .entry-6 .recipe-card,
+.recipe-show-7:checked ~ .entries .entry-7 .recipe-card
 {
     transition: transform .4s ease-out .3s;
     transform: rotateX(0deg) scale(1, 1);
