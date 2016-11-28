@@ -1,0 +1,317 @@
+body
+{
+    overflow-x:  hidden;
+    background: #eaeaea;
+}
+
+main
+{
+    margin-top: 200px;
+}
+
+.card
+{
+    position: absolute;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+    height: 200px;
+    width: 300px;
+    transition: transform 1s ease-out;
+    transform: perspective(0);
+}
+
+.pic
+{
+    width: 100%;
+    height: 100%;
+    transition: transform .5s linear .5s;
+}
+
+.card:target > .pic
+{
+    transition: transform .5s linear;
+    transform: translateY(-150px) perspective(200px) rotateX(-90deg);
+}
+
+.pic img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 2px 10px #808080;
+}
+
+input[id="one-photo"]:checked ~ .card[id="one"] .to-info,
+input[id="two-photo"]:checked ~ .card[id="two"] .to-info,
+input[id="three-photo"]:checked ~ .card[id="three"] .to-info,
+input[id="four-photo"]:checked ~ .card[id="four"] .to-info,
+input[id="five-photo"]:checked ~ .card[id="five"] .to-info,
+input[id="six-photo"]:checked ~ .card[id="six"] .to-info,
+input[id="seven-photo"]:checked ~ .card[id="seven"] .to-info
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+input[id="one-photo"]:checked ~ .card[id="one"] .to-info:hover:after,
+input[id="two-photo"]:checked ~ .card[id="two"] .to-info:hover:after,
+input[id="three-photo"]:checked ~ .card[id="three"] .to-info:hover:after,
+input[id="four-photo"]:checked ~ .card[id="four"] .to-info:hover:after,
+input[id="five-photo"]:checked ~ .card[id="five"] .to-info:hover:after,
+input[id="six-photo"]:checked ~ .card[id="six"] .to-info:hover:after,
+input[id="seven-photo"]:checked ~ .card[id="seven"] .to-info:hover:after
+{
+    content: "Рецепт";
+    text-align: center;
+    position: absolute;
+    top: 20px;
+    left: 70px;
+    width: 150px;
+    height: 150px;
+    color: white;
+    text-transform: uppercase;
+    font: 20px/150px sans-serif;
+    border: 5px solid #fff;
+    border-radius: 50%;
+}
+
+
+.to-info:hover:before
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+}
+
+.to-info:hover
+{
+    animation-name: increaseOpacity;
+    animation-duration: 1s;
+}
+
+@keyframes increaseOpacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+input[id="seven-photo"]:checked ~ .card[id="one"]
+{
+    z-index: 0;
+    transform: translateX(-210%) perspective(200px) rotateY(10deg) scale(.8);
+}
+
+input[id="six-photo"]:checked ~ .card[id="one"],
+input[id="seven-photo"]:checked ~ .card[id="two"]
+{
+    z-index: 1;
+    transform: translateX(-180%) perspective(200px) rotateY(12deg) scale(.8);
+}
+
+input[id="five-photo"]:checked ~ .card[id="one"],
+input[id="six-photo"]:checked ~ .card[id="two"],
+input[id="seven-photo"]:checked ~ .card[id="three"]
+{
+    z-index: 2;
+    transform: translateX(-150%) perspective(200px) rotateY(14deg) scale(.8);
+}
+
+input[id="four-photo"]:checked ~ .card[id="one"],
+input[id="five-photo"]:checked ~ .card[id="two"],
+input[id="six-photo"]:checked ~ .card[id="three"],
+input[id="seven-photo"]:checked ~ .card[id="four"]
+{
+    z-index: 3;
+    transform: translateX(-120%) perspective(200px) rotateY(16deg) scale(.8);
+}
+
+input[id="three-photo"]:checked ~ .card[id="one"],
+input[id="four-photo"]:checked ~ .card[id="two"],
+input[id="five-photo"]:checked ~ .card[id="three"],
+input[id="six-photo"]:checked ~ .card[id="four"],
+input[id="seven-photo"]:checked ~ .card[id="five"]
+{
+    z-index: 4;
+    transform: translateX(-90%) perspective(200px) rotateY(18deg) scale(.8);
+}
+
+input[id="two-photo"]:checked ~ .card[id="one"],
+input[id="three-photo"]:checked ~ .card[id="two"],
+input[id="four-photo"]:checked ~ .card[id="three"],
+input[id="five-photo"]:checked ~ .card[id="four"],
+input[id="six-photo"]:checked ~ .card[id="five"],
+input[id="seven-photo"]:checked ~ .card[id="six"]
+{
+    z-index: 5;
+    transform: translateX(-60%) perspective(200px) rotateY(20deg) scale(.8);
+}
+
+input[id="one-photo"]:checked ~ .card[id="one"],
+input[id="two-photo"]:checked ~ .card[id="two"],
+input[id="three-photo"]:checked ~ .card[id="three"],
+input[id="four-photo"]:checked ~ .card[id="four"],
+input[id="five-photo"]:checked ~ .card[id="five"],
+input[id="six-photo"]:checked ~ .card[id="six"],
+input[id="seven-photo"]:checked ~ .card[id="seven"]
+{
+    z-index: 7;
+}
+
+input[id="one-photo"]:checked ~ .card[id="two"],
+input[id="two-photo"]:checked ~ .card[id="three"],
+input[id="three-photo"]:checked ~ .card[id="four"],
+input[id="four-photo"]:checked ~ .card[id="five"],
+input[id="five-photo"]:checked ~ .card[id="six"],
+input[id="six-photo"]:checked ~ .card[id="seven"]
+{
+    z-index: 5;
+    transform: translateX(60%) perspective(200px) rotateY(-20deg) scale(.8);
+}
+
+input[id="one-photo"]:checked ~ .card[id="three"],
+input[id="two-photo"]:checked ~ .card[id="four"],
+input[id="three-photo"]:checked ~ .card[id="five"],
+input[id="four-photo"]:checked ~ .card[id="six"],
+input[id="five-photo"]:checked ~ .card[id="seven"]
+{
+    z-index: 4;
+    transform: translateX(90%) perspective(200px) rotateY(-18deg) scale(.8);
+}
+
+input[id="one-photo"]:checked ~ .card[id="four"],
+input[id="two-photo"]:checked ~ .card[id="five"],
+input[id="three-photo"]:checked ~ .card[id="six"],
+input[id="four-photo"]:checked ~ .card[id="seven"]
+{
+    z-index: 3;
+    transform: translateX(120%) perspective(200px) rotateY(-16deg) scale(.8);
+}
+
+input[id="one-photo"]:checked ~ .card[id="five"],
+input[id="two-photo"]:checked ~ .card[id="six"],
+input[id="three-photo"]:checked ~ .card[id="seven"]
+{
+    z-index: 2;
+    transform: translateX(150%) perspective(200px) rotateY(-14deg) scale(.8);
+}
+
+input[id="one-photo"]:checked ~ .card[id="six"],
+input[id="two-photo"]:checked ~ .card[id="seven"]
+{
+    z-index: 1;
+    transform: translateX(180%) perspective(200px) rotateY(-12deg) scale(.8);
+}
+
+input[id="one-photo"]:checked ~ .card[id="seven"]
+{
+    z-index: 0;
+    transform: translateX(210%) perspective(200px) rotateY(-10deg) scale(.8);
+}
+
+.info
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    position: fixed;
+    width: 600px;
+    min-height: 400px;
+    background: #fff;
+    top: -100px;
+    right: -190px;
+    transition: transform .5s linear;
+    transform: translateY(-150px) perspective(1000px) rotateX(90deg);
+    padding: 40px;
+}
+
+.info > h2
+{
+    flex-basis: 100%;
+    font: 40px sans-serif;
+    margin: 5px 0;
+    color: #aaa;
+    border-bottom: 3px solid #aaa;
+}
+
+.card:target > .info
+{
+    transition: transform .5s linear .5s;
+    transform: perspective(200px) rotateX(0deg);
+}
+
+.close
+{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 21px;
+    height: 21px;
+    background: url(close.png);
+}
+
+.ingredients
+{
+    flex-basis: 35%;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.ingredients > li
+{
+    padding: 5px 0;
+    font: bold 14px sans-serif;
+}
+
+.instruction
+{
+    flex-basis: 60%;
+    margin: 16px 0;
+    padding-left: 5%;
+}
+
+.instruction:before
+{
+    content: "Инструкция:";
+    color: #f00;
+    display: block;
+}
+
+.comment
+{
+    flex-basis: 60%;
+    color: #aaa;
+    border-top: 1px solid #000;
+    font-style: italic;
+}
+
+.back
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: rgba(0, 0, 0, 1);
+    transition: opacity 1s ease-in, z-index 1s step-end;
+    z-index: -1;
+    cursor: default;
+}
+
+.card:target ~ .back
+{
+    opacity: .5;
+    transition: opacity 1s ease-in;
+    z-index: 6;
+}
