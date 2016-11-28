@@ -1,0 +1,456 @@
+body
+{
+    font: 16px Kurale, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 15% 0 0;
+    box-sizing: border-box;
+    perspective: 1000px;
+}
+
+html,
+main
+{
+    height: 100%;
+    z-index: 2;
+    text-align: center;
+    position: relative;
+}
+
+.harvest-input
+{
+    display: none;
+}
+
+.harvest
+{
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(50, 50, 50, .7);
+    z-index: 1;
+    display: inline-block;
+    transform-style: preserve-3d;
+    transition: transform 1s ease-out;
+}
+
+.image
+{
+    width: 100%;
+    transform: scale(1.15);
+    transition: all .3s ease-out;
+}
+
+input[id='strawberry-input']:checked ~ .strawberry:hover .image,
+input[id='peas-input']:checked ~ .peas:hover .image,
+input[id='pumpkin-input']:checked ~ .pumpkin:hover .image,
+input[id='apple-input']:checked ~ .apple:hover .image,
+input[id='currant-input']:checked ~ .currant:hover .image,
+input[id='persimmon-input']:checked ~ .persimmon:hover .image,
+input[id='dewberry-input']:checked ~ .dewberry:hover .image
+{
+    transform: scale(1);
+}
+
+.recipe
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 140px;
+    height: 140px;
+    line-height: 140px;
+    text-align: center;
+    font-size: 1.25em;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .6);
+    border: 1px solid #fff;
+    margin: -70px 0 0 -70px;
+}
+
+.harvest a
+{
+    height: 180px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, .5);
+    opacity: 0;
+    z-index: -1;
+    transition: all .3s ease-out;
+}
+
+input[id='strawberry-input']:checked ~ .strawberry:hover a,
+input[id='peas-input']:checked ~ .peas:hover a,
+input[id='pumpkin-input']:checked ~ .pumpkin:hover a,
+input[id='apple-input']:checked ~ .apple:hover a,
+input[id='currant-input']:checked ~ .currant:hover a,
+input[id='persimmon-input']:checked ~ .persimmon:hover a,
+input[id='dewberry-input']:checked ~ .dewberry:hover a
+{
+    opacity: 1;
+    z-index: 1;
+}
+
+.modal
+{
+    position: fixed;
+    z-index: -7;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    transition: all .8s ease-out;
+}
+
+.harvest:target ~ .modal
+{
+    opacity: .5;
+    z-index: 2;
+}
+
+.modal-recipe
+{
+    transform: rotateX(180deg);
+}
+
+.front,
+.modal-recipe
+{
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.harvest:target
+{
+    transform: rotateX(-180deg) !important;
+}
+
+input[id='strawberry-input']:checked ~ .strawberry
+{
+    transform: rotateY(0deg) translateX(540px);
+}
+
+input[id='peas-input']:checked ~ .peas
+{
+    transform: rotateY(0deg) translateX(360px);
+}
+
+input[id='pumpkin-input']:checked ~ .pumpkin
+{
+    transform: rotateY(0deg) translateX(180px);
+}
+
+input[id='apple-input']:checked ~ .apple
+{
+    transform: rotateY(0deg);
+}
+
+input[id='currant-input']:checked ~ .currant
+{
+    transform: rotateY(0deg) translateX(-180px);
+}
+
+input[id='persimmon-input']:checked ~ .persimmon
+{
+    transform: rotateY(0deg) translateX(-360px);
+}
+
+input[id='dewberry-input']:checked ~ .dewberry
+{
+    transform: rotateY(0deg) translateX(-540px);
+}
+
+/*----------------------Strawberry----------------------------*/
+
+input[id='strawberry-input']:checked ~ .peas
+{
+    z-index: -1;
+    transform: translateX(470px) perspective(400px)
+        translateZ(-80px) rotateY(-36deg);
+}
+
+input[id='strawberry-input']:checked ~ .pumpkin
+{
+    z-index: -2;
+    transform: translateX(370px) perspective(400px)
+        translateZ(-80px) rotateY(-33deg);
+}
+
+input[id='strawberry-input']:checked ~ .apple
+{
+    z-index: -3;
+    transform: translateX(260px) perspective(400px)
+        translateZ(-80px) rotateY(-30deg);
+}
+
+input[id='strawberry-input']:checked ~ .currant
+{
+    z-index: -4;
+    transform: translateX(140px) perspective(400px)
+        translateZ(-80px) rotateY(-27deg);
+}
+
+input[id='strawberry-input']:checked ~ .persimmon
+{
+    z-index: -5;
+    transform: translateX(25px) perspective(400px)
+        translateZ(-80px) rotateY(-24deg);
+}
+
+input[id='strawberry-input']:checked ~ .dewberry
+{
+    z-index: -6;
+    transform: translateX(-105px) perspective(400px)
+        translateZ(-80px) rotateY(-23deg);
+}
+
+/*----------------------Peas----------------------------*/
+
+input[id='peas-input']:checked ~ .strawberry
+{
+    transform: translateX(430px) perspective(400px)
+        translateZ(-80px) rotateY(36deg);
+}
+
+input[id='peas-input']:checked ~ .pumpkin
+{
+    z-index: -2;
+    transform: translateX(290px) perspective(400px)
+        translateZ(-80px) rotateY(-36deg);
+}
+
+input[id='peas-input']:checked ~ .apple
+{
+    z-index: -3;
+    transform: translateX(180px) perspective(400px)
+        translateZ(-80px) rotateY(-33deg);
+}
+
+input[id='peas-input']:checked ~ .currant
+{
+    z-index: -4;
+    transform: translateX(70px) perspective(400px)
+        translateZ(-80px) rotateY(-30deg);
+}
+
+input[id='peas-input']:checked ~ .persimmon
+{
+    z-index: -5;
+    transform: translateX(-45px) perspective(400px)
+        translateZ(-80px) rotateY(-27deg);
+}
+
+input[id='peas-input']:checked ~ .dewberry
+{
+    z-index: -6;
+    transform: translateX(-155px) perspective(400px)
+        translateZ(-80px) rotateY(-24deg);
+}
+
+/*----------------------Pumpkin----------------------------*/
+
+input[id='pumpkin-input']:checked ~ .strawberry
+{
+    transform: translateX(350px) perspective(400px)
+        translateZ(-80px) rotateY(33deg);
+}
+
+input[id='pumpkin-input']:checked ~ .peas
+{
+    transform: translateX(250px) perspective(400px)
+        translateZ(-80px) rotateY(36deg);
+}
+
+input[id='pumpkin-input']:checked ~ .apple
+{
+    z-index: -3;
+    transform: translateX(110px) perspective(400px)
+        translateZ(-80px) rotateY(-36deg);
+}
+
+input[id='pumpkin-input']:checked ~ .currant
+{
+    z-index: -4;
+    transform: translateX(5px) perspective(400px)
+        translateZ(-80px) rotateY(-33deg);
+}
+
+input[id='pumpkin-input']:checked ~ .persimmon
+{
+    z-index: -5;
+    transform: translateX(-105px) perspective(400px)
+        translateZ(-80px) rotateY(-30deg);
+}
+
+input[id='pumpkin-input']:checked ~ .dewberry
+{
+    z-index: -6;
+    transform: translateX(-225px) perspective(400px)
+        translateZ(-80px) rotateY(-27deg);
+}
+
+/*----------------------Apple----------------------------*/
+
+input[id='apple-input']:checked ~ .currant
+{
+    z-index: -4;
+    transform: translateX(-65px) perspective(400px)
+        translateZ(-80px) rotateY(-36deg);
+}
+
+input[id='apple-input']:checked ~ .pumpkin
+{
+    transform: translateX(65px) perspective(400px)
+        translateZ(-80px) rotateY(36deg);
+}
+
+input[id='apple-input']:checked ~ .persimmon
+{
+    z-index: -5;
+    transform: translateX(-170px) perspective(400px)
+        translateZ(-80px) rotateY(-33deg);
+}
+
+input[id='apple-input']:checked ~ .peas
+{
+    transform: translateX(170px) perspective(400px)
+        translateZ(-80px) rotateY(33deg);
+}
+
+input[id='apple-input']:checked ~ .dewberry
+{
+    z-index: -6;
+    transform: translateX(-270px) perspective(400px)
+        translateZ(-80px) rotateY(-30deg);
+}
+
+input[id='apple-input']:checked ~ .strawberry
+{
+    transform: translateX(270px) perspective(400px)
+        translateZ(-80px) rotateY(30deg);
+}
+
+/*----------------------Currant----------------------------*/
+
+input[id='currant-input']:checked ~ .apple
+{
+    transform: translateX(-110px) perspective(400px)
+        translateZ(-80px) rotateY(36deg);
+}
+
+input[id='currant-input']:checked ~ .persimmon
+{
+    z-index: -5;
+    transform: translateX(-250px) perspective(400px)
+        translateZ(-80px) rotateY(-36deg);
+}
+
+input[id='currant-input']:checked ~ .pumpkin
+{
+    transform: translateX(5px) perspective(400px)
+        translateZ(-80px) rotateY(33deg);
+}
+
+input[id='currant-input']:checked ~ .dewberry
+{
+    z-index: -6;
+    transform: translateX(-350px) perspective(400px)
+        translateZ(-80px) rotateY(-33deg);
+}
+
+input[id='currant-input']:checked ~ .peas
+{
+    transform: translateX(105px) perspective(400px)
+        translateZ(-80px) rotateY(30deg);
+}
+
+input[id='currant-input']:checked ~ .strawberry
+{
+    transform: translateX(225px) perspective(400px)
+        translateZ(-80px) rotateY(27deg);
+}
+
+/*----------------------Persimmon----------------------------*/
+
+input[id='persimmon-input']:checked ~ .currant
+{
+    transform: translateX(-290px) perspective(400px)
+        translateZ(-80px) rotateY(36deg);
+}
+
+input[id='persimmon-input']:checked ~ .dewberry
+{
+    z-index: -6;
+    transform: translateX(-430px) perspective(400px)
+        translateZ(-80px) rotateY(-36deg);
+}
+
+input[id='persimmon-input']:checked ~ .apple
+{
+    transform: translateX(-180px) perspective(400px)
+        translateZ(-80px) rotateY(33deg);
+}
+
+input[id='persimmon-input']:checked ~ .pumpkin
+{
+    transform: translateX(-70px) perspective(400px)
+        translateZ(-80px) rotateY(30deg);
+}
+
+input[id='persimmon-input']:checked ~ .peas
+{
+    transform: translateX(45px) perspective(400px)
+        translateZ(-80px) rotateY(27deg);
+}
+
+input[id='persimmon-input']:checked ~ .strawberry
+{
+    transform: translateX(155px) perspective(400px)
+        translateZ(-80px) rotateY(24deg);
+}
+
+/*----------------------Dewberry----------------------------*/
+
+input[id='dewberry-input']:checked ~ .persimmon
+{
+    transform: translateX(-470px) perspective(400px)
+        translateZ(-80px) rotateY(36deg);
+}
+
+input[id='dewberry-input']:checked ~ .currant
+{
+    transform: translateX(-370px) perspective(400px)
+        translateZ(-80px) rotateY(33deg);
+}
+
+input[id='dewberry-input']:checked ~ .apple
+{
+    transform: translateX(-260px) perspective(400px)
+        translateZ(-80px) rotateY(30deg);
+}
+
+input[id='dewberry-input']:checked ~ .pumpkin
+{
+    transform: translateX(-140px) perspective(400px)
+        translateZ(-80px) rotateY(27deg);
+}
+
+input[id='dewberry-input']:checked ~ .peas
+{
+    transform: translateX(5px) perspective(400px)
+        translateZ(-80px) rotateY(24deg);
+}
+
+input[id='dewberry-input']:checked ~ .strawberry
+{
+    transform: translateX(105px) perspective(400px)
+        translateZ(-80px) rotateY(21deg);
+}
