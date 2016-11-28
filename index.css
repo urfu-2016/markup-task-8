@@ -1,0 +1,260 @@
+html,
+body
+{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.big-wrapper
+{
+    margin: 300px auto;
+    perspective: 600px;
+    perspective-origin: 420px 50px;
+    width: 1000px;
+}
+
+.wrapper
+{
+    width: 1000px;
+    height: 200px;
+    transform-style: preserve-3d;
+    display: flex;
+    transition: transform 1s;
+}
+
+.text-wrapper
+{
+    box-shadow: 0 0 2px 2px #000;
+    margin-left: -50px;
+    width: 150px;
+    height: 150px;
+    transition: transform 1s cubic-bezier(.82,-.49,0,1.48);
+    transform: rotateY(30deg) translateX(-50%);
+    background: #ff7857;
+    transform-style: preserve-3d;
+}
+
+.front-text
+{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.back,
+.normal,
+.text-radio
+{
+    display: none;
+}
+
+.radio1:checked ~ .wrapper
+{
+    transform: translateX(400px);
+}
+
+.radio2:checked ~ .wrapper
+{
+    transform: translateX(300px);
+}
+
+.radio3:checked ~ .wrapper
+{
+    transform: translateX(200px);
+}
+
+.radio4:checked ~ .wrapper
+{
+    transform: translateX(100px);
+}
+
+.radio5:checked ~ .wrapper
+{
+    transform: translateX(0);
+}
+
+.radio6:checked ~ .wrapper
+{
+    transform: translateX(-100px);
+}
+
+.radio7:checked ~ .wrapper
+{
+    transform: translateX(-200px);
+}
+
+.text-wrapper1
+{
+    background: #b84bba;
+}
+
+.text-wrapper2
+{
+    background: #2c2ebf;
+}
+
+.text-wrapper3
+{
+    background: #ff7857;
+}
+
+.text-wrapper4
+{
+    background: #28bf30;
+}
+
+.text-wrapper5
+{
+    background: #ff273c;
+}
+
+.text-wrapper6
+{
+    background: #99fffc;
+}
+
+.text-wrapper7
+{
+    background: #0c4c03;
+}
+
+.radio1:checked ~ .wrapper .text-wrapper1 ~ .text-wrapper,
+.radio2:checked ~ .wrapper .text-wrapper2 ~ .text-wrapper,
+.radio3:checked ~ .wrapper .text-wrapper3 ~ .text-wrapper,
+.radio4:checked ~ .wrapper .text-wrapper4 ~ .text-wrapper,
+.radio5:checked ~ .wrapper .text-wrapper5 ~ .text-wrapper,
+.radio6:checked ~ .wrapper .text-wrapper6 ~ .text-wrapper,
+.radio7:checked ~ .wrapper .text-wrapper7 ~ .text-wrapper
+{
+    transition: transform 1s cubic-bezier(.82,-.49,0,1.48);
+    transform: rotateY(-30deg) translateX(50%);
+    text-align: end;
+}
+
+.radio1:checked ~ .wrapper .text-wrapper1,
+.radio2:checked ~ .wrapper .text-wrapper2,
+.radio3:checked ~ .wrapper .text-wrapper3,
+.radio4:checked ~ .wrapper .text-wrapper4,
+.radio5:checked ~ .wrapper .text-wrapper5,
+.radio6:checked ~ .wrapper .text-wrapper6,
+.radio7:checked ~ .wrapper .text-wrapper7
+{
+    transition: transform 1s cubic-bezier(.33,-1.19,.42,1.96);
+    transform: rotateY(0deg) translateZ(200px);
+    text-align: center;
+}
+
+.back-text
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    color: #fff;
+    background: #bdbdc2;
+    text-align: center;
+    transform: scale(1, -1) translateZ(-3px);
+}
+
+.spin-label
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0;
+    color: #fff;
+    transition: opacity 1s;
+    align-items: center;
+    justify-content: center;
+}
+
+.radio1:checked ~ .wrapper .text-wrapper1 .spin-label,
+.radio2:checked ~ .wrapper .text-wrapper2 .spin-label,
+.radio3:checked ~ .wrapper .text-wrapper3 .spin-label,
+.radio4:checked ~ .wrapper .text-wrapper4 .spin-label,
+.radio5:checked ~ .wrapper .text-wrapper5 .spin-label,
+.radio6:checked ~ .wrapper .text-wrapper6 .spin-label,
+.radio7:checked ~ .wrapper .text-wrapper7 .spin-label
+{
+    display: flex;
+}
+
+.spin-label:hover
+{
+    opacity: .5;
+}
+
+.back:checked + .text-wrapper
+{
+    animation: spin 2s linear forwards;
+}
+
+.normal:checked + .back + .text-wrapper
+{
+    animation: spin-reverse 2s linear;
+}
+
+@keyframes spin
+{
+    0%
+    {
+        transform: translateY(0) rotateX(0deg) translateZ(200px);
+    }
+    50%
+    {
+        transform: translateY(-100px) rotateX(-120deg) translateZ(-100px);
+    }
+    100%
+    {
+        transform: translateY(0) rotateX(-180deg) translateZ(-400px);
+    }
+}
+
+@keyframes spin-reverse
+{
+    0%
+    {
+        transform: translateY(-50px) rotateY(-180deg) translateZ(-400px);
+    }
+    50%
+    {
+        transform: translateZ(0);
+    }
+    100%
+    {
+        transform: translateY(0) rotateY(0deg) translateZ(200px);
+    }
+}
+
+.paranja
+{
+    display: none;
+    background: #000;
+    position: absolute;
+    z-index: -3;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(30);
+}
+
+.back:checked + .text-wrapper .paranja
+{
+    display: block;
+    animation: show_par 1s 2s forwards;
+}
+
+@keyframes show_par
+{
+    to
+    {
+        opacity: .5;
+    }
+}
