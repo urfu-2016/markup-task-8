@@ -273,7 +273,7 @@ body
 .card-6:checked ~ .card-6:hover .recipe,
 .card-7:checked ~ .card-7:hover .recipe
 {
-	opacity: 1;
+    opacity: 1;
     transition-delay: .5s;
     z-index: 11;
 }
