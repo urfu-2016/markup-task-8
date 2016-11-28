@@ -51,8 +51,18 @@ article
     width: 300px;
     height: 170px;
     z-index: 2;
-    transition: transform .6s linear;
-    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: transform .6s ease-in-out, z-index .1ms linear .3s;
+}
+
+article:after
+{
+    content: '';
+    transform: translateZ(-1px);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
 }
 
 article label
@@ -62,113 +72,212 @@ article label
     height: 100%;
 }
 
-input[id='select-pepper']:checked ~ article label[for='select-pepper'],
-input[id='select-cabbage']:checked ~ article label[for='select-cabbage'],
-input[id='select-onion']:checked ~ article label[for='select-onion'],
-input[id='select-cucumber']:checked ~ article label[for='select-cucumber'],
-input[id='select-corn']:checked ~ article label[for='select-corn'],
-input[id='select-garlic']:checked ~ article label[for='select-garlic'],
-input[id='select-carrot']:checked ~ article label[for='select-carrot'],
-input[id='select-tomato']:checked ~ article label[for='select-tomato']
+[id='select-pepper']:checked ~ article label[for='select-pepper'],
+[id='select-pepper']:checked ~ article label[for='select-pepper'],
+[id='select-cabbage']:checked ~ article label[for='select-cabbage'],
+[id='select-onion']:checked ~ article label[for='select-onion'],
+[id='select-cucumber']:checked ~ article label[for='select-cucumber'],
+[id='select-corn']:checked ~ article label[for='select-corn'],
+[id='select-garlic']:checked ~ article label[for='select-garlic'],
+[id='select-carrot']:checked ~ article label[for='select-carrot'],
+[id='select-tomato']:checked ~ article label[for='select-tomato']
 {
     display: none;
 }
 
-input[id='select-pepper']:checked ~ article[id='cabbage'],
-input[id='select-corn']:checked ~ article[id='pepper'],
-input[id='select-cabbage']:checked ~ article[id='onion'],
-input[id='select-cucumber']:checked ~ article[id='corn'],
-input[id='select-onion']:checked ~ article[id='carrot'],
-input[id='select-carrot']:checked ~ article[id='garlic'],
-input[id='select-tomato']:checked ~ article[id='cucumber'],
-input[id='select-garlic']:checked ~ article[id='tomato']
+.change-layout:checked ~ main [id='select-pepper']:checked ~ [id='cabbage'],
+.change-layout:checked ~ main [id='select-corn']:checked ~ [id='pepper'],
+.change-layout:checked ~ main [id='select-cabbage']:checked ~ [id='onion'],
+.change-layout:checked ~ main [id='select-cucumber']:checked ~ [id='corn'],
+.change-layout:checked ~ main [id='select-onion']:checked ~ [id='carrot'],
+.change-layout:checked ~ main [id='select-carrot']:checked ~ [id='garlic'],
+.change-layout:checked ~ main [id='select-tomato']:checked ~ [id='cucumber'],
+.change-layout:checked ~ main [id='select-garlic']:checked ~ [id='tomato']
 {
     transform: perspective(500px) rotateY(50deg)
         translateZ(120px) translateX(260px);
     z-index: -1;
 }
 
-input[id='select-cabbage']:checked ~ article[id='pepper'],
-input[id='select-pepper']:checked ~ article[id='corn'],
-input[id='select-corn']:checked ~ article[id='cucumber'],
-input[id='select-onion']:checked ~ article[id='cabbage'],
-input[id='select-cucumber']:checked ~ article[id='tomato'],
-input[id='select-carrot']:checked ~ article[id='onion'],
-input[id='select-tomato']:checked ~ article[id='garlic'],
-input[id='select-garlic']:checked ~ article[id='carrot']
+.change-layout:checked ~ main [id='select-cabbage']:checked ~ [id='pepper'],
+.change-layout:checked ~ main [id='select-pepper']:checked ~ [id='corn'],
+.change-layout:checked ~ main [id='select-corn']:checked ~ [id='cucumber'],
+.change-layout:checked ~ main [id='select-onion']:checked ~ [id='cabbage'],
+.change-layout:checked ~ main [id='select-cucumber']:checked ~ [id='tomato'],
+.change-layout:checked ~ main [id='select-carrot']:checked ~ [id='onion'],
+.change-layout:checked ~ main [id='select-tomato']:checked ~ [id='garlic'],
+.change-layout:checked ~ main [id='select-garlic']:checked ~ [id='carrot']
 {
     transform: perspective(500px) rotateY(-50deg)
         translateZ(120px) translateX(-260px);
     z-index: -1;
 }
 
-input[id='select-pepper']:checked ~ article[id='onion'],
-input[id='select-corn']:checked ~ article[id='cabbage'],
-input[id='select-cucumber']:checked ~ article[id='pepper'],
-input[id='select-cabbage']:checked ~ article[id='carrot'],
-input[id='select-onion']:checked ~ article[id='garlic'],
-input[id='select-carrot']:checked ~ article[id='tomato'],
-input[id='select-tomato']:checked ~ article[id='corn'],
-input[id='select-garlic']:checked ~ article[id='cucumber']
+.change-layout:checked ~ main [id='select-pepper']:checked ~ [id='onion'],
+.change-layout:checked ~ main [id='select-corn']:checked ~ [id='cabbage'],
+.change-layout:checked ~ main [id='select-cucumber']:checked ~ [id='pepper'],
+.change-layout:checked ~ main [id='select-cabbage']:checked ~ [id='carrot'],
+.change-layout:checked ~ main [id='select-onion']:checked ~ [id='garlic'],
+.change-layout:checked ~ main [id='select-carrot']:checked ~ [id='tomato'],
+.change-layout:checked ~ main [id='select-tomato']:checked ~ [id='corn'],
+.change-layout:checked ~ main [id='select-garlic']:checked ~ [id='cucumber']
 {
     transform: perspective(500px) rotateY(90deg)
         translateZ(400px) translateX(500px);
     z-index: -2;
 }
 
-input[id='select-pepper']:checked ~ article[id='cucumber'],
-input[id='select-cabbage']:checked ~ article[id='corn'],
-input[id='select-onion']:checked ~ article[id='pepper'],
-input[id='select-corn']:checked ~ article[id='tomato'],
-input[id='select-cucumber']:checked ~ article[id='garlic'],
-input[id='select-carrot']:checked ~ article[id='cabbage'],
-input[id='select-tomato']:checked ~ article[id='carrot'],
-input[id='select-garlic']:checked ~ article[id='onion']
+.change-layout:checked ~ main [id='select-pepper']:checked ~ [id='cucumber'],
+.change-layout:checked ~ main [id='select-cabbage']:checked ~ [id='corn'],
+.change-layout:checked ~ main [id='select-onion']:checked ~ [id='pepper'],
+.change-layout:checked ~ main [id='select-corn']:checked ~ [id='tomato'],
+.change-layout:checked ~ main [id='select-cucumber']:checked ~ [id='garlic'],
+.change-layout:checked ~ main [id='select-carrot']:checked ~ [id='cabbage'],
+.change-layout:checked ~ main [id='select-tomato']:checked ~ [id='carrot'],
+.change-layout:checked ~ main [id='select-garlic']:checked ~ [id='onion']
 {
     transform: perspective(500px) rotateY(-90deg)
         translateZ(400px) translateX(-500px);
     z-index: -2;
 }
 
-input[id='select-pepper']:checked ~ article[id='carrot'],
-input[id='select-corn']:checked ~ article[id='onion'],
-input[id='select-cucumber']:checked ~ article[id='cabbage'],
-input[id='select-cabbage']:checked ~ article[id='garlic'],
-input[id='select-onion']:checked ~ article[id='tomato'],
-input[id='select-carrot']:checked ~ article[id='cucumber'],
-input[id='select-tomato']:checked ~ article[id='pepper'],
-input[id='select-garlic']:checked ~ article[id='corn']
+.change-layout:checked ~ main [id='select-pepper']:checked ~ [id='carrot'],
+.change-layout:checked ~ main [id='select-corn']:checked ~ [id='onion'],
+.change-layout:checked ~ main [id='select-cucumber']:checked ~ [id='cabbage'],
+.change-layout:checked ~ main [id='select-cabbage']:checked ~ [id='garlic'],
+.change-layout:checked ~ main [id='select-onion']:checked ~ [id='tomato'],
+.change-layout:checked ~ main [id='select-carrot']:checked ~ [id='cucumber'],
+.change-layout:checked ~ main [id='select-tomato']:checked ~ [id='pepper'],
+.change-layout:checked ~ main [id='select-garlic']:checked ~ [id='corn']
 {
     transform: perspective(500px) rotateY(130deg)
         translateZ(700px) translateX(390px);
     z-index: -3;
 }
 
-input[id='select-pepper']:checked ~ article[id='tomato'],
-input[id='select-cabbage']:checked ~ article[id='cucumber'],
-input[id='select-corn']:checked ~ article[id='garlic'],
-input[id='select-onion']:checked ~ article[id='corn'],
-input[id='select-cucumber']:checked ~ article[id='carrot'],
-input[id='select-carrot']:checked ~ article[id='pepper'],
-input[id='select-tomato']:checked ~ article[id='onion'],
-input[id='select-garlic']:checked ~ article[id='cabbage']
+.change-layout:checked ~ main [id='select-pepper']:checked ~ [id='tomato'],
+.change-layout:checked ~ main [id='select-cabbage']:checked ~ [id='cucumber'],
+.change-layout:checked ~ main [id='select-corn']:checked ~ [id='garlic'],
+.change-layout:checked ~ main [id='select-onion']:checked ~ [id='corn'],
+.change-layout:checked ~ main [id='select-cucumber']:checked ~ [id='carrot'],
+.change-layout:checked ~ main [id='select-carrot']:checked ~ [id='pepper'],
+.change-layout:checked ~ main [id='select-tomato']:checked ~ [id='onion'],
+.change-layout:checked ~ main [id='select-garlic']:checked ~ [id='cabbage']
 {
     transform: perspective(500px) rotateY(-130deg)
         translateZ(700px) translateX(-390px);
     z-index: -3;
 }
 
-input[id='select-pepper']:checked ~ article[id='garlic'],
-input[id='select-corn']:checked ~ article[id='carrot'],
-input[id='select-cabbage']:checked ~ article[id='tomato'],
-input[id='select-onion']:checked ~ article[id='cucumber'],
-input[id='select-cucumber']:checked ~ article[id='onion'],
-input[id='select-carrot']:checked ~ article[id='corn'],
-input[id='select-tomato']:checked ~ article[id='cabbage'],
-input[id='select-garlic']:checked ~ article[id='pepper']
+.change-layout:checked ~ main [id='select-pepper']:checked ~ [id='garlic'],
+.change-layout:checked ~ main [id='select-corn']:checked ~ [id='carrot'],
+.change-layout:checked ~ main [id='select-cabbage']:checked ~ [id='tomato'],
+.change-layout:checked ~ main [id='select-onion']:checked ~ [id='cucumber'],
+.change-layout:checked ~ main [id='select-cucumber']:checked ~ [id='onion'],
+.change-layout:checked ~ main [id='select-carrot']:checked ~ [id='corn'],
+.change-layout:checked ~ main [id='select-tomato']:checked ~ [id='cabbage'],
+.change-layout:checked ~ main [id='select-garlic']:checked ~ [id='pepper']
 {
     transform: perspective(500px) rotateY(180deg) translateZ(640px);
     z-index: -3;
+}
+
+[id='select-pepper']:checked ~ [id='cabbage'],
+[id='select-corn']:checked ~ [id='pepper'],
+[id='select-cabbage']:checked ~ [id='onion'],
+[id='select-cucumber']:checked ~ [id='corn'],
+[id='select-onion']:checked ~ [id='carrot'],
+[id='select-carrot']:checked ~ [id='garlic'],
+[id='select-tomato']:checked ~ [id='cucumber'],
+[id='select-garlic']:checked ~ [id='tomato']
+{
+    transform: perspective(1000px) translateZ(-60px)
+        translateX(110px) rotateY(-40deg);
+    z-index: -1;
+}
+
+[id='select-cabbage']:checked ~ [id='pepper'],
+[id='select-pepper']:checked ~ [id='corn'],
+[id='select-corn']:checked ~ [id='cucumber'],
+[id='select-onion']:checked ~ [id='cabbage'],
+[id='select-cucumber']:checked ~ [id='tomato'],
+[id='select-carrot']:checked ~ [id='onion'],
+[id='select-tomato']:checked ~ [id='garlic'],
+[id='select-garlic']:checked ~ [id='carrot']
+{
+    transform: perspective(1000px) translateZ(-60px)
+        translateX(-110px) rotateY(40deg);
+    z-index: -1;
+}
+
+[id='select-pepper']:checked ~ [id='onion'],
+[id='select-corn']:checked ~ [id='cabbage'],
+[id='select-cucumber']:checked ~ [id='pepper'],
+[id='select-cabbage']:checked ~ [id='carrot'],
+[id='select-onion']:checked ~ [id='garlic'],
+[id='select-carrot']:checked ~ [id='tomato'],
+[id='select-tomato']:checked ~ [id='corn'],
+[id='select-garlic']:checked ~ [id='cucumber']
+{
+    transform: perspective(1000px) translateZ(-80px)
+        translateX(210px) rotateY(-55deg);
+    z-index: -2;
+}
+
+[id='select-pepper']:checked ~ [id='cucumber'],
+[id='select-cabbage']:checked ~ [id='corn'],
+[id='select-onion']:checked ~ [id='pepper'],
+[id='select-corn']:checked ~ [id='tomato'],
+[id='select-cucumber']:checked ~ [id='garlic'],
+[id='select-carrot']:checked ~ [id='cabbage'],
+[id='select-tomato']:checked ~ [id='carrot'],
+[id='select-garlic']:checked ~ [id='onion']
+{
+    transform: perspective(1000px) translateZ(-80px)
+        translateX(-210px) rotateY(55deg);
+    z-index: -2;
+}
+
+[id='select-pepper']:checked ~ [id='carrot'],
+[id='select-corn']:checked ~ [id='onion'],
+[id='select-cucumber']:checked ~ [id='cabbage'],
+[id='select-cabbage']:checked ~ [id='garlic'],
+[id='select-onion']:checked ~ [id='tomato'],
+[id='select-carrot']:checked ~ [id='cucumber'],
+[id='select-tomato']:checked ~ [id='pepper'],
+[id='select-garlic']:checked ~ [id='corn']
+{
+    transform: perspective(1000px) translateZ(-80px)
+        translateX(270px) rotateY(-55deg);
+    z-index: -3;
+}
+
+[id='select-pepper']:checked ~ [id='tomato'],
+[id='select-cabbage']:checked ~ [id='cucumber'],
+[id='select-corn']:checked ~ [id='garlic'],
+[id='select-onion']:checked ~ [id='corn'],
+[id='select-cucumber']:checked ~ [id='carrot'],
+[id='select-carrot']:checked ~ [id='pepper'],
+[id='select-tomato']:checked ~ [id='onion'],
+[id='select-garlic']:checked ~ [id='cabbage']
+{
+    transform: perspective(1000px) translateZ(-80px)
+        translateX(-270px) rotateY(55deg);
+    z-index: -3;
+}
+
+[id='select-pepper']:checked ~ [id='garlic'],
+[id='select-corn']:checked ~ [id='carrot'],
+[id='select-cabbage']:checked ~ [id='tomato'],
+[id='select-onion']:checked ~ [id='cucumber'],
+[id='select-cucumber']:checked ~ [id='onion'],
+[id='select-carrot']:checked ~ [id='corn'],
+[id='select-tomato']:checked ~ [id='cabbage'],
+[id='select-garlic']:checked ~ [id='pepper']
+{
+    transform: perspective(1000px) translateZ(-80px)
+        translateX(-330px) rotateY(55deg);
+    z-index: -4;
 }
 
 article img
@@ -211,35 +320,12 @@ article .show-recipe
     background: rgba(0, 0, 0, .34);
     text-decoration: none;
     text-align: center;
+    transition: opacity .2s ease-in;
 }
 
 .show-recipe:hover
 {
     opacity: 1;
-    animation-name: reflect;
-    animation-duration: .5s;
-    animation-fill-mode: forwards;
-    animation-timing-function: linear;
-}
-
-@keyframes reflect
-{
-    0%
-    {
-        background: linear-gradient(
-            to bottom left,
-            rgba(0, 0, 0, .7),
-            rgba(255, 255, 255, .7),
-            rgba(0, 0, 0, .7));
-        background-size: 1000px 1000px;
-        background-position: 0 -300px;
-    }
-
-    100%
-    {
-        background-position: -900px -300px;
-        background-size: 1000px 1000px;
-    }
 }
 
 .show-recipe span
@@ -274,11 +360,13 @@ article:hover .show-recipe span
     border: 1px solid #777;
     background: #fff;
     transform: perspective(250px) rotateX(-90deg) scale(.5);
-    transition: transform .5s linear;
+    visibility: hidden;
+    transition: transform .5s linear, visibility .1ms linear .5s;
 }
 
 article:target .recipe
 {
+    visibility: visible;
     transition: transform .5s linear .5s;
     transform: perspective(250px) rotateX(0deg);
 }
