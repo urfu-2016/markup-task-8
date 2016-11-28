@@ -318,7 +318,7 @@ input[id='open-recipe-5']:checked ~ .fruits .fifth-fruit,
 input[id='open-recipe-6']:checked ~ .fruits .six-fruit,
 input[id='open-recipe-7']:checked ~ .fruits .seventh-fruit
 {
-    transform: rotateX(360deg);
+    transform: rotateX(180deg);
     cursor: default;
     z-index: 1000;
     min-width: 400px;
@@ -334,6 +334,7 @@ input[id='open-recipe-6']:checked ~ .fruits .six-fruit .recipe,
 input[id='open-recipe-7']:checked ~ .fruits .seventh-fruit .recipe
 {
     display: block;
+    transform: rotateX(180deg);
 }
 
 @keyframes content-visible-delay
