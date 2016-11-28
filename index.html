@@ -2,7 +2,436 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
+    <title>3D Галерея</title>
+    <link href="https://fonts.googleapis.com/css?family=Marmelad" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
 </head>
 <body>
+    <main>
+        <input class="no-display-input" type="radio" id="check-item-1" name="check-item">
+        <input class="no-display-input" type="radio" id="check-item-2" name="check-item">
+        <input class="no-display-input" type="radio" id="check-item-3" name="check-item">
+        <input class="no-display-input" type="radio" id="check-item-4" name="check-item" checked>
+        <input class="no-display-input" type="radio" id="check-item-5" name="check-item">
+        <input class="no-display-input" type="radio" id="check-item-6" name="check-item">
+        <input class="no-display-input" type="radio" id="check-item-7" name="check-item">
+        <section class="gallery">
+            <input class="no-display-input" type="radio" id="check-info-1" name="info-1">
+            <input class="no-display-input" type="radio" id="check-info-2" name="info-2">
+            <input class="no-display-input" type="radio" id="check-info-3" name="info-3">
+            <input class="no-display-input" type="radio" id="check-info-4" name="info-4">
+            <input class="no-display-input" type="radio" id="check-info-5" name="info-5">
+            <input class="no-display-input" type="radio" id="check-info-6" name="info-6">
+            <input class="no-display-input" type="radio" id="check-info-7" name="info-7">
+            <input class="no-display-input" type="radio" id="close-info-1" name="info-1">
+            <input class="no-display-input" type="radio" id="close-info-2" name="info-2">
+            <input class="no-display-input" type="radio" id="close-info-3" name="info-3">
+            <input class="no-display-input" type="radio" id="close-info-4" name="info-4">
+            <input class="no-display-input" type="radio" id="close-info-5" name="info-5">
+            <input class="no-display-input" type="radio" id="close-info-6" name="info-6">
+            <input class="no-display-input" type="radio" id="close-info-7" name="info-7">
+            <article class="gallery-item gallery-item-1">
+                <section class="front-side">
+                    <label for="check-item-1">
+                        <img class="item-photo" src="images/cabbage.jpg" alt="Капуста" title="Капуста">
+                    </label>
+                    <label class="link-on-info" for="check-info-1">
+                        <span class="item-hover">Рецепт</span>
+                    </label>
+                </section>
+                <section class="back-side">
+                    <article class="recipe">
+                        <label for="close-info-1"><span class="close-recipe"></span></label>
+                        <div class="recipe-photo recipe-1"></div>
+                        <h2 class="recipe-name">Тушёная капуста</h2>
+                        <section class="content recipe-info">
+                            <article class="ingredients">
+                                <ul>
+                                    <li>Репчатый лук <span class="quantity">1 шт</span></li>
+                                    <li>Белокочанная капуста <span class="quantity">500 г</span></li>
+                                    <li>Уксус <span class="quantity">0.5 ст.л.</span></li>
+                                    <li>Сахар <span class="quantity">0.5 ст.л.</span></li>
+                                    <li>Пшеничная мука <span class="quantity">0.5 ст.л.</span></li>
+                                    <li>Томатное пюре <span class="quantity">1 ст.л.</span></li>
+                                    <li>Вода <span class="quantity">0.5 стакана</span></li>
+                                    <li>Растительное масло <span class="quantity">2 ст.л.</span></li>
+                                </ul>
+                            </article>
+                            <article class="steps">
+                                <h3 class="header-article">Инструкция приготовления</h3>
+                                <ul>
+                                    <li>
+                                        Очищенную капусту нашинковать и положить в кастрюлю, 
+                                        добавить масло и воду, накрыть крышкой и тушить 20 мин.
+                                    </li>
+                                    <li>
+                                        Порезать и поджарить лук, добавить его к капусте, затем 
+                                        положить томатное пюре, уксус, сахар, приправить по вкусу 
+                                        и продолжать тушить.
+                                    </li>
+                                    <li>
+                                        Когда капуста будет готова, добавить обжаренную в масле 
+                                        муку, перемешать и прокипятить.
+                                    </li>
+                                </ul>
+                                <p class="comments">Приятного аппетита!</p>
+                            </article>
+                        </section>
+                    </article>
+                </section>
+            </article>
+            <article class="gallery-item gallery-item-2">
+                <section class="front-side">
+                    <label for="check-item-2">
+                        <img class="item-photo" src="images/carrot.jpg" alt="Морковь" title="Морковь">
+                    </label>
+                    <label class="link-on-info" for="check-info-2">
+                        <span class="item-hover">Рецепт</span>
+                    </label>
+                </section>
+                <section class="back-side">
+                    <article class="recipe">
+                        <label for="close-info-2"><span class="close-recipe"></span></label>
+                        <div class="recipe-photo recipe-2"></div>
+                        <h2 class="recipe-name">Салат "Оранжевое чудо"</h2>
+                        <section class="content recipe-info">
+                            <article class="ingredients">
+                                <ul>
+                                    <li>Морковь <span class="quantity">1 кг</span></li>
+                                    <li>Помидоры <span class="quantity">1.5 кг</span></li>
+                                    <li>Сахар <span class="quantity">5 ст.л.</span></li>
+                                    <li>Соль <span class="quantity">1 ст.л.</span></li>
+                                    <li>9%-уксус <span class="quantity">1 ст.л.</span></li>
+                                    <li>Подсолнечное масло <span class="quantity">100 мл</span></li>
+                                    <li>Чеснок <span class="quantity">2 зубчика</span></li>
+                                </ul>
+                            </article>
+                            <article class="steps">
+                                <h3 class="header-article">Инструкция приготовления</h3>
+                                <ul>
+                                    <li>
+                                        Морковь очистить от кожуры, разрезать на небольшие кусочки, 
+                                        помидоры разрезать на четвертинки. Пропустить морковь и 
+                                        помидоры через мясорубку или просто пробить в блендере 
+                                        до однородного состояния.
+                                    </li>
+                                    <li>
+                                        Переложить полученную массу в казанок или кастрюлю.
+                                    </li>
+                                    <li>
+                                        Добавить к массе соль и сахар.
+                                    </li>
+                                    <li>
+                                        Влить растительное масло. Поставить кастрюлю на медленный 
+                                        огонь и готовить салат 90 минут, помешивая, пока морковь 
+                                        не станет совсем мягкой.
+                                    </li>
+                                    <li>
+                                        Затем вливать уксус и добавить чеснок. Варить салат еще 
+                                        10 минут.
+                                    </li>
+                                    <li>
+                                        Подавать холодным.
+                                    </li>
+                                </ul>
+                                <p class="comments">Приятного аппетита!</p>
+                            </article>
+                        </section>
+                    </article>
+                </section>
+            </article>
+            <article class="gallery-item gallery-item-3">
+                <section class="front-side">
+                    <label for="check-item-3">
+                        <img class="item-photo" src="images/corn.jpg" alt="Кукуруза" title="Кукуруза">
+                    </label>
+                    <label class="link-on-info" for="check-info-3">
+                        <span class="item-hover">Рецепт</span>
+                    </label>
+                </section>
+                <section class="back-side">
+                    <article class="recipe">
+                        <label for="close-info-3"><span class="close-recipe"></span></label>
+                        <div class="recipe-photo recipe-3"></div>
+                        <h2 class="recipe-name">Варёная кукуруза с петрушкой</h2>
+                        <section class="content recipe-info">
+                            <article class="ingredients">
+                                <ul>
+                                    <li>Початки кукурузы <span class="quantity">6 шт</span></li>
+                                    <li>Сливочное масло <span class="quantity">4 ст.л.</span></li>
+                                    <li>Крупная соль <span class="quantity">0.5 ч.л.</span></li>
+                                    <li>Молотый чёрный перец <span class="quantity">0.25 ч.л.</span></li>
+                                    <li>Рубленая петрушка <span class="quantity">0.25 стакана</span></li>
+                                </ul>
+                            </article>
+                            <article class="steps">
+                                <h3 class="header-article">Инструкция приготовления</h3>
+                                <ul>
+                                    <li>
+                                        Довести до кипения воду в большой кастрюле.
+                                    </li>
+                                    <li>
+                                        Разрезать початки кукурузы на 2-3 части и варить 
+                                        до мягкости не больше 5 минут.
+                                    </li>
+                                    <li>
+                                        Слить и переложить на сервировочное блюдо.
+                                    </li>
+                                    <li>
+                                        Сверху положить кусочки масла, посолить, поперчить 
+                                        и посыпать петрушкой.
+                                    </li>
+                                    <li>
+                                        Аккуратно перемешать и подавать.
+                                    </li>
+                                </ul>
+                                <p class="comments">Приятного аппетита!</p>
+                            </article>
+                        </section>
+                    </article>
+                </section>
+            </article>
+            <article class="gallery-item gallery-item-4">
+                <section class="front-side">
+                    <label for="check-item-4">
+                        <img class="item-photo" src="images/potato.jpg" alt="Картофель" title="Картофель">
+                    </label>
+                    <label class="link-on-info" for="check-info-4">
+                        <span class="item-hover">Рецепт</span>
+                    </label>
+                </section>
+                <section class="back-side">
+                    <article class="recipe">
+                        <label for="close-info-4"><span class="close-recipe"></span></label>
+                        <div class="recipe-photo recipe-4"></div>
+                        <h2 class="recipe-name">Салат из картофеля с маслинами</h2>
+                        <section class="content recipe-info">
+                            <article class="ingredients">
+                                <ul>
+                                    <li>Картофель <span class="quantity">500 г</span></li>
+                                    <li>Маслины <span class="quantity">150 г</span></li>
+                                    <li>Красный лук <span class="quantity">1 шт</span></li>
+                                    <li>Зелень <span class="quantity">1 пучок</span></li>
+                                    <li>Винный уксус <span class="quantity">1 ч.л.</span></li>
+                                    <li>Оливковое масло <span class="quantity">70 мл</span></li>
+                                    <li>Паприка <span class="quantity">0.5 ч.л.</span></li>
+                                    <li>Зира <span class="quantity">0.5 ч.л.</span></li>
+                                    <li>Красный перец <span class="quantity">1 щепотка</span></li>
+                                    <li>Соль <span class="quantity">по вкусу</span></li>
+                                </ul>
+                            </article>
+                            <article class="steps">
+                                <h3 class="header-article">Инструкция приготовления</h3>
+                                <ul>
+                                    <li>
+                                        Картофель вымыть щеткой. Залить кипящей водой, посолить 
+                                        и сварить до готовности. Обсушить. Маленькие картофелины 
+                                        оставить как есть, те, что покрупнее, разрезать 
+                                        на половинки или четвертинки.
+                                    </li>
+                                    <li>
+                                        Для заправки смешать уксус с солью, оливковым маслом 
+                                        и специями. Залить теплый картофель и перемешать.
+                                    </li>
+                                    <li>
+                                        Лук нарезать очень тонкими кольцами или полукольцами. 
+                                        Порубить зелень. Из маслин вынуть косточки. Смешать 
+                                        картофель, маслины, зелень и лук, подавать салат теплым 
+                                        или холодным.
+                                    </li>
+                                </ul>
+                                <p class="comments">Приятного аппетита!</p>
+                            </article>
+                        </section>
+                    </article>
+                </section>
+            </article>
+            <article class="gallery-item gallery-item-5">
+                <section class="front-side">
+                    <label for="check-item-5">
+                        <img class="item-photo" src="images/pumpkin.jpg" alt="Тыква" title="Тыква">
+                    </label>
+                    <label class="link-on-info" for="check-info-5">
+                        <span class="item-hover">Рецепт</span>
+                    </label>
+                </section>
+                <section class="back-side">
+                    <article class="recipe">
+                        <label for="close-info-5"><span class="close-recipe"></span></label>
+                        <div class="recipe-photo recipe-5"></div>
+                        <h2 class="recipe-name">Варенье из тыквы с мандаринами</h2>
+                        <section class="content recipe-info">
+                            <article class="ingredients">
+                                <ul>
+                                    <li>Тыква <span class="quantity">300 г</span></li>
+                                    <li>Мандарины <span class="quantity">200 г</span></li>
+                                    <li>Сахар <span class="quantity">300 г</span></li>
+                                    <li>Пряности <span class="quantity">по вкусу</span></li>
+                                </ul>
+                            </article>
+                            <article class="steps">
+                                <h3 class="header-article">Инструкция приготовления</h3>
+                                <ul>
+                                    <li>
+                                        Мандарины тщательно вымыть и нарезать.
+                                    </li>
+                                    <li>
+                                        Посыпать подготовленные мандарины небольшим количеством 
+                                        сахара.
+                                    </li>
+                                    <li>
+                                        Мякоть тыквы нарезать кубиком желаемого размера.
+                                    </li>
+                                    <li>
+                                        Отправить в кастрюлю к мандаринам и посыпать оставшимся 
+                                        сахаром. По желанию добавить пряности.
+                                    </li>
+                                    <li>
+                                        Начинать варить варенье из тыквы с мандаринами на среднем 
+                                        огне, помогая сахару раствориться при помешивании. Затем 
+                                        поварить минут пять при сильном кипении.
+                                    </li>
+                                    <li>
+                                        Далее уваривать на слабом кипении около получаса или дольше.
+                                    </li>
+                                    <li>
+                                        Готовое варенье из тыквы и мандаринов можно оставить таким, 
+                                        как есть, и закатать в стерильные банки. Или можно 
+                                        измельчить его при помощи блендера, ещё раз довести 
+                                        до закипания, а затем закатать.
+                                    </li>
+                                </ul>
+                                <p class="comments">Приятного аппетита!</p>
+                            </article>
+                        </section>
+                    </article>
+                </section>
+            </article>
+            <article class="gallery-item gallery-item-6">
+                <section class="front-side">
+                    <label for="check-item-6">
+                        <img class="item-photo" src="images/squash.jpg" alt="Кабачок" title="Кабачок">
+                    </label>
+                    <label class="link-on-info" for="check-info-6">
+                        <span class="item-hover">Рецепт</span>
+                    </label>
+                </section>
+                <section class="back-side">
+                    <article class="recipe">
+                        <label for="close-info-6"><span class="close-recipe"></span></label>
+                        <div class="recipe-photo recipe-6"></div>
+                        <h2 class="recipe-name">Кабачковая пицца</h2>
+                        <section class="content recipe-info">
+                            <article class="ingredients">
+                                <ul>
+                                    <li>Кабачок <span class="quantity">250 г</span></li>
+                                    <li>Помидоры <span class="quantity">1 шт</span></li>
+                                    <li>Яйцо <span class="quantity">1 шт</span></li>
+                                    <li>Сыр твёрдый <span class="quantity">100 г</span></li>
+                                    <li>Куриное филе <span class="quantity">150 г</span></li>
+                                    <li>Лук зелёный <span class="quantity">2 шт</span></li>
+                                    <li>Укроп <span class="quantity">0.5 пучка</span></li>
+                                    <li>Мука пшеничная <span class="quantity">100 г</span></li>
+                                    <li>Соевый соус <span class="quantity">2 ст.л.</span></li>
+                                    <li>Разрыхлитель <span class="quantity">0.5 ч.л.</span></li>
+                                    <li>Соль <span class="quantity">0.5 ч.л.</span></li>
+                                    <li>Молотый чёрный перец <span class="quantity">2 щепотки</span></li>
+                                    <li>Ароматные травы <span class="quantity">2 щепотки</span></li>
+                                </ul>
+                            </article>
+                            <article class="steps">
+                                <h3 class="header-article">Инструкция приготовления</h3>
+                                <ul>
+                                    <li>
+                                        Куриное филе промыть и обсушить. Затем нарезать небольшими 
+                                        кусочками, выложить в тарелку, добавить соевый соус.
+                                    </li>
+                                    <li>
+                                        Натереть на средней терке кабачок, отжать с него сок. 
+                                        Добавить к кабачку измельченные лук и укроп, яйцо, соль 
+                                        и щепотку перца.
+                                    </li>
+                                    <li>
+                                        Смешать муку с разрыхлителем, добавить к кабачковой массе. 
+                                        Тщательно перемешать.
+                                    </li>
+                                    <li>
+                                        Противень застелить пергаментом и чуть смазать 
+                                        растительным маслом. Выложить тесто в форме основы 
+                                        для пиццы. Разложить сверху тонкие ломтики помидора, 
+                                        посыпать ароматными травами.
+                                    </li>
+                                    <li>
+                                        На помидоры выложить кусочки куриного филе, посыпать 
+                                        всё молотым перцем.
+                                    </li>
+                                    <li>
+                                        Выпекать пиццу при 180 градусах 30 минут, затем посыпать 
+                                        натертым сыром и отправить в духовку еще на минут 10.
+                                    </li>
+                                </ul>
+                                <p class="comments">Приятного аппетита!</p>
+                            </article>
+                        </section>
+                    </article>
+                </section>
+            </article>
+            <article class="gallery-item gallery-item-7">
+                <section class="front-side">
+                    <label for="check-item-7">
+                        <img class="item-photo" src="images/tomato.jpg" alt="Помидор" title="Помидор">
+                    </label>
+                    <label class="link-on-info" for="check-info-7">
+                        <span class="item-hover">Рецепт</span>
+                    </label>
+                </section>
+                <section class="back-side">
+                    <article class="recipe">
+                        <label for="close-info-7"><span class="close-recipe"></span></label>
+                        <div class="recipe-photo recipe-7"></div>
+                        <h2 class="recipe-name">Помидоры с сырной начинкой</h2>
+                        <section class="content recipe-info">
+                            <article class="ingredients">
+                                <ul>
+                                    <li>Помидоры <span class="quantity">8 шт</span></li>
+                                    <li>Яйца <span class="quantity">4 шт</span></li>
+                                    <li>Сыр <span class="quantity">200 г</span></li>
+                                    <li>Зелень <span class="quantity">30 г</span></li>
+                                    <li>Майонез <span class="quantity">200 г</span></li>
+                                    <li>Сосиски <span class="quantity">2 шт</span></li>
+                                    <li>Лук <span class="quantity">1 шт</span></li>
+                                </ul>
+                            </article>
+                            <article class="steps">
+                                <h3 class="header-article">Инструкция приготовления</h3>
+                                <ul>
+                                    <li>
+                                        Измельчить составляющие для начинки, обжарить лук 
+                                        на растительном масле.
+                                    </li>
+                                    <li>
+                                        Натереть сыр на терке и отварить 2 яйца.
+                                    </li>
+                                    <li>
+                                        Отправить в блендер сосиски, обжаренный лук, натертый сыр 
+                                        и яйца. Измельчить всё до состояния паштета.
+                                    </li>
+                                    <li>
+                                        Готовую начинку смешать с майонезом.
+                                    </li>
+                                    <li>
+                                        Вырезать сердцевину у каждого помидора. Наполнить каждый 
+                                        помидор начинкой и выложить их на блюдо.
+                                    </li>
+                                </ul>
+                                <p class="comments">Приятного аппетита!</p>
+                            </article>
+                        </section>
+                    </article>
+                </section>
+            </article>
+        </section>
+    </main>
 </body>
 </html>

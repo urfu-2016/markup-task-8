@@ -1,0 +1,708 @@
+html,
+body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #f2f2f2;
+    font: 14px 'PT Sans', sans-serif;
+    cursor: default;
+}
+
+main
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.no-display-input
+{
+    display: none;
+}
+
+.gallery
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 960px;
+    transition-duration: 1s;
+}
+
+.gallery-item
+{
+    position: relative;
+    width: 240px;
+    height: 160px;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 0 50px rgba(0,0,0, .25);
+    background-color: #fff;
+    transition-property: transform, margin;
+    transition-duration: 1s;
+}
+
+.front-side
+{
+    position: relative;
+    width: 240px;
+    height: 160px;
+    margin: 0;
+    padding: 0;
+}
+
+.front-side label
+{
+    cursor: pointer;
+}
+
+.item-photo
+{
+    width: 240px;
+    height: 160px;
+    margin: 0;
+    padding: 0;
+}
+
+.item-hover
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 3rem;
+    right: 4rem;
+    bottom: 3rem;
+    left: 4rem;
+    opacity: 0;
+    border: 2px solid #eee;
+    border-radius: 10px;
+}
+
+.link-on-info
+{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-transform: uppercase;
+    background: rgba(0,0,0, .5);
+    font-size: 1rem;
+    color: #eee;
+}
+
+input[id='check-item-1']:checked ~ .gallery .gallery-item-7
+{
+    transform: perspective(375px) translateZ(-200px) rotateY(-5deg);
+}
+
+input[id='check-item-1']:checked ~ .gallery .gallery-item-6,
+input[id='check-item-2']:checked ~ .gallery .gallery-item-7
+{
+    transform: perspective(375px) translateZ(-175px) rotateY(-15deg);
+}
+
+input[id='check-item-1']:checked ~ .gallery .gallery-item-5,
+input[id='check-item-2']:checked ~ .gallery .gallery-item-6,
+input[id='check-item-3']:checked ~ .gallery .gallery-item-7
+{
+    transform: perspective(375px) translateZ(-150px) rotateY(-20deg);
+}
+
+input[id='check-item-1']:checked ~ .gallery .gallery-item-4,
+input[id='check-item-2']:checked ~ .gallery .gallery-item-5,
+input[id='check-item-3']:checked ~ .gallery .gallery-item-6,
+input[id='check-item-4']:checked ~ .gallery .gallery-item-7
+{
+    transform: perspective(375px) translateZ(-125px) rotateY(-25deg);
+}
+
+input[id='check-item-1']:checked ~ .gallery .gallery-item-3,
+input[id='check-item-2']:checked ~ .gallery .gallery-item-4,
+input[id='check-item-3']:checked ~ .gallery .gallery-item-5,
+input[id='check-item-4']:checked ~ .gallery .gallery-item-6,
+input[id='check-item-5']:checked ~ .gallery .gallery-item-7
+{
+    transform: perspective(375px) translateZ(-100px) rotateY(-30deg);
+}
+
+input[id='check-item-1']:checked ~ .gallery .gallery-item-2,
+input[id='check-item-2']:checked ~ .gallery .gallery-item-3,
+input[id='check-item-3']:checked ~ .gallery .gallery-item-4,
+input[id='check-item-4']:checked ~ .gallery .gallery-item-5,
+input[id='check-item-5']:checked ~ .gallery .gallery-item-6,
+input[id='check-item-6']:checked ~ .gallery .gallery-item-7
+{
+    transform: perspective(375px) translateZ(-75px) rotateY(-35deg);
+}
+
+input[id='check-item-7']:checked ~ .gallery .gallery-item-1
+{
+    transform: perspective(375px) translateZ(-200px) rotateY(5deg);
+}
+
+input[id='check-item-6']:checked ~ .gallery .gallery-item-1,
+input[id='check-item-7']:checked ~ .gallery .gallery-item-2
+{
+    transform: perspective(375px) translateZ(-175px) rotateY(15deg);
+}
+
+input[id='check-item-5']:checked ~ .gallery .gallery-item-1,
+input[id='check-item-6']:checked ~ .gallery .gallery-item-2,
+input[id='check-item-7']:checked ~ .gallery .gallery-item-3
+{
+    transform: perspective(375px) translateZ(-150px) rotateY(20deg);
+}
+
+input[id='check-item-4']:checked ~ .gallery .gallery-item-1,
+input[id='check-item-5']:checked ~ .gallery .gallery-item-2,
+input[id='check-item-6']:checked ~ .gallery .gallery-item-3,
+input[id='check-item-7']:checked ~ .gallery .gallery-item-4
+{
+    transform: perspective(375px) translateZ(-125px) rotateY(25deg);
+}
+
+input[id='check-item-3']:checked ~ .gallery .gallery-item-1,
+input[id='check-item-4']:checked ~ .gallery .gallery-item-2,
+input[id='check-item-5']:checked ~ .gallery .gallery-item-3,
+input[id='check-item-6']:checked ~ .gallery .gallery-item-4,
+input[id='check-item-7']:checked ~ .gallery .gallery-item-5
+{
+    transform: perspective(375px) translateZ(-100px) rotateY(30deg);
+}
+
+input[id='check-item-2']:checked ~ .gallery .gallery-item-1,
+input[id='check-item-3']:checked ~ .gallery .gallery-item-2,
+input[id='check-item-4']:checked ~ .gallery .gallery-item-3,
+input[id='check-item-5']:checked ~ .gallery .gallery-item-4,
+input[id='check-item-6']:checked ~ .gallery .gallery-item-5,
+input[id='check-item-7']:checked ~ .gallery .gallery-item-6
+{
+    transform: perspective(375px) translateZ(-75px) rotateY(35deg);
+}
+
+input[id='check-item-1']:checked ~ .gallery .gallery-item-1,
+input[id='check-item-2']:checked ~ .gallery .gallery-item-2,
+input[id='check-item-3']:checked ~ .gallery .gallery-item-3,
+input[id='check-item-4']:checked ~ .gallery .gallery-item-4,
+input[id='check-item-5']:checked ~ .gallery .gallery-item-5,
+input[id='check-item-6']:checked ~ .gallery .gallery-item-6,
+input[id='check-item-7']:checked ~ .gallery .gallery-item-7
+{
+    transform: perspective(375px) translateZ(0);
+    margin: 0 -125px;
+    z-index: 7;
+}
+
+input[id='check-item-1']:checked ~ .gallery .gallery-item-7
+{
+    margin-right: -200px;
+    z-index: 1;
+}
+
+input[id='check-item-7']:checked ~ .gallery .gallery-item-1
+{
+    margin-left: -200px;
+    z-index: 1;
+}
+
+input[id='check-item-1']:checked ~ .gallery .gallery-item-6,
+input[id='check-item-2']:checked ~ .gallery .gallery-item-7
+{
+    margin-right: -190px;
+    z-index: 2;
+}
+
+input[id='check-item-6']:checked ~ .gallery .gallery-item-1,
+input[id='check-item-7']:checked ~ .gallery .gallery-item-2
+{
+    margin-left: -190px;
+    z-index: 2;
+}
+
+input[id='check-item-1']:checked ~ .gallery .gallery-item-5,
+input[id='check-item-2']:checked ~ .gallery .gallery-item-6,
+input[id='check-item-3']:checked ~ .gallery .gallery-item-7
+{
+    margin-right: -180px;
+    z-index: 3;
+}
+
+input[id='check-item-5']:checked ~ .gallery .gallery-item-1,
+input[id='check-item-6']:checked ~ .gallery .gallery-item-2,
+input[id='check-item-7']:checked ~ .gallery .gallery-item-3
+{
+    margin-left: -180px;
+    z-index: 3;
+}
+
+input[id='check-item-1']:checked ~ .gallery .gallery-item-4,
+input[id='check-item-2']:checked ~ .gallery .gallery-item-5,
+input[id='check-item-3']:checked ~ .gallery .gallery-item-6,
+input[id='check-item-4']:checked ~ .gallery .gallery-item-7
+{
+    margin-right: -170px;
+    z-index: 4;
+}
+
+input[id='check-item-4']:checked ~ .gallery .gallery-item-1,
+input[id='check-item-5']:checked ~ .gallery .gallery-item-2,
+input[id='check-item-6']:checked ~ .gallery .gallery-item-3,
+input[id='check-item-7']:checked ~ .gallery .gallery-item-4
+{
+    margin-left: -170px;
+    z-index: 4;
+}
+
+input[id='check-item-1']:checked ~ .gallery .gallery-item-3,
+input[id='check-item-2']:checked ~ .gallery .gallery-item-4,
+input[id='check-item-3']:checked ~ .gallery .gallery-item-5,
+input[id='check-item-4']:checked ~ .gallery .gallery-item-6,
+input[id='check-item-5']:checked ~ .gallery .gallery-item-7
+{
+    margin-right: -160px;
+    z-index: 5;
+}
+
+input[id='check-item-3']:checked ~ .gallery .gallery-item-1,
+input[id='check-item-4']:checked ~ .gallery .gallery-item-2,
+input[id='check-item-5']:checked ~ .gallery .gallery-item-3,
+input[id='check-item-6']:checked ~ .gallery .gallery-item-4,
+input[id='check-item-7']:checked ~ .gallery .gallery-item-5
+{
+    margin-left: -160px;
+    z-index: 5;
+}
+
+input[id='check-item-1']:checked ~ .gallery .gallery-item-2,
+input[id='check-item-2']:checked ~ .gallery .gallery-item-3,
+input[id='check-item-3']:checked ~ .gallery .gallery-item-4,
+input[id='check-item-4']:checked ~ .gallery .gallery-item-5,
+input[id='check-item-5']:checked ~ .gallery .gallery-item-6,
+input[id='check-item-6']:checked ~ .gallery .gallery-item-7
+{
+    margin-right: -150px;
+    z-index: 6;
+}
+
+input[id='check-item-2']:checked ~ .gallery .gallery-item-1,
+input[id='check-item-3']:checked ~ .gallery .gallery-item-2,
+input[id='check-item-4']:checked ~ .gallery .gallery-item-3,
+input[id='check-item-5']:checked ~ .gallery .gallery-item-4,
+input[id='check-item-6']:checked ~ .gallery .gallery-item-5,
+input[id='check-item-7']:checked ~ .gallery .gallery-item-6
+{
+    margin-left: -150px;
+    z-index: 6;
+}
+
+input[id='check-item-1']:checked ~ .gallery .gallery-item-1:hover .item-hover,
+input[id='check-item-2']:checked ~ .gallery .gallery-item-2:hover .item-hover,
+input[id='check-item-3']:checked ~ .gallery .gallery-item-3:hover .item-hover,
+input[id='check-item-4']:checked ~ .gallery .gallery-item-4:hover .item-hover,
+input[id='check-item-5']:checked ~ .gallery .gallery-item-5:hover .item-hover,
+input[id='check-item-6']:checked ~ .gallery .gallery-item-6:hover .item-hover,
+input[id='check-item-7']:checked ~ .gallery .gallery-item-7:hover .item-hover
+{
+    opacity: 1;
+}
+
+input[id='check-item-1']:checked ~ .gallery .gallery-item-1:hover .link-on-info,
+input[id='check-item-2']:checked ~ .gallery .gallery-item-2:hover .link-on-info,
+input[id='check-item-3']:checked ~ .gallery .gallery-item-3:hover .link-on-info,
+input[id='check-item-4']:checked ~ .gallery .gallery-item-4:hover .link-on-info,
+input[id='check-item-5']:checked ~ .gallery .gallery-item-5:hover .link-on-info,
+input[id='check-item-6']:checked ~ .gallery .gallery-item-6:hover .link-on-info,
+input[id='check-item-7']:checked ~ .gallery .gallery-item-7:hover .link-on-info
+{
+    display: flex;
+}
+
+input[id='check-item-1']:checked ~ .gallery
+{
+    margin-left: 400px;
+}
+
+input[id='check-item-2']:checked ~ .gallery
+{
+    margin-left: 250px;
+}
+
+input[id='check-item-3']:checked ~ .gallery
+{
+    margin-left: 125px;
+}
+
+input[id='check-item-5']:checked ~ .gallery
+{
+    margin-left: -125px;
+}
+
+input[id='check-item-6']:checked ~ .gallery
+{
+    margin-left: -250px;
+}
+
+input[id='check-item-7']:checked ~ .gallery
+{
+    margin-left: -400px;
+}
+
+.back-side
+{
+    position: absolute;
+    display: none;
+    top: -50vh;
+    right: -50vw;
+    bottom: -50vh;
+    left: -50vw;
+    z-index: 100;
+    background: rgba(0,0,0, .5);
+}
+
+.recipe
+{
+    position: absolute;
+    margin: 0;
+    padding: 3rem;
+    overflow: auto;
+    display: block;
+    top: 25vh;
+    right: 25vw;
+    bottom: 25vh;
+    left: 25vw;
+    z-index: 100;
+    background-color: #fff;
+}
+
+.close-recipe
+{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 1rem;
+    height: 1rem;
+    margin: 0;
+    padding: 0;
+    background: url(images/close.png) 0 0 no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.recipe-photo
+{
+    width: 100%;
+    height: 7rem;
+    margin: 0;
+    padding: 0;
+    background: 50% 50% no-repeat;
+    background-size: cover;
+}
+
+.recipe-1
+{
+    background-image: url(images/cabbage_recipe.jpg);
+}
+
+.recipe-2
+{
+    background-image: url(images/carrot_recipe.jpg);
+}
+
+.recipe-3
+{
+    background-image: url(images/corn_recipe.jpg);
+}
+
+.recipe-4
+{
+    background-image: url(images/potato_recipe.jpg);
+}
+
+.recipe-5
+{
+    background-image: url(images/pumpkin_recipe.jpg);
+}
+
+.recipe-6
+{
+    background-image: url(images/squash_recipe.jpg);
+}
+
+.recipe-7
+{
+    background-image: url(images/tomato_recipe.jpg);
+}
+
+.recipe-name
+{
+    margin: 0;
+    padding: 1.5rem 0;
+    font: 2rem 'Marmelad', sans-serif;
+    border-bottom: 2px solid #999;
+}
+
+.recipe-info
+{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.recipe-info ul
+{
+    margin: 0;
+    padding: 0;
+}
+
+.header-article
+{
+    margin: 0;
+    padding: 1.5rem 0 1rem;
+    font-size: 1.4rem;
+    color: #900;
+}
+
+.ingredients
+{
+    margin: 0;
+    padding: 0 2rem 0 0;
+    width: calc(40% - 2rem);
+}
+
+.ingredients ul
+{
+    padding: 1.5rem 0 0;
+}
+
+.ingredients li
+{
+    margin: 0;
+    padding: .25rem 0;
+    font-weight: bold;
+    list-style: none;
+}
+
+.quantity
+{
+    font-weight: normal;
+    color: #555;
+}
+
+.quantity:before
+{
+    content: '(';
+}
+
+.quantity:after
+{
+    content: ')';
+}
+
+.steps
+{
+    margin: 0;
+    padding: 0 0 0 2rem;
+    width: calc(60% - 2rem);
+}
+
+.steps li
+{
+    margin: 0;
+    padding: .25rem 0;
+    list-style: decimal inside;
+}
+
+.comments
+{
+    margin: 1rem 0 0;
+    padding: 1rem 0 0;
+    border-top: 2px solid #aaa;
+    font-style: italic;
+}
+
+input[id='check-info-1']:checked ~ .gallery-item-1,
+input[id='check-info-2']:checked ~ .gallery-item-2,
+input[id='check-info-3']:checked ~ .gallery-item-3,
+input[id='check-info-4']:checked ~ .gallery-item-4,
+input[id='check-info-5']:checked ~ .gallery-item-5,
+input[id='check-info-6']:checked ~ .gallery-item-6,
+input[id='check-info-7']:checked ~ .gallery-item-7
+{
+    animation: animateItemStart 1s linear;
+}
+
+input[id='check-info-1']:checked ~ .gallery-item-1 .front-side,
+input[id='check-info-2']:checked ~ .gallery-item-2 .front-side,
+input[id='check-info-3']:checked ~ .gallery-item-3 .front-side,
+input[id='check-info-4']:checked ~ .gallery-item-4 .front-side,
+input[id='check-info-5']:checked ~ .gallery-item-5 .front-side,
+input[id='check-info-6']:checked ~ .gallery-item-6 .front-side,
+input[id='check-info-7']:checked ~ .gallery-item-7 .front-side
+{
+    animation: animateFrontSideStart 1s linear;
+}
+
+input[id='check-info-1']:checked ~ .gallery-item-1 .back-side,
+input[id='check-info-2']:checked ~ .gallery-item-2 .back-side,
+input[id='check-info-3']:checked ~ .gallery-item-3 .back-side,
+input[id='check-info-4']:checked ~ .gallery-item-4 .back-side,
+input[id='check-info-5']:checked ~ .gallery-item-5 .back-side,
+input[id='check-info-6']:checked ~ .gallery-item-6 .back-side,
+input[id='check-info-7']:checked ~ .gallery-item-7 .back-side
+{
+    display: block;
+    animation: animateBackSideStart 1s linear;
+}
+
+input[id='close-info-1']:checked ~ .gallery-item-1,
+input[id='close-info-2']:checked ~ .gallery-item-2,
+input[id='close-info-3']:checked ~ .gallery-item-3,
+input[id='close-info-4']:checked ~ .gallery-item-4,
+input[id='close-info-5']:checked ~ .gallery-item-5,
+input[id='close-info-6']:checked ~ .gallery-item-6,
+input[id='close-info-7']:checked ~ .gallery-item-7
+{
+    top: 0;
+    animation: animateItemEnd 1s linear;
+}
+
+@keyframes animateItemStart
+{
+    0%
+    {
+        transform: perspective(375px) rotateX(0deg);
+        opacity: 1;
+    }
+    50%
+    {
+        transform: perspective(375px) rotateX(-90deg);
+        opacity: 1;
+    }
+    100%
+    {
+        transform: perspective(375px) rotateX(-180deg);
+        opacity: 1;
+    }
+}
+
+@keyframes animateFrontSideStart
+{
+    0%
+    {
+        transform: perspective(375px) rotateX(0deg);
+        opacity: 1;
+    }
+    99%
+    {
+        transform: perspective(375px) rotateX(0deg);
+        opacity: 1;
+    }
+    100%
+    {
+        transform: perspective(375px) rotateX(0deg);
+        opacity: 0;
+    }
+}
+
+@keyframes animateBackSideStart
+{
+    0%
+    {
+        transform: perspective(375px) rotateX(180deg);
+        opacity: 0;
+        background: rgba(0,0,0, 0);
+    }
+    50%
+    {
+        transform: perspective(375px) rotateX(90deg);
+        opacity: 0;
+        background: rgba(0,0,0, 0);
+    }
+    51%
+    {
+        transform: perspective(375px) rotateX(90deg);
+        opacity: 1;
+        background: rgba(0,0,0, 0);
+    }
+    90%
+    {
+        transform: perspective(375px) rotateX(180deg);
+        opacity: 1;
+        background: rgba(0,0,0, 0);
+    }
+    100%
+    {
+        transform: perspective(375px) rotateX(180deg);
+        opacity: 1;
+        background: rgba(0,0,0, .5);
+    }
+}
+
+@keyframes animateItemEnd
+{
+    0%
+    {
+        transform: perspective(375px) rotateX(-90deg);
+        opacity: 1;
+    }
+    10%
+    {
+        transform: perspective(375px) rotateX(-45deg);
+        opacity: 1;
+    }
+    20%
+    {
+        transform: perspective(375px) rotateX(0deg);
+        opacity: 1;
+    }
+    30%
+    {
+        transform: perspective(375px) rotateX(45deg);
+        opacity: 1;
+    }
+    40%
+    {
+        transform: perspective(375px) rotateX(70deg);
+        opacity: 1;
+    }
+    50%
+    {
+        transform: perspective(375px) rotateX(30deg);
+        opacity: 1;
+    }
+    60%
+    {
+        transform: perspective(375px) rotateX(0deg);
+        opacity: 1;
+    }
+    70%
+    {
+        transform: perspective(375px) rotateX(-20deg);
+        opacity: 1;
+    }
+    80%
+    {
+        transform: perspective(375px) rotateX(0deg);
+        opacity: 1;
+    }
+    90%
+    {
+        transform: perspective(375px) rotateX(7deg);
+        opacity: 1;
+    }
+    100%
+    {
+        transform: perspective(375px) rotateX(0deg);
+        opacity: 1;
+    }
+}
