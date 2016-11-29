@@ -1,4 +1,5 @@
 /* stylelint-disable  selector-combinator-space-before */
+/* stylelint-disable  selector-combinator-space-after */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body
@@ -41,6 +42,11 @@ h3::first-letter
     transform-origin: 50% 50% -700px;
 }
 
+input[type='checkbox'][id='simple-check']:checked ~ .gallery-container
+{
+    transform-origin: 50% 50% 0;
+}
+
 .item-container .item
 {
     display: block;
@@ -54,8 +60,14 @@ h3::first-letter
     height: 300px;
 }
 
+input[type='checkbox'][id='simple-check']:checked ~ .gallery-container .item
+{
+    transform-origin: 50% 50% 0;
+}
+
 .item-label
 {
+    cursor: pointer;
     opacity: 0;
     position: absolute;
     background: red;
@@ -185,6 +197,366 @@ input[type='radio'][id='item2'].show-recepie:checked ~ .gallery-container .black
     transform: rotateY(45deg);
 }
 
+input[type='checkbox'][id='simple-check']:checked
+~ div div[id='img1']
+{
+    transform: translateX(-200px) rotateY(20deg);
+}
+
+input[type='checkbox'][id='simple-check']:checked
+~ div div[id='img2']
+{
+    transform: translateX(0) rotateY(20deg);
+}
+
+input[type='checkbox'][id='simple-check']:checked
+~ div div[id='img3']
+{
+    transform: translateX(200px) rotateY(20deg);
+}
+
+input[type='checkbox'][id='simple-check']:checked
+~ div div[id='img4']
+{
+    transform: translateX(400px) rotateY(20deg);
+}
+
+input[type='checkbox'][id='simple-check']:checked
+~ div div[id='img5']
+{
+    transform: translateX(-1000px) rotateY(20deg);
+}
+
+input[type='checkbox'][id='simple-check']:checked
+~ div div[id='img6']
+{
+    transform: translateX(-800px) rotateY(20deg);
+}
+
+input[type='checkbox'][id='simple-check']:checked
+~ div div[id='img7']
+{
+    transform: translateX(-600px) rotateY(20deg);
+}
+
+input[type='checkbox'][id='simple-check']:checked 
+~ div div[id='img8']
+{
+    transform: translateX(-400px) rotateY(20deg);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item1']:checked
+~ .gallery-container div.item-container[id='img1']
+{
+    transform: rotate(0deg) translateX(0);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item5']:checked
+~ .gallery-container div.item-container[id='img6'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item5']:checked
+~ .gallery-container div.item-container[id='img7'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item5']:checked
+~ .gallery-container div.item-container[id='img8'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item5']:checked
+~ .gallery-container div.item-container[id='img1'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item5']:checked
+~ .gallery-container div.item-container[id='img2'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item5']:checked
+~ .gallery-container div.item-container[id='img3'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item5']:checked
+~ .gallery-container div.item-container[id='img4'] .item-rotation
+{
+    transform: rotateY(-40deg);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item6']:checked
+~ .gallery-container div.item-container[id='img7'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item6']:checked
+~ .gallery-container div.item-container[id='img8'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item6']:checked
+~ .gallery-container div.item-container[id='img1'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item6']:checked
+~ .gallery-container div.item-container[id='img2'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item6']:checked
+~ .gallery-container div.item-container[id='img3'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item6']:checked
+~ .gallery-container div.item-container[id='img4'] .item-rotation
+{
+    transform: rotateY(-40deg);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item7']:checked
+~ .gallery-container div.item-container[id='img8'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item7']:checked
+~ .gallery-container div.item-container[id='img1'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item7']:checked
+~ .gallery-container div.item-container[id='img2'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item7']:checked
+~ .gallery-container div.item-container[id='img3'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item7']:checked
+~ .gallery-container div.item-container[id='img4'] .item-rotation
+{
+    transform: rotateY(-40deg);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item8']:checked
+~ .gallery-container div.item-container[id='img1'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item8']:checked
+~ .gallery-container div.item-container[id='img2'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item8']:checked
+~ .gallery-container div.item-container[id='img3'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item8']:checked
+~ .gallery-container div.item-container[id='img4'] .item-rotation
+{
+    transform: rotateY(-40deg);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item1']:checked
+~ .gallery-container div.item-container[id='img2'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item1']:checked
+~ .gallery-container div.item-container[id='img3'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item1']:checked
+~ .gallery-container div.item-container[id='img4'] .item-rotation
+{
+    transform: rotateY(-40deg);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item2']:checked
+~ .gallery-container div.item-container[id='img3'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item2']:checked
+~ .gallery-container div.item-container[id='img4'] .item-rotation
+{
+    transform: rotateY(-40deg);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item3']:checked
+~ .gallery-container div.item-container[id='img4'] .item-rotation
+{
+    transform: rotateY(-40deg);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item2']:checked
+~ .gallery-container div.item-container[id='img2']
+{
+    transform: rotate(0deg) translateX(200px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item3']:checked
+~ .gallery-container div.item-container[id='img3']
+{
+    transform: rotate(0deg) translateX(400px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item4']:checked
+~ .gallery-container div.item-container[id='img4']
+{
+    transform: rotate(0deg) translateX(600px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item5']:checked
+~ .gallery-container div.item-container[id='img5']
+{
+    transform: rotate(0deg) translateX(-800px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item6']:checked
+~ .gallery-container div.item-container[id='img6']
+{
+    transform: rotate(0deg) translateX(-600px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item7']:checked
+~ .gallery-container div.item-container[id='img7']
+{
+    transform: rotate(0deg) translateX(-400px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item8']:checked
+~ .gallery-container div.item-container[id='img8']
+{
+    transform: rotate(0deg) translateX(-200px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item1'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(0);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item2'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(-200px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item3'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(-400px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item4'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(-600px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item5'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(800px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item6'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(600px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item7'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(400px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item8'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(200px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item1'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(0);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item2'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(-200px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item3'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(-400px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item4'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(-600px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item5'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(800px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item6'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(600px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item7'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(400px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item8'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(200px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item1'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: translateX(0) translateZ(60px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item2'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: translateX(200px) translateZ(60px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item3'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: translateX(400px) translateZ(60px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item4'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: translateX(600px) translateZ(60px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item5'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: translateX(-800px) translateZ(60px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item6'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: translateX(-600px) translateZ(60px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item7'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: translateX(-400px) translateZ(60px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item8'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: translateX(-200px) translateZ(60px);
+}
+
 .item-container
 {
     transform-origin: 50% 50% -700px;
@@ -198,6 +570,13 @@ input[type='radio'][id='item2'].show-recepie:checked ~ .gallery-container .black
     left: 0;
     right: 0;
     top: 0;
+}
+
+input[type='checkbox'][id='simple-check']:checked
+~ div input[type='checkbox'][id='simple-check']:checked
+~ .gallery-container .item-container
+{
+    transform-origin: 50% 50% 0;
 }
 
 label.recepie-show
@@ -266,6 +645,13 @@ input[type='checkbox'].recepie-check:checked + div.item-container .item
 {
     transform: rotateX(-180deg) perspective(250px) scale(2) translateY(-100px);
     font-size: 12px;
+}
+
+input[type='checkbox'][id='simple-check']:checked 
+~ div input[type='checkbox'].recepie-check:checked + div.item-container .item
+{
+    transform: rotateX(180deg) perspective(0) scale(1.5)
+        translateY(25px) translateZ(-150px);
 }
 
 .recepie-check
