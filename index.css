@@ -221,7 +221,7 @@ input
     top: 0;
 
     background-color: #fff;
-    transform: rotateX(90deg);
+    transform: translateZ(250px) rotateX(90deg);
 
     transition: .4s ease-in;
 }
@@ -277,7 +277,7 @@ input[class^='recipe']:checked ~ .paranja
 .recipe6:checked ~ .card:nth-of-type(6) .front
 {
     transition: .4s ease-in;
-    transform: rotateX(-90deg);
+    transform: translateZ(250px) rotateX(-90deg);
 }
 
 .recipe1:checked ~ .card:nth-of-type(1) .back,
