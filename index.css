@@ -98,7 +98,7 @@ main
     margin-top: 0;
 }
 
-.close-reciept
+.close
 {
     display: inline-block;
     visibility: hidden;
@@ -161,6 +161,7 @@ main
     left: -200px;
     display: block;
     opacity: 0;
+    z-index: -1;
     background-color: rgba(191, 191, 191, .8);
     transition: opacity 2s ease;
 }
@@ -317,13 +318,13 @@ input[id='cucumber-reciept']:checked ~ main > .vegetable.cucumber
     animation-fill-mode: both;
 }
 
-input[id='eggplant-reciept']:checked ~ main > .vegetable.eggplant .close-reciept,
-input[id='peas-reciept']:checked ~ main > .vegetable.peas .close-reciept,
-input[id='cabbage-reciept']:checked ~ main > .vegetable.cabbage .close-reciept,
-input[id='corn-reciept']:checked ~ main > .vegetable.corn .close-reciept,
-input[id='onion-reciept']:checked ~ main > .vegetable.onion .close-reciept,
-input[id='carrot-reciept']:checked ~ main > .vegetable.carrot .close-reciept,
-input[id='cucumber-reciept']:checked ~ main > .vegetable.cucumber .close-reciept
+input[id='eggplant-reciept']:checked ~ main > .vegetable.eggplant .close,
+input[id='peas-reciept']:checked ~ main > .vegetable.peas .close,
+input[id='cabbage-reciept']:checked ~ main > .vegetable.cabbage .close,
+input[id='corn-reciept']:checked ~ main > .vegetable.corn .close,
+input[id='onion-reciept']:checked ~ main > .vegetable.onion .close,
+input[id='carrot-reciept']:checked ~ main > .vegetable.carrot .close,
+input[id='cucumber-reciept']:checked ~ main > .vegetable.cucumber .close
 {
     visibility: visible;
 }
@@ -355,13 +356,13 @@ input[id='cucumber-reciept']:checked ~ main .paranja
     transition: opacity 2s ease;
 }
 
-input[id='eggplant-reciept']:checked ~ main .eggplant .close-reciept,
-input[id='peas-reciept']:checked ~ main .peas .close-reciept,
-input[id='cabbage-reciept']:checked ~ main .cabbage .close-reciept,
-input[id='corn-reciept']:checked ~ main .corn .close-reciept,
-input[id='onion-reciept']:checked ~ main .onion .close-reciept,
-input[id='carrot-reciept']:checked ~ main .carrot .close-reciept,
-input[id='cucumber-reciept']:checked ~ main .cucumber .close-reciept
+input[id='eggplant-reciept']:checked ~ main .eggplant .close,
+input[id='peas-reciept']:checked ~ main .peas .close,
+input[id='cabbage-reciept']:checked ~ main .cabbage .close,
+input[id='corn-reciept']:checked ~ main .corn .close,
+input[id='onion-reciept']:checked ~ main .onion .close,
+input[id='carrot-reciept']:checked ~ main .carrot .close,
+input[id='cucumber-reciept']:checked ~ main .cucumber .close
 {
     opacity: 1;
 }
@@ -399,6 +400,7 @@ input[id='circle']:checked ~ input[id='carrot']:checked ~ main > .carrot,
 input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .cucumber
 {
     transform: scale(1.4);
+    z-index: 13;
 }
 
 input[id='circle']:checked ~ input[id='eggplant']:checked ~ main > .peas,
@@ -409,7 +411,7 @@ input[id='circle']:checked ~ input[id='onion']:checked ~ main > .carrot,
 input[id='circle']:checked ~ input[id='carrot']:checked ~ main > .cucumber,
 input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .eggplant
 {
-    z-index: -1;
+    z-index: 12;
     transform: scale(1.3) perspective(500px) rotateY(37deg)
         translateZ(50px) translateX(260px);
 }
@@ -422,7 +424,7 @@ input[id='circle']:checked ~ input[id='onion']:checked ~ main > .corn,
 input[id='circle']:checked ~ input[id='carrot']:checked ~ main > .onion,
 input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .carrot
 {
-    z-index: -1;
+    z-index: 12;
     transform: scale(1.3) perspective(500px) rotateY(-37deg)
         translateZ(50px) translateX(-260px);
 }
@@ -435,7 +437,7 @@ input[id='circle']:checked ~ input[id='onion']:checked ~ main > .cucumber,
 input[id='circle']:checked ~ input[id='carrot']:checked ~ main > .eggplant,
 input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .peas
 {
-    z-index: -2;
+    z-index: 11;
     transform: scale(1.3) perspective(500px) rotateY(115deg)
         translateZ(500px) translateX(260px);
 }
@@ -448,7 +450,7 @@ input[id='circle']:checked ~ input[id='onion']:checked ~ main > .cabbage,
 input[id='circle']:checked ~ input[id='carrot']:checked ~ main > .corn,
 input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .onion
 {
-    z-index: -2;
+    z-index: 11;
     transform: scale(1.3) perspective(500px) rotateY(-115deg)
         translateZ(500px) translateX(-260px);
 }
@@ -461,7 +463,7 @@ input[id='circle']:checked ~ input[id='onion']:checked ~ main > .eggplant,
 input[id='circle']:checked ~ input[id='carrot']:checked ~ main > .peas,
 input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .cabbage
 {
-    z-index: -3;
+    z-index: 10;
     transform: scale(1.3) perspective(500px) rotateY(136deg)
         translateZ(500px) translateX(260px);
 }
@@ -474,7 +476,7 @@ input[id='circle']:checked ~ input[id='onion']:checked ~ main > .peas,
 input[id='circle']:checked ~ input[id='carrot']:checked ~ main > .cabbage,
 input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .corn
 {
-    z-index: -3;
+    z-index: 10;
     transform: scale(1.3) perspective(500px) rotateY(15deg) translateZ(-500px);
 }
 
