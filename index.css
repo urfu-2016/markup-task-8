@@ -48,7 +48,7 @@ input
 .card4:checked ~ .card:nth-of-type(5),
 .card5:checked ~ .card:nth-of-type(6)
 {
-    transform: translateX(50%) scale(.9) rotateY(-40deg);
+    transform: translateX(50%) rotateY(-40deg) translateY(-10%) scale(.9);
 }
 
 .card2:checked ~ .card:nth-of-type(1),
@@ -57,7 +57,7 @@ input
 .card5:checked ~ .card:nth-of-type(4),
 .card6:checked ~ .card:nth-of-type(5)
 {
-    transform: translateX(-50%) scale(.9) rotateY(40deg);
+    transform: translateX(-50%) rotateY(40deg) translateY(-10%) scale(.9);
 }
 
 .card1:checked ~ .card:nth-of-type(3),
@@ -65,7 +65,7 @@ input
 .card3:checked ~ .card:nth-of-type(5),
 .card4:checked ~ .card:nth-of-type(6)
 {
-    transform: translateX(70%) scale(.85) rotateY(-35deg);
+    transform: translateX(70%) rotateY(-35deg) translateY(-15%) scale(.85);
 }
 
 .card3:checked ~ .card:nth-of-type(1),
@@ -73,43 +73,43 @@ input
 .card5:checked ~ .card:nth-of-type(3),
 .card6:checked ~ .card:nth-of-type(4)
 {
-    transform: translateX(-70%) scale(.85) rotateY(35deg);
+    transform: translateX(-70%) rotateY(35deg) translateY(-15%) scale(.85);
 }
 
 .card1:checked ~ .card:nth-of-type(4),
 .card2:checked ~ .card:nth-of-type(5),
 .card3:checked ~ .card:nth-of-type(6)
 {
-    transform: translateX(87%) scale(.8) rotateY(-30deg);
+    transform: translateX(87%) rotateY(-30deg) translateY(-20%) scale(.8);
 }
 
 .card4:checked ~ .card:nth-of-type(1),
 .card5:checked ~ .card:nth-of-type(2),
 .card6:checked ~ .card:nth-of-type(3)
 {
-    transform: translateX(-87%) scale(.8) rotateY(30deg);
+    transform: translateX(-87%) rotateY(30deg) translateY(-20%) scale(.8);
 }
 
 .card1:checked ~ .card:nth-of-type(5),
 .card2:checked ~ .card:nth-of-type(6)
 {
-    transform: translateX(99%) scale(.75) rotateY(-25deg);
+    transform: translateX(99%) rotateY(-25deg) translateY(-25%) scale(.75);
 }
 
 .card5:checked ~ .card:nth-of-type(1),
 .card6:checked ~ .card:nth-of-type(2)
 {
-    transform: translateX(-99%) scale(.75) rotateY(25deg);
+    transform: translateX(-99%) rotateY(25deg) translateY(-25%) scale(.75);
 }
 
 .card1:checked ~ .card:nth-of-type(6)
 {
-    transform: translateX(109%) scale(.7) rotateY(-20deg);
+    transform: translateX(109%) rotateY(-20deg) translateY(-30%) scale(.7);
 }
 
 .card6:checked ~ .card:nth-of-type(1)
 {
-    transform: translateX(-109%) scale(.7) rotateY(20deg);
+    transform: translateX(-109%) rotateY(20deg) translateY(-30%) scale(.7);
 }
 
 .card1:checked ~ .card:nth-of-type(2)
