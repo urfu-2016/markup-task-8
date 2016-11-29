@@ -220,6 +220,8 @@ input
     position: absolute;
     top: 0;
 
+    visibility: hidden;
+
     background-color: #fff;
     transform: translateZ(250px) rotateX(90deg);
 
@@ -241,7 +243,6 @@ label[for^='card']
 
 label[for^='card'] img
 {
-    margin: auto;
     max-width: 90%;
     max-height: 90%;
     vertical-align: middle;
@@ -287,6 +288,7 @@ input[class^='recipe']:checked ~ .paranja
 .recipe5:checked ~ .card:nth-of-type(5) .back,
 .recipe6:checked ~ .card:nth-of-type(6) .back
 {
+    visibility: visible;
     transition: .4s ease-out .4s;
     transform: rotateX(0deg) translateZ(500px);
 }
