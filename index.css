@@ -167,6 +167,12 @@ input
     background: #000;
     opacity: 0;
     position: absolute;
+
+    animation-name: showOpacity;
+    animation-duration: .4s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
 }
 
 .show span
@@ -197,7 +203,24 @@ input
 .card5:checked ~ .card:nth-of-type(5):hover .show,
 .card6:checked ~ .card:nth-of-type(6):hover .show
 {
+    animation-play-state: running;
     opacity: .8;
+}
+
+@keyframes showOpacity
+{
+    0%
+    {
+        opacity: 0;
+    }
+    99%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: .8;
+    }
 }
 
 /* Front & back faces styles */
