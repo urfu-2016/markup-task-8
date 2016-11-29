@@ -168,7 +168,7 @@ input
     opacity: 0;
     position: absolute;
 
-    animation-name: showOpacity;
+    animation-name: show-opacity;
     animation-duration: .4s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
@@ -207,7 +207,7 @@ input
     opacity: .8;
 }
 
-@keyframes showOpacity
+@keyframes show-opacity
 {
     0%
     {
