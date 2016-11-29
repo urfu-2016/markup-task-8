@@ -168,11 +168,10 @@ input
     opacity: 0;
     position: absolute;
 
-    animation-name: show-opacity;
+    animation-name: hide-opacity;
     animation-duration: .4s;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: ease-out;
     animation-fill-mode: forwards;
-    animation-play-state: paused;
 }
 
 .show span
@@ -203,8 +202,26 @@ input
 .card5:checked ~ .card:nth-of-type(5):hover .show,
 .card6:checked ~ .card:nth-of-type(6):hover .show
 {
-    animation-play-state: running;
-    opacity: .8;
+    animation-name: show-opacity;
+    animation-duration: .4s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: both;
+}
+
+@keyframes hide-opacity
+{
+    0%
+    {
+        opacity: .8;
+    }
+    40%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 0;
+    }
 }
 
 @keyframes show-opacity
@@ -213,7 +230,7 @@ input
     {
         opacity: 0;
     }
-    99%
+    60%
     {
         opacity: 0;
     }
@@ -233,6 +250,8 @@ input
     height: 100%;
 
     transition: .25s ease-out .4s;
+
+    user-select: none;
 }
 
 .back
