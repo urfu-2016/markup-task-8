@@ -297,7 +297,7 @@ article label
 {
     transform: perspective(1000px) translateZ(-80px)
         translateX(450px) rotateY(-55deg);
-    z-index: -5;
+    z-index: -6;
 }
 
 [id='select-onion']:checked ~ [id='garlic'],
@@ -305,21 +305,21 @@ article label
 {
     transform: perspective(1000px) translateZ(-80px)
         translateX(-450px) rotateY(55deg);
-    z-index: -5;
+    z-index: -6;
 }
 
 [id='select-garlic']:checked ~ [id='carrot']
 {
     transform: perspective(1000px) translateZ(-80px)
         translateX(510px) rotateY(-55deg);
-    z-index: -5;
+    z-index: -7;
 }
 
 [id='select-carrot']:checked ~ [id='garlic']
 {
     transform: perspective(1000px) translateZ(-80px)
         translateX(-510px) rotateY(55deg);
-    z-index: -5;
+    z-index: -7;
 }
 
 article img
