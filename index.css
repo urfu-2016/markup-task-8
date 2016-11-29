@@ -51,32 +51,6 @@ input
     transform: translateX(50%) scale(.9) rotateY(-40deg);
 }
 
-.card1:checked ~ .card:nth-of-type(3),
-.card2:checked ~ .card:nth-of-type(4),
-.card3:checked ~ .card:nth-of-type(5),
-.card4:checked ~ .card:nth-of-type(6)
-{
-    transform: translateX(70%) scale(.85) rotateY(-35deg);
-}
-
-.card1:checked ~ .card:nth-of-type(4),
-.card2:checked ~ .card:nth-of-type(5),
-.card3:checked ~ .card:nth-of-type(6)
-{
-    transform: translateX(87%) scale(.8) rotateY(-30deg);
-}
-
-.card1:checked ~ .card:nth-of-type(5),
-.card2:checked ~ .card:nth-of-type(6)
-{
-    transform: translateX(99%) scale(.75) rotateY(-25deg);
-}
-
-.card1:checked ~ .card:nth-of-type(6)
-{
-    transform: translateX(109%) scale(.7) rotateY(-20deg);
-}
-
 .card2:checked ~ .card:nth-of-type(1),
 .card3:checked ~ .card:nth-of-type(2),
 .card4:checked ~ .card:nth-of-type(3),
@@ -84,6 +58,14 @@ input
 .card6:checked ~ .card:nth-of-type(5)
 {
     transform: translateX(-50%) scale(.9) rotateY(40deg);
+}
+
+.card1:checked ~ .card:nth-of-type(3),
+.card2:checked ~ .card:nth-of-type(4),
+.card3:checked ~ .card:nth-of-type(5),
+.card4:checked ~ .card:nth-of-type(6)
+{
+    transform: translateX(70%) scale(.85) rotateY(-35deg);
 }
 
 .card3:checked ~ .card:nth-of-type(1),
@@ -94,6 +76,13 @@ input
     transform: translateX(-70%) scale(.85) rotateY(35deg);
 }
 
+.card1:checked ~ .card:nth-of-type(4),
+.card2:checked ~ .card:nth-of-type(5),
+.card3:checked ~ .card:nth-of-type(6)
+{
+    transform: translateX(87%) scale(.8) rotateY(-30deg);
+}
+
 .card4:checked ~ .card:nth-of-type(1),
 .card5:checked ~ .card:nth-of-type(2),
 .card6:checked ~ .card:nth-of-type(3)
@@ -101,10 +90,21 @@ input
     transform: translateX(-87%) scale(.8) rotateY(30deg);
 }
 
+.card1:checked ~ .card:nth-of-type(5),
+.card2:checked ~ .card:nth-of-type(6)
+{
+    transform: translateX(99%) scale(.75) rotateY(-25deg);
+}
+
 .card5:checked ~ .card:nth-of-type(1),
 .card6:checked ~ .card:nth-of-type(2)
 {
     transform: translateX(-99%) scale(.75) rotateY(25deg);
+}
+
+.card1:checked ~ .card:nth-of-type(6)
+{
+    transform: translateX(109%) scale(.7) rotateY(-20deg);
 }
 
 .card6:checked ~ .card:nth-of-type(1)
@@ -167,7 +167,6 @@ input
     background: #000;
     opacity: 0;
     position: absolute;
-    transition: .2s ease-in-out;
 }
 
 .show span
