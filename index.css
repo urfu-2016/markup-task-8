@@ -101,6 +101,7 @@ main
 .close-reciept
 {
     display: inline-block;
+    visibility: hidden;
     position: fixed;
     z-index: 101;
     top: 270px;
@@ -314,6 +315,17 @@ input[id='cucumber-reciept']:checked ~ main > .vegetable.cucumber
     animation-name: flip;
     animation-duration: 2s;
     animation-fill-mode: both;
+}
+
+input[id='eggplant-reciept']:checked ~ main > .vegetable.eggplant .close-reciept,
+input[id='peas-reciept']:checked ~ main > .vegetable.peas .close-reciept,
+input[id='cabbage-reciept']:checked ~ main > .vegetable.cabbage .close-reciept,
+input[id='corn-reciept']:checked ~ main > .vegetable.corn .close-reciept,
+input[id='onion-reciept']:checked ~ main > .vegetable.onion .close-reciept,
+input[id='carrot-reciept']:checked ~ main > .vegetable.carrot .close-reciept,
+input[id='cucumber-reciept']:checked ~ main > .vegetable.cucumber .close-reciept
+{
+    visibility: visible;
 }
 
 input[id='eggplant-reciept']:checked ~ main > .vegetable.eggplant .description,
