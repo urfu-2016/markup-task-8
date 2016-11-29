@@ -378,8 +378,6 @@ input[id='cucumber-reciept-close']:checked ~ main .vegetable.cucumber .desc7
     animation-duration: .5s;
 }
 
-
-
 input[id='circle']:checked ~ input[id='eggplant']:checked ~ main > .eggplant,
 input[id='circle']:checked ~ input[id='peas']:checked ~ main > .peas,
 input[id='circle']:checked ~ input[id='cabbage']:checked ~ main > .cabbage,
@@ -443,8 +441,6 @@ input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .onion
         translateZ(500px) translateX(-260px);
 }
 
-
-
 input[id='circle']:checked ~ input[id='eggplant']:checked ~ main > .corn,
 input[id='circle']:checked ~ input[id='peas']:checked ~ main > .onion,
 input[id='circle']:checked ~ input[id='cabbage']:checked ~ main > .carrot,
@@ -469,7 +465,6 @@ input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .corn
     z-index: -3;
     transform: scale(1.3) perspective(500px) rotateY(15deg) translateZ(-500px);
 }
-
 
 @keyframes flip
 {
