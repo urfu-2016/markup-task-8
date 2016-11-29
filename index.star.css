@@ -1,9 +1,3 @@
-.star:checked ~ .article:not(:target)
-{
-    opacity: .9;
-    width: 30%;
-}
-
 .star:checked ~ .pick-img:nth-of-type(2):checked ~ .article:nth-of-type(1),
 .star:checked ~ .pick-img:nth-of-type(3):checked ~ .article:nth-of-type(2),
 .star:checked ~ .pick-img:nth-of-type(4):checked ~ .article:nth-of-type(3),
