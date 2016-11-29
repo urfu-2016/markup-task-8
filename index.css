@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&subset=cyrillic');
 
 body
 {
@@ -316,6 +316,14 @@ label[for]
 
 .recipe-show-button
 {
+    -webkit-animation-name: prevent-opacity-on-pageload;
+    -moz-animation-name: prevent-opacity-on-pageload;
+    -o-animation-name: prevent-opacity-on-pageload;
+    animation-name: prevent-opacity-on-pageload;
+    -webkit-animation-duration: .1s;
+    -moz-animation-duration: .1s;
+    -o-animation-duration: .1s;
+    animation-duration: .1s;
     background: rgba(0, 0, 0, .65);
     display: block;
     height: 100%;
@@ -339,8 +347,8 @@ label[for]
     display: none;
 }
 
-.recipe-button-shape,
-.recipe-button
+.recipe-show-button-shape,
+.recipe-show-button-text
 {
     margin: auto;
     position: absolute;
@@ -350,7 +358,7 @@ label[for]
     left: 0;
 }
 
-.recipe-button-shape
+.recipe-show-button-shape
 {
     border: 3px solid #fff;
     display: inline-block;
@@ -363,7 +371,7 @@ label[for]
     width: 100px;
 }
 
-.recipe-button
+.recipe-show-button-text
 {
     color: #fff;
     display: inline-block;
@@ -395,6 +403,14 @@ label[for]
 
 .recipe-bg
 {
+    -webkit-animation-name: prevent-opacity-on-pageload;
+    -moz-animation-name: prevent-opacity-on-pageload;
+    -o-animation-name: prevent-opacity-on-pageload;
+    animation-name: prevent-opacity-on-pageload;
+    -webkit-animation-duration: .1s;
+    -moz-animation-duration: .1s;
+    -o-animation-duration: .1s;
+    animation-duration: .1s;
     background: rgba(0, 0, 0, .75);
     height: 100%;
     opacity: 0;
@@ -415,6 +431,14 @@ label[for]
 
 .recipe-card
 {
+    -webkit-animation-name: prevent-transform-on-pageload;
+    -moz-animation-name: prevent-transform-on-pageload;
+    -o-animation-name: prevent-transform-on-pageload;
+    animation-name: prevent-transform-on-pageload;
+    -webkit-animation-duration: .1s;
+    -moz-animation-duration: .1s;
+    -o-animation-duration: .1s;
+    animation-duration: .1s;
     -webkit-align-content: flex-start;
     align-content: flex-start;
     -webkit-backface-visibility: hidden;
@@ -470,6 +494,8 @@ label[for]
     background-color: #3f51b5;
     color: #fff;
     display: flex;
+    overflow: hidden;
+    position: relative;
     width: 100%;
 }
 
@@ -486,9 +512,48 @@ label[for]
     padding: 0 24px;
 }
 
-.recipe-card .hide-recipe-button
+.ripple-bg
 {
-    background: #303f9f url('img/ic_close.svg') no-repeat 50% 50%;
+    -webkit-animation-name: fade-out-animation;
+    -moz-animation-name: fade-out-animation;
+    -o-animation-name: fade-out-animation;
+    animation-name: fade-out-animation;
+    -webkit-animation-duration: .3s;
+    -moz-animation-duration: .3s;
+    -o-animation-duration: .3s;
+    animation-duration: .3s;
+    background-color: #303f9f;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    display: inline-block;
+    height: 48px;
+    opacity: 0;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 48px;
+}
+
+.hide-recipe-button:hover + .ripple-bg
+{
+    -webkit-animation-name: ripple-animation;
+    -moz-animation-name: ripple-animation;
+    -o-animation-name: ripple-animation;
+    animation-name: ripple-animation;
+    -webkit-animation-duration: .25s;
+    -moz-animation-duration: .25s;
+    -o-animation-duration: .25s;
+    animation-duration: .25s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.hide-recipe-button
+{
+    background: url('img/ic_close.svg') no-repeat 50% 50%;
     -webkit-background-size: 24px 24px;
     -moz-background-size: 24px 24px;
     -o-background-size: 24px 24px;
@@ -497,11 +562,8 @@ label[for]
     -webkit-flex-basis: 56px;
     flex-basis: 56px;
     height: 56px;
-}
-
-.recipe-card .hide-recipe-button:hover
-{
-    background-color: #283593;
+    position: relative;
+    z-index: 1;
 }
 
 .recipe-card h6
@@ -531,4 +593,68 @@ label[for]
 .recipe-card ol li
 {
     padding: 4px 16px 4px 0;
+}
+
+@keyframes ripple-animation
+{
+    from
+    {
+        opacity: 0;
+        -webkit-transform: scale(.33);
+        -moz-transform: scale(.33);
+        -ms-transform: scale(.33);
+        -o-transform: scale(.33);
+        transform: scale(.33);
+    }
+    to
+    {
+        opacity: 1;
+        -webkit-transform: scale(1.5);
+        -moz-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+        -o-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+}
+
+@keyframes fade-out-animation
+{
+    from
+    {
+        opacity: 1;
+        -webkit-transform: scale(1.5);
+        -moz-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+        -o-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+    to
+    {
+        opacity: 0;
+        -webkit-transform: scale(1.5);
+        -moz-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+        -o-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+}
+
+@keyframes prevent-transform-on-pageload
+{
+    from
+    {
+        -webkit-transform: rotateX(91deg) scale(.5, .66);
+        -moz-transform: rotateX(91deg) scale(.5, .66);
+        -ms-transform: rotateX(91deg) scale(.5, .66);
+        -o-transform: rotateX(91deg) scale(.5, .66);
+        transform: rotateX(91deg) scale(.5, .66);
+    }
+}
+
+@keyframes prevent-opacity-on-pageload
+{
+    from
+    {
+        opacity: 0;
+    }
 }
