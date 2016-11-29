@@ -147,14 +147,14 @@ input
     z-index: 1;
 }
 
-.card1:checked ~ .card:nth-of-type(1) .show,
-.card2:checked ~ .card:nth-of-type(2) .show,
-.card3:checked ~ .card:nth-of-type(3) .show,
-.card4:checked ~ .card:nth-of-type(4) .show,
-.card5:checked ~ .card:nth-of-type(5) .show,
-.card6:checked ~ .card:nth-of-type(6) .show
+.card1:not(:checked) ~ .card:nth-of-type(1) .show,
+.card2:not(:checked) ~ .card:nth-of-type(2) .show,
+.card3:not(:checked) ~ .card:nth-of-type(3) .show,
+.card4:not(:checked) ~ .card:nth-of-type(4) .show,
+.card5:not(:checked) ~ .card:nth-of-type(5) .show,
+.card6:not(:checked) ~ .card:nth-of-type(6) .show
 {
-    z-index: 10;
+    visibility: hidden;
 }
 
 /* Show recipe button styles */
@@ -168,10 +168,9 @@ input
     opacity: 0;
     position: absolute;
 
-    animation-name: hide-opacity;
-    animation-duration: .4s;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
+    transition: .4s ease-in-out;
+
+    z-index: 10;
 }
 
 .show span
@@ -202,42 +201,7 @@ input
 .card5:checked ~ .card:nth-of-type(5):hover .show,
 .card6:checked ~ .card:nth-of-type(6):hover .show
 {
-    animation-name: show-opacity;
-    animation-duration: .4s;
-    animation-timing-function: ease-in;
-    animation-fill-mode: both;
-}
-
-@keyframes hide-opacity
-{
-    0%
-    {
-        opacity: .8;
-    }
-    40%
-    {
-        opacity: 0;
-    }
-    100%
-    {
-        opacity: 0;
-    }
-}
-
-@keyframes show-opacity
-{
-    0%
-    {
-        opacity: 0;
-    }
-    60%
-    {
-        opacity: 0;
-    }
-    100%
-    {
-        opacity: .8;
-    }
+    opacity: .8;
 }
 
 /* Front & back faces styles */
