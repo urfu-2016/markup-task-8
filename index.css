@@ -1,6 +1,11 @@
-input[type='radio']
+body input[type='radio']
 {
     display: none;
+}
+
+body
+{
+    overflow-x: hidden;
 }
 
 main
@@ -37,7 +42,7 @@ main
     position: absolute;
     background: #fff;
     box-shadow: 0 0 10px #fff;
-    z-index: -1;
+    z-index: 10;
     left: -134%;
     width: 650px;
     height: 400px;
@@ -127,8 +132,7 @@ main
     width: 100px;
     display: table-cell;
     color: #fff;
-    font-size: 1rem;
-    font-family: arial, sans-serif;
+    font: 1rem arial, sans-serif ;
     text-align: center;
     border: 6px solid #fff;
     border-radius: 100px;
@@ -157,7 +161,6 @@ main
     display: block;
     opacity: 0;
     background-color: rgba(191, 191, 191, .8);
-    pointer-events: none;
     transition: opacity 2s ease;
 }
 
@@ -238,7 +241,7 @@ input[id='peas']:checked ~ main > .carrot,
 input[id='cabbage']:checked ~ main > .cucumber
 {
     z-index: 3;
-    transform: perspective(500px) rotateY(-15deg) translateX(340px);
+    transform: perspective(500px) rotateY(-18deg) translateX(340px);
 }
 
 input[id='onion']:checked ~ main > .eggplant,
@@ -246,21 +249,21 @@ input[id='carrot']:checked ~ main > .peas,
 input[id='cucumber']:checked ~ main > .cabbage
 {
     z-index: 3;
-    transform: perspective(500px) rotateY(15deg) translateX(-340px);
+    transform: perspective(500px) rotateY(18deg) translateX(-340px);
 }
 
 input[id='eggplant']:checked ~ main > .carrot,
 input[id='peas']:checked ~ main > .cucumber
 {
     z-index: 2;
-    transform: perspective(500px) rotateY(-15deg) translateX(380px);
+    transform: perspective(500px) rotateY(-17deg) translateX(380px);
 }
 
 input[id='carrot']:checked ~ main > .eggplant,
 input[id='cucumber']:checked ~ main > .peas
 {
     z-index: 2;
-    transform: perspective(500px) rotateY(15deg) translateX(-380px);
+    transform: perspective(500px) rotateY(17deg) translateX(-380px);
 }
 
 input[id='eggplant']:checked ~ main > .cucumber
@@ -372,9 +375,10 @@ input[id='carrot-reciept-close']:checked ~ main .vegetable.carrot .desc6,
 input[id='cucumber-reciept-close']:checked ~ main .vegetable.cucumber .desc7
 {
     animation-name: visibility-back;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
+    animation-duration: .5s;
 }
+
+
 
 input[id='circle']:checked ~ input[id='eggplant']:checked ~ main > .eggplant,
 input[id='circle']:checked ~ input[id='peas']:checked ~ main > .peas,
@@ -384,7 +388,6 @@ input[id='circle']:checked ~ input[id='onion']:checked ~ main > .onion,
 input[id='circle']:checked ~ input[id='carrot']:checked ~ main > .carrot,
 input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .cucumber
 {
-    z-index: 7;
     transform: scale(1.4);
 }
 
@@ -393,13 +396,15 @@ input[id='circle']:checked ~ input[id='peas']:checked ~ main > .cabbage,
 input[id='circle']:checked ~ input[id='cabbage']:checked ~ main > .corn,
 input[id='circle']:checked ~ input[id='corn']:checked ~ main > .onion,
 input[id='circle']:checked ~ input[id='onion']:checked ~ main > .carrot,
-input[id='circle']:checked ~ input[id='carrot']:checked ~ main > .cucumber
+input[id='circle']:checked ~ input[id='carrot']:checked ~ main > .cucumber,
+input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .eggplant
 {
-    z-index: 6;
+    z-index: -1;
     transform: scale(1.3) perspective(500px) rotateY(37deg)
         translateZ(50px) translateX(260px);
 }
 
+input[id='circle']:checked ~ input[id='eggplant']:checked ~ main > .cucumber,
 input[id='circle']:checked ~ input[id='peas']:checked ~ main > .eggplant,
 input[id='circle']:checked ~ input[id='cabbage']:checked ~ main > .peas,
 input[id='circle']:checked ~ input[id='corn']:checked ~ main > .cabbage,
@@ -407,7 +412,7 @@ input[id='circle']:checked ~ input[id='onion']:checked ~ main > .corn,
 input[id='circle']:checked ~ input[id='carrot']:checked ~ main > .onion,
 input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .carrot
 {
-    z-index: 6;
+    z-index: -1;
     transform: scale(1.3) perspective(500px) rotateY(-37deg)
         translateZ(50px) translateX(-260px);
 }
@@ -416,91 +421,55 @@ input[id='circle']:checked ~ input[id='eggplant']:checked ~ main > .cabbage,
 input[id='circle']:checked ~ input[id='peas']:checked ~ main > .corn,
 input[id='circle']:checked ~ input[id='cabbage']:checked ~ main > .onion,
 input[id='circle']:checked ~ input[id='corn']:checked ~ main > .carrot,
-input[id='circle']:checked ~ input[id='onion']:checked ~ main > .cucumber
+input[id='circle']:checked ~ input[id='onion']:checked ~ main > .cucumber,
+input[id='circle']:checked ~ input[id='carrot']:checked ~ main > .eggplant,
+input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .peas
 {
-    z-index: 5;
+    z-index: -2;
     transform: scale(1.3) perspective(500px) rotateY(115deg)
         translateZ(500px) translateX(260px);
 }
 
+input[id='circle']:checked ~ input[id='eggplant']:checked ~ main > .carrot,
+input[id='circle']:checked ~ input[id='peas']:checked ~ main > .cucumber,
 input[id='circle']:checked ~ input[id='cabbage']:checked ~ main > .eggplant,
 input[id='circle']:checked ~ input[id='corn']:checked ~ main > .peas,
 input[id='circle']:checked ~ input[id='onion']:checked ~ main > .cabbage,
 input[id='circle']:checked ~ input[id='carrot']:checked ~ main > .corn,
 input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .onion
 {
-    z-index: 5;
+    z-index: -2;
     transform: scale(1.3) perspective(500px) rotateY(-115deg)
         translateZ(500px) translateX(-260px);
 }
 
+
+
 input[id='circle']:checked ~ input[id='eggplant']:checked ~ main > .corn,
 input[id='circle']:checked ~ input[id='peas']:checked ~ main > .onion,
 input[id='circle']:checked ~ input[id='cabbage']:checked ~ main > .carrot,
-input[id='circle']:checked ~ input[id='corn']:checked ~ main > .cucumber
+input[id='circle']:checked ~ input[id='corn']:checked ~ main > .cucumber,
+input[id='circle']:checked ~ input[id='onion']:checked ~ main > .eggplant,
+input[id='circle']:checked ~ input[id='carrot']:checked ~ main > .peas,
+input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .cabbage
 {
-    z-index: 4;
+    z-index: -3;
     transform: scale(1.3) perspective(500px) rotateY(136deg)
         translateZ(500px) translateX(260px);
 }
 
+input[id='circle']:checked ~ input[id='eggplant']:checked ~ main > .onion,
+input[id='circle']:checked ~ input[id='peas']:checked ~ main > .carrot,
+input[id='circle']:checked ~ input[id='cabbage']:checked ~ main > .cucumber,
 input[id='circle']:checked ~ input[id='corn']:checked ~ main > .eggplant,
 input[id='circle']:checked ~ input[id='onion']:checked ~ main > .peas,
 input[id='circle']:checked ~ input[id='carrot']:checked ~ main > .cabbage,
 input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .corn
 {
-    z-index: 4;
-    transform: scale(1.3) perspective(500px) rotateY(-136deg)
-        translateZ(500px) translateX(-260px);
+    z-index: -3;
+    transform: scale(1.3) perspective(500px) rotateY(15deg) translateZ(-500px);
 }
 
-input[id='circle']:checked ~ input[id='eggplant']:checked ~ main > .onion,
-input[id='circle']:checked ~ input[id='peas']:checked ~ main > .carrot,
-input[id='circle']:checked ~ input[id='cabbage']:checked ~ main > .cucumber
-{
-    z-index: 3;
-    transform: scale(1.3) perspective(500px) rotateY(-136deg)
-        translateZ(500px) translateX(-260px);
-}
-
-input[id='circle']:checked ~ input[id='onion']:checked ~ main > .eggplant,
-input[id='circle']:checked ~ input[id='carrot']:checked ~ main > .peas,
-input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .cabbage
-{
-    z-index: 3;
-    transform: scale(1.3) perspective(500px) rotateY(136deg)
-        translateZ(500px) translateX(260px);
-}
-
-input[id='circle']:checked ~ input[id='eggplant']:checked ~ main > .carrot,
-input[id='circle']:checked ~ input[id='peas']:checked ~ main > .cucumber
-{
-    z-index: 2;
-    transform: scale(1.3) perspective(500px) rotateY(-115deg)
-        translateZ(500px) translateX(-260px);
-}
-
-input[id='circle']:checked ~ input[id='carrot']:checked ~ main > .eggplant,
-input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .peas
-{
-    z-index: 2;
-    transform: scale(1.3) perspective(500px) rotateY(115deg)
-        translateZ(500px) translateX(260px);
-}
-
-input[id='circle']:checked ~ input[id='eggplant']:checked ~ main > .cucumber
-{
-    z-index: 3;
-    transform: scale(1.3) perspective(500px) rotateY(-37deg)
-        translateZ(50px) translateX(-260px);
-}
-
-input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .eggplant
-{
-    z-index: 4;
-    transform: scale(1.3) perspective(500px) rotateY(37deg)
-        translateZ(50px) translateX(260px);
-}
 
 @keyframes flip
 {
@@ -524,20 +493,21 @@ input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .eggplant
 {
     from
     {
-        transform: perspective(500px) translateY(0) rotateX(-180deg);
+        transform: translateY(0) rotateX(-180deg);
         overflow: visible;
     }
-    50%
+    30%
     {
-        transform: scale(1.4) perspective(500px) rotateX(0deg);
+        transform: scale(1.6) rotateX(-90deg);
+    }
+    90%
+    {
         overflow: hidden;
     }
     to
     {
-
-        visibility: hidden;
         overflow: hidden;
-        transform: scale(1.4) translateY(0);
+        transform: scale(1.4) translateY(0) rotateX(0deg);
     }
 }
 
@@ -561,18 +531,14 @@ input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .eggplant
 
 @keyframes visibility-back
 {
-    from
+    50%
     {
         visibility: visible;
         backface-visibility: visible;
-        z-index: 10;
-        opacity: 1;
     }
-    to
+    100%
     {
         visibility: hidden;
         backface-visibility: hidden;
-        z-index: -10;
-        opacity: 0;
     }
 }
