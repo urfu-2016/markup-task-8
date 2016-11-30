@@ -1,11 +1,26 @@
+/* Везде calc(80vw / 7) - размер блока с овощем */
+
 html,
-body
+body,
+.content
 {
     font-family: sans-serif;
+    text-align: center;
+    position: relative;
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.radio,
+.smog
+{
+    display: none;
 }
 
 .item-label
@@ -26,53 +41,20 @@ body
 
 .smog
 {
-    display: none;
-    z-index: 5;
-    top: 0;
-    left: 0;
     background-color: rgba(0, 0, 0, .4);
     position: absolute;
-    width: 100vw;
     height: 100vh;
-}
-
-.view-type-label
-{
-    z-index: 40;
-}
-
-.view-type-label:hover
-{
-    color: #fff;
-    background-color: #000;
-}
-
-.view-type-label:after
-{
-    content: 'Макет 1';
-}
-
-.view-type:checked ~ .view-type-label:after
-{
-    content: 'Макет 2';
-}
-
-.view-type,
-.radio
-{
-    display: none;
-}
-
-.content
-{
-    text-align: center;
-    position: relative;
-    top: 0;
-    bottom: 0;
+    width: 100vw;
     left: 0;
-    right: 0;
-    margin: 0;
-    padding: 0;
+    top: 0;
+    z-index: 7;
+}
+
+.view-type:checked ~ .smog
+{
+    z-index: 5;
+    display: inline-block;
+    background: transparent;
 }
 
 .cross-image
@@ -85,6 +67,8 @@ body
 
 .veg-block
 {
+    -webkit-transition: transform .5s ease-out;
+    -moz-transition: transform .5s ease-out;
     transition: transform .5s ease-out;
     position: fixed;
     display: inline-block;
@@ -105,7 +89,11 @@ body
     z-index: 100;
     visibility: hidden;
     font-size: 2em;
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
+    -webkit-transform: rotateX(-180deg);
+    -moz-transform: rotateX(-180deg);
     transform: rotateX(-180deg);
     border: 1px solid #000;
     position: fixed;
@@ -114,6 +102,11 @@ body
     height: calc(80vw / 7);
     background: #f0f0f0;
     animation: fold-revert 2s ease;
+}
+
+.view-type:checked ~ .veg-block .recipe-view
+{
+    top: calc(2 * 80vw / 7);
 }
 
 .content
@@ -217,6 +210,8 @@ body
 .cucumber-item:checked ~ .cucumber:target ~ .smog
 {
     display: inline-block;
+    z-index: 7;
+    background-color: rgba(0, 0, 0, .6);
 }
 
 .pepper-item:checked ~ .pepper:target > .face,
@@ -244,6 +239,8 @@ body
     z-index: -3;
     background: linear-gradient(rgba(153, 150, 241, .6), rgba(52, 71, 255, 1));
     transition: background 1s ease-out;
+    -moz-transition: background 1s ease-out;
+    -webkit-transition: background 1s ease-out;
 }
 
 .pepper-item:checked ~ .pepper:target > .item-label,
@@ -264,14 +261,20 @@ body
     from
     {
         background: #f0f0f0;
+        -webkit-transform: rotateX(180deg);
+        -moz-transform: rotateX(180deg);
         transform: rotateX(180deg);
     }
     50%
     {
+        -webkit-transform: translateY(calc(80vw / 7)) scale(1);
+        -moz-transform: translateY(calc(80vw / 7)) scale(1);
         transform: translateY(calc(80vw / 7)) scale(1);
     }
     to
     {
+        -webkit-transform: rotateX(0deg) scale(3, 2.5);
+        -moz-transform: rotateX(0deg) scale(3, 2.5);
         transform: rotateX(0deg) scale(3, 2.5);
     }
 }
@@ -281,6 +284,8 @@ body
     from
     {
         visibility: visible;
+        -webkit-transform: rotateX(0deg) scale(3, 2.5);
+        -moz-transform: rotateX(0deg) scale(3, 2.5);
         transform: rotateX(0deg) scale(3, 2.5);
         z-index: 10;
     }
@@ -289,6 +294,8 @@ body
         z-index: 0;
         visibility: visible;
         background: #f0f0f0;
+        -webkit-transform: rotateX(180deg) scale(1);
+        -moz-transform: rotateX(180deg) scale(1);
         transform: rotateX(180deg) scale(1);
     }
 }
@@ -298,12 +305,16 @@ body
     from
     {
         background: #f0f0f0;
+        -webkit-transform: rotateX(0deg);
+        -moz-transform: rotateX(0deg);
         transform: rotateX(0deg);
-        z-index: 5;
+        z-index: 6;
     }
     50%
     {
         z-index: 0;
+        -webkit-transform: translateY(calc(80vw / 7)) rotateX(180deg);
+        -moz-transform: translateY(calc(80vw / 7)) rotateX(180deg);
         transform: translateY(calc(80vw / 7)) rotateX(180deg);
     }
 }
@@ -314,6 +325,8 @@ body
     {
         z-index: 0;
         visibility: visible;
+        -webkit-transform: rotateX(180deg) scale(3, 2.5);
+        -moz-transform: rotateX(180deg) scale(3, 2.5);
         transform: rotateX(180deg) scale(3, 2.5);
     }
     to
@@ -321,50 +334,66 @@ body
         z-index: 10;
         visibility: visible;
         background: #f0f0f0;
+        -webkit-transform: rotateX(0deg) scale(1);
+        -moz-transform: rotateX(0deg) scale(1);
         transform: rotateX(0deg) scale(1);
     }
 }
 
-/* Стандартное задание */
+/* z-index'ы блоков */
 
-.cucumber-item:checked ~ .pepper
+.pepper-item:checked ~ .garlic
+{
+    z-index: 1;
+}
+
+.cucumber-item:checked ~ .pepper,
+.pepper-item:checked ~ .cucumber
 {
     z-index: 0;
-    transform: translateX(-600px) perspective(550px) rotateY(25deg);
 }
 
 .garlic-item:checked ~ .pepper,
-.cucumber-item:checked ~ .carrot
+.cucumber-item:checked ~ .carrot,
+.carrot-item:checked ~ .cucumber
 {
-    z-index: 1;
-    transform: translateX(-500px) perspective(500px) rotateY(25deg);
+    z-index: 2;
 }
 
 .onion-item:checked ~ .pepper,
 .garlic-item:checked ~ .carrot,
-.cucumber-item:checked ~ .tomato
+.cucumber-item:checked ~ .tomato,
+.pepper-item:checked ~ .onion,
+.carrot-item:checked ~ .garlic,
+.tomato-item:checked ~ .cucumber
 {
-    z-index: 2;
-    transform: translateX(-400px) perspective(450px) rotateY(25deg);
+    z-index: 3;
 }
 
 .onion-item:checked ~ .carrot,
 .garlic-item:checked ~ .tomato,
 .cucumber-item:checked ~ .chilly,
-.chilly-item:checked ~ .pepper
+.chilly-item:checked ~ .pepper,
+.pepper-item:checked ~ .chilly,
+.carrot-item:checked ~ .onion,
+.tomato-item:checked ~ .garlic,
+.chilly-item:checked ~ .cucumber
 {
-    z-index: 3;
-    transform: translateX(-300px) perspective(400px) rotateY(25deg);
+    z-index: 5;
 }
 
 .tomato-item:checked ~ .pepper,
 .onion-item:checked ~ .tomato,
 .garlic-item:checked ~ .chilly,
 .cucumber-item:checked ~ .onion,
-.chilly-item:checked ~ .carrot
+.chilly-item:checked ~ .carrot,
+.pepper-item:checked ~ .tomato,
+.carrot-item:checked ~ .chilly,
+.tomato-item:checked ~ .onion,
+.onion-item:checked ~ .cucumber,
+.chilly-item:checked ~ .garlic
 {
-    z-index: 4;
-    transform: translateX(-200px) perspective(350px) rotateY(25deg);
+    z-index: 6;
 }
 
 .carrot-item:checked ~ .pepper,
@@ -372,10 +401,15 @@ body
 .onion-item:checked ~ .chilly,
 .garlic-item:checked ~ .onion,
 .cucumber-item:checked ~ .garlic,
-.chilly-item:checked ~ .tomato
+.chilly-item:checked ~ .tomato,
+.pepper-item:checked ~ .carrot,
+.carrot-item:checked ~ .tomato,
+.tomato-item:checked ~ .chilly,
+.onion-item:checked ~ .garlic,
+.garlic-item:checked ~ .cucumber,
+.chilly-item:checked ~ .onion
 {
-    z-index: 5;
-    transform: translateX(-100px) perspective(300px) rotateY(25deg);
+    z-index: 7;
 }
 
 .pepper-item:checked ~ .pepper,
@@ -386,73 +420,127 @@ body
 .cucumber-item:checked ~ .cucumber,
 .chilly-item:checked ~ .chilly
 {
-    z-index: 6;
-    transform: perspective(250px) scale(1.2);
+    z-index: 8;
 }
 
-.pepper-item:checked ~ .carrot,
-.carrot-item:checked ~ .tomato,
-.tomato-item:checked ~ .chilly,
-.onion-item:checked ~ .garlic,
-.garlic-item:checked ~ .cucumber,
-.chilly-item:checked ~ .onion
+.view-type:checked ~ .cucumber-item:checked ~ .carrot,
+.view-type:checked ~ .pepper-item:checked ~ .cucumber,
+.view-type:checked ~ .garlic-item:checked ~ .pepper
+{
+    z-index: 6;
+}
+
+.view-type:checked ~ .cucumber-item:checked ~ .tomato,
+.view-type:checked ~ .pepper-item:checked ~ .garlic,
+.view-type:checked ~ .garlic-item:checked ~ .carrot
 {
     z-index: 5;
-    transform: translateX(100px) perspective(300px) rotateY(-25deg);
 }
 
-.pepper-item:checked ~ .tomato,
-.carrot-item:checked ~ .chilly,
-.tomato-item:checked ~ .onion,
-.onion-item:checked ~ .cucumber,
-.chilly-item:checked ~ .garlic
+/* Стандартное задание */
+
+.view-type:not(:checked) ~ .cucumber-item:checked ~ .pepper
 {
-    z-index: 4;
-    transform: translateX(200px) perspective(350px) rotateY(-25deg);
+    transform: translateX(calc(-6 * 80vw / 14)) perspective(550px) rotateY(25deg);
 }
 
-.pepper-item:checked ~ .chilly,
-.carrot-item:checked ~ .onion,
-.tomato-item:checked ~ .garlic,
-.chilly-item:checked ~ .cucumber
+.view-type:not(:checked) ~ .garlic-item:checked ~ .pepper,
+.view-type:not(:checked) ~ .cucumber-item:checked ~ .carrot
 {
-    z-index: 3;
-    transform: translateX(300px) perspective(400px) rotateY(-25deg);
+    transform: translateX(calc(-5 * 80vw / 14)) perspective(500px) rotateY(25deg);
 }
 
-.pepper-item:checked ~ .onion,
-.carrot-item:checked ~ .garlic,
-.tomato-item:checked ~ .cucumber
+.view-type:not(:checked) ~ .onion-item:checked ~ .pepper,
+.view-type:not(:checked) ~ .garlic-item:checked ~ .carrot,
+.view-type:not(:checked) ~ .cucumber-item:checked ~ .tomato
 {
-    z-index: 2;
-    transform: translateX(400px) perspective(450px) rotateY(-25deg);
+    transform: translateX(calc(-4 * 80vw / 14)) perspective(450px) rotateY(25deg);
 }
 
-.pepper-item:checked ~ .garlic,
-.carrot-item:checked ~ .cucumber
+.view-type:not(:checked) ~ .onion-item:checked ~ .carrot,
+.view-type:not(:checked) ~ .garlic-item:checked ~ .tomato,
+.view-type:not(:checked) ~ .cucumber-item:checked ~ .chilly,
+.view-type:not(:checked) ~ .chilly-item:checked ~ .pepper
 {
-    z-index: 1;
-    transform: translateX(500px) perspective(500px) rotateY(-25deg);
+    transform: translateX(calc(-3 * 80vw / 14)) perspective(400px) rotateY(25deg);
 }
 
-.pepper-item:checked ~ .cucumber
+.view-type:not(:checked) ~ .tomato-item:checked ~ .pepper,
+.view-type:not(:checked) ~ .onion-item:checked ~ .tomato,
+.view-type:not(:checked) ~ .garlic-item:checked ~ .chilly,
+.view-type:not(:checked) ~ .cucumber-item:checked ~ .onion,
+.view-type:not(:checked) ~ .chilly-item:checked ~ .carrot
 {
-    z-index: 0;
-    transform: translateX(600px) perspective(550px) rotateY(-25deg);
+    transform: translateX(calc(-2 * 80vw / 14)) perspective(350px) rotateY(25deg);
+}
+
+.view-type:not(:checked) ~ .carrot-item:checked ~ .pepper,
+.view-type:not(:checked) ~ .tomato-item:checked ~ .carrot,
+.view-type:not(:checked) ~ .onion-item:checked ~ .chilly,
+.view-type:not(:checked) ~ .garlic-item:checked ~ .onion,
+.view-type:not(:checked) ~ .cucumber-item:checked ~ .garlic,
+.view-type:not(:checked) ~ .chilly-item:checked ~ .tomato
+{
+    transform: translateX(calc(-80vw / 14)) perspective(300px) rotateY(25deg);
+}
+
+.view-type:not(:checked) ~ .pepper-item:checked ~ .pepper,
+.view-type:not(:checked) ~ .carrot-item:checked ~ .carrot,
+.view-type:not(:checked) ~ .tomato-item:checked ~ .tomato,
+.view-type:not(:checked) ~ .onion-item:checked ~ .onion,
+.view-type:not(:checked) ~ .garlic-item:checked ~ .garlic,
+.view-type:not(:checked) ~ .cucumber-item:checked ~ .cucumber,
+.view-type:not(:checked) ~ .chilly-item:checked ~ .chilly
+{
+    transform: perspective(250px) scale(1.4);
+}
+
+.view-type:not(:checked) ~ .pepper-item:checked ~ .carrot,
+.view-type:not(:checked) ~ .carrot-item:checked ~ .tomato,
+.view-type:not(:checked) ~ .tomato-item:checked ~ .chilly,
+.view-type:not(:checked) ~ .onion-item:checked ~ .garlic,
+.view-type:not(:checked) ~ .garlic-item:checked ~ .cucumber,
+.view-type:not(:checked) ~ .chilly-item:checked ~ .onion
+{
+    transform: translateX(calc(80vw / 14)) perspective(300px) rotateY(-25deg);
+}
+
+.view-type:not(:checked) ~ .pepper-item:checked ~ .tomato,
+.view-type:not(:checked) ~ .carrot-item:checked ~ .chilly,
+.view-type:not(:checked) ~ .tomato-item:checked ~ .onion,
+.view-type:not(:checked) ~ .onion-item:checked ~ .cucumber,
+.view-type:not(:checked) ~ .chilly-item:checked ~ .garlic
+{
+    transform: translateX(calc(2 * 80vw / 14)) perspective(350px) rotateY(-25deg);
+}
+
+.view-type:not(:checked) ~ .pepper-item:checked ~ .chilly,
+.view-type:not(:checked) ~ .carrot-item:checked ~ .onion,
+.view-type:not(:checked) ~ .tomato-item:checked ~ .garlic,
+.view-type:not(:checked) ~ .chilly-item:checked ~ .cucumber
+{
+    transform: translateX(calc(3 * 80vw / 14)) perspective(400px) rotateY(-25deg);
+}
+
+.view-type:not(:checked) ~ .pepper-item:checked ~ .onion,
+.view-type:not(:checked) ~ .carrot-item:checked ~ .garlic,
+.view-type:not(:checked) ~ .tomato-item:checked ~ .cucumber
+{
+    transform: translateX(calc(4 * 80vw / 14)) perspective(450px) rotateY(-25deg);
+}
+
+.view-type:not(:checked) ~ .pepper-item:checked ~ .garlic,
+.view-type:not(:checked) ~ .carrot-item:checked ~ .cucumber
+{
+    transform: translateX(calc(5 * 80vw / 14)) perspective(500px) rotateY(-25deg);
+}
+
+.view-type:not(:checked) ~ .pepper-item:checked ~ .cucumber
+{
+    transform: translateX(calc(6 * 80vw / 14)) perspective(550px) rotateY(-25deg);
 }
 
 /* Задание со звездочкой */
-
-.view-type:checked ~ .pepper-item:checked ~ .pepper,
-.view-type:checked ~ .carrot-item:checked ~ .carrot,
-.view-type:checked ~ .tomato-item:checked ~ .tomato,
-.view-type:checked ~ .chilly-item:checked ~ .chilly,
-.view-type:checked ~ .onion-item:checked ~ .onion,
-.view-type:checked ~ .garlic-item:checked ~ .garlic,
-.view-type:checked ~ .cucumber-item:checked ~ .cucumber
-{
-    z-index: 6;
-}
 
 .view-type:checked ~ .pepper-item:checked ~ .carrot,
 .view-type:checked ~ .carrot-item:checked ~ .tomato,
@@ -462,7 +550,9 @@ body
 .view-type:checked ~ .garlic-item:checked ~ .cucumber,
 .view-type:checked ~ .cucumber-item:checked ~ .pepper
 {
-    z-index: 5;
+    z-index: 7;
+    transform: translateZ(calc(-80vw / 7)) translateX(calc(80vw / 7))
+    perspective(1100px) rotateY(52deg);
 }
 
 .view-type:checked ~ .pepper-item:checked ~ .tomato,
@@ -473,7 +563,8 @@ body
 .view-type:checked ~ .garlic-item:checked ~ .pepper,
 .view-type:checked ~ .cucumber-item:checked ~ .carrot
 {
-    z-index: 4;
+    transform: translateZ(calc(-3 * 80vw / 7)) translateX(calc(80vw / 7))
+    perspective(550px) rotateY(128deg) scale(.8);
 }
 
 .view-type:checked ~ .pepper-item:checked ~ .chilly,
@@ -484,7 +575,8 @@ body
 .view-type:checked ~ .garlic-item:checked ~ .carrot,
 .view-type:checked ~ .cucumber-item:checked ~ .tomato
 {
-    z-index: 3;
+    transform: translateZ(calc(-4 * 80vw / 7)) translateX(calc(80vw / 14))
+    perspective(300px) rotateY(160deg) scale(.6);
 }
 
 .view-type:checked ~ .pepper-item:checked ~ .onion,
@@ -495,7 +587,9 @@ body
 .view-type:checked ~ .garlic-item:checked ~ .tomato,
 .view-type:checked ~ .cucumber-item:checked ~ .chilly
 {
-    z-index: 3;
+    z-index: -1;
+    transform: translateZ(calc(-4 * 80vw / 7)) translateX(calc(-80vw / 14))
+    perspective(300px) rotateY(-160deg) scale(.6);
 }
 
 .view-type:checked ~ .pepper-item:checked ~ .garlic,
@@ -506,7 +600,8 @@ body
 .view-type:checked ~ .garlic-item:checked ~ .chilly,
 .view-type:checked ~ .cucumber-item:checked ~ .onion
 {
-    z-index: 4;
+    transform: translateZ(calc(-3 * 80vw / 7)) translateX(calc(-80vw / 7))
+    perspective(550px) rotateY(-128deg) scale(.8);
 }
 
 .view-type:checked ~ .pepper-item:checked ~ .cucumber,
@@ -517,5 +612,6 @@ body
 .view-type:checked ~ .garlic-item:checked ~ .onion,
 .view-type:checked ~ .cucumber-item:checked ~ .garlic
 {
-    z-index: 5;
+    transform: translateZ(calc(-80vw / 7)) translateX(calc(-80vw / 7))
+    perspective(1100px) rotateY(-52deg);
 }
