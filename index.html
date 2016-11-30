@@ -6,9 +6,9 @@
     <link rel="stylesheet" type="text/css" href="index.css" class="veg-link">
 </head>
 <body>
-    <input type="checkbox" id="view" name="view" class="view-type">
-    <label for="view" class="view-type-label"></label>
     <main class="content">
+        <input type="checkbox" id="view" name="view" class="view-type">
+        <label for="view" class="view-type-label"></label>
         <input type="radio" id="pepper-item" name="item" class="radio pepper-item">
         <input type="radio" id="carrot-item" name="item" class="radio carrot-item">
         <input type="radio" id="tomato-item" name="item" class="radio tomato-item">
@@ -17,9 +17,11 @@
         <input type="radio" id="garlic-item" name="item" class="radio garlic-item">
         <input type="radio" id="cucumber-item" name="item" class="radio cucumber-item">
         <article class="veg-block pepper" id="pepper">
-            <label class="veg-link" for="pepper-item">
-                <img src="images/1.png" alt="Перец" title="Перец" class="veg-image">
-            </label>
+            <div class="face">
+                <label class="veg-link" for="pepper-item">
+                    <img src="images/1.png" alt="Перец" title="Перец" class="veg-image">
+                </label>
+            </div>
             <div class="recipe-view">
                 <header class="recipe-header">Фаршированный перец</header>
                 <ul class="ingredients">
@@ -41,9 +43,11 @@
             <a href="#pepper" class="item-label">Рецепт</a>
         </article>
         <article class="veg-block carrot" id="carrot">
-            <label class="veg-link" for="carrot-item">
-                <img src="images/2.png" alt="Морковка" title="Морковка" class="veg-image">
-            </label>
+            <div class="face">
+                <label class="veg-link" for="carrot-item">
+                    <img src="images/2.png" alt="Морковка" title="Морковка" class="veg-image">
+                </label>
+            </div>
             <div class="recipe-view">
                 <header class="recipe-header">Корейская морковка</header>
                 <ul class="ingredients">
@@ -66,9 +70,11 @@
             <a href="#carrot" class="item-label">Рецепт</a>
         </article>
         <article class="veg-block tomato" id="tomato">
-            <label class="veg-link" for="tomato-item">
-                <img src="images/3.png" alt="Томат" title="Томат" class="veg-image">
-            </label>
+            <div class="face">
+                <label class="veg-link" for="tomato-item">
+                    <img src="images/3.png" alt="Томат" title="Томат" class="veg-image">
+                </label>
+            </div>
             <div class="recipe-view">
                 <header class="recipe-header">Кетчуп</header>
                 <ul class="ingredients">
@@ -93,9 +99,11 @@
             <a href="#tomato" class="item-label">Рецепт</a>
         </article>
         <article class="veg-block chilly" id="chilly">
-            <label class="veg-link" for="chilly-item">
-                <img src="images/4.png" alt="Чили" title="Чили" class="veg-image">
-            </label>
+            <div class="face">
+                <label class="veg-link" for="chilly-item">
+                    <img src="images/4.png" alt="Чили" title="Чили" class="veg-image">
+                </label>
+            </div>
             <div class="recipe-view">
                 <header class="recipe-header">Перец Чили</header>
                 <ul class="ingredients">
@@ -116,9 +124,11 @@
             <a href="#chilly" class="item-label">Рецепт</a>
         </article>
         <article class="veg-block onion" id="onion">
-            <label class="veg-link" for="onion-item">
-                <img src="images/5.png" alt="Лук" title="Лук" class="veg-image">
-            </label>
+            <div class="face">
+                <label class="veg-link" for="onion-item">
+                    <img src="images/5.png" alt="Лук" title="Лук" class="veg-image">
+                </label>
+            </div>
             <div class="recipe-view">
                 <header class="recipe-header">Луковые кольца</header>
                 <ul class="ingredients">
@@ -138,9 +148,11 @@
             <a href="#onion" class="item-label">Рецепт</a>
         </article>
         <article class="veg-block garlic" id="garlic">
-            <label class="veg-link" for="garlic-item">
-                <img src="images/6.png" alt="Чеснок" title="Чеснок" class="veg-image">
-            </label>
+            <div class="face">
+                <label class="veg-link" for="garlic-item">
+                    <img src="images/6.png" alt="Чеснок" title="Чеснок" class="veg-image">
+                </label>
+            </div>
             <div class="recipe-view">
                 <header class="recipe-header">Чесночный салат</header>
                 <ul class="ingredients">
@@ -162,9 +174,11 @@
             <a href="#garlic" class="item-label">Рецепт</a>
         </article>
         <article class="veg-block cucumber" id="cucumber">
-            <label class="veg-link" for="cucumber-item">
-                <img src="images/7.png" alt="Огурец" title="Огурец" class="veg-image">
-            </label>
+            <div class="face">
+                <label class="veg-link" for="cucumber-item">
+                    <img src="images/7.png" alt="Огурец" title="Огурец" class="veg-image">
+                </label>
+            </div>
             <div class="recipe-view">
                 <header class="recipe-header">Огуречный салат</header>
                 <ul class="ingredients">
@@ -185,6 +199,7 @@
             </div>
             <a href="#cucumber" class="item-label">Рецепт</a>
         </article>
+        <div class="smog"></div>
     </main>
 </body>
 </html>
