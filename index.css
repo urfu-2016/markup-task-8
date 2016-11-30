@@ -80,7 +80,11 @@ input.card-4:checked ~ .card-5,
 input.card-5:checked ~ .card-6,
 input.card-6:checked ~ .card-7
 {
-    transform: translate(100px) perspective(300px) rotateY(-60deg) translateY(-20px);
+    transform:
+        translate(100px)
+        perspective(300px)
+        rotateY(-60deg)
+        translateY(-20px);
 }
 
 input.card-1:checked ~ .card-3,
@@ -89,7 +93,11 @@ input.card-3:checked ~ .card-5,
 input.card-4:checked ~ .card-6,
 input.card-5:checked ~ .card-7
 {
-    transform: translate(200px) perspective(300px) rotateY(-55deg) translateY(-30px);
+    transform:
+        translate(200px)
+        perspective(300px)
+        rotateY(-55deg)
+        translateY(-30px);
 }
 
 input.card-1:checked ~ .card-4,
@@ -97,25 +105,41 @@ input.card-2:checked ~ .card-5,
 input.card-3:checked ~ .card-6,
 input.card-4:checked ~ .card-7
 {
-    transform: translate(300px) perspective(300px) rotateY(-50deg) translateY(-40px);
+    transform:
+        translate(300px)
+        perspective(300px)
+        rotateY(-50deg)
+        translateY(-40px);
 }
 
 input.card-1:checked ~ .card-5,
 input.card-2:checked ~ .card-6,
 input.card-3:checked ~ .card-7
 {
-    transform: translate(400px) perspective(300px) rotateY(-45deg) translateY(-50px);
+    transform:
+        translate(400px)
+        perspective(300px)
+        rotateY(-45deg)
+        translateY(-50px);
 }
 
 input.card-1:checked ~ .card-6,
 input.card-2:checked ~ .card-7
 {
-    transform: translate(500px) perspective(300px) rotateY(-40deg) translateY(-60px);
+    transform:
+        translate(500px)
+        perspective(300px)
+        rotateY(-40deg)
+        translateY(-60px);
 }
 
 input.card-1:checked ~ .card-7
 {
-    transform: translate(600px) perspective(300px) rotateY(-35deg) translateY(-70px);
+    transform:
+        translate(600px)
+        perspective(300px)
+        rotateY(-35deg)
+        translateY(-70px);
 }
 
 
@@ -126,7 +150,11 @@ input.card-4:checked ~ .card-3,
 input.card-3:checked ~ .card-2,
 input.card-2:checked ~ .card-1
 {
-    transform: translate(-100px) perspective(300px) rotateY(60deg) translateY(-20px);
+    transform:
+        translate(-100px)
+        perspective(300px)
+        rotateY(60deg)
+        translateY(-20px);
 }
 
 input.card-7:checked ~ .card-5,
@@ -135,7 +163,11 @@ input.card-5:checked ~ .card-3,
 input.card-4:checked ~ .card-2,
 input.card-3:checked ~ .card-1
 {
-    transform: translate(-200px) perspective(300px) rotateY(55deg) translateY(-30px);
+    transform:
+        translate(-200px)
+        perspective(300px)
+        rotateY(55deg)
+        translateY(-30px);
 }
 
 input.card-7:checked ~ .card-4,
@@ -143,25 +175,29 @@ input.card-6:checked ~ .card-3,
 input.card-5:checked ~ .card-2,
 input.card-4:checked ~ .card-1
 {
-    transform: translate(-300px) perspective(300px) rotateY(50deg) translateY(-40px);
+    transform:
+        translate(-300px) perspective(300px) rotateY(50deg) translateY(-40px);
 }
 
 input.card-7:checked ~ .card-3,
 input.card-6:checked ~ .card-2,
 input.card-5:checked ~ .card-1
 {
-    transform: translate(-400px) perspective(300px) rotateY(45deg) translateY(-50px);
+    transform:
+        translate(-400px) perspective(300px) rotateY(45deg) translateY(-50px);
 }
 
 input.card-7:checked ~ .card-2,
 input.card-6:checked ~ .card-1
 {
-    transform: translate(-500px) perspective(300px) rotateY(40deg) translateY(-60px);
+    transform:
+        translate(-500px) perspective(300px) rotateY(40deg) translateY(-60px);
 }
 
 input.card-7:checked ~ .card-1
 {
-    transform: translate(-600px) perspective(300px) rotateY(35deg) translateY(-70px);
+    transform:
+        translate(-600px) perspective(300px) rotateY(35deg) translateY(-70px);
 }
 
 input.card-1:checked ~ .card-1,
@@ -224,13 +260,13 @@ input.card-7:checked ~ .card-7
     z-index: -1;
 }
 
-input[id="show-recipe-1"]:checked ~ .card-1,
-input[id="show-recipe-2"]:checked ~ .card-2,
-input[id="show-recipe-3"]:checked ~ .card-3,
-input[id="show-recipe-4"]:checked ~ .card-4,
-input[id="show-recipe-5"]:checked ~ .card-5,
-input[id="show-recipe-6"]:checked ~ .card-6,
-input[id="show-recipe-7"]:checked ~ .card-7
+input[id='show-recipe-1']:checked ~ .card-1,
+input[id='show-recipe-2']:checked ~ .card-2,
+input[id='show-recipe-3']:checked ~ .card-3,
+input[id='show-recipe-4']:checked ~ .card-4,
+input[id='show-recipe-5']:checked ~ .card-5,
+input[id='show-recipe-6']:checked ~ .card-6,
+input[id='show-recipe-7']:checked ~ .card-7
 {
     width: 400px;
     height: 400px;
@@ -250,13 +286,13 @@ input[id="show-recipe-7"]:checked ~ .card-7
     visibility: visible;
 }
 
-input[id="show-recipe-1"]:checked ~ .card-1 .recipe,
-input[id="show-recipe-2"]:checked ~ .card-2 .recipe,
-input[id="show-recipe-3"]:checked ~ .card-3 .recipe,
-input[id="show-recipe-4"]:checked ~ .card-4 .recipe,
-input[id="show-recipe-5"]:checked ~ .card-5 .recipe,
-input[id="show-recipe-6"]:checked ~ .card-6 .recipe,
-input[id="show-recipe-7"]:checked ~ .card-7 .recipe
+input[id='show-recipe-1']:checked ~ .card-1 .recipe,
+input[id='show-recipe-2']:checked ~ .card-2 .recipe,
+input[id='show-recipe-3']:checked ~ .card-3 .recipe,
+input[id='show-recipe-4']:checked ~ .card-4 .recipe,
+input[id='show-recipe-5']:checked ~ .card-5 .recipe,
+input[id='show-recipe-6']:checked ~ .card-6 .recipe,
+input[id='show-recipe-7']:checked ~ .card-7 .recipe
 {
     display: none;
 }
