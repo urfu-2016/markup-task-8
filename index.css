@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css?family=Bad+Script');
+@import url('https://fonts.googleapis.com/css?family=Marck+Script');
+
+body
+{
+    text-align: center;
+}
+
+img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.card
+{
+    width: 200px;
+    height: 200px;
+}
+
+input.gallery,
+input.show-recipe
+{
+    display: none;
+}
+
+.card
+{
+    position: absolute;
+    box-shadow: 0 0 10px 5px #aaa;
+    transition: z-index 0s, transform .5s;
+    right: 0;
+    left: 0;
+    top: 20%;
+    margin: auto;
+}
+
+div.card-1,
+div.card-7
+{
+    z-index: 1;
+}
+
+div.card-2,
+div.card-6
+{
+    z-index: 2;
+}
+
+div.card-3,
+div.card-5
+{
+    z-index: 3;
+}
+
+div.card-4
+{
+    z-index: 4;
+}
+
+input.card-1:checked ~ .card-2,
+input.card-7:checked ~ .card-6
+{
+    z-index: 9;
+}
+
+input.card-1:checked ~ .card-3,
+input.card-7:checked ~ .card-5
+{
+    z-index: 8;
+}
+
+input.card-2:checked ~ .card-3,
+input.card-6:checked ~ .card-5
+{
+    z-index: 7;
+}
+
+input.card-1:checked ~ .card-2,
+input.card-2:checked ~ .card-3,
+input.card-3:checked ~ .card-4,
+input.card-4:checked ~ .card-5,
+input.card-5:checked ~ .card-6,
+input.card-6:checked ~ .card-7
+{
+    transform: translate(
+        100px) perspective(300px) rotateY(-60deg) translateZ(-20px);
+}
+
+input.card-1:checked ~ .card-3,
+input.card-2:checked ~ .card-4,
+input.card-3:checked ~ .card-5,
+input.card-4:checked ~ .card-6,
+input.card-5:checked ~ .card-7
+{
+    transform: translate(
+        200px) perspective(300px) rotateY(-55deg) translateZ(-30px);
+}
+
+input.card-1:checked ~ .card-4,
+input.card-2:checked ~ .card-5,
+input.card-3:checked ~ .card-6,
+input.card-4:checked ~ .card-7
+{
+    transform: translate(
+        300px) perspective(300px) rotateY(-50deg) translateZ(-40px);
+}
+
+input.card-1:checked ~ .card-5,
+input.card-2:checked ~ .card-6,
+input.card-3:checked ~ .card-7
+{
+    transform: translate(
+        400px) perspective(300px) rotateY(-45deg) translateZ(-50px);
+}
+
+input.card-1:checked ~ .card-6,
+input.card-2:checked ~ .card-7
+{
+    transform: translate(
+        500px) perspective(300px) rotateY(-40deg) translateZ(-60px);
+}
+
+input.card-1:checked ~ .card-7
+{
+    transform: translate(
+        600px) perspective(300px) rotateY(-35deg) translateZ(-70px);
+}
+
+input.card-7:checked ~ .card-6,
+input.card-6:checked ~ .card-5,
+input.card-5:checked ~ .card-4,
+input.card-4:checked ~ .card-3,
+input.card-3:checked ~ .card-2,
+input.card-2:checked ~ .card-1
+{
+    transform: translate(
+        -100px) perspective(300px) rotateY(60deg) translateZ(-20px);
+}
+
+input.card-7:checked ~ .card-5,
+input.card-6:checked ~ .card-4,
+input.card-5:checked ~ .card-3,
+input.card-4:checked ~ .card-2,
+input.card-3:checked ~ .card-1
+{
+    transform: translate(
+        -200px) perspective(300px) rotateY(55deg) translateZ(-30px);
+}
+
+input.card-7:checked ~ .card-4,
+input.card-6:checked ~ .card-3,
+input.card-5:checked ~ .card-2,
+input.card-4:checked ~ .card-1
+{
+    transform: translate(
+        -300px) perspective(300px) rotateY(50deg) translateZ(-40px);
+}
+
+input.card-7:checked ~ .card-3,
+input.card-6:checked ~ .card-2,
+input.card-5:checked ~ .card-1
+{
+    transform: translate(
+        -400px) perspective(300px) rotateY(45deg) translateZ(-50px);
+}
+
+input.card-7:checked ~ .card-2,
+input.card-6:checked ~ .card-1
+{
+    transform: translate(
+        -500px) perspective(300px) rotateY(40deg) translateZ(-60px);
+}
+
+input.card-7:checked ~ .card-1
+{
+    transform: translate(
+        -600px) perspective(300px) rotateY(35deg) translateZ(-70px);
+}
+
+input.card-1:checked ~ .card-1,
+input.card-2:checked ~ .card-2,
+input.card-3:checked ~ .card-3,
+input.card-4:checked ~ .card-4,
+input.card-5:checked ~ .card-5,
+input.card-6:checked ~ .card-6,
+input.card-7:checked ~ .card-7
+{
+    z-index: 10;
+}
+
+.recipe
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 0;
+    width: 0;
+    background-color: rgba(0, 0, 0, .3);
+    transition: all .4s ease-in-out;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.recipe:hover:before
+{
+    border: 3px solid #fff;
+    content: 'РЕЦЕПТ';
+    position: absolute;
+    border-radius: 50%;
+    height: 80%;
+    width: 80%;
+    top: 10%;
+    left: 10%;
+    box-sizing: border-box;
+    padding-top: 30%;
+    transition: .5s;
+}
+
+.recipe-description
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('images/background.jpg') center center no-repeat;
+    transform: rotateX(180deg);
+    overflow: hidden;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+}
+
+.front,
+.recipe-description
+{
+    backface-visibility: hidden;
+}
+
+.card
+{
+    transform-style: preserve-3d;
+}
+
+input[id='show-recipe-1']:checked ~ .card-1,
+input[id='show-recipe-2']:checked ~ .card-2,
+input[id='show-recipe-3']:checked ~ .card-3,
+input[id='show-recipe-4']:checked ~ .card-4,
+input[id='show-recipe-5']:checked ~ .card-5,
+input[id='show-recipe-6']:checked ~ .card-6,
+input[id='show-recipe-7']:checked ~ .card-7
+{
+    width: 600px;
+    height: 400px;
+    top: 10%;
+    transform: perspective(500px) rotateX(-180deg);
+    transition: all 1s;
+}
+
+.card-1:checked ~ .card-1:hover .recipe,
+.card-2:checked ~ .card-2:hover .recipe,
+.card-3:checked ~ .card-3:hover .recipe,
+.card-4:checked ~ .card-4:hover .recipe,
+.card-5:checked ~ .card-5:hover .recipe,
+.card-6:checked ~ .card-6:hover .recipe,
+.card-7:checked ~ .card-7:hover .recipe
+{
+    height: 100%;
+    width: 100%;
+    transition: height .5s ease-in-out, width .5 ease-in-out;
+}
+
+input[id='show-recipe-1']:checked ~ .card-1 .recipe,
+input[id='show-recipe-2']:checked ~ .card-2 .recipe,
+input[id='show-recipe-3']:checked ~ .card-3 .recipe,
+input[id='show-recipe-4']:checked ~ .card-4 .recipe,
+input[id='show-recipe-5']:checked ~ .card-5 .recipe,
+input[id='show-recipe-6']:checked ~ .card-6 .recipe,
+input[id='show-recipe-7']:checked ~ .card-7 .recipe
+{
+    display: none;
+}
+
+h3
+{
+    background-color: #fff;
+    border-radius: 20%;
+    border: 2px solid black;
+    font: 30px 'Marck Script', cursive;
+    margin: 10px 30px;
+    height: 50px;
+    width: 400px;
+    padding-top: 5px;
+    box-sizing: border-box;
+}
+
+h4
+{
+    text-align: center;
+    margin: 10px 0;
+}
+
+.ingredients,
+.steps
+{
+    position: absolute;
+    background-color: #fff;
+    border-radius: 20%;
+    border: 2px solid black;
+    margin: 20px;
+    height: 250px;
+    font-family: 'Bad Script', cursive;
+    text-align: left;
+}
+
+.ingredients
+{
+    width: 38%;
+    left: 0;
+}
+
+.steps
+{
+    width: 50%;
+    right: 0;
+}
+
+.close
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 15px;
+    font: bold 40px arial;
+    color: #fff;
+    text-shadow: 0 0 10px #000;
+    cursor: pointer;
+}
