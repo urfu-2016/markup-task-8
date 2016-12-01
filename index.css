@@ -83,6 +83,11 @@ main
     transition: .3s ease-in;
 }
 
+.article:target > a
+{
+    opacity: 0;
+}
+
 .article:target > .back-face
 {
     
@@ -102,14 +107,6 @@ main
     background: rgba(0, 0, 0, .5);
 }
 
-.article:target ~ .close-button:before
-{
-    position: absolute;
-    right: 0;
-    content: 'x';
-    color: #f00;
-}
-
 .pick-img
 {
     display: none;
@@ -124,18 +121,41 @@ main
 
 .back-face > header
 {
-    flex: 0 0 100%;
+    flex: 0 0 90%;
+    order: 1;
     font-size: 32px;
+}
+
+.back-face > a
+{
+    flex: 0 0 10%;
+    order: 2;
+    color: #000;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+.back-face > a:before
+{
+    content: '✖';
+}
+
+.back-face > a:hover
+{
+    background: #e81123;
+    color: #fff;
 }
 
 .back-face > aside
 {
     flex: 0 0 30%;
+    order: 3;
 }
 
 .back-face > .instruction
 {
     flex: 0 0 60%;
+    order: 4;
     text-align: left;
 }
 
@@ -151,16 +171,38 @@ main
         translateX(-50%);
 }
 
-.pick-img:nth-of-type(2):checked ~ .article:nth-of-type(1) > a,
-.pick-img:nth-of-type(3):checked ~ .article:nth-of-type(2) > a,
-.pick-img:nth-of-type(4):checked ~ .article:nth-of-type(3) > a,
-.pick-img:nth-of-type(5):checked ~ .article:nth-of-type(4) > a,
-.pick-img:nth-of-type(6):checked ~ .article:nth-of-type(5) > a,
-.pick-img:nth-of-type(7):checked ~ .article:nth-of-type(6) > a,
-.pick-img:nth-of-type(8):checked ~ .article:nth-of-type(7) > a
+.pick-img:nth-of-type(2):checked ~ .article:nth-of-type(1):hover > a,
+.pick-img:nth-of-type(3):checked ~ .article:nth-of-type(2):hover > a,
+.pick-img:nth-of-type(4):checked ~ .article:nth-of-type(3):hover > a,
+.pick-img:nth-of-type(5):checked ~ .article:nth-of-type(4):hover > a,
+.pick-img:nth-of-type(6):checked ~ .article:nth-of-type(5):hover > a,
+.pick-img:nth-of-type(7):checked ~ .article:nth-of-type(6):hover > a,
+.pick-img:nth-of-type(8):checked ~ .article:nth-of-type(7):hover > a
 {
     z-index: 4;
+    background: rgba(0, 0, 0, .5);
     pointer-events: initial;
+}
+
+.pick-img:nth-of-type(2):checked ~ .article:nth-of-type(1):hover > a:before,
+.pick-img:nth-of-type(3):checked ~ .article:nth-of-type(2):hover > a:before,
+.pick-img:nth-of-type(4):checked ~ .article:nth-of-type(3):hover > a:before,
+.pick-img:nth-of-type(5):checked ~ .article:nth-of-type(4):hover > a:before,
+.pick-img:nth-of-type(6):checked ~ .article:nth-of-type(5):hover > a:before,
+.pick-img:nth-of-type(7):checked ~ .article:nth-of-type(6):hover > a:before,
+.pick-img:nth-of-type(8):checked ~ .article:nth-of-type(7):hover > a:before
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    content: 'Рецепт';
+    font-size: 2em;
+    line-height: 17vw;
+    color: #fff;
+    background: url('images/circle.svg');
+    background-size: 100%;
 }
 
 .pick-img:nth-of-type(3):checked ~ .article:nth-of-type(1),
