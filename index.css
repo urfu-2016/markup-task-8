@@ -1,0 +1,553 @@
+body input[type='radio']
+{
+    display: none;
+}
+
+body
+{
+    overflow-x: hidden;
+}
+
+main
+{
+    width: 90%;
+    height: 100%;
+    margin: 200px auto;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.vegetable
+{
+    width: 220px;
+    height: 160px;
+    position: absolute;
+    left: 43%;
+    box-shadow: 0 0 10px #000;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    overflow: hidden;
+    transition: transform .6s ease;
+}
+
+.vegetable .front .img-label img
+{
+    height: 165px;
+}
+
+.description
+{
+    visibility: hidden;
+    position: absolute;
+    background: #fff;
+    box-shadow: 0 0 10px #fff;
+    z-index: 10;
+    left: -134%;
+    width: 650px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: 190px 440px;
+    grid-template-areas: 'a a'
+        'b c';
+    margin: 20%;
+    white-space: normal;
+}
+
+.description h2
+{
+    grid-area: a;
+    color: #b5b5b5;
+    font-size: 3rem;
+    margin: 2%;
+    border-bottom: #b9b9b9 solid;
+}
+
+.description .ingredients
+{
+    grid-area: b;
+    margin-left: 10px;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+.description .reciept
+{
+    grid-area: c;
+    padding-left: 10px;
+}
+
+.reciept p:last-child
+{
+    color: #b5b5b5;
+    font-size: 12px;
+    border-top: black solid 1px;
+}
+
+.reciept h3
+{
+    margin-bottom: .5%;
+    color: red;
+}
+
+.reciept p
+{
+    margin-top: 0;
+}
+
+.close
+{
+    display: inline-block;
+    visibility: hidden;
+    position: fixed;
+    z-index: 101;
+    top: 270px;
+    left: 360px;
+    font-size: 3rem;
+}
+
+.reciept-loading
+{
+    background: #888;
+    width: 220px;
+    height: 160px;
+    left: 0;
+    top: 0;
+}
+
+.reciept-loading,
+.load-text
+{
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    transition: all 1s ease .5s;
+}
+
+.load-text
+{
+    height: 100px;
+    width: 100px;
+    display: table-cell;
+    color: #fff;
+    font: 1rem arial, sans-serif ;
+    text-align: center;
+    border: 6px solid #fff;
+    border-radius: 100px;
+    line-height: 100px;
+    left: 23%;
+    top: 13%;
+}
+
+.front
+{
+    backface-visibility: hidden;
+}
+
+.back
+{
+    transform: rotateX(-180deg);
+}
+
+.paranja
+{
+    position: fixed;
+    width: 5000px;
+    height: 4000px;
+    top: -30%;
+    left: -200px;
+    display: block;
+    opacity: 0;
+    z-index: -1;
+    background-color: rgba(191, 191, 191, .8);
+    transition: opacity 2s ease;
+}
+
+input[id='eggplant']:checked ~ main > .eggplant,
+input[id='peas']:checked ~ main > .peas,
+input[id='cabbage']:checked ~ main > .cabbage,
+input[id='corn']:checked ~ main > .corn,
+input[id='onion']:checked ~ main > .onion,
+input[id='carrot']:checked ~ main > .carrot,
+input[id='cucumber']:checked ~ main > .cucumber
+{
+    z-index: 7;
+    transform: scale(1.4);
+}
+
+input[id='eggplant']:checked ~ main > .peas,
+input[id='peas']:checked ~ main > .cabbage,
+input[id='cabbage']:checked ~ main > .corn,
+input[id='corn']:checked ~ main > .onion,
+input[id='onion']:checked ~ main > .carrot,
+input[id='carrot']:checked ~ main > .cucumber
+{
+    z-index: 6;
+    transform: perspective(500px) rotateY(-30deg) translateX(120px);
+}
+
+input[id='peas']:checked ~ main > .eggplant,
+input[id='cabbage']:checked ~ main > .peas,
+input[id='corn']:checked ~ main > .cabbage,
+input[id='onion']:checked ~ main > .corn,
+input[id='carrot']:checked ~ main > .onion,
+input[id='cucumber']:checked ~ main > .carrot
+{
+    z-index: 6;
+    transform: perspective(500px) rotateY(30deg) translateX(-120px);
+}
+
+input[id='eggplant']:checked ~ main > .cabbage,
+input[id='peas']:checked ~ main > .corn,
+input[id='cabbage']:checked ~ main > .onion,
+input[id='corn']:checked ~ main > .carrot,
+input[id='onion']:checked ~ main > .cucumber
+{
+    z-index: 5;
+    transform: perspective(500px) rotateY(-25deg) translateX(200px);
+}
+
+input[id='cabbage']:checked ~ main > .eggplant,
+input[id='corn']:checked ~ main > .peas,
+input[id='onion']:checked ~ main > .cabbage,
+input[id='carrot']:checked ~ main > .corn,
+input[id='cucumber']:checked ~ main > .onion
+{
+    z-index: 5;
+    transform: perspective(500px) rotateY(25deg) translateX(-200px);
+}
+
+input[id='eggplant']:checked ~ main > .corn,
+input[id='peas']:checked ~ main > .onion,
+input[id='cabbage']:checked ~ main > .carrot,
+input[id='corn']:checked ~ main > .cucumber
+{
+    z-index: 4;
+    transform: perspective(500px) rotateY(-20deg) translateX(280px);
+}
+
+input[id='corn']:checked ~ main > .eggplant,
+input[id='onion']:checked ~ main > .peas,
+input[id='carrot']:checked ~ main > .cabbage,
+input[id='cucumber']:checked ~ main > .corn
+{
+    z-index: 4;
+    transform: perspective(500px) rotateY(20deg) translateX(-280px);
+}
+
+input[id='eggplant']:checked ~ main > .onion,
+input[id='peas']:checked ~ main > .carrot,
+input[id='cabbage']:checked ~ main > .cucumber
+{
+    z-index: 3;
+    transform: perspective(500px) rotateY(-18deg) translateX(340px);
+}
+
+input[id='onion']:checked ~ main > .eggplant,
+input[id='carrot']:checked ~ main > .peas,
+input[id='cucumber']:checked ~ main > .cabbage
+{
+    z-index: 3;
+    transform: perspective(500px) rotateY(18deg) translateX(-340px);
+}
+
+input[id='eggplant']:checked ~ main > .carrot,
+input[id='peas']:checked ~ main > .cucumber
+{
+    z-index: 2;
+    transform: perspective(500px) rotateY(-17deg) translateX(380px);
+}
+
+input[id='carrot']:checked ~ main > .eggplant,
+input[id='cucumber']:checked ~ main > .peas
+{
+    z-index: 2;
+    transform: perspective(500px) rotateY(17deg) translateX(-380px);
+}
+
+input[id='eggplant']:checked ~ main > .cucumber
+{
+    z-index: 1;
+    transform: perspective(500px) rotateY(-15deg) translateX(420px);
+}
+
+input[id='cucumber']:checked ~ main > .eggplant
+{
+    z-index: 1;
+    transform: perspective(500px) rotateY(15deg) translateX(-420px);
+}
+
+input[id='eggplant']:checked ~ main > .eggplant:hover .reciept-loading,
+input[id='peas']:checked ~ main > .peas:hover .reciept-loading,
+input[id='cabbage']:checked ~ main > .cabbage:hover .reciept-loading,
+input[id='corn']:checked ~ main > .corn:hover .reciept-loading,
+input[id='onion']:checked ~ main > .onion:hover .reciept-loading,
+input[id='carrot']:checked ~ main > .carrot:hover .reciept-loading,
+input[id='cucumber']:checked ~ main > .cucumber:hover .reciept-loading
+{
+    z-index: 8;
+    opacity: .6;
+}
+
+input[id='eggplant']:checked ~ main > .vegetable.eggplant:hover .load-text,
+input[id='peas']:checked ~ main > .vegetable.peas:hover .load-text,
+input[id='cabbage']:checked ~ main > .vegetable.cabbage:hover .load-text,
+input[id='corn']:checked ~ main > .vegetable.corn:hover .load-text,
+input[id='onion']:checked ~ main > .vegetable.onion:hover .load-text,
+input[id='carrot']:checked ~ main > .vegetable.carrot:hover .load-text,
+input[id='cucumber']:checked ~ main > .vegetable.cucumber:hover .load-text
+{
+    z-index: 9;
+    opacity: 1;
+    cursor: pointer;
+}
+
+input[id='eggplant-reciept']:checked ~ main > .vegetable.eggplant,
+input[id='peas-reciept']:checked ~ main > .vegetable.peas,
+input[id='cabbage-reciept']:checked ~ main > .vegetable.cabbage,
+input[id='corn-reciept']:checked ~ main > .vegetable.corn,
+input[id='onion-reciept']:checked ~ main > .vegetable.onion,
+input[id='carrot-reciept']:checked ~ main > .vegetable.carrot,
+input[id='cucumber-reciept']:checked ~ main > .vegetable.cucumber
+{
+    animation-name: flip;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+
+input[id='eggplant-reciept']:checked ~ main > .vegetable.eggplant .close,
+input[id='peas-reciept']:checked ~ main > .vegetable.peas .close,
+input[id='cabbage-reciept']:checked ~ main > .vegetable.cabbage .close,
+input[id='corn-reciept']:checked ~ main > .vegetable.corn .close,
+input[id='onion-reciept']:checked ~ main > .vegetable.onion .close,
+input[id='carrot-reciept']:checked ~ main > .vegetable.carrot .close,
+input[id='cucumber-reciept']:checked ~ main > .vegetable.cucumber .close
+{
+    visibility: visible;
+}
+
+input[id='eggplant-reciept']:checked ~ main > .vegetable.eggplant .description,
+input[id='peas-reciept']:checked ~ main > .vegetable.peas .description,
+input[id='cabbage-reciept']:checked ~ main > .vegetable.cabbage .description,
+input[id='corn-reciept']:checked ~ main > .vegetable.corn .description,
+input[id='onion-reciept']:checked ~ main > .vegetable.onion .description,
+input[id='carrot-reciept']:checked ~ main > .vegetable.carrot .description,
+input[id='cucumber-reciept']:checked ~ main > .vegetable.cucumber .description
+{
+    animation-name: visibility;
+    animation-duration: 1s;
+    animation-delay: .55s;
+    animation-fill-mode: both;
+}
+
+input[id='eggplant-reciept']:checked ~ main .paranja,
+input[id='peas-reciept']:checked ~ main .paranja,
+input[id='cabbage-reciept']:checked ~ main .paranja,
+input[id='corn-reciept']:checked ~ main .paranja,
+input[id='onion-reciept']:checked ~ main .paranja,
+input[id='carrot-reciept']:checked ~ main .paranja,
+input[id='cucumber-reciept']:checked ~ main .paranja
+{
+    opacity: 1;
+    z-index: 6;
+    transition: opacity 2s ease;
+}
+
+input[id='eggplant-reciept']:checked ~ main .eggplant .close,
+input[id='peas-reciept']:checked ~ main .peas .close,
+input[id='cabbage-reciept']:checked ~ main .cabbage .close,
+input[id='corn-reciept']:checked ~ main .corn .close,
+input[id='onion-reciept']:checked ~ main .onion .close,
+input[id='carrot-reciept']:checked ~ main .carrot .close,
+input[id='cucumber-reciept']:checked ~ main .cucumber .close
+{
+    opacity: 1;
+}
+
+input[id='eggplant-reciept-close']:checked ~ main .vegetable.eggplant,
+input[id='peas-reciept-close']:checked ~ main .vegetable.peas,
+input[id='cabbage-reciept-close']:checked ~ main .vegetable.cabbage,
+input[id='corn-reciept-close']:checked ~ main .vegetable.corn,
+input[id='onion-reciept-close']:checked ~ main .vegetable.onion,
+input[id='carrot-reciept-close']:checked ~ main .vegetable.carrot,
+input[id='cucumber-reciept-close']:checked ~ main .vegetable.cucumber
+{
+    animation-name: flip-back;
+    animation-duration: 2s;
+}
+
+input[id='eggplant-reciept-close']:checked ~ main .vegetable.eggplant .desc1,
+input[id='peas-reciept-close']:checked ~ main .vegetable.peas .desc2,
+input[id='cabbage-reciept-close']:checked ~ main .vegetable.cabbage .desc3,
+input[id='corn-reciept-close']:checked ~ main .vegetable.corn .desc4,
+input[id='onion-reciept-close']:checked ~ main .vegetable.onion .desc5,
+input[id='carrot-reciept-close']:checked ~ main .vegetable.carrot .desc6,
+input[id='cucumber-reciept-close']:checked ~ main .vegetable.cucumber .desc7
+{
+    animation-name: visibility-back;
+    animation-duration: .5s;
+}
+
+input[id='circle']:checked ~ input[id='eggplant']:checked ~ main > .eggplant,
+input[id='circle']:checked ~ input[id='peas']:checked ~ main > .peas,
+input[id='circle']:checked ~ input[id='cabbage']:checked ~ main > .cabbage,
+input[id='circle']:checked ~ input[id='corn']:checked ~ main > .corn,
+input[id='circle']:checked ~ input[id='onion']:checked ~ main > .onion,
+input[id='circle']:checked ~ input[id='carrot']:checked ~ main > .carrot,
+input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .cucumber
+{
+    transform: scale(1.4);
+    z-index: 13;
+}
+
+input[id='circle']:checked ~ input[id='eggplant']:checked ~ main > .peas,
+input[id='circle']:checked ~ input[id='peas']:checked ~ main > .cabbage,
+input[id='circle']:checked ~ input[id='cabbage']:checked ~ main > .corn,
+input[id='circle']:checked ~ input[id='corn']:checked ~ main > .onion,
+input[id='circle']:checked ~ input[id='onion']:checked ~ main > .carrot,
+input[id='circle']:checked ~ input[id='carrot']:checked ~ main > .cucumber,
+input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .eggplant
+{
+    z-index: 12;
+    transform: scale(1.3) perspective(500px) rotateY(37deg)
+        translateZ(50px) translateX(260px);
+}
+
+input[id='circle']:checked ~ input[id='eggplant']:checked ~ main > .cucumber,
+input[id='circle']:checked ~ input[id='peas']:checked ~ main > .eggplant,
+input[id='circle']:checked ~ input[id='cabbage']:checked ~ main > .peas,
+input[id='circle']:checked ~ input[id='corn']:checked ~ main > .cabbage,
+input[id='circle']:checked ~ input[id='onion']:checked ~ main > .corn,
+input[id='circle']:checked ~ input[id='carrot']:checked ~ main > .onion,
+input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .carrot
+{
+    z-index: 12;
+    transform: scale(1.3) perspective(500px) rotateY(-37deg)
+        translateZ(50px) translateX(-260px);
+}
+
+input[id='circle']:checked ~ input[id='eggplant']:checked ~ main > .cabbage,
+input[id='circle']:checked ~ input[id='peas']:checked ~ main > .corn,
+input[id='circle']:checked ~ input[id='cabbage']:checked ~ main > .onion,
+input[id='circle']:checked ~ input[id='corn']:checked ~ main > .carrot,
+input[id='circle']:checked ~ input[id='onion']:checked ~ main > .cucumber,
+input[id='circle']:checked ~ input[id='carrot']:checked ~ main > .eggplant,
+input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .peas
+{
+    z-index: 11;
+    transform: scale(1.3) perspective(500px) rotateY(115deg)
+        translateZ(500px) translateX(260px);
+}
+
+input[id='circle']:checked ~ input[id='eggplant']:checked ~ main > .carrot,
+input[id='circle']:checked ~ input[id='peas']:checked ~ main > .cucumber,
+input[id='circle']:checked ~ input[id='cabbage']:checked ~ main > .eggplant,
+input[id='circle']:checked ~ input[id='corn']:checked ~ main > .peas,
+input[id='circle']:checked ~ input[id='onion']:checked ~ main > .cabbage,
+input[id='circle']:checked ~ input[id='carrot']:checked ~ main > .corn,
+input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .onion
+{
+    z-index: 11;
+    transform: scale(1.3) perspective(500px) rotateY(-115deg)
+        translateZ(500px) translateX(-260px);
+}
+
+input[id='circle']:checked ~ input[id='eggplant']:checked ~ main > .corn,
+input[id='circle']:checked ~ input[id='peas']:checked ~ main > .onion,
+input[id='circle']:checked ~ input[id='cabbage']:checked ~ main > .carrot,
+input[id='circle']:checked ~ input[id='corn']:checked ~ main > .cucumber,
+input[id='circle']:checked ~ input[id='onion']:checked ~ main > .eggplant,
+input[id='circle']:checked ~ input[id='carrot']:checked ~ main > .peas,
+input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .cabbage
+{
+    z-index: 10;
+    transform: scale(1.3) perspective(500px) rotateY(136deg)
+        translateZ(500px) translateX(260px);
+}
+
+input[id='circle']:checked ~ input[id='eggplant']:checked ~ main > .onion,
+input[id='circle']:checked ~ input[id='peas']:checked ~ main > .carrot,
+input[id='circle']:checked ~ input[id='cabbage']:checked ~ main > .cucumber,
+input[id='circle']:checked ~ input[id='corn']:checked ~ main > .eggplant,
+input[id='circle']:checked ~ input[id='onion']:checked ~ main > .peas,
+input[id='circle']:checked ~ input[id='carrot']:checked ~ main > .cabbage,
+input[id='circle']:checked ~ input[id='cucumber']:checked ~ main > .corn
+{
+    z-index: 10;
+    transform: scale(1.3) perspective(500px) rotateY(15deg) translateZ(-500px);
+}
+
+@keyframes flip
+{
+    50%
+    {
+        transform: scale(2) rotateX(-90deg);
+        overflow: hidden;
+    }
+    51%
+    {
+        overflow: visible;
+    }
+    to
+    {
+        overflow: visible;
+        transform: translateY(0) rotateX(-180deg);
+    }
+}
+
+@keyframes flip-back
+{
+    from
+    {
+        transform: translateY(0) rotateX(-180deg);
+        overflow: visible;
+    }
+    30%
+    {
+        transform: scale(1.6) rotateX(-90deg);
+    }
+    90%
+    {
+        overflow: hidden;
+    }
+    to
+    {
+        overflow: hidden;
+        transform: scale(1.4) translateY(0) rotateX(0deg);
+    }
+}
+
+@keyframes visibility
+{
+    from
+    {
+        visibility: hidden;
+        backface-visibility: hidden;
+        z-index: -10;
+        opacity: 0;
+    }
+    to
+    {
+        visibility: visible;
+        backface-visibility: visible;
+        z-index: 10;
+        opacity: 1;
+    }
+}
+
+@keyframes visibility-back
+{
+    50%
+    {
+        visibility: visible;
+        backface-visibility: visible;
+    }
+    100%
+    {
+        visibility: hidden;
+        backface-visibility: hidden;
+    }
+}
