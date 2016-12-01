@@ -10,6 +10,8 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 500px;
+    min-height: 600px;
 }
 
 .harvest
@@ -64,7 +66,7 @@ body
     cursor: pointer;
 }
 
-.recipe-logo__inp
+.recipe-logo__item
 {
     position: absolute;
     display: block;
@@ -76,7 +78,7 @@ body
 .recipe-dish
 {
     position: relative;
-    top: -100px;
+    top: -280px;
     opacity: 0;
     transform: rotateX(90deg);
     padding: 30px;
@@ -107,8 +109,8 @@ body
 .close-recipe-img
 {
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 30px;
+    top: 10px;
     display: block;
     width: 30px;
     height: 30px;
@@ -510,6 +512,7 @@ body
 .recipe-6:checked ~ .harvest .dish6,
 .recipe-7:checked ~ .harvest .dish7
 {
+    top: -100px;
     opacity: 1;
     transform: rotateX(0);
     transition: all ease-out .5s;
@@ -524,61 +527,37 @@ body
 .recipe-1:checked ~ .harvest .dish3,
 .recipe-1:checked ~ .harvest .dish5,
 .recipe-1:checked ~ .harvest .dish6,
-.recipe-1:checked ~ .harvest .dish7
-{
-    display: none;
-}
-
+.recipe-1:checked ~ .harvest .dish7,
 .recipe-2:checked ~ .harvest .dish1,
 .recipe-2:checked ~ .harvest .dish4,
 .recipe-2:checked ~ .harvest .dish3,
 .recipe-2:checked ~ .harvest .dish5,
 .recipe-2:checked ~ .harvest .dish6,
-.recipe-2:checked ~ .harvest .dish7
-{
-    display: none;
-}
-
+.recipe-2:checked ~ .harvest .dish7,
 .recipe-3:checked ~ .harvest .dish1,
 .recipe-3:checked ~ .harvest .dish2,
 .recipe-3:checked ~ .harvest .dish4,
 .recipe-3:checked ~ .harvest .dish5,
 .recipe-3:checked ~ .harvest .dish6,
-.recipe-3:checked ~ .harvest .dish7
-{
-    display: none;
-}
-
+.recipe-3:checked ~ .harvest .dish7,
 .recipe-4:checked ~ .harvest .dish1,
 .recipe-4:checked ~ .harvest .dish2,
 .recipe-4:checked ~ .harvest .dish3,
 .recipe-4:checked ~ .harvest .dish5,
 .recipe-4:checked ~ .harvest .dish6,
-.recipe-4:checked ~ .harvest .dish7
-{
-    display: none;
-}
-
+.recipe-4:checked ~ .harvest .dish7,
 .recipe-5:checked ~ .harvest .dish1,
 .recipe-5:checked ~ .harvest .dish2,
 .recipe-5:checked ~ .harvest .dish3,
 .recipe-5:checked ~ .harvest .dish4,
 .recipe-5:checked ~ .harvest .dish6,
-.recipe-5:checked ~ .harvest .dish7
-{
-    display: none;
-}
-
+.recipe-5:checked ~ .harvest .dish7,
 .recipe-6:checked ~ .harvest .dish1,
 .recipe-6:checked ~ .harvest .dish2,
 .recipe-6:checked ~ .harvest .dish3,
 .recipe-6:checked ~ .harvest .dish5,
 .recipe-6:checked ~ .harvest .dish4,
-.recipe-6:checked ~ .harvest .dish7
-{
-    display: none;
-}
-
+.recipe-6:checked ~ .harvest .dish7,
 .recipe-7:checked ~ .harvest .dish1,
 .recipe-7:checked ~ .harvest .dish2,
 .recipe-7:checked ~ .harvest .dish3,
