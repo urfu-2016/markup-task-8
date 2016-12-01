@@ -90,7 +90,8 @@ input.card-3:checked ~ .card-5,
 input.card-4:checked ~ .card-6,
 input.card-5:checked ~ .card-7
 {
-    transform: translate(200px) perspective(300px) rotateY(-55deg) translateZ(-30px);
+    transform: translate(
+        200px) perspective(300px) rotateY(-55deg) translateZ(-30px);
 }
 
 input.card-1:checked ~ .card-4,
@@ -98,25 +99,29 @@ input.card-2:checked ~ .card-5,
 input.card-3:checked ~ .card-6,
 input.card-4:checked ~ .card-7
 {
-    transform: translate(300px) perspective(300px) rotateY(-50deg) translateZ(-40px);
+    transform: translate(
+        300px) perspective(300px) rotateY(-50deg) translateZ(-40px);
 }
 
 input.card-1:checked ~ .card-5,
 input.card-2:checked ~ .card-6,
 input.card-3:checked ~ .card-7
 {
-    transform: translate(400px) perspective(300px) rotateY(-45deg) translateZ(-50px);
+    transform: translate(
+        400px) perspective(300px) rotateY(-45deg) translateZ(-50px);
 }
 
 input.card-1:checked ~ .card-6,
 input.card-2:checked ~ .card-7
 {
-    transform: translate(500px) perspective(300px) rotateY(-40deg) translateZ(-60px);
+    transform: translate(
+        500px) perspective(300px) rotateY(-40deg) translateZ(-60px);
 }
 
 input.card-1:checked ~ .card-7
 {
-    transform: translate(600px) perspective(300px) rotateY(-35deg) translateZ(-70px);
+    transform: translate(
+        600px) perspective(300px) rotateY(-35deg) translateZ(-70px);
 }
 
 input.card-7:checked ~ .card-6,
@@ -126,7 +131,8 @@ input.card-4:checked ~ .card-3,
 input.card-3:checked ~ .card-2,
 input.card-2:checked ~ .card-1
 {
-    transform: translate(-100px) perspective(300px) rotateY(60deg) translateZ(-20px);
+    transform: translate(
+        -100px) perspective(300px) rotateY(60deg) translateZ(-20px);
 }
 
 input.card-7:checked ~ .card-5,
@@ -135,7 +141,8 @@ input.card-5:checked ~ .card-3,
 input.card-4:checked ~ .card-2,
 input.card-3:checked ~ .card-1
 {
-    transform: translate(-200px) perspective(300px) rotateY(55deg) translateZ(-30px);
+    transform: translate(
+        -200px) perspective(300px) rotateY(55deg) translateZ(-30px);
 }
 
 input.card-7:checked ~ .card-4,
@@ -143,25 +150,29 @@ input.card-6:checked ~ .card-3,
 input.card-5:checked ~ .card-2,
 input.card-4:checked ~ .card-1
 {
-    transform: translate(-300px) perspective(300px) rotateY(50deg) translateZ(-40px);
+    transform: translate(
+        -300px) perspective(300px) rotateY(50deg) translateZ(-40px);
 }
 
 input.card-7:checked ~ .card-3,
 input.card-6:checked ~ .card-2,
 input.card-5:checked ~ .card-1
 {
-    transform: translate(-400px) perspective(300px) rotateY(45deg) translateZ(-50px);
+    transform: translate(
+        -400px) perspective(300px) rotateY(45deg) translateZ(-50px);
 }
 
 input.card-7:checked ~ .card-2,
 input.card-6:checked ~ .card-1
 {
-    transform: translate(-500px) perspective(300px) rotateY(40deg) translateZ(-60px);
+    transform: translate(
+        -500px) perspective(300px) rotateY(40deg) translateZ(-60px);
 }
 
 input.card-7:checked ~ .card-1
 {
-    transform: translate(-600px) perspective(300px) rotateY(35deg) translateZ(-70px);
+    transform: translate(
+        -600px) perspective(300px) rotateY(35deg) translateZ(-70px);
 }
 
 input.card-1:checked ~ .card-1,
