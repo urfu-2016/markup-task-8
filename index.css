@@ -155,8 +155,21 @@ input[id='dewberry-input']:checked ~ .dewberry:hover a
     height: 100%;
     width: 25%;
     padding: 0 0 0 5px;
+    margin-top: 5px;
     box-sizing: border-box;
+}
+
+.ingredients ul
+{
+    padding: 0 0 5px;
+    margin: 0;
     list-style-type: none;
+}
+
+.header-instruction
+{
+    color: #ff2929;
+    margin: 0 0 2px;
 }
 
 .instruction
@@ -164,7 +177,14 @@ input[id='dewberry-input']:checked ~ .dewberry:hover a
     height: 100%;
     width: 75%;
     padding: 0 0 0 25px;
+    margin-top: 5px;
     box-sizing: border-box;
+}
+
+.instruction ol
+{
+    padding: 0 0 5px 5px;
+    margin: 0;
 }
 
 .front
@@ -195,7 +215,7 @@ input[id='dewberry-input']:checked ~ .dewberry:hover a
 
 .harvest:target
 {
-    width: 240px;
+    width: 250px;
     height: 170px;
     z-index: 3;
     transform: scale(2.6) rotateX(180deg);
