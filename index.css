@@ -106,7 +106,7 @@ body,
 
 .view-type:checked ~ .veg-block .recipe-view
 {
-    top: calc(2 * 80vw / 7);
+    top: calc(50vh - 80vw / 14);
 }
 
 .content
@@ -237,6 +237,7 @@ body,
     display: inline-block;
     visibility: visible;
     z-index: -3;
+    font-size: 10px;
     background: linear-gradient(rgba(153, 150, 241, .6), rgba(52, 71, 255, 1));
     transition: background 1s ease-out;
     -moz-transition: background 1s ease-out;
@@ -245,7 +246,7 @@ body,
 
 .pepper-item:checked ~ .pepper:target > .item-label,
 .carrot-item:checked ~ .carrot:target > .item-label,
-.tomato-item:checked ~ .tomato:target > .item-label,
+
 .chilly-item:checked ~ .chilly:target > .item-label,
 .onion-item:checked ~ .onion:target > .item-label,
 .garlic-item:checked ~ .garlic:target > .item-label,
