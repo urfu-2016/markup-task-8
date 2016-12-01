@@ -3,9 +3,11 @@ body
 {
     height: 100%;
     overflow: hidden;
-    perspective: 5000px;
+    perspective: 2000px;
     margin: 0;
     padding: 0;
+
+    perspective-origin: 50% 0;
 }
 
 body
@@ -26,6 +28,15 @@ label
 input
 {
     display: none;
+}
+
+label.change-layout
+{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 2em;
+    cursor: pointer;
 }
 
 /* One card styles */
@@ -305,6 +316,84 @@ input[class^='recipe']:checked ~ .paranja
 .recipe4:checked ~ .card:nth-of-type(4),
 .recipe5:checked ~ .card:nth-of-type(5),
 .recipe6:checked ~ .card:nth-of-type(6)
+{
+    z-index: 11;
+}
+
+/* Alternate layout styles */
+
+.change-layout:checked ~ .card1:checked ~ .card:nth-of-type(1),
+.change-layout:checked ~ .card2:checked ~ .card:nth-of-type(2),
+.change-layout:checked ~ .card3:checked ~ .card:nth-of-type(3),
+.change-layout:checked ~ .card4:checked ~ .card:nth-of-type(4),
+.change-layout:checked ~ .card5:checked ~ .card:nth-of-type(5),
+.change-layout:checked ~ .card6:checked ~ .card:nth-of-type(6)
+{
+    transform: translateZ(0) translateX(0) rotateY(0);
+    z-index: 4;
+}
+
+.change-layout:checked ~ .card1:checked ~ .card:nth-of-type(2),
+.change-layout:checked ~ .card2:checked ~ .card:nth-of-type(3),
+.change-layout:checked ~ .card3:checked ~ .card:nth-of-type(4),
+.change-layout:checked ~ .card4:checked ~ .card:nth-of-type(5),
+.change-layout:checked ~ .card5:checked ~ .card:nth-of-type(6),
+.change-layout:checked ~ .card6:checked ~ .card:nth-of-type(1)
+{
+    transform: translateZ(-300px) translateX(100%) rotateY(60deg);
+    z-index: 3;
+}
+
+.change-layout:checked ~ .card1:checked ~ .card:nth-of-type(3),
+.change-layout:checked ~ .card2:checked ~ .card:nth-of-type(4),
+.change-layout:checked ~ .card3:checked ~ .card:nth-of-type(5),
+.change-layout:checked ~ .card4:checked ~ .card:nth-of-type(6),
+.change-layout:checked ~ .card5:checked ~ .card:nth-of-type(1),
+.change-layout:checked ~ .card6:checked ~ .card:nth-of-type(2)
+{
+    transform: translateZ(-600px) translateX(100%) rotateY(120deg);
+    z-index: 2;
+}
+
+.change-layout:checked ~ .card1:checked ~ .card:nth-of-type(4),
+.change-layout:checked ~ .card2:checked ~ .card:nth-of-type(5),
+.change-layout:checked ~ .card3:checked ~ .card:nth-of-type(6),
+.change-layout:checked ~ .card4:checked ~ .card:nth-of-type(1),
+.change-layout:checked ~ .card5:checked ~ .card:nth-of-type(2),
+.change-layout:checked ~ .card6:checked ~ .card:nth-of-type(3)
+{
+    transform: translateZ(-900px) rotateY(180deg);
+    z-index: 1;
+}
+
+.change-layout:checked ~ .card1:checked ~ .card:nth-of-type(5),
+.change-layout:checked ~ .card2:checked ~ .card:nth-of-type(6),
+.change-layout:checked ~ .card3:checked ~ .card:nth-of-type(1),
+.change-layout:checked ~ .card4:checked ~ .card:nth-of-type(2),
+.change-layout:checked ~ .card5:checked ~ .card:nth-of-type(3),
+.change-layout:checked ~ .card6:checked ~ .card:nth-of-type(4)
+{
+    transform: translateZ(-600px) translateX(-100%) rotateY(-120deg);
+    z-index: 2;
+}
+
+.change-layout:checked ~ .card1:checked ~ .card:nth-of-type(6),
+.change-layout:checked ~ .card2:checked ~ .card:nth-of-type(1),
+.change-layout:checked ~ .card3:checked ~ .card:nth-of-type(2),
+.change-layout:checked ~ .card4:checked ~ .card:nth-of-type(3),
+.change-layout:checked ~ .card5:checked ~ .card:nth-of-type(4),
+.change-layout:checked ~ .card6:checked ~ .card:nth-of-type(5)
+{
+    transform: translateZ(-300px) translateX(-100%) rotateY(-60deg);
+    z-index: 3;
+}
+
+.change-layout:checked ~ .recipe1:checked ~ .card:nth-of-type(1),
+.change-layout:checked ~ .recipe2:checked ~ .card:nth-of-type(2),
+.change-layout:checked ~ .recipe3:checked ~ .card:nth-of-type(3),
+.change-layout:checked ~ .recipe4:checked ~ .card:nth-of-type(4),
+.change-layout:checked ~ .recipe5:checked ~ .card:nth-of-type(5),
+.change-layout:checked ~ .recipe6:checked ~ .card:nth-of-type(6)
 {
     z-index: 11;
 }
