@@ -1,3 +1,5 @@
+/* stylelint-disable max-line-length */
+
 html,
 body
 {
@@ -227,6 +229,8 @@ label.change-layout
     transition: .25s ease-out .4s;
 
     user-select: none;
+    -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+    backface-visibility: hidden;
 }
 
 .back
@@ -396,4 +400,26 @@ input[class^='recipe']:checked ~ .paranja
 .change-layout:checked ~ .recipe6:checked ~ .card:nth-of-type(6)
 {
     z-index: 11;
+}
+
+.change-layout:checked ~ .card1:checked ~ .card:nth-of-type(3) label[for^='card'],
+.change-layout:checked ~ .card2:checked ~ .card:nth-of-type(4) label[for^='card'],
+.change-layout:checked ~ .card3:checked ~ .card:nth-of-type(5) label[for^='card'],
+.change-layout:checked ~ .card4:checked ~ .card:nth-of-type(6) label[for^='card'],
+.change-layout:checked ~ .card5:checked ~ .card:nth-of-type(1) label[for^='card'],
+.change-layout:checked ~ .card6:checked ~ .card:nth-of-type(2) label[for^='card'],
+.change-layout:checked ~ .card1:checked ~ .card:nth-of-type(4) label[for^='card'],
+.change-layout:checked ~ .card2:checked ~ .card:nth-of-type(5) label[for^='card'],
+.change-layout:checked ~ .card3:checked ~ .card:nth-of-type(6) label[for^='card'],
+.change-layout:checked ~ .card4:checked ~ .card:nth-of-type(1) label[for^='card'],
+.change-layout:checked ~ .card5:checked ~ .card:nth-of-type(2) label[for^='card'],
+.change-layout:checked ~ .card6:checked ~ .card:nth-of-type(3) label[for^='card'],
+.change-layout:checked ~ .card1:checked ~ .card:nth-of-type(5) label[for^='card'],
+.change-layout:checked ~ .card2:checked ~ .card:nth-of-type(6) label[for^='card'],
+.change-layout:checked ~ .card3:checked ~ .card:nth-of-type(1) label[for^='card'],
+.change-layout:checked ~ .card4:checked ~ .card:nth-of-type(2) label[for^='card'],
+.change-layout:checked ~ .card5:checked ~ .card:nth-of-type(3) label[for^='card'],
+.change-layout:checked ~ .card6:checked ~ .card:nth-of-type(4) label[for^='card']
+{
+    pointer-events: none;
 }
