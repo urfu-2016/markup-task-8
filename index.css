@@ -198,7 +198,7 @@ input[id='dewberry-input']:checked ~ .dewberry:hover a
     width: 240px;
     height: 170px;
     z-index: 3;
-    transform: perspective(0) scale(2.6) rotateX(-180deg);
+    transform: scale(2.6) rotateX(180deg);
 }
 
 /*----------------------Strawberry----------------------------*/
