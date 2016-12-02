@@ -1,0 +1,601 @@
+body
+{
+    font: 16px 'Didact Gothic', sans-serif;
+    background: url(images/background.png);
+    height: 100%;
+    box-sizing: border-box;
+    min-width: 1100px;
+    max-width: 1366px;
+    margin: auto;
+}
+
+html,
+main
+{
+    height: 100%;
+    z-index: 2;
+    position: relative;
+}
+
+.harvest-input
+{
+    display: none;
+}
+
+.harvest
+{
+    width: 190px;
+    height: 190px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    box-shadow: 0 10px 25px rgba(50, 50, 50, .7);
+    transform-style: preserve-3d;
+    transform: translateX(0) perspective(600px) translateZ(0) rotateY(0deg);
+    transition: transform 1s ease-out, width .5s, height .5s;
+}
+
+.image
+{
+    width: 100%;
+    transform: scale(1.15);
+    transition: all .3s ease-out;
+}
+
+input[id='strawberry-input']:checked ~ .strawberry:hover .image,
+input[id='peas-input']:checked ~ .peas:hover .image,
+input[id='pumpkin-input']:checked ~ .pumpkin:hover .image,
+input[id='apple-input']:checked ~ .apple:hover .image,
+input[id='currant-input']:checked ~ .currant:hover .image,
+input[id='persimmon-input']:checked ~ .persimmon:hover .image,
+input[id='dewberry-input']:checked ~ .dewberry:hover .image
+{
+    transform: scale(1);
+}
+
+.recipe
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    font: 1.5em 'Poiret One', sans-serif;
+    line-height: 150px;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .6);
+    border: 1px solid #fff;
+    margin: -75px 0 0 -75px;
+}
+
+.harvest .show-recipe
+{
+    height: 190px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, .5);
+    opacity: 0;
+    z-index: -1;
+    transition: all .3s ease-out;
+}
+
+input[id='strawberry-input']:checked ~ .strawberry:hover a,
+input[id='peas-input']:checked ~ .peas:hover a,
+input[id='pumpkin-input']:checked ~ .pumpkin:hover a,
+input[id='apple-input']:checked ~ .apple:hover a,
+input[id='currant-input']:checked ~ .currant:hover a,
+input[id='persimmon-input']:checked ~ .persimmon:hover a,
+input[id='dewberry-input']:checked ~ .dewberry:hover a
+{
+    opacity: 1;
+    z-index: 1;
+}
+
+.modal
+{
+    position: fixed;
+    z-index: -7;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    transition: all 1s ease-out;
+}
+
+.harvest:target ~ .modal
+{
+    opacity: .5;
+    z-index: 2;
+}
+
+.modal-recipe
+{
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    transform: rotateX(-180deg);
+    font-size: .38em;
+    transition: z-index .3s step-end;
+    z-index: -1;
+}
+
+.close-recipe
+{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 10px;
+    width: 10px;
+    background: url('images/close.svg') no-repeat;
+    background-size: 9px;
+}
+
+.header-modal-recipe
+{
+    height: 15px;
+    width: 100%;
+    padding: 0;
+    margin: 0 0 5px;
+    border-bottom: 1px solid #888;
+    color: #888;
+}
+
+.ingredients
+{
+    height: 100%;
+    width: 25%;
+    padding: 0 0 0 5px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.ingredients ul
+{
+    padding: 0 0 5px;
+    margin: 0;
+    list-style-type: none;
+}
+
+.header-instruction
+{
+    color: #ff2929;
+    margin: 0 0 2px;
+}
+
+.instruction
+{
+    height: 100%;
+    width: 75%;
+    padding: 0 0 0 25px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.instruction ol
+{
+    padding: 0 0 5px 5px;
+    margin: 0;
+}
+
+.front
+{
+    z-index: 1;
+    transition: z-index 1s ease-in-out;
+}
+
+.front,
+.modal-recipe
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.harvest:target .front
+{
+    z-index: -1;
+}
+
+.harvest:target .modal-recipe
+{
+    z-index: 1;
+}
+
+.harvest:target
+{
+    width: 250px;
+    height: 170px;
+    z-index: 3;
+    transform: scale(2.6) rotateX(180deg);
+}
+
+/*----------------------Strawberry----------------------------*/
+
+input[id='strawberry-input']:checked ~ .peas
+{
+    z-index: -1;
+    transform: translateX(120px) perspective(400px)
+        translateZ(-90px) rotateY(-36deg);
+}
+
+input[id='strawberry-input']:checked ~ .pumpkin
+{
+    z-index: -2;
+    transform: translateX(210px) perspective(400px)
+        translateZ(-90px) rotateY(-33deg);
+}
+
+input[id='strawberry-input']:checked ~ .apple
+{
+    z-index: -3;
+    transform: translateX(290px) perspective(400px)
+        translateZ(-90px) rotateY(-30deg);
+}
+
+input[id='strawberry-input']:checked ~ .currant
+{
+    z-index: -4;
+    transform: translateX(370px) perspective(400px)
+        translateZ(-90px) rotateY(-27deg);
+}
+
+input[id='strawberry-input']:checked ~ .persimmon
+{
+    z-index: -5;
+    transform: translateX(440px) perspective(400px)
+        translateZ(-90px) rotateY(-24deg);
+}
+
+input[id='strawberry-input']:checked ~ .dewberry
+{
+    z-index: -6;
+    transform: translateX(500px) perspective(400px)
+        translateZ(-90px) rotateY(-23deg);
+}
+
+/*----------------------Peas----------------------------*/
+
+input[id='peas-input']:checked ~ .strawberry
+{
+    transform: translateX(-120px) perspective(400px)
+        translateZ(-90px) rotateY(36deg);
+}
+
+input[id='peas-input']:checked ~ .pumpkin
+{
+    z-index: -2;
+    transform: translateX(120px) perspective(400px)
+        translateZ(-90px) rotateY(-36deg);
+}
+
+input[id='peas-input']:checked ~ .apple
+{
+    z-index: -3;
+    transform: translateX(210px) perspective(400px)
+        translateZ(-90px) rotateY(-33deg);
+}
+
+input[id='peas-input']:checked ~ .currant
+{
+    z-index: -4;
+    transform: translateX(290px) perspective(400px)
+        translateZ(-90px) rotateY(-30deg);
+}
+
+input[id='peas-input']:checked ~ .persimmon
+{
+    z-index: -5;
+    transform: translateX(370px) perspective(400px)
+        translateZ(-90px) rotateY(-27deg);
+}
+
+input[id='peas-input']:checked ~ .dewberry
+{
+    z-index: -6;
+    transform: translateX(440px) perspective(400px)
+        translateZ(-90px) rotateY(-24deg);
+}
+
+/*----------------------Pumpkin----------------------------*/
+
+input[id='pumpkin-input']:checked ~ .strawberry
+{
+    transform: translateX(-210px) perspective(400px)
+        translateZ(-90px) rotateY(33deg);
+}
+
+input[id='pumpkin-input']:checked ~ .peas
+{
+    transform: translateX(-120px) perspective(400px)
+        translateZ(-90px) rotateY(36deg);
+}
+
+input[id='pumpkin-input']:checked ~ .apple
+{
+    z-index: -3;
+    transform: translateX(120px) perspective(400px)
+        translateZ(-90px) rotateY(-36deg);
+}
+
+input[id='pumpkin-input']:checked ~ .currant
+{
+    z-index: -4;
+    transform: translateX(210px) perspective(400px)
+        translateZ(-90px) rotateY(-33deg);
+}
+
+input[id='pumpkin-input']:checked ~ .persimmon
+{
+    z-index: -5;
+    transform: translateX(290px) perspective(400px)
+        translateZ(-90px) rotateY(-30deg);
+}
+
+input[id='pumpkin-input']:checked ~ .dewberry
+{
+    z-index: -6;
+    transform: translateX(370px) perspective(400px)
+        translateZ(-90px) rotateY(-27deg);
+}
+
+/*----------------------Apple----------------------------*/
+
+input[id='apple-input']:checked ~ .strawberry
+{
+    transform: translateX(-290px) perspective(400px)
+        translateZ(-90px) rotateY(30deg);
+}
+
+input[id='apple-input']:checked ~ .peas
+{
+    transform: translateX(-210px) perspective(400px)
+        translateZ(-90px) rotateY(33deg);
+}
+
+input[id='apple-input']:checked ~ .pumpkin
+{
+    transform: translateX(-120px) perspective(400px)
+        translateZ(-90px) rotateY(36deg);
+}
+
+input[id='apple-input']:checked ~ .currant
+{
+    z-index: -4;
+    transform: translateX(120px) perspective(400px)
+        translateZ(-90px) rotateY(-36deg);
+}
+
+input[id='apple-input']:checked ~ .persimmon
+{
+    z-index: -5;
+    transform: translateX(210px) perspective(400px)
+        translateZ(-90px) rotateY(-33deg);
+}
+
+input[id='apple-input']:checked ~ .dewberry
+{
+    z-index: -6;
+    transform: translateX(290px) perspective(400px)
+        translateZ(-90px) rotateY(-30deg);
+}
+
+/*----------------------Currant----------------------------*/
+
+input[id='currant-input']:checked ~ .strawberry
+{
+    transform: translateX(-370px) perspective(400px)
+        translateZ(-90px) rotateY(27deg);
+}
+
+input[id='currant-input']:checked ~ .peas
+{
+    transform: translateX(-290px) perspective(400px)
+        translateZ(-90px) rotateY(30deg);
+}
+
+input[id='currant-input']:checked ~ .pumpkin
+{
+    transform: translateX(-210px) perspective(400px)
+        translateZ(-90px) rotateY(33deg);
+}
+
+input[id='currant-input']:checked ~ .apple
+{
+    transform: translateX(-120px) perspective(400px)
+        translateZ(-90px) rotateY(36deg);
+}
+
+input[id='currant-input']:checked ~ .persimmon
+{
+    z-index: -5;
+    transform: translateX(120px) perspective(400px)
+        translateZ(-90px) rotateY(-36deg);
+}
+
+input[id='currant-input']:checked ~ .dewberry
+{
+    z-index: -6;
+    transform: translateX(210px) perspective(400px)
+        translateZ(-90px) rotateY(-33deg);
+}
+
+/*----------------------Persimmon----------------------------*/
+
+input[id='persimmon-input']:checked ~ .strawberry
+{
+    transform: translateX(-440px) perspective(400px)
+        translateZ(-90px) rotateY(24deg);
+}
+
+input[id='persimmon-input']:checked ~ .peas
+{
+    transform: translateX(-370px) perspective(400px)
+        translateZ(-90px) rotateY(27deg);
+}
+
+input[id='persimmon-input']:checked ~ .pumpkin
+{
+    transform: translateX(-290px) perspective(400px)
+        translateZ(-90px) rotateY(30deg);
+}
+
+input[id='persimmon-input']:checked ~ .apple
+{
+    transform: translateX(-210px) perspective(400px)
+        translateZ(-90px) rotateY(33deg);
+}
+
+input[id='persimmon-input']:checked ~ .currant
+{
+    transform: translateX(-120px) perspective(400px)
+        translateZ(-90px) rotateY(36deg);
+}
+
+input[id='persimmon-input']:checked ~ .dewberry
+{
+    z-index: -6;
+    transform: translateX(120px) perspective(400px)
+        translateZ(-90px) rotateY(-36deg);
+}
+
+/*----------------------Dewberry----------------------------*/
+
+input[id='dewberry-input']:checked ~ .strawberry
+{
+    z-index: -6;
+    transform: translateX(-500px) perspective(400px)
+        translateZ(-90px) rotateY(21deg);
+}
+
+input[id='dewberry-input']:checked ~ .peas
+{
+    z-index: -5;
+    transform: translateX(-440px) perspective(400px)
+        translateZ(-90px) rotateY(24deg);
+}
+
+input[id='dewberry-input']:checked ~ .pumpkin
+{
+    z-index: -4;
+    transform: translateX(-370px) perspective(400px)
+        translateZ(-90px) rotateY(27deg);
+}
+
+input[id='dewberry-input']:checked ~ .apple
+{
+    z-index: -3;
+    transform: translateX(-290px) perspective(400px)
+        translateZ(-90px) rotateY(30deg);
+}
+
+input[id='dewberry-input']:checked ~ .currant
+{
+    z-index: -2;
+    transform: translateX(-210px) perspective(400px)
+        translateZ(-90px) rotateY(33deg);
+}
+
+input[id='dewberry-input']:checked ~ .persimmon
+{
+    z-index: -1;
+    transform: translateX(-120px) perspective(400px)
+        translateZ(-90px) rotateY(36deg);
+}
+
+/*-----------------------------------Extra----------------------------------------*/
+
+.change-view:checked ~ input[id='peas-input']:checked ~ .strawberry,
+.change-view:checked ~ input[id='pumpkin-input']:checked ~ .peas,
+.change-view:checked ~ input[id='apple-input']:checked ~ .pumpkin,
+.change-view:checked ~ input[id='currant-input']:checked ~ .apple,
+.change-view:checked ~ input[id='persimmon-input']:checked ~ .currant,
+.change-view:checked ~ input[id='dewberry-input']:checked ~ .persimmon,
+.change-view:checked ~ input[id='strawberry-input']:checked ~ .dewberry
+{
+    z-index: -1;
+    transform: translateX(-190px) perspective(600px)
+        translateZ(-65px) rotateY(-40deg);
+}
+
+.change-view:checked ~ input[id='dewberry-input']:checked ~ .strawberry,
+.change-view:checked ~ input[id='strawberry-input']:checked ~ .peas,
+.change-view:checked ~ input[id='peas-input']:checked ~ .pumpkin,
+.change-view:checked ~ input[id='pumpkin-input']:checked ~ .apple,
+.change-view:checked ~ input[id='apple-input']:checked ~ .currant,
+.change-view:checked ~ input[id='currant-input']:checked ~ .persimmon,
+.change-view:checked ~ input[id='persimmon-input']:checked ~ .dewberry
+
+{
+    z-index: -1;
+    transform: translateX(190px) perspective(600px)
+        translateZ(-65px) rotateY(40deg);
+}
+
+.change-view:checked ~ input[id='peas-input']:checked ~ .dewberry,
+.change-view:checked ~ input[id='pumpkin-input']:checked ~ .strawberry,
+.change-view:checked ~ input[id='apple-input']:checked ~ .peas,
+.change-view:checked ~ input[id='currant-input']:checked ~ .pumpkin,
+.change-view:checked ~ input[id='persimmon-input']:checked ~ .apple,
+.change-view:checked ~ input[id='dewberry-input']:checked ~ .currant,
+.change-view:checked ~ input[id='strawberry-input']:checked ~ .persimmon
+{
+    z-index: -2;
+    transform: translateX(-210px) perspective(600px)
+        translateZ(-280px) rotateY(-110deg);
+}
+
+.change-view:checked ~ input[id='peas-input']:checked ~ .apple,
+.change-view:checked ~ input[id='pumpkin-input']:checked ~ .currant,
+.change-view:checked ~ input[id='apple-input']:checked ~ .persimmon,
+.change-view:checked ~ input[id='currant-input']:checked ~ .dewberry,
+.change-view:checked ~ input[id='persimmon-input']:checked ~ .strawberry,
+.change-view:checked ~ input[id='dewberry-input']:checked ~ .peas,
+.change-view:checked ~ input[id='strawberry-input']:checked ~ .pumpkin
+{
+    z-index: -2;
+    transform: translateX(210px) perspective(600px)
+        translateZ(-280px) rotateY(110deg);
+}
+
+.change-view:checked ~ input[id='peas-input']:checked ~ .persimmon,
+.change-view:checked ~ input[id='pumpkin-input']:checked ~ .dewberry,
+.change-view:checked ~ input[id='apple-input']:checked ~ .strawberry,
+.change-view:checked ~ input[id='currant-input']:checked ~ .peas,
+.change-view:checked ~ input[id='persimmon-input']:checked ~ .pumpkin,
+.change-view:checked ~ input[id='dewberry-input']:checked ~ .apple,
+.change-view:checked ~ input[id='strawberry-input']:checked ~ .currant
+{
+    z-index: -7;
+    transform: translateX(-100px) perspective(600px)
+        translateZ(-300px) rotateY(-170deg);
+    opacity: .7;
+}
+
+.change-view:checked ~ input[id='peas-input']:checked ~ .currant,
+.change-view:checked ~ input[id='pumpkin-input']:checked ~ .persimmon,
+.change-view:checked ~ input[id='apple-input']:checked ~ .dewberry,
+.change-view:checked ~ input[id='currant-input']:checked ~ .strawberry,
+.change-view:checked ~ input[id='persimmon-input']:checked ~ .peas,
+.change-view:checked ~ input[id='dewberry-input']:checked ~ .pumpkin,
+.change-view:checked ~ input[id='strawberry-input']:checked ~ .apple
+{
+    z-index: -7;
+    transform: translateX(100px) perspective(600px)
+        translateZ(-300px) rotateY(170deg);
+    opacity: .7;
+}
