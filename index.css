@@ -15,6 +15,9 @@ main
     width: 100%;
     position: absolute;
     height: 200px;
+    opacity: 0;
+    animation: content-visible-delay2 .6s;
+    animation-fill-mode: forwards;
 }
 
 input.first-fruit:checked ~ .fruits .fruit:nth-of-type(2),
@@ -337,7 +340,21 @@ input[id='open-recipe-7']:checked ~ .fruits .seventh-fruit .recipe
 
 @keyframes content-visible-delay
 {
-    31%
+    30%
+    {
+        visibility: hidden;
+        opacity: 0;
+    }
+    100%
+    {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@keyframes content-visible-delay2
+{
+    99%
     {
         visibility: hidden;
         opacity: 0;
