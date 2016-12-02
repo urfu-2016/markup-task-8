@@ -1,0 +1,617 @@
+html,
+body
+{
+    margin: 0;
+    height: 100%;
+}
+
+.wrap
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 500px;
+    min-height: 600px;
+}
+
+.harvest
+{
+    display: flex;
+    justify-content: center;
+    height: 40%;
+    width: 90%;
+    -webkit-perspective: 300px;
+    perspective: 1000px;
+}
+
+.harvets__item
+{
+    position: absolute;
+    height: 100%;
+    width: 190px;
+}
+
+.harvest__item__img
+{
+    display: block;
+    height: 63%;
+}
+
+.harvets__item__cover
+{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 63%;
+    background: #000;
+    opacity: .5;
+}
+
+.recipe-logo
+{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 43%;
+    position: absolute;
+    top: 9%;
+    left: 13%;
+    width: 70%;
+    border: 5px solid #fff;
+    border-radius: 100%;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.recipe-logo__item
+{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.recipe-dish
+{
+    position: relative;
+    top: -280px;
+    opacity: 0;
+    transform: rotateX(90deg);
+    padding: 30px;
+    background: #fff;
+    border: 1px solid red;
+    z-index: 10;
+}
+
+.recipe-dish__head
+{
+    font-size: 30px;
+    color: #aaa;
+    border-bottom: 3px solid #aaa;
+}
+
+.recipe-dish__info
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.recipe-dish__info__instruct
+{
+    flex-basis: 40%;
+    list-style-type: decimal;
+}
+
+.close-recipe-img
+{
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url(img/close.jpg) no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+}
+
+.recipe-dish__info__count li,
+.recipe-dish__info__instruct li
+{
+    margin-top: 15px;
+}
+
+.harvest__item__img.item--img-1
+{
+    background: url('img/dish1.jpg') no-repeat;
+    background-size: cover;
+}
+
+.harvest__item__img.item--img-2
+{
+    background: url('img/dish2.jpg') no-repeat;
+    background-size: cover;
+}
+
+.harvest__item__img.item--img-3
+{
+    background: url('img/dish3.jpeg') no-repeat;
+    background-size: cover;
+}
+
+.harvest__item__img.item--img-4
+{
+    background: url('img/dish4.jpg') no-repeat;
+    background-size: cover;
+}
+
+.harvest__item__img.item--img-5
+{
+    background: url('img/dish5.jpg') no-repeat;
+    background-size: cover;
+}
+
+.harvest__item__img.item--img-6
+{
+    background: url('img/dish6.jpg') no-repeat;
+    background-size: cover;
+}
+
+.harvest__item__img.item--img-7
+{
+    background: url('img/dish7.jpg') no-repeat;
+    background-size: cover;
+}
+
+.position1:checked ~ .harvest .harvets__item,
+.position2:checked ~ .harvest .harvets__item,
+.position3:checked ~ .harvest .harvets__item,
+.position4:checked ~ .harvest .harvets__item,
+.position5:checked ~ .harvest .harvets__item,
+.position6:checked ~ .harvest .harvets__item,
+.position7:checked ~ .harvest .harvets__item
+{
+    transition: transform ease-out .5s;
+}
+
+.position1:checked ~ .harvest .item-1
+{
+    z-index: 7;
+}
+
+.position1:checked ~ .harvest .item-2
+{
+    transform: rotateY(45deg) translateX(270px);
+    z-index: 6;
+}
+
+.position1:checked ~ .harvest .item-3
+{
+    transform: rotateY(125deg) translate(-180px) scale(.5);
+    z-index: 5;
+}
+
+.position1:checked ~ .harvest .item-4
+{
+    transform: rotateY(160deg) translateX(-55px) scale(.5);
+    z-index: 4;
+}
+
+.position1:checked ~ .harvest .item-5
+{
+    transform: rotateY(200deg) translateX(40px) scale(.5);
+    z-index: 3;
+}
+
+.position1:checked ~ .harvest .item-6
+{
+    transform: rotateY(-125deg) translate(180px) scale(.5);
+    z-index: 5;
+}
+
+.position1:checked ~ .harvest .item-7
+{
+    transform: rotateY(-45deg) translateX(-270px);
+    z-index: 6;
+}
+
+.position2:checked ~ .harvest .item-1
+{
+    transform: rotateY(-45deg) translateX(-270px);
+    z-index: 4;
+}
+
+.position2:checked ~ .harvest .item-2
+{
+    z-index: 5;
+}
+
+.position2:checked ~ .harvest .item-3
+{
+    transform: rotateY(45deg) translateX(270px);
+    z-index: 4;
+}
+
+.position2:checked ~ .harvest .item-4
+{
+    transform: rotateY(125deg) translate(-180px) scale(.5);
+    z-index: 3;
+}
+
+.position2:checked ~ .harvest .item-5
+{
+    transform: rotateY(160deg) translateX(-55px) scale(.5);
+    z-index: 2;
+}
+
+.position2:checked ~ .harvest .item-6
+{
+    transform: rotateY(200deg) translateX(40px) scale(.5);
+    z-index: 1;
+}
+
+.position2:checked ~ .harvest .item-7
+{
+    transform: rotateY(-125deg) translate(180px) scale(.5);
+    z-index: 1;
+}
+
+.position3:checked ~ .harvest .item-1
+{
+    transform: rotateY(-125deg) translate(180px) scale(.5);
+    z-index: 3;
+}
+
+.position3:checked ~ .harvest .item-2
+{
+    transform: rotateY(-45deg) translateX(-270px);
+    z-index: 4;
+}
+
+.position3:checked ~ .harvest .item-3
+{
+    z-index: 5;
+}
+
+.position3:checked ~ .harvest .item-4
+{
+    transform: rotateY(45deg) translateX(270px);
+    z-index: 4;
+}
+
+.position3:checked ~ .harvest .item-5
+{
+    transform: rotateY(125deg) translate(-180px) scale(.5);
+    z-index: 3;
+}
+
+.position3:checked ~ .harvest .item-6
+{
+    transform: rotateY(160deg) translateX(-55px) scale(.5);
+    z-index: 2;
+}
+
+.position3:checked ~ .harvest .item-7
+{
+    transform: rotateY(200deg) translateX(40px) scale(.5);
+    z-index: 1;
+}
+
+.position4:checked ~ .harvest .item-1
+{
+    transform: rotateY(200deg) translateX(40px) scale(.5);
+    z-index: 1;
+}
+
+.position4:checked ~ .harvest .item-2
+{
+    transform: rotateY(-125deg) translate(180px) scale(.5);
+    z-index: 2;
+}
+
+.position4:checked ~ .harvest .item-3
+{
+    transform: rotateY(-45deg) translateX(-270px);
+    z-index: 3;
+}
+
+.position4:checked ~ .harvest .item-4
+{
+    z-index: 4;
+}
+
+.position4:checked ~ .harvest .item-5
+{
+    transform: rotateY(45deg) translateX(270px);
+    z-index: 3;
+}
+
+.position4:checked ~ .harvest .item-6
+{
+    transform: rotateY(125deg) translate(-180px) scale(.5);
+    z-index: 2;
+}
+
+.position4:checked ~ .harvest .item-7
+{
+    transform: rotateY(160deg) translateX(-55px) scale(.5);
+    z-index: 1;
+}
+
+.position5:checked ~ .harvest .item-1
+{
+    transform: rotateY(160deg) translateX(-55px) scale(.5);
+    z-index: 1;
+}
+
+.position5:checked ~ .harvest .item-2
+{
+    transform: rotateY(200deg) translateX(40px) scale(.5);
+    z-index: 2;
+}
+
+.position5:checked ~ .harvest .item-3
+{
+    transform: rotateY(-125deg) translate(180px) scale(.5);
+    z-index: 3;
+}
+
+.position5:checked ~ .harvest .item-4
+{
+    transform: rotateY(-45deg) translateX(-270px);
+    z-index: 4;
+}
+
+.position5:checked ~ .harvest .item-5
+{
+    z-index: 5;
+}
+
+.position5:checked ~ .harvest .item-6
+{
+    transform: rotateY(45deg) translateX(270px);
+    z-index: 4;
+}
+
+.position5:checked ~ .harvest .item-7
+{
+    transform: rotateY(125deg) translate(-180px) scale(.5);
+    z-index: 3;
+}
+
+.position6:checked ~ .harvest .item-1
+{
+    transform: rotateY(125deg) translate(-180px) scale(.5);
+    z-index: 1;
+}
+
+.position6:checked ~ .harvest .item-2
+{
+    transform: rotateY(160deg) translateX(-55px) scale(.5);
+    z-index: 2;
+}
+
+.position6:checked ~ .harvest .item-3
+{
+    transform: rotateY(200deg) translateX(40px) scale(.5);
+    z-index: 3;
+}
+
+.position6:checked ~ .harvest .item-4
+{
+    transform: rotateY(-125deg) translate(180px) scale(.5);
+    z-index: 4;
+}
+
+.position6:checked ~ .harvest .item-5
+{
+    transform: rotateY(-45deg) translateX(-270px);
+    z-index: 5;
+}
+
+.position6:checked ~ .harvest .item-6
+{
+    z-index: 6;
+}
+
+.position6:checked ~ .harvest .item-7
+{
+    transform: rotateY(45deg) translateX(270px);
+    z-index: 5;
+}
+
+.position7:checked ~ .harvest .item-1
+{
+    transform: rotateY(45deg) translateX(270px);
+    z-index: 6;
+}
+
+.position7:checked ~ .harvest .item-2
+{
+    transform: rotateY(125deg) translate(-180px) scale(.5);
+    z-index: 2;
+}
+
+.position7:checked ~ .harvest .item-3
+{
+    transform: rotateY(160deg) translateX(-55px) scale(.5);
+    z-index: 3;
+}
+
+.position7:checked ~ .harvest .item-4
+{
+    transform: rotateY(200deg) translateX(40px) scale(.5);
+    z-index: 4;
+}
+
+.position7:checked ~ .harvest .item-5
+{
+    transform: rotateY(-125deg) translate(180px) scale(.5);
+    z-index: 5;
+}
+
+.position7:checked ~ .harvest .item-6
+{
+    transform: rotateY(-45deg) translateX(-270px);
+    z-index: 6;
+}
+
+.position7:checked ~ .harvest .item-7
+{
+    z-index: 7;
+}
+
+.position1:checked ~ .harvest .item-1:hover > .harvets__item__cover,
+.position2:checked ~ .harvest .item-2:hover > .harvets__item__cover,
+.position3:checked ~ .harvest .item-3:hover > .harvets__item__cover,
+.position4:checked ~ .harvest .item-4:hover > .harvets__item__cover,
+.position5:checked ~ .harvest .item-5:hover > .harvets__item__cover,
+.position6:checked ~ .harvest .item-6:hover > .harvets__item__cover,
+.position7:checked ~ .harvest .item-7:hover > .harvets__item__cover 
+{
+    display: block;
+    animation-name: change-opacity-to-average;
+    animation-duration: 2s;
+    
+}
+
+.position1:checked ~ .harvest .item-1:hover > .recipe-logo,
+.position2:checked ~ .harvest .item-2:hover > .recipe-logo,
+.position3:checked ~ .harvest .item-3:hover > .recipe-logo,
+.position4:checked ~ .harvest .item-4:hover > .recipe-logo,
+.position5:checked ~ .harvest .item-5:hover > .recipe-logo,
+.position6:checked ~ .harvest .item-6:hover > .recipe-logo,
+.position7:checked ~ .harvest .item-7:hover > .recipe-logo
+{
+    display: flex;
+    animation-name: change-opacity-to-full;
+    animation-duration: 1s;
+}
+
+.recipe-1:checked ~ .harvest .item-1,
+.recipe-2:checked ~ .harvest .item-2,
+.recipe-3:checked ~ .harvest .item-3,
+.recipe-4:checked ~ .harvest .item-4,
+.recipe-5:checked ~ .harvest .item-5,
+.recipe-6:checked ~ .harvest .item-6,
+.recipe-7:checked ~ .harvest .item-7
+{
+    transition: transform ease-out .5s;
+    transform: scale(3) rotateX(-90deg);
+}
+
+.recipe-1:checked ~ .harvest .dish1,
+.recipe-2:checked ~ .harvest .dish2,
+.recipe-3:checked ~ .harvest .dish3,
+.recipe-4:checked ~ .harvest .dish4,
+.recipe-5:checked ~ .harvest .dish5,
+.recipe-6:checked ~ .harvest .dish6,
+.recipe-7:checked ~ .harvest .dish7
+{
+    top: -100px;
+    opacity: 1;
+    transform: rotateX(0);
+    transition: all ease-out .5s;
+    transition-delay: .5s;
+    animation-duration: 1s;
+    width: 700px;
+    height: 400px;
+}
+
+.recipe-1:checked ~ .harvest .dish4,
+.recipe-1:checked ~ .harvest .dish2,
+.recipe-1:checked ~ .harvest .dish3,
+.recipe-1:checked ~ .harvest .dish5,
+.recipe-1:checked ~ .harvest .dish6,
+.recipe-1:checked ~ .harvest .dish7,
+.recipe-2:checked ~ .harvest .dish1,
+.recipe-2:checked ~ .harvest .dish4,
+.recipe-2:checked ~ .harvest .dish3,
+.recipe-2:checked ~ .harvest .dish5,
+.recipe-2:checked ~ .harvest .dish6,
+.recipe-2:checked ~ .harvest .dish7,
+.recipe-3:checked ~ .harvest .dish1,
+.recipe-3:checked ~ .harvest .dish2,
+.recipe-3:checked ~ .harvest .dish4,
+.recipe-3:checked ~ .harvest .dish5,
+.recipe-3:checked ~ .harvest .dish6,
+.recipe-3:checked ~ .harvest .dish7,
+.recipe-4:checked ~ .harvest .dish1,
+.recipe-4:checked ~ .harvest .dish2,
+.recipe-4:checked ~ .harvest .dish3,
+.recipe-4:checked ~ .harvest .dish5,
+.recipe-4:checked ~ .harvest .dish6,
+.recipe-4:checked ~ .harvest .dish7,
+.recipe-5:checked ~ .harvest .dish1,
+.recipe-5:checked ~ .harvest .dish2,
+.recipe-5:checked ~ .harvest .dish3,
+.recipe-5:checked ~ .harvest .dish4,
+.recipe-5:checked ~ .harvest .dish6,
+.recipe-5:checked ~ .harvest .dish7,
+.recipe-6:checked ~ .harvest .dish1,
+.recipe-6:checked ~ .harvest .dish2,
+.recipe-6:checked ~ .harvest .dish3,
+.recipe-6:checked ~ .harvest .dish5,
+.recipe-6:checked ~ .harvest .dish4,
+.recipe-6:checked ~ .harvest .dish7,
+.recipe-7:checked ~ .harvest .dish1,
+.recipe-7:checked ~ .harvest .dish2,
+.recipe-7:checked ~ .harvest .dish3,
+.recipe-7:checked ~ .harvest .dish5,
+.recipe-7:checked ~ .harvest .dish4,
+.recipe-7:checked ~ .harvest .dish6
+{
+    display: none;
+}
+
+.recipe-1:checked ~ .cover-full,
+.recipe-2:checked ~ .cover-full,
+.recipe-3:checked ~ .cover-full,
+.recipe-4:checked ~ .cover-full,
+.recipe-5:checked ~ .cover-full,
+.recipe-6:checked ~ .cover-full,
+.recipe-7:checked ~ .cover-full
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #aaa;
+    opacity: .6;
+}
+
+input[type='radio']
+{
+    display: none;
+}
+
+@keyframes change-opacity-to-average
+{
+    from
+    {
+        opacity: 0;
+    }
+    to
+    {
+        opacity: .6;
+        animation-timing-function: ease-in-out;
+    }
+}
+
+@keyframes change-opacity-to-full
+{
+    from
+    {
+        opacity: 0;
+    }
+    to
+    {
+        opacity: 1;
+        animation-timing-function: ease-in-out;
+    }
+}
