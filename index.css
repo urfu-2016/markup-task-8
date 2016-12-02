@@ -3,9 +3,10 @@ body
     font: 16px 'Didact Gothic', sans-serif;
     background: url(images/background.png);
     height: 100%;
-    margin: 0;
-    padding: 15% 0 0;
     box-sizing: border-box;
+    min-width: 1100px;
+    max-width: 1366px;
+    margin: auto;
 }
 
 html,
@@ -30,11 +31,13 @@ main
     z-index: 2;
     right: 0;
     left: 0;
+    bottom: 0;
+    top: 0;
     margin: auto;
     box-shadow: 0 10px 25px rgba(50, 50, 50, .7);
     transform-style: preserve-3d;
+    transform: translateX(0) perspective(600px) translateZ(0) rotateY(0deg);
     transition: transform 1s ease-out, width .5s, height .5s;
-    transform: perspective(400px) scale(1) rotateX(0deg);
 }
 
 .image
@@ -512,4 +515,87 @@ input[id='dewberry-input']:checked ~ .persimmon
     z-index: -1;
     transform: translateX(-120px) perspective(400px)
         translateZ(-90px) rotateY(36deg);
+}
+
+/*-----------------------------------Extra----------------------------------------*/
+
+.change-view:checked ~ input[id='peas-input']:checked ~ .strawberry,
+.change-view:checked ~ input[id='pumpkin-input']:checked ~ .peas,
+.change-view:checked ~ input[id='apple-input']:checked ~ .pumpkin,
+.change-view:checked ~ input[id='currant-input']:checked ~ .apple,
+.change-view:checked ~ input[id='persimmon-input']:checked ~ .currant,
+.change-view:checked ~ input[id='dewberry-input']:checked ~ .persimmon,
+.change-view:checked ~ input[id='strawberry-input']:checked ~ .dewberry
+{
+    z-index: -1;
+    transform: translateX(-190px) perspective(600px)
+        translateZ(-65px) rotateY(-40deg);
+}
+
+.change-view:checked ~ input[id='dewberry-input']:checked ~ .strawberry,
+.change-view:checked ~ input[id='strawberry-input']:checked ~ .peas,
+.change-view:checked ~ input[id='peas-input']:checked ~ .pumpkin,
+.change-view:checked ~ input[id='pumpkin-input']:checked ~ .apple,
+.change-view:checked ~ input[id='apple-input']:checked ~ .currant,
+.change-view:checked ~ input[id='currant-input']:checked ~ .persimmon,
+.change-view:checked ~ input[id='persimmon-input']:checked ~ .dewberry
+
+{
+    z-index: -1;
+    transform: translateX(190px) perspective(600px)
+        translateZ(-65px) rotateY(40deg);
+}
+
+.change-view:checked ~ input[id='peas-input']:checked ~ .dewberry,
+.change-view:checked ~ input[id='pumpkin-input']:checked ~ .strawberry,
+.change-view:checked ~ input[id='apple-input']:checked ~ .peas,
+.change-view:checked ~ input[id='currant-input']:checked ~ .pumpkin,
+.change-view:checked ~ input[id='persimmon-input']:checked ~ .apple,
+.change-view:checked ~ input[id='dewberry-input']:checked ~ .currant,
+.change-view:checked ~ input[id='strawberry-input']:checked ~ .persimmon
+{
+    z-index: -2;
+    transform: translateX(-210px) perspective(600px)
+        translateZ(-280px) rotateY(-110deg);
+}
+
+.change-view:checked ~ input[id='peas-input']:checked ~ .apple,
+.change-view:checked ~ input[id='pumpkin-input']:checked ~ .currant,
+.change-view:checked ~ input[id='apple-input']:checked ~ .persimmon,
+.change-view:checked ~ input[id='currant-input']:checked ~ .dewberry,
+.change-view:checked ~ input[id='persimmon-input']:checked ~ .strawberry,
+.change-view:checked ~ input[id='dewberry-input']:checked ~ .peas,
+.change-view:checked ~ input[id='strawberry-input']:checked ~ .pumpkin
+{
+    z-index: -2;
+    transform: translateX(210px) perspective(600px)
+        translateZ(-280px) rotateY(110deg);
+}
+
+.change-view:checked ~ input[id='peas-input']:checked ~ .persimmon,
+.change-view:checked ~ input[id='pumpkin-input']:checked ~ .dewberry,
+.change-view:checked ~ input[id='apple-input']:checked ~ .strawberry,
+.change-view:checked ~ input[id='currant-input']:checked ~ .peas,
+.change-view:checked ~ input[id='persimmon-input']:checked ~ .pumpkin,
+.change-view:checked ~ input[id='dewberry-input']:checked ~ .apple,
+.change-view:checked ~ input[id='strawberry-input']:checked ~ .currant
+{
+    z-index: -7;
+    transform: translateX(-100px) perspective(600px)
+        translateZ(-300px) rotateY(-170deg);
+    opacity: .7;
+}
+
+.change-view:checked ~ input[id='peas-input']:checked ~ .currant,
+.change-view:checked ~ input[id='pumpkin-input']:checked ~ .persimmon,
+.change-view:checked ~ input[id='apple-input']:checked ~ .dewberry,
+.change-view:checked ~ input[id='currant-input']:checked ~ .strawberry,
+.change-view:checked ~ input[id='persimmon-input']:checked ~ .peas,
+.change-view:checked ~ input[id='dewberry-input']:checked ~ .pumpkin,
+.change-view:checked ~ input[id='strawberry-input']:checked ~ .apple
+{
+    z-index: -7;
+    transform: translateX(100px) perspective(600px)
+        translateZ(-300px) rotateY(170deg);
+    opacity: .7;
 }
