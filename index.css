@@ -1,0 +1,340 @@
+html,
+body
+{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main
+{
+    margin: 300px auto;
+    perspective: 600px;
+
+    perspective-origin: 500px 50px;
+    width: 1000px;
+}
+
+.wrapper
+{
+    height: 300px;
+    transform-style: preserve-3d;
+    display: flex;
+    -webkit-transition: transform 1s;
+    -moz-transition: transform 1s;
+    -ms-transition: transform 1s;
+    -o-transition: transform 1s;
+    transition: transform 1s;
+}
+
+.plate-wrapper
+{
+    box-shadow: 0 0 4px 1px #000;
+    margin-left: -150px;
+    width: 250px;
+    height: 200px;
+    -webkit-transition: transform 1s cubic-bezier(.82,-.49,0,1.48);
+    -moz-transition: transform 1s cubic-bezier(.82,-.49,0,1.48);
+    -ms-transition: transform 1s cubic-bezier(.82,-.49,0,1.48);
+    -o-transition: transform 1s cubic-bezier(.82,-.49,0,1.48);
+    transition: transform 1s cubic-bezier(.82,-.49,0,1.48);
+    transform: rotate3d(0, 1, 0, 40deg) translateX(-50%);
+    background: #fff;
+    transform-style: preserve-3d;
+    transform-origin: bottom center;
+}
+
+.front-info
+{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.front-plate__img
+{
+    width: 100%;
+}
+
+.back,
+.normal,
+.plate-radio
+{
+    display: none;
+}
+
+.radio1:checked ~ .wrapper
+{
+    transform: translate3d(500px, 0, 0);
+}
+
+.radio2:checked ~ .wrapper
+{
+    transform: translate3d(400px, 0, 0);
+}
+
+.radio3:checked ~ .wrapper
+{
+    transform: translate3d(300px, 0, 0);
+}
+
+.radio4:checked ~ .wrapper
+{
+    transform: translate3d(200px, 0, 0);
+}
+
+.radio5:checked ~ .wrapper
+{
+    transform: translate3d(100px, 0, 0);
+}
+
+.radio6:checked ~ .wrapper
+{
+    transform: translate3d(0, 0, 0);
+}
+
+.radio7:checked ~ .wrapper
+{
+    transform: translate3d(-100px, 0, 0);
+}
+
+.radio1:checked ~ .wrapper .plate-wrapper1 ~ .plate-wrapper,
+.radio2:checked ~ .wrapper .plate-wrapper2 ~ .plate-wrapper,
+.radio3:checked ~ .wrapper .plate-wrapper3 ~ .plate-wrapper,
+.radio4:checked ~ .wrapper .plate-wrapper4 ~ .plate-wrapper,
+.radio5:checked ~ .wrapper .plate-wrapper5 ~ .plate-wrapper,
+.radio6:checked ~ .wrapper .plate-wrapper6 ~ .plate-wrapper,
+.radio7:checked ~ .wrapper .plate-wrapper7 ~ .plate-wrapper
+{
+    -webkit-transition: transform 1s cubic-bezier(.82,-.49,0,1.48);
+    -moz-transition: transform 1s cubic-bezier(.82,-.49,0,1.48);
+    -ms-transition: transform 1s cubic-bezier(.82,-.49,0,1.48);
+    -o-transition: transform 1s cubic-bezier(.82,-.49,0,1.48);
+    transition: transform 1s cubic-bezier(.82,-.49,0,1.48);
+    transform: rotate3d(0, 1, 0, -40deg) translateX(50%);
+    text-align: end;
+}
+
+.radio1:checked ~ .wrapper .plate-wrapper1,
+.radio2:checked ~ .wrapper .plate-wrapper2,
+.radio3:checked ~ .wrapper .plate-wrapper3,
+.radio4:checked ~ .wrapper .plate-wrapper4,
+.radio5:checked ~ .wrapper .plate-wrapper5,
+.radio6:checked ~ .wrapper .plate-wrapper6,
+.radio7:checked ~ .wrapper .plate-wrapper7
+{
+    -webkit-transition: transform 1s cubic-bezier(.33,-1.19,.42,1.96);
+    -moz-transition: transform 1s cubic-bezier(.33,-1.19,.42,1.96);
+    -ms-transition: transform 1s cubic-bezier(.33,-1.19,.42,1.96);
+    -o-transition: transform 1s cubic-bezier(.33,-1.19,.42,1.96);
+    transition: transform 1s cubic-bezier(.33,-1.19,.42,1.96);
+    transform: rotate3d(0, 1, 0, 0deg) translateZ(200px);
+    text-align: center;
+}
+
+.back-info
+{
+    position: absolute;
+    width: 480px;
+    height: 380px;
+    background: #fff;
+    transform: scale(.5, -.5) translate3d(-50%, 50%, -3px);
+    padding: 10px;
+}
+
+.back-spin-label
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.back-spin-label__img
+{
+    width: 20px;
+    height: 20px;
+}
+
+.back-content
+{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 40px 300px;
+    grid-template-areas: 'instruction-header instruction-header'
+        'ingredients instruction'
+        'ingredients conclusion';
+}
+
+.back-header
+{
+    grid-area: instruction-header;
+    margin: 0;
+    padding: 0;
+    color: #818783;
+    border-bottom: 2px solid #c5cbc7 ;
+}
+
+.instruction,
+.ingredients
+{
+    text-align: left;
+    font-size: 15px;
+}
+
+.ingredients
+{
+    grid-area: ingredients;
+    list-style-type: none;
+    padding: 5px 10px;
+}
+
+.ingredient-name
+{
+    font-weight: 600;
+}
+
+.instruction
+{
+    color: #f00;
+    padding: 10px;
+}
+
+.instruction-list
+{
+    padding: 0;
+    margin: 0;
+}
+
+.instruction-step
+{
+    padding: 5px 0;
+    color: #000;
+}
+
+.conclusion
+{
+    grid-area: conclusion;
+    border-top: 2px solid #c5cbc7;
+    color: #818783;
+}
+
+.spin-block
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0;
+    color: #fff;
+    transition: opacity 1s;
+    align-items: center;
+    justify-content: center;
+}
+
+.radio1:checked ~ .wrapper .plate-wrapper1 .spin-block,
+.radio2:checked ~ .wrapper .plate-wrapper2 .spin-block,
+.radio3:checked ~ .wrapper .plate-wrapper3 .spin-block,
+.radio4:checked ~ .wrapper .plate-wrapper4 .spin-block,
+.radio5:checked ~ .wrapper .plate-wrapper5 .spin-block,
+.radio6:checked ~ .wrapper .plate-wrapper6 .spin-block,
+.radio7:checked ~ .wrapper .plate-wrapper7 .spin-block
+{
+    display: flex;
+}
+
+.spin-block:hover
+{
+    opacity: .5;
+}
+
+.spin-label
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 100px;
+    border: 10px solid white;
+    border-radius: 100px;
+    font: 600 20px sans-serif;
+    text-transform: uppercase;
+}
+
+.back:checked + .plate-wrapper
+{
+    transform-origin: bottom center;
+    animation: spin 2s cubic-bezier(.53,.27,.49,1.03) forwards;
+}
+
+.normal:checked + .back + .plate-wrapper
+{
+    transform-origin: center;
+    animation: spin-reverse 1s linear;
+}
+
+@keyframes spin
+{
+    0%
+    {
+        transform: translate3d(0, 0, 200px) rotate3d(1, 0, 0, 0deg) scale(1);
+    }
+    50%
+    {
+        transform: translate3d(0, -120%, 0) rotate3d(1, 0, 0, -100deg)
+            scale(1.8);
+    }
+    100%
+    {
+        transform: translate3d(0, -150%, 200px) rotate3d(1, 0, 0, -180deg)
+            scale(1.8);
+    }
+}
+
+@keyframes spin-reverse
+{
+    0%
+    {
+        transform: translate3d(0, 0, 200px) rotateY(-180deg) scale(1.8);
+    }
+    50%
+    {
+        transform: translate3d(0, 0, 50px) rotateY(-90deg) scale(1);
+    }
+    100%
+    {
+        transform: translate3d(0, 0, 200px) rotateY(0deg) scale(1);
+    }
+}
+
+.paranja
+{
+    display: none;
+    background: #000;
+    position: absolute;
+    z-index: -3;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(30);
+}
+
+.back:checked + .plate-wrapper .paranja
+{
+    display: block;
+    animation: show_par 1s 2s forwards;
+}
+
+@keyframes show_par
+{
+    to
+    {
+        opacity: .5;
+    }
+}
