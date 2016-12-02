@@ -337,7 +337,7 @@ input[id='open-recipe-7']:checked ~ .fruits .seventh-fruit .recipe
 
 @keyframes content-visible-delay
 {
-    30%
+    31%
     {
         visibility: hidden;
         opacity: 0;
