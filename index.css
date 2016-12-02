@@ -16,6 +16,9 @@ main
 .article
 {
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, .5);
     top: 200px;
     left: 50%;
@@ -54,12 +57,10 @@ main
 
 .article > .back-face
 {
-    position: absolute;
+    flex: none;
     background-color: #fff;
     width: 400px;
     height: 350px;
-    top: -100px;
-    left: -100px;
     opacity: 0;
     transform: perspective(500px) rotateX(90deg) scale(.5);
     transition: .3s ease-in;
@@ -90,7 +91,6 @@ main
 
 .article:target > .back-face
 {
-    
     opacity: 1;
     transform: rotateY(-90deg) translateX(100%) rotateY(90deg)
         perspective(500px) rotateX(0deg);
@@ -156,6 +156,11 @@ main
 {
     flex: 0 0 60%;
     order: 4;
+}
+
+.back-face > aside,
+.back-face > .instruction
+{
     text-align: left;
 }
 
