@@ -1,3 +1,33 @@
+.star:checked ~ .article
+{
+    pointer-events: none;
+}
+
+.star:checked ~ .pick-img:nth-of-type(2):checked ~ .article:nth-of-type(7),
+.star:checked ~ .pick-img:nth-of-type(2):checked ~ .article:nth-of-type(1),
+.star:checked ~ .pick-img:nth-of-type(2):checked ~ .article:nth-of-type(2),
+.star:checked ~ .pick-img:nth-of-type(3):checked ~ .article:nth-of-type(1),
+.star:checked ~ .pick-img:nth-of-type(3):checked ~ .article:nth-of-type(2),
+.star:checked ~ .pick-img:nth-of-type(3):checked ~ .article:nth-of-type(3),
+.star:checked ~ .pick-img:nth-of-type(4):checked ~ .article:nth-of-type(2),
+.star:checked ~ .pick-img:nth-of-type(4):checked ~ .article:nth-of-type(3),
+.star:checked ~ .pick-img:nth-of-type(4):checked ~ .article:nth-of-type(4),
+.star:checked ~ .pick-img:nth-of-type(5):checked ~ .article:nth-of-type(3),
+.star:checked ~ .pick-img:nth-of-type(5):checked ~ .article:nth-of-type(4),
+.star:checked ~ .pick-img:nth-of-type(5):checked ~ .article:nth-of-type(5),
+.star:checked ~ .pick-img:nth-of-type(6):checked ~ .article:nth-of-type(4),
+.star:checked ~ .pick-img:nth-of-type(6):checked ~ .article:nth-of-type(5),
+.star:checked ~ .pick-img:nth-of-type(6):checked ~ .article:nth-of-type(6),
+.star:checked ~ .pick-img:nth-of-type(7):checked ~ .article:nth-of-type(5),
+.star:checked ~ .pick-img:nth-of-type(7):checked ~ .article:nth-of-type(6),
+.star:checked ~ .pick-img:nth-of-type(7):checked ~ .article:nth-of-type(7),
+.star:checked ~ .pick-img:nth-of-type(8):checked ~ .article:nth-of-type(6),
+.star:checked ~ .pick-img:nth-of-type(8):checked ~ .article:nth-of-type(7),
+.star:checked ~ .pick-img:nth-of-type(8):checked ~ .article:nth-of-type(1)
+{
+    pointer-events: initial;
+}
+
 .star:checked ~ .pick-img:nth-of-type(2):checked ~ .article:nth-of-type(1),
 .star:checked ~ .pick-img:nth-of-type(3):checked ~ .article:nth-of-type(2),
 .star:checked ~ .pick-img:nth-of-type(4):checked ~ .article:nth-of-type(3),
