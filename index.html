@@ -6,22 +6,22 @@
     <link rel="stylesheet" href="index.css" type="text/css">
 </head>
 <body>
-<div class="big-wrapper">
-    <input type="radio" id="radio1" class="text-radio radio1" name="swipe">
-    <input type="radio" id="radio2" class="text-radio radio2" name="swipe">
-    <input type="radio" id="radio3" class="text-radio radio3" name="swipe">
-    <input type="radio" id="radio4" class="text-radio radio4" name="swipe" checked>
-    <input type="radio" id="radio5" class="text-radio radio5" name="swipe">
-    <input type="radio" id="radio6" class="text-radio radio6" name="swipe">
-    <input type="radio" id="radio7" class="text-radio radio7" name="swipe">
+<div class="main">
+    <input type="radio" id="radio1" class="plate-radio radio1" name="swipe">
+    <input type="radio" id="radio2" class="plate-radio radio2" name="swipe">
+    <input type="radio" id="radio3" class="plate-radio radio3" name="swipe">
+    <input type="radio" id="radio4" class="plate-radio radio4" name="swipe" checked>
+    <input type="radio" id="radio5" class="plate-radio radio5" name="swipe">
+    <input type="radio" id="radio6" class="plate-radio radio6" name="swipe">
+    <input type="radio" id="radio7" class="plate-radio radio7" name="swipe">
     <div class="wrapper">
         <input type="radio" name="spin1" id="normal-view1" class="normal">
         <input type="radio" name="spin1" id="back-view1" class="back">
-        <div class="text-wrapper1 text-wrapper">
+        <div class="plate-wrapper1 plate-wrapper">
             <div class="spin-block">
                 <label for="back-view1" class="spin-label">рецепт</label>
             </div>
-            <div class="back-text">
+            <div class="back-info">
                 <label for="normal-view1" class="back-spin-label">
                     <img src="images/close.png" alt="close" class="back-spin-label__img">
                 </label>
@@ -47,41 +47,43 @@
                             <span class="ingredient-name">Перец</span>&nbsp;
                         </li>
                     </ul>
-                    <ol class="instruction">
+                    <div class="instruction">
                         Инструкция
-                        <li class="instruction-step">
-                            Помидоры необходимо очистить от кожицы.
-                        </li>
-                        <li class="instruction-step">
-                            Слейте воду, очистите от кожи,
-                            разрежьте пополам и очистите от мякоти с косточками.
-                        </li>
-                        <li class="instruction-step">
-                            Чеснок измельчите. В сковороде разогрейте
-                            оливковое масло, добавьте чеснок и слегка
-                            обжарьте до появления аромата.
-                        </li>
-                        <li class="instruction-step">
-                            Иди и купи в магазине
-                        </li>
-                    </ol>
+                        <ol class="instruction-list">
+                            <li class="instruction-step">
+                                Помидоры необходимо очистить от кожицы.
+                            </li>
+                            <li class="instruction-step">
+                                Слейте воду, очистите от кожи,
+                                разрежьте пополам и очистите от мякоти с косточками.
+                            </li>
+                            <li class="instruction-step">
+                                Чеснок измельчите. В сковороде разогрейте
+                                оливковое масло, добавьте чеснок и слегка
+                                обжарьте до появления аромата.
+                            </li>
+                            <li class="instruction-step">
+                                Иди и купи в магазине
+                            </li>
+                        </ol>
+                    </div>
                     <p class="conclusion">
                         Приятного аппетита, дорогие друзья!
                     </p>
                 </div>
             </div>
             <div class="paranja"></div>
-            <label for="radio1" class="text1 text front-text">
-                <img src="images/veg1.jpg" alt="veg1" class="front-text__img img1">
+            <label for="radio1" class="plate1 plate front-info">
+                <img src="images/veg1.jpg" alt="veg1" class="front-plate__img img1">
             </label>
         </div>
         <input type="radio" name="spin2" id="normal-view2" class="normal">
         <input type="radio" name="spin2" id="back-view2" class="back">
-        <div class="text-wrapper2 text-wrapper">
+        <div class="plate-wrapper2 plate-wrapper">
             <div class="spin-block">
                 <label for="back-view2" class="spin-label">рецепт</label>
             </div>
-            <div class="back-text">
+            <div class="back-info">
                 <label for="normal-view2" class="back-spin-label">
                     <img src="images/close.png" alt="close" class="back-spin-label__img">
                 </label>
@@ -108,35 +110,37 @@
                             (8 штук)
                         </li>
                     </ul>
-                    <ol class="instruction">
+                    <div class="instruction">
                         Инструкция
-                        <li class="instruction-step">Собрать огурцы</li>
-                        <li class="instruction-step">
-                            На 1 литр воды 2 столовых ложки
-                            соли и поставить под гнет на 2 суток.
-                            Потом специи убрать, рассол процедить, огурцы промыть.
-                        </li>
-                        <li class="instruction-step">
-                            Взять стерилизованные банки, уложить
-                            огурцы и новые специи, добавить лавровый лист и перец.
-                            Рассол прокипятить и залить горячим в банки.
-                        </li>
-                    </ol>
+                        <ol class="instruction-list">
+                            <li class="instruction-step">Собрать огурцы</li>
+                            <li class="instruction-step">
+                                На 1 литр воды 2 столовых ложки
+                                соли и поставить под гнет на 2 суток.
+                                Потом специи убрать, рассол процедить, огурцы промыть.
+                            </li>
+                            <li class="instruction-step">
+                                Взять стерилизованные банки, уложить
+                                огурцы и новые специи, добавить лавровый лист и перец.
+                                Рассол прокипятить и залить горячим в банки.
+                            </li>
+                        </ol>
+                    </div>
                     <p class="conclusion">Приятного аппетита!</p>
                 </div>
             </div>
             <div class="paranja"></div>
-            <label for="radio2" class="text2 text front-text">
-                <img src="images/veg2.jpg" alt="veg2" class="front-text__img img2">
+            <label for="radio2" class="plate2 plate front-info">
+                <img src="images/veg2.jpg" alt="veg2" class="front-plate__img img2">
             </label>
         </div>
         <input type="radio" name="spin3" id="normal-view3" class="normal">
         <input type="radio" name="spin3" id="back-view3" class="back">
-        <div class="text-wrapper3 text-wrapper">
+        <div class="plate-wrapper3 plate-wrapper">
             <div class="spin-block">
                 <label for="back-view3" class="spin-label">рецепт</label>
             </div>
-            <div class="back-text">
+            <div class="back-info">
                 <label for="normal-view3" class="back-spin-label">
                     <img src="images/close.png" alt="close" class="back-spin-label__img">
                 </label>
@@ -160,37 +164,39 @@
                             (по&nbsp;вкусу)
                         </li>
                     </ul>
-                    <ol class="instruction">
+                    <div class="instruction">
                         Инструкция
-                        <li class="instruction-step">
-                            У тыковок срезать макушку.
-                        </li>
-                        <li class="instruction-step">
-                            Ложкой выковырять семена и срезать
-                            тыквенную мякоть, (толщиной примерно 1 см).
-                        </li>
-                        <li class="instruction-step">
-                            Кого ты обманываешь, ты не любишь тыкву
-                        </li>
-                        <li class="instruction-step">
-                            Оставь только Курицу и ешь курицу
-                        </li>
-                    </ol>
+                        <ol class="instruction-list">
+                            <li class="instruction-step">
+                                У тыковок срезать макушку.
+                            </li>
+                            <li class="instruction-step">
+                                Ложкой выковырять семена и срезать
+                                тыквенную мякоть, (толщиной примерно 1 см).
+                            </li>
+                            <li class="instruction-step">
+                                Кого ты обманываешь, ты не любишь тыкву
+                            </li>
+                            <li class="instruction-step">
+                                Оставь только Курицу и ешь курицу
+                            </li>
+                        </ol>
+                    </div>
                     <p class="conclusion"></p>
                 </div>
             </div>
             <div class="paranja"></div>
-            <label for="radio3" class="text3 text front-text">
-                <img src="images/veg3.jpg" alt="veg3" class="front-text__img img3">
+            <label for="radio3" class="plate3 plate front-info">
+                <img src="images/veg3.jpg" alt="veg3" class="front-plate__img img3">
             </label>
         </div>
         <input type="radio" name="spin4" id="normal-view4" class="normal">
         <input type="radio" name="spin4" id="back-view4" class="back">
-        <div class="text-wrapper4 text-wrapper">
+        <div class="plate-wrapper4 plate-wrapper">
             <div class="spin-block">
                 <label for="back-view4" class="spin-label">рецепт</label>
             </div>
-            <div class="back-text">
+            <div class="back-info">
                 <label for="normal-view4" class="back-spin-label">
                     <img src="images/close.png" alt="close" class="back-spin-label__img">
                 </label>
@@ -215,37 +221,39 @@
                             <span class="ingredient-name">Кориандр</span> (0.5&nbsp;ч.л.)
                         </li>
                     </ul>
-                    <ol class="instruction">
+                    <div class="instruction">
                         Инструкция
-                        <li class="instruction-step">
-                            Морковь чистим, моем и натираем на специальной терке,
-                            чтобы получились длинные полосочки моркови.
-                        </li>
-                        <li class="instruction-step">
-                            Чеснока можно взять и по вкусу,
-                            но так как мы готовим морковь «по-корейски»,
-                            чесночка лучше взять побольше, для остроты.
-                            У меня была одна головка с крупными зубками.
-                        </li>
-                        <li class="instruction-step">
-                            Ммм... БЫло бы вкусно, если готовил не ты!!
-                        </li>
-                    </ol>
+                        <ol class="instruction-list">
+                            <li class="instruction-step">
+                                Морковь чистим, моем и натираем на специальной терке,
+                                чтобы получились длинные полосочки моркови.
+                            </li>
+                            <li class="instruction-step">
+                                Чеснока можно взять и по вкусу,
+                                но так как мы готовим морковь «по-корейски»,
+                                чесночка лучше взять побольше, для остроты.
+                                У меня была одна головка с крупными зубками.
+                            </li>
+                            <li class="instruction-step">
+                                Ммм... БЫло бы вкусно, если готовил не ты!!
+                            </li>
+                        </ol>
+                    </div>
                     <p class="conclusion">Чертовски острая!!</p>
                 </div>
             </div>
             <div class="paranja"></div>
-            <label for="radio4" class="text4 text front-text">
-                <img src="images/veg4.jpg" alt="veg4" class="front-text__img img4">
+            <label for="radio4" class="plate4 plate front-info">
+                <img src="images/veg4.jpg" alt="veg4" class="front-plate__img img4">
             </label>
         </div>
         <input type="radio" name="spin5" id="normal-view5" class="normal">
         <input type="radio" name="spin5" id="back-view5" class="back">
-        <div class="text-wrapper5 text-wrapper">
+        <div class="plate-wrapper5 plate-wrapper">
             <div class="spin-block">
                 <label for="back-view5" class="spin-label">рецепт</label>
             </div>
-            <div class="back-text">
+            <div class="back-info">
                 <label for="normal-view5" class="back-spin-label">
                     <img src="images/close.png" alt="close" class="back-spin-label__img">
                 </label>
@@ -271,27 +279,29 @@
                             <span class="ingredient-name">Соль черный и красный перец</span>
                         </li>
                     </ul>
-                    <ol class="instruction">
+                    <div class="instruction">
                         Инструкция
-                        <li class="instruction-step">Берем</li>
-                        <li class="instruction-step">И делаем</li>
-                        <li class="instruction-step">Ты же не дурак, справишься</li>
-                    </ol>
+                        <ol class="instruction-list">
+                            <li class="instruction-step">Берем</li>
+                            <li class="instruction-step">И делаем</li>
+                            <li class="instruction-step">Ты же не дурак, справишься</li>
+                        </ol>
+                    </div>
                     <p class="conclusion">Покайфу с пивом</p>
                 </div>
             </div>
             <div class="paranja"></div>
-            <label for="radio5" class="text5 text front-text">
-                <img src="images/veg5.jpg" alt="veg5" class="front-text__img img5">
+            <label for="radio5" class="plate5 plate front-info">
+                <img src="images/veg5.jpg" alt="veg5" class="front-plate__img img5">
             </label>
         </div>
         <input type="radio" name="spin6" id="normal-view6" class="normal">
         <input type="radio" name="spin6" id="back-view6" class="back">
-        <div class="text-wrapper6 text-wrapper">
+        <div class="plate-wrapper6 plate-wrapper">
             <div class="spin-block">
                 <label for="back-view6" class="spin-label">рецепт</label>
             </div>
-            <div class="back-text">
+            <div class="back-info">
                 <label for="normal-view6" class="back-spin-label">
                     <img src="images/close.png" alt="close" class="back-spin-label__img">
                 </label>
@@ -308,28 +318,30 @@
                             <span class="ingredient-name">На самом деле не фри</span>
                         </li>
                     </ul>
-                    <ol class="instruction">
+                    <div class="instruction">
                         Инструкция
+                        <ol class="instruction-list">
                         <li class="instruction-step">Берем сковородку</li>
                         <li class="instruction-step">Кладем туда нарезанную картошку</li>
                         <li class="instruction-step">Зовем женщину</li>
                         <li class="instruction-step">Ждем</li>
                     </ol>
+                    </div>
                     <p class="conclusion">Наличие женщины обязательно!!!</p>
                 </div>
             </div>
             <div class="paranja"></div>
-            <label for="radio6" class="text6 text front-text">
-                <img src="images/veg6.jpg" alt="veg6" class="front-text__img img6">
+            <label for="radio6" class="plate6 plate front-info">
+                <img src="images/veg6.jpg" alt="veg6" class="front-plate__img img6">
             </label>
         </div>
         <input type="radio" name="spin7" id="normal-view7" class="normal">
         <input type="radio" name="spin7" id="back-view7" class="back">
-        <div class="text-wrapper7 text-wrapper">
+        <div class="plate-wrapper7 plate-wrapper">
             <div class="spin-block">
                 <label for="back-view7" class="spin-label">рецепт</label>
             </div>
-            <div class="back-text">
+            <div class="back-info">
                 <label for="normal-view7" class="back-spin-label">
                     <img src="images/close.png" alt="close" class="back-spin-label__img">
                 </label>
@@ -346,18 +358,20 @@
                             <span class="ingredient-name">Руки</span>&nbsp;(Желательно две)
                         </li>
                     </ul>
-                    <ol class="instruction">
+                    <div class="instruction">
                         Инструкция
+                        <ol class="instruction-list">
                         <li class="instruction-step">Ты что дурак это готовить</li>
                         <li class="instruction-step">Забудь</li>
                         <li class="instruction-step">Иди есть мясо</li>
                     </ol>
+                    </div>
                     <p class="conclusion"></p>
                 </div>
             </div>
             <div class="paranja"></div>
-            <label for="radio7" class="text7 text front-text">
-                <img src="images/veg7.jpg" alt="veg7" class="front-text__img img7">
+            <label for="radio7" class="plate7 plate front-info">
+                <img src="images/veg7.jpg" alt="veg7" class="front-plate__img img7">
             </label>
         </div>
     </div>

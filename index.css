@@ -7,7 +7,7 @@ body
     overflow: hidden;
 }
 
-.big-wrapper
+.main
 {
     margin: 300px auto;
     perspective: 600px;
@@ -28,7 +28,7 @@ body
     transition: transform 1s;
 }
 
-.text-wrapper
+.plate-wrapper
 {
     box-shadow: 0 0 4px 1px #000;
     margin-left: -150px;
@@ -45,7 +45,7 @@ body
     transform-origin: bottom center;
 }
 
-.front-text
+.front-info
 {
     display: flex;
     width: 100%;
@@ -55,14 +55,14 @@ body
     overflow: hidden;
 }
 
-.front-text__img
+.front-plate__img
 {
     width: 100%;
 }
 
 .back,
 .normal,
-.text-radio
+.plate-radio
 {
     display: none;
 }
@@ -102,13 +102,13 @@ body
     transform: translate3d(-100px, 0, 0);
 }
 
-.radio1:checked ~ .wrapper .text-wrapper1 ~ .text-wrapper,
-.radio2:checked ~ .wrapper .text-wrapper2 ~ .text-wrapper,
-.radio3:checked ~ .wrapper .text-wrapper3 ~ .text-wrapper,
-.radio4:checked ~ .wrapper .text-wrapper4 ~ .text-wrapper,
-.radio5:checked ~ .wrapper .text-wrapper5 ~ .text-wrapper,
-.radio6:checked ~ .wrapper .text-wrapper6 ~ .text-wrapper,
-.radio7:checked ~ .wrapper .text-wrapper7 ~ .text-wrapper
+.radio1:checked ~ .wrapper .plate-wrapper1 ~ .plate-wrapper,
+.radio2:checked ~ .wrapper .plate-wrapper2 ~ .plate-wrapper,
+.radio3:checked ~ .wrapper .plate-wrapper3 ~ .plate-wrapper,
+.radio4:checked ~ .wrapper .plate-wrapper4 ~ .plate-wrapper,
+.radio5:checked ~ .wrapper .plate-wrapper5 ~ .plate-wrapper,
+.radio6:checked ~ .wrapper .plate-wrapper6 ~ .plate-wrapper,
+.radio7:checked ~ .wrapper .plate-wrapper7 ~ .plate-wrapper
 {
     -webkit-transition: transform 1s cubic-bezier(.82,-.49,0,1.48);
     -moz-transition: transform 1s cubic-bezier(.82,-.49,0,1.48);
@@ -119,13 +119,13 @@ body
     text-align: end;
 }
 
-.radio1:checked ~ .wrapper .text-wrapper1,
-.radio2:checked ~ .wrapper .text-wrapper2,
-.radio3:checked ~ .wrapper .text-wrapper3,
-.radio4:checked ~ .wrapper .text-wrapper4,
-.radio5:checked ~ .wrapper .text-wrapper5,
-.radio6:checked ~ .wrapper .text-wrapper6,
-.radio7:checked ~ .wrapper .text-wrapper7
+.radio1:checked ~ .wrapper .plate-wrapper1,
+.radio2:checked ~ .wrapper .plate-wrapper2,
+.radio3:checked ~ .wrapper .plate-wrapper3,
+.radio4:checked ~ .wrapper .plate-wrapper4,
+.radio5:checked ~ .wrapper .plate-wrapper5,
+.radio6:checked ~ .wrapper .plate-wrapper6,
+.radio7:checked ~ .wrapper .plate-wrapper7
 {
     -webkit-transition: transform 1s cubic-bezier(.33,-1.19,.42,1.96);
     -moz-transition: transform 1s cubic-bezier(.33,-1.19,.42,1.96);
@@ -136,7 +136,7 @@ body
     text-align: center;
 }
 
-.back-text
+.back-info
 {
     position: absolute;
     width: 480px;
@@ -199,14 +199,19 @@ body
 
 .instruction
 {
-    grid-area: instruction;
     color: #f00;
     padding: 10px;
 }
 
+.instruction-list
+{
+    padding: 0;
+    margin: 0;
+}
+
 .instruction-step
 {
-    padding: 5px 10px;
+    padding: 5px 0;
     color: #000;
 }
 
@@ -233,13 +238,13 @@ body
     justify-content: center;
 }
 
-.radio1:checked ~ .wrapper .text-wrapper1 .spin-block,
-.radio2:checked ~ .wrapper .text-wrapper2 .spin-block,
-.radio3:checked ~ .wrapper .text-wrapper3 .spin-block,
-.radio4:checked ~ .wrapper .text-wrapper4 .spin-block,
-.radio5:checked ~ .wrapper .text-wrapper5 .spin-block,
-.radio6:checked ~ .wrapper .text-wrapper6 .spin-block,
-.radio7:checked ~ .wrapper .text-wrapper7 .spin-block
+.radio1:checked ~ .wrapper .plate-wrapper1 .spin-block,
+.radio2:checked ~ .wrapper .plate-wrapper2 .spin-block,
+.radio3:checked ~ .wrapper .plate-wrapper3 .spin-block,
+.radio4:checked ~ .wrapper .plate-wrapper4 .spin-block,
+.radio5:checked ~ .wrapper .plate-wrapper5 .spin-block,
+.radio6:checked ~ .wrapper .plate-wrapper6 .spin-block,
+.radio7:checked ~ .wrapper .plate-wrapper7 .spin-block
 {
     display: flex;
 }
@@ -262,13 +267,13 @@ body
     text-transform: uppercase;
 }
 
-.back:checked + .text-wrapper
+.back:checked + .plate-wrapper
 {
     transform-origin: bottom center;
     animation: spin 2s cubic-bezier(.53,.27,.49,1.03) forwards;
 }
 
-.normal:checked + .back + .text-wrapper
+.normal:checked + .back + .plate-wrapper
 {
     transform-origin: center;
     animation: spin-reverse 1s linear;
@@ -320,7 +325,7 @@ body
     transform: scale(30);
 }
 
-.back:checked + .text-wrapper .paranja
+.back:checked + .plate-wrapper .paranja
 {
     display: block;
     animation: show_par 1s 2s forwards;
