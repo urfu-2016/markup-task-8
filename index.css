@@ -141,7 +141,7 @@ input.seventh-fruit:checked ~ .fruits .fruit:nth-of-type(1)
     z-index: 7;
     box-shadow: 0 1px 18px -3px #000;
     position: absolute;
-    transition: all .5s;
+    transition: all .6s linear;
 }
 
 .fruit .open-recipe
@@ -156,6 +156,7 @@ input.seventh-fruit:checked ~ .fruits .fruit:nth-of-type(1)
     padding-top: 75px;
     height: 175px;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .open-recipe span
@@ -211,13 +212,16 @@ input.seventh-fruit:checked ~ .fruits .seventh-fruit
 
 .recipe
 {
+    visibility: hidden;
     width: 100%;
     height: 250px;
-    display: none;
+    opacity: 0;
+    transition: all .3s step-end;
     background: rgba(255, 255, 255, 1);
-    padding-top: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 20px 10px;
+    position: absolute;
+    top: 0;
+    z-index: 1;
 }
 
 .recipe h2
@@ -231,7 +235,7 @@ input.seventh-fruit:checked ~ .fruits .seventh-fruit
 
 .recipe .description
 {
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
@@ -258,7 +262,7 @@ input.seventh-fruit:checked ~ .fruits .seventh-fruit
 .close
 {
     position: absolute;
-    right: 0;
+    right: 10px;
     top: 10px;
     cursor: pointer;
     background: url(close.svg) no-repeat;
@@ -291,13 +295,6 @@ input[type='checkbox']:checked ~ .fruits .modal
     animation-fill-mode: forwards;
 }
 
-input[id='open-recipe-1']:checked ~ .fruits .first-fruit .fruit-image,
-input[id='open-recipe-2']:checked ~ .fruits .second-fruit .fruit-image,
-input[id='open-recipe-3']:checked ~ .fruits .third-fruit .fruit-image,
-input[id='open-recipe-4']:checked ~ .fruits .fourth-fruit .fruit-image,
-input[id='open-recipe-5']:checked ~ .fruits .fifth-fruit .fruit-image,
-input[id='open-recipe-6']:checked ~ .fruits .six-fruit .fruit-image,
-input[id='open-recipe-7']:checked ~ .fruits .seventh-fruit .fruit-image,
 input[id='open-recipe-1']:checked ~ .fruits .first-fruit .open-recipe,
 input[id='open-recipe-2']:checked ~ .fruits .second-fruit .open-recipe,
 input[id='open-recipe-3']:checked ~ .fruits .third-fruit .open-recipe,
@@ -321,7 +318,7 @@ input[id='open-recipe-7']:checked ~ .fruits .seventh-fruit
     transform: rotateX(180deg);
     cursor: default;
     z-index: 1000;
-    min-width: 400px;
+    width: 400px;
     margin-left: -200px;
 }
 
@@ -333,13 +330,14 @@ input[id='open-recipe-5']:checked ~ .fruits .fifth-fruit .recipe,
 input[id='open-recipe-6']:checked ~ .fruits .six-fruit .recipe,
 input[id='open-recipe-7']:checked ~ .fruits .seventh-fruit .recipe
 {
-    display: block;
+    opacity: 1;
+    visibility: visible;
     transform: rotateX(180deg);
 }
 
 @keyframes content-visible-delay
 {
-    50%
+    30%
     {
         visibility: hidden;
         opacity: 0;
