@@ -40,6 +40,9 @@ main
     height: 100%;
     object-fit: cover;
     box-shadow: 0 2px 10px #808080;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 input[id='one-photo']:checked ~ .card[id='one'] .to-info,
@@ -55,15 +58,23 @@ input[id='seven-photo']:checked ~ .card[id='seven'] .to-info
     left: 0;
     width: 100%;
     height: 100%;
+    opacity: 0;
+    background: rgba(0, 0, 0, .7);
 }
 
-input[id='one-photo']:checked ~ .card[id='one'] .to-info:hover:after,
-input[id='two-photo']:checked ~ .card[id='two'] .to-info:hover:after,
-input[id='three-photo']:checked ~ .card[id='three'] .to-info:hover:after,
-input[id='four-photo']:checked ~ .card[id='four'] .to-info:hover:after,
-input[id='five-photo']:checked ~ .card[id='five'] .to-info:hover:after,
-input[id='six-photo']:checked ~ .card[id='six'] .to-info:hover:after,
-input[id='seven-photo']:checked ~ .card[id='seven'] .to-info:hover:after
+input[id='one-photo']:checked ~ .card[id='one'] .to-info:hover,
+input[id='two-photo']:checked ~ .card[id='two'] .to-info:hover,
+input[id='three-photo']:checked ~ .card[id='three'] .to-info:hover,
+input[id='four-photo']:checked ~ .card[id='four'] .to-info:hover,
+input[id='five-photo']:checked ~ .card[id='five'] .to-info:hover,
+input[id='six-photo']:checked ~ .card[id='six'] .to-info:hover,
+input[id='seven-photo']:checked ~ .card[id='seven'] .to-info:hover
+{
+    opacity: 1;
+    transition: opacity 1s linear;
+}
+
+.to-info:hover:after
 {
     content: 'Рецепт';
     text-align: center;
@@ -77,35 +88,6 @@ input[id='seven-photo']:checked ~ .card[id='seven'] .to-info:hover:after
     font: 20px/150px sans-serif;
     border: 5px solid #fff;
     border-radius: 50%;
-}
-
-.to-info:hover:before
-{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, .7);
-}
-
-.to-info:hover
-{
-    animation-name: increaseOpacity;
-    animation-duration: 1s;
-}
-
-@keyframes increaseOpacity
-{
-    from
-    {
-        opacity: 0;
-    }
-    to
-    {
-        opacity: 1;
-    }
 }
 
 input[id='seven-photo']:checked ~ .card[id='one']
@@ -223,10 +205,12 @@ input[id='one-photo']:checked ~ .card[id='seven']
 
 .info
 {
+    animation-name: prevent-transition-info-on-page-loads;
+    animation-duration: .1s;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
-    position: fixed;
+    position: absolute;
     width: 600px;
     min-height: 400px;
     background: #fff;
@@ -235,6 +219,14 @@ input[id='one-photo']:checked ~ .card[id='seven']
     transition: transform .5s linear;
     transform: translateY(-150px) perspective(1000px) rotateX(90deg);
     padding: 40px;
+}
+
+@keyframes prevent-transition-info-on-page-loads
+{
+    from
+    {
+        transform: translateY(-150px) perspective(1000px) rotateX(90deg);
+    }
 }
 
 .info > h2
@@ -299,6 +291,8 @@ input[id='one-photo']:checked ~ .card[id='seven']
 
 .back
 {
+    animation-name: prevent-transition-back-on-page-loads;
+    animation-duration: .1s;
     position: fixed;
     top: 0;
     left: 0;
@@ -309,6 +303,15 @@ input[id='one-photo']:checked ~ .card[id='seven']
     transition: opacity 1s ease-in, z-index 1s step-end;
     z-index: -1;
     cursor: default;
+}
+
+@keyframes prevent-transition-back-on-page-loads
+{
+    from
+    {
+        opacity: 0;
+        z-index: -1;
+    }
 }
 
 .card:target ~ .back
