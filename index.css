@@ -49,7 +49,7 @@ label.change-layout
     width: 300px;
     position: absolute;
     perspective: 1000px;
-    transition: transform .4s ease-in-out;
+    transition: transform .4s ease-in-out, opacity .3s ease-in-out;
     z-index: 10;
 }
 
