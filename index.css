@@ -32,7 +32,7 @@
     }
 }
 
-input[id='broccoli']:checked ~ section :nth-child(1):hover .shadow,
+input[id='broccoli']:checked ~ section .vegetable:first-child:hover .shadow,
 input[id='squash']:checked ~ section :nth-child(2):hover .shadow,
 input[id='onion']:checked ~ section :nth-child(3):hover .shadow,
 input[id='cucumbers']:checked ~ section :nth-child(4):hover .shadow,
@@ -45,7 +45,7 @@ input[id='tomato']:checked ~ section :nth-child(7):hover .shadow
     background-color: #000;
 }
 
-input[id='broccoli']:checked ~ section :nth-child(1):hover .receipt,
+input[id='broccoli']:checked ~ section .vegetable:first-child:hover .receipt,
 input[id='squash']:checked ~ section :nth-child(2):hover .receipt,
 input[id='onion']:checked ~ section :nth-child(3):hover .receipt,
 input[id='cucumbers']:checked ~ section :nth-child(4):hover .receipt,
@@ -97,12 +97,25 @@ input[id='tomato']:checked ~ section :nth-child(7):hover .receipt
     transform-style: preserve-3d;
 }
 
+.wrapper
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ingredients
+{
+    flex: 1 20%;
+}
+
+.description
+{
+    flex: 1 50%;
+}
+
 .description,
 .ingredients
 {
-    vertical-align: top;
-    display: inline-block;
-    width: 45%;
     font-size: 5px;
 }
 
@@ -147,7 +160,7 @@ input[id='tomato']:checked ~ section :nth-child(7):hover .receipt
     top: 0;
     width: 15px;
     height: 15px;
-    right: -2px;
+    right: 0;
     z-index: 15;
 }
 
