@@ -1,24 +1,13 @@
 /* Везде calc(80vw / 7) - размер блока с овощем */
 
-html,
-body,
-.content
+html
 {
     font-family: sans-serif;
-    text-align: center;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
 }
 
 .radio,
-.smog
+.smog,
+.item-label
 {
     display: none;
 }
@@ -26,6 +15,7 @@ body,
 .item-label
 {
     background: #fff;
+    display: none;
     visibility: hidden;
     color: #000;
     padding-top: calc(30vw / 7 - 10px);
@@ -36,7 +26,8 @@ body,
     width: calc(60vw / 7);
     height: calc(60vw / 7);
     border-radius: calc(80vw / 7);
-    transform: translateY(calc(-80vw / 7 - 4px)) translateX(calc(-30vw / 7));
+    transform: translateY(calc(-80vw / 7 - 4px)) translateX(calc(10vw / 7));
+    text-align: center;
 }
 
 .smog
@@ -216,13 +207,13 @@ body,
     animation: fold-face 2s ease;
 }
 
-.pepper-item:checked ~ .pepper:hover > .item-label,
-.carrot-item:checked ~ .carrot:hover > .item-label,
-.tomato-item:checked ~ .tomato:hover > .item-label,
-.chilly-item:checked ~ .chilly:hover > .item-label,
-.onion-item:checked ~ .onion:hover > .item-label,
-.garlic-item:checked ~ .garlic:hover > .item-label,
-.cucumber-item:checked ~ .cucumber:hover > .item-label
+.pepper-item:checked ~ .pepper:hover .face > .item-label,
+.carrot-item:checked ~ .carrot:hover .face > .item-label,
+.tomato-item:checked ~ .tomato:hover .face > .item-label,
+.chilly-item:checked ~ .chilly:hover .face > .item-label,
+.onion-item:checked ~ .onion:hover .face > .item-label,
+.garlic-item:checked ~ .garlic:hover .face > .item-label,
+.cucumber-item:checked ~ .cucumber:hover .face > .item-label
 {
     position: absolute;
     z-index: 0;
@@ -234,12 +225,12 @@ body,
     transition: background 1s ease-out;
 }
 
-.pepper-item:checked ~ .pepper:target > .item-label,
-.carrot-item:checked ~ .carrot:target > .item-label,
-.chilly-item:checked ~ .chilly:target > .item-label,
-.onion-item:checked ~ .onion:target > .item-label,
-.garlic-item:checked ~ .garlic:target > .item-label,
-.cucumber-item:checked ~ .cucumber:target > .item-label
+.pepper-item:checked ~ .pepper:target .face > .item-label,
+.carrot-item:checked ~ .carrot:target .face > .item-label,
+.chilly-item:checked ~ .chilly:target .face .item-label,
+.onion-item:checked ~ .onion:target .face > .item-label,
+.garlic-item:checked ~ .garlic:target .face > .item-label,
+.cucumber-item:checked ~ .cucumber:target .face > .item-label
 {
     z-index: -100;
     visibility: hidden;
