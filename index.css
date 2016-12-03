@@ -1,0 +1,448 @@
+/* stylelint-disable max-line-length */
+
+html,
+body
+{
+    height: 100%;
+    overflow: hidden;
+    perspective: 2000px;
+    margin: 0;
+    padding: 0;
+
+    /*perspective-origin: 50% 0;*/
+}
+
+body
+{
+    background-color: #eee;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+label
+{
+    cursor: pointer;
+}
+
+input
+{
+    display: none;
+}
+
+.change-layout
+{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+/* One card styles */
+
+.card
+{
+    height: 250px;
+    width: 300px;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    perspective: 1000px;
+    transition: transform .4s ease-in-out, opacity .3s ease-in-out;
+    z-index: 10;
+}
+
+/* Gallery styles */
+
+.card1:checked ~ .card:nth-of-type(2),
+.card2:checked ~ .card:nth-of-type(3),
+.card3:checked ~ .card:nth-of-type(4),
+.card4:checked ~ .card:nth-of-type(5),
+.card5:checked ~ .card:nth-of-type(6)
+{
+    transform: translateX(40%) rotateY(-40deg) translateY(-10%) scale(.9);
+}
+
+.card2:checked ~ .card:nth-of-type(1),
+.card3:checked ~ .card:nth-of-type(2),
+.card4:checked ~ .card:nth-of-type(3),
+.card5:checked ~ .card:nth-of-type(4),
+.card6:checked ~ .card:nth-of-type(5)
+{
+    transform: translateX(-40%) rotateY(40deg) translateY(-10%) scale(.9);
+}
+
+.card1:checked ~ .card:nth-of-type(3),
+.card2:checked ~ .card:nth-of-type(4),
+.card3:checked ~ .card:nth-of-type(5),
+.card4:checked ~ .card:nth-of-type(6)
+{
+    transform: translateX(60%) rotateY(-35deg) translateY(-15%) scale(.85);
+}
+
+.card3:checked ~ .card:nth-of-type(1),
+.card4:checked ~ .card:nth-of-type(2),
+.card5:checked ~ .card:nth-of-type(3),
+.card6:checked ~ .card:nth-of-type(4)
+{
+    transform: translateX(-60%) rotateY(35deg) translateY(-15%) scale(.85);
+}
+
+.card1:checked ~ .card:nth-of-type(4),
+.card2:checked ~ .card:nth-of-type(5),
+.card3:checked ~ .card:nth-of-type(6)
+{
+    transform: translateX(77%) rotateY(-30deg) translateY(-20%) scale(.8);
+}
+
+.card4:checked ~ .card:nth-of-type(1),
+.card5:checked ~ .card:nth-of-type(2),
+.card6:checked ~ .card:nth-of-type(3)
+{
+    transform: translateX(-77%) rotateY(30deg) translateY(-20%) scale(.8);
+}
+
+.card1:checked ~ .card:nth-of-type(5),
+.card2:checked ~ .card:nth-of-type(6)
+{
+    transform: translateX(89%) rotateY(-25deg) translateY(-25%) scale(.75);
+}
+
+.card5:checked ~ .card:nth-of-type(1),
+.card6:checked ~ .card:nth-of-type(2)
+{
+    transform: translateX(-89%) rotateY(25deg) translateY(-25%) scale(.75);
+}
+
+.card1:checked ~ .card:nth-of-type(6)
+{
+    transform: translateX(99%) rotateY(-20deg) translateY(-30%) scale(.7);
+}
+
+.card6:checked ~ .card:nth-of-type(1)
+{
+    transform: translateX(-99%) rotateY(20deg) translateY(-30%) scale(.7);
+}
+
+.card1:checked ~ .card:nth-of-type(2)
+{
+    z-index: 5;
+}
+
+.card1:checked ~ .card:nth-of-type(3),
+.card2:checked ~ .card:nth-of-type(3)
+{
+    z-index: 4;
+}
+
+.card1:checked ~ .card:nth-of-type(4),
+.card2:checked ~ .card:nth-of-type(4),
+.card3:checked ~ .card:nth-of-type(4)
+{
+    z-index: 3;
+}
+
+.card1:checked ~ .card:nth-of-type(5),
+.card2:checked ~ .card:nth-of-type(5),
+.card3:checked ~ .card:nth-of-type(5),
+.card4:checked ~ .card:nth-of-type(5)
+{
+    z-index: 2;
+}
+
+.card1:checked ~ .card:nth-of-type(6),
+.card2:checked ~ .card:nth-of-type(6),
+.card3:checked ~ .card:nth-of-type(6),
+.card4:checked ~ .card:nth-of-type(6),
+.card5:checked ~ .card:nth-of-type(6)
+{
+    z-index: 1;
+}
+
+.card1:not(:checked) ~ .card:nth-of-type(1) .show,
+.card2:not(:checked) ~ .card:nth-of-type(2) .show,
+.card3:not(:checked) ~ .card:nth-of-type(3) .show,
+.card4:not(:checked) ~ .card:nth-of-type(4) .show,
+.card5:not(:checked) ~ .card:nth-of-type(5) .show,
+.card6:not(:checked) ~ .card:nth-of-type(6) .show
+{
+    visibility: hidden;
+}
+
+/* Show recipe button styles */
+
+.show
+{
+    height: 100%;
+    width: 100%;
+
+    background: #000;
+    opacity: 0;
+    position: absolute;
+
+    transition: .4s ease-in-out;
+
+    z-index: 10;
+}
+
+.show span
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    box-sizing: border-box;
+
+    border: 3px solid #fff;
+    border-radius: 50%;
+
+    height: 120px;
+    width: 120px;
+
+    color: #fff;
+    font-size: 1.5em;
+    line-height: 114px;
+    text-align: center;
+}
+
+.card1:checked ~ .card:nth-of-type(1) .show:hover,
+.card2:checked ~ .card:nth-of-type(2) .show:hover,
+.card3:checked ~ .card:nth-of-type(3) .show:hover,
+.card4:checked ~ .card:nth-of-type(4) .show:hover,
+.card5:checked ~ .card:nth-of-type(5) .show:hover,
+.card6:checked ~ .card:nth-of-type(6) .show:hover
+{
+    opacity: .8;
+}
+
+/* Front & back faces styles */
+
+.front
+{
+    background-color: #fff;
+    box-shadow: 0 1em 2em rgba(60, 63, 65, .78);
+
+    height: 100%;
+
+    transition: .25s ease-out .4s;
+
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+    backface-visibility: hidden;
+}
+
+.back
+{
+    height: 375px;
+    width: 450px;
+
+    position: absolute;
+    top: -25%;
+    left: -25%;
+
+    visibility: hidden;
+
+    background-color: #fff;
+    transform: rotateX(90deg) scale(.85);
+
+    transition: .4s ease-in;
+}
+
+/* Images styles */
+
+label[for^='card']
+{
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    line-height: 250px;
+    position: relative;
+    text-align: center;
+}
+
+label[for^='card'] img
+{
+    max-width: 90%;
+    max-height: 90%;
+    vertical-align: middle;
+}
+
+/* Paranja styles */
+
+.paranja
+{
+    visibility: hidden;
+    background: rgba(0, 0, 0, .75);
+    height: 100%;
+    opacity: 0;
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    transition: .4s;
+    width: 100%;
+    z-index: 10;
+}
+
+input[class^='recipe']:checked ~ .paranja
+{
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Flip styles */
+
+.recipe1:checked ~ .card:nth-of-type(1) .front,
+.recipe2:checked ~ .card:nth-of-type(2) .front,
+.recipe3:checked ~ .card:nth-of-type(3) .front,
+.recipe4:checked ~ .card:nth-of-type(4) .front,
+.recipe5:checked ~ .card:nth-of-type(5) .front,
+.recipe6:checked ~ .card:nth-of-type(6) .front
+{
+    transition: .4s ease-in;
+    transform: scale(1.18) rotateX(-90deg);
+}
+
+.recipe1:checked ~ .card:nth-of-type(1) .back,
+.recipe2:checked ~ .card:nth-of-type(2) .back,
+.recipe3:checked ~ .card:nth-of-type(3) .back,
+.recipe4:checked ~ .card:nth-of-type(4) .back,
+.recipe5:checked ~ .card:nth-of-type(5) .back,
+.recipe6:checked ~ .card:nth-of-type(6) .back
+{
+    visibility: visible;
+    transition: .4s ease-out .4s;
+    transform: rotateX(0deg) scale(1);
+}
+
+.recipe1:checked ~ .card:nth-of-type(1),
+.recipe2:checked ~ .card:nth-of-type(2),
+.recipe3:checked ~ .card:nth-of-type(3),
+.recipe4:checked ~ .card:nth-of-type(4),
+.recipe5:checked ~ .card:nth-of-type(5),
+.recipe6:checked ~ .card:nth-of-type(6)
+{
+    z-index: 11;
+}
+
+/* Alternate layout styles */
+
+.change-layout:checked ~ .card
+{
+    transition: transform .4s ease-in-out, opacity .3s ease-in-out, z-index .4s ease-in-out;
+}
+
+.change-layout:checked ~ .card1:checked ~ .card:nth-of-type(1),
+.change-layout:checked ~ .card2:checked ~ .card:nth-of-type(2),
+.change-layout:checked ~ .card3:checked ~ .card:nth-of-type(3),
+.change-layout:checked ~ .card4:checked ~ .card:nth-of-type(4),
+.change-layout:checked ~ .card5:checked ~ .card:nth-of-type(5),
+.change-layout:checked ~ .card6:checked ~ .card:nth-of-type(6)
+{
+    transform: translateZ(0) translateX(0) rotateY(0);
+    z-index: 4;
+}
+
+.change-layout:checked ~ .card1:checked ~ .card:nth-of-type(2),
+.change-layout:checked ~ .card2:checked ~ .card:nth-of-type(3),
+.change-layout:checked ~ .card3:checked ~ .card:nth-of-type(4),
+.change-layout:checked ~ .card4:checked ~ .card:nth-of-type(5),
+.change-layout:checked ~ .card5:checked ~ .card:nth-of-type(6),
+.change-layout:checked ~ .card6:checked ~ .card:nth-of-type(1)
+{
+    transform: translate3d(100%, 50%, -100px) rotateZ(45deg) rotateY(40deg);
+    z-index: 3;
+}
+
+.change-layout:checked ~ .card1:checked ~ .card:nth-of-type(3),
+.change-layout:checked ~ .card2:checked ~ .card:nth-of-type(4),
+.change-layout:checked ~ .card3:checked ~ .card:nth-of-type(5),
+.change-layout:checked ~ .card4:checked ~ .card:nth-of-type(6),
+.change-layout:checked ~ .card5:checked ~ .card:nth-of-type(1),
+.change-layout:checked ~ .card6:checked ~ .card:nth-of-type(2)
+{
+    transform: translate3d(100%, 80%, -100px) rotateZ(90deg) rotateY(90deg);
+    opacity: 0;
+    z-index: 2;
+}
+
+.change-layout:checked ~ .card1:checked ~ .card:nth-of-type(4),
+.change-layout:checked ~ .card2:checked ~ .card:nth-of-type(5),
+.change-layout:checked ~ .card3:checked ~ .card:nth-of-type(6),
+.change-layout:checked ~ .card4:checked ~ .card:nth-of-type(1),
+.change-layout:checked ~ .card5:checked ~ .card:nth-of-type(2),
+.change-layout:checked ~ .card6:checked ~ .card:nth-of-type(3)
+{
+    transform: translate3d(0, 80%, -100px) rotateZ(180deg) rotateY(90deg);
+    opacity: 0;
+    z-index: 1;
+}
+
+.change-layout:checked ~ .card1:checked ~ .card:nth-of-type(5),
+.change-layout:checked ~ .card2:checked ~ .card:nth-of-type(6),
+.change-layout:checked ~ .card3:checked ~ .card:nth-of-type(1),
+.change-layout:checked ~ .card4:checked ~ .card:nth-of-type(2),
+.change-layout:checked ~ .card5:checked ~ .card:nth-of-type(3),
+.change-layout:checked ~ .card6:checked ~ .card:nth-of-type(4)
+{
+    transform: translate3d(-100%, 80%, -100px) rotateZ(-90deg) rotateY(-90deg);
+    opacity: 0;
+    z-index: 2;
+}
+
+.change-layout:checked ~ .card1:checked ~ .card:nth-of-type(6),
+.change-layout:checked ~ .card2:checked ~ .card:nth-of-type(1),
+.change-layout:checked ~ .card3:checked ~ .card:nth-of-type(2),
+.change-layout:checked ~ .card4:checked ~ .card:nth-of-type(3),
+.change-layout:checked ~ .card5:checked ~ .card:nth-of-type(4),
+.change-layout:checked ~ .card6:checked ~ .card:nth-of-type(5)
+{
+    transform: translate3d(-100%, 50%, -100px) rotateZ(-45deg) rotateY(-40deg);
+    z-index: 3;
+}
+
+.change-layout:checked ~ .recipe1:checked ~ .card:nth-of-type(1),
+.change-layout:checked ~ .recipe2:checked ~ .card:nth-of-type(2),
+.change-layout:checked ~ .recipe3:checked ~ .card:nth-of-type(3),
+.change-layout:checked ~ .recipe4:checked ~ .card:nth-of-type(4),
+.change-layout:checked ~ .recipe5:checked ~ .card:nth-of-type(5),
+.change-layout:checked ~ .recipe6:checked ~ .card:nth-of-type(6)
+{
+    z-index: 11;
+}
+
+.change-layout:checked ~ .card1:checked ~ .card:nth-of-type(3) label[for^='card'],
+.change-layout:checked ~ .card2:checked ~ .card:nth-of-type(4) label[for^='card'],
+.change-layout:checked ~ .card3:checked ~ .card:nth-of-type(5) label[for^='card'],
+.change-layout:checked ~ .card4:checked ~ .card:nth-of-type(6) label[for^='card'],
+.change-layout:checked ~ .card5:checked ~ .card:nth-of-type(1) label[for^='card'],
+.change-layout:checked ~ .card6:checked ~ .card:nth-of-type(2) label[for^='card'],
+.change-layout:checked ~ .card1:checked ~ .card:nth-of-type(4) label[for^='card'],
+.change-layout:checked ~ .card2:checked ~ .card:nth-of-type(5) label[for^='card'],
+.change-layout:checked ~ .card3:checked ~ .card:nth-of-type(6) label[for^='card'],
+.change-layout:checked ~ .card4:checked ~ .card:nth-of-type(1) label[for^='card'],
+.change-layout:checked ~ .card5:checked ~ .card:nth-of-type(2) label[for^='card'],
+.change-layout:checked ~ .card6:checked ~ .card:nth-of-type(3) label[for^='card'],
+.change-layout:checked ~ .card1:checked ~ .card:nth-of-type(5) label[for^='card'],
+.change-layout:checked ~ .card2:checked ~ .card:nth-of-type(6) label[for^='card'],
+.change-layout:checked ~ .card3:checked ~ .card:nth-of-type(1) label[for^='card'],
+.change-layout:checked ~ .card4:checked ~ .card:nth-of-type(2) label[for^='card'],
+.change-layout:checked ~ .card5:checked ~ .card:nth-of-type(3) label[for^='card'],
+.change-layout:checked ~ .card6:checked ~ .card:nth-of-type(4) label[for^='card']
+{
+    pointer-events: none;
+}
