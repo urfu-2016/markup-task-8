@@ -40,6 +40,8 @@ h3::first-letter
     transition-property: transform;
     transition-duration: .5s;
     transform-origin: 50% 50% -700px;
+    perspective: 100000px;
+
 }
 
 input[type='checkbox'][id='simple-check']:checked ~ .gallery-container
@@ -65,10 +67,22 @@ input[type='checkbox'][id='simple-check']:checked ~ .gallery-container .item
     transform-origin: 50% 50% 0;
 }
 
+.item-container
+{
+    z-index: -100;
+}
+
+.item-rotation
+{
+    z-index: 100;
+    transform-style: preserve-3d;
+}
+
 .item-label
 {
     cursor: pointer;
     opacity: 0;
+    background: red;
     position: absolute;
     display: block;
     top: 0;
@@ -76,8 +90,13 @@ input[type='checkbox'][id='simple-check']:checked ~ .gallery-container .item
     width: 100%;
     height: 300px;
     z-index: 100;
-    transform-style: preserve-3d;
-    transform: translateZ(2px);
+    transform: translateZ(20px);
+}
+
+input[type='checkbox'][id='simple-check']:not(:checked)
+~ div .item-label
+{
+    transform: translateZ(1px);
 }
 
 .item img
@@ -153,7 +172,8 @@ div[id='img8']
 
 input[type='radio'][id='item1'].show-recepie:checked ~ .gallery-container
 {
-    transform: rotateY(0deg);
+    transform: rotateY(0deg) ;
+
 }
 
 input[type='radio'][id='item2'].show-recepie:checked ~ .gallery-container,
@@ -566,11 +586,14 @@ input[type='radio'][id='item8'].show-recepie:checked ~ .gallery-container .black
     width: 400px;
     height: 300px;
     transition-duration: .5s;
-    cursor: pointer;
     margin: 0 auto;
     left: 0;
     right: 0;
     top: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 input[type='checkbox'][id='simple-check']:checked
