@@ -32,6 +32,27 @@
     }
 }
 
+@keyframes back-flip
+{
+    from
+    {
+        transform: rotateX(-180deg);
+    }
+    25%
+    {
+        transform: scale(1.5) rotateX(-90deg);
+    }
+    90%
+    {
+        overflow: hidden;
+    }
+    to
+    {
+        overflow: hidden;
+        transform: scale(1.2) rotateX(0deg);
+    }
+}
+
 input[id='broccoli']:checked ~ section .vegetable:first-child:hover .shadow,
 input[id='squash']:checked ~ section :nth-child(2):hover .shadow,
 input[id='onion']:checked ~ section :nth-child(3):hover .shadow,
@@ -57,6 +78,41 @@ input[id='tomato']:checked ~ section :nth-child(7):hover .receipt
     z-index: 11;
 }
 
+input[id='broccoli-close']:checked ~ section .broccoli,
+input[id='squash-close']:checked ~ section .squash,
+input[id='onion-close']:checked ~ section .onion,
+input[id='cucumbers-close']:checked ~ section .cucumbers,
+input[id='redis-close']:checked ~ section .redis,
+input[id='cabbage-close']:checked ~ section .cabbage,
+input[id='tomato-close']:checked ~ section .tomato
+{
+    animation-name: back-flip;
+    animation-duration: 3000ms;
+    transform-style: preserve-3d;
+}
+
+input[id='broccoli-close']:checked ~ section .broccoli ~ .background-shadow,
+input[id='squash-close']:checked ~ section .squash ~ .background-shadow,
+input[id='onion-close']:checked ~ section .onion ~ .background-shadow,
+input[id='cucumbers-close']:checked ~ section .cucumbers ~ .background-shadow,
+input[id='redis-close']:checked ~ section .redis ~ .background-shadow,
+input[id='cabbage-close']:checked ~ section .cabbage ~ .background-shadow,
+input[id='tomato-close']:checked ~ section .tomato ~ .background-shadow
+{
+    background-color: #fff;
+}
+
+input[id='broccoli-close']:checked ~ section .broccoli .back-side .close,
+input[id='squash-close']:checked ~ section .squash .back-side .close,
+input[id='onion-close']:checked ~ section .onion .back-side .close,
+input[id='cucumbers-close']:checked ~ section .cucumbers .back-side .close,
+input[id='redis-close']:checked ~ section .redis .back-side .close,
+input[id='cabbage-close']:checked ~ section .cabbage .back-side .close,
+input[id='tomato-close']:checked ~ section .tomato .back-side .close
+{
+    display: none;
+}
+
 .receipt
 {
     text-decoration: none;
@@ -69,9 +125,40 @@ input[id='tomato']:checked ~ section :nth-child(7):hover .receipt
     z-index: -2;
 }
 
-.vegetable:target .back-side .close
+input[id='broccoli-receipt']:checked ~ section .broccoli .back-side .close,
+input[id='squash-receipt']:checked ~ section .squash .back-side .close,
+input[id='onion-receipt']:checked ~ section .onion .back-side .close,
+input[id='cucumbers-receipt']:checked ~ section .cucumbers .back-side .close,
+input[id='redis-receipt']:checked ~ section .redis .back-side .close,
+input[id='cabbage-receipt']:checked ~ section .cabbage .back-side .close,
+input[id='tomato-receipt']:checked ~ section .tomato .back-side .close
 {
     display: block;
+}
+
+input[id='broccoli-receipt']:checked ~ section .broccoli ~ .background-shadow,
+input[id='squash-receipt']:checked ~ section .squash ~ .background-shadow,
+input[id='onion-receipt']:checked ~ section .onion ~ .background-shadow,
+input[id='cucumbers-receipt']:checked ~ section .cucumbers ~ .background-shadow,
+input[id='redis-receipt']:checked ~ section .redis ~ .background-shadow,
+input[id='cabbage-receipt']:checked ~ section .cabbage ~ .background-shadow,
+input[id='tomato-receipt']:checked ~ section .tomato ~ .background-shadow
+{
+    background-color: #ccc;
+}
+
+input[id='broccoli-receipt']:checked ~ section .broccoli,
+input[id='squash-receipt']:checked ~ section .squash,
+input[id='onion-receipt']:checked ~ section .onion,
+input[id='cucumbers-receipt']:checked ~ section .cucumbers,
+input[id='redis-receipt']:checked ~ section .redis,
+input[id='cabbage-receipt']:checked ~ section .cabbage,
+input[id='tomato-receipt']:checked ~ section .tomato
+{
+    animation-name: front-flip;
+    animation-duration: 3000ms;
+    animation-fill-mode: both;
+    transform-style: preserve-3d;
 }
 
 .name
@@ -82,19 +169,6 @@ input[id='tomato']:checked ~ section :nth-child(7):hover .receipt
     color: #ccc;
     width: 100%;
     border-bottom: 1px solid #ccc;
-}
-
-.vegetable:target ~ .background-shadow
-{
-    background-color: #ccc;
-}
-
-.vegetable:target
-{
-    animation-name: front-flip;
-    animation-duration: 3000ms;
-    animation-fill-mode: both;
-    transform-style: preserve-3d;
 }
 
 .wrapper
