@@ -177,7 +177,7 @@ input[type='radio'][id='item1'].show-recepie:checked ~ .gallery-container
 
 }
 
- .item-rotation
+.item-rotation
 {
     transform: translateZ(10px);
 }
@@ -227,7 +227,7 @@ input[type='radio'][id='item2'].show-recepie:checked ~ .gallery-container .black
 input[type='checkbox'][id='simple-check']:checked
 ~ div .item-rotation
 {
-     transform: translateZ(100px);
+    transform: translateZ(100px);
 }
 
 input[type='checkbox'][id='simple-check']:checked
