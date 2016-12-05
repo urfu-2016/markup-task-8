@@ -40,6 +40,7 @@
     from
     {
         transform: perspective(600px) scale(2.5) rotateX(180deg);
+        backface-visibility: hidden;
     }
     45%
     {
@@ -171,6 +172,8 @@ input[id='redis-receipt']:checked ~ section .redis ~ .background-shadow,
 input[id='cabbage-receipt']:checked ~ section .cabbage ~ .background-shadow,
 input[id='tomato-receipt']:checked ~ section .tomato ~ .background-shadow
 {
+    z-index: 5;
+    opacity: .5;
     background-color: #ccc;
 }
 
@@ -336,14 +339,14 @@ input[id='tomato-receipt']:checked ~ section .tomato
 input[id='tomato']:checked ~ section .vegetable:nth-child(1)
 {
     z-index: 0;
-    transform: perspective(1100px) rotateY(25deg) translateX(-600px);
+    transform: perspective(1100px) rotateY(25deg) translateX(-450px);
 }
 
 input[id='cabbage']:checked ~ section .vegetable:nth-child(1),
 input[id='tomato']:checked ~ section .vegetable:nth-child(2)
 {
     z-index: 1;
-    transform: perspective(1000px) rotateY(25deg) translateX(-500px);
+    transform: perspective(1000px) rotateY(25deg) translateX(-375px);
 }
 
 input[id='redis']:checked ~ section .vegetable:nth-child(1),
@@ -351,7 +354,7 @@ input[id='cabbage']:checked ~ section .vegetable:nth-child(2),
 input[id='tomato']:checked ~ section .vegetable:nth-child(3)
 {
     z-index: 2;
-    transform: perspective(900px) rotateY(25deg) translateX(-400px);
+    transform: perspective(900px) rotateY(25deg) translateX(-300px);
 }
 
 input[id='cucumbers']:checked ~ section .vegetable:nth-child(1),
@@ -360,7 +363,7 @@ input[id='cabbage']:checked ~ section .vegetable:nth-child(3),
 input[id='tomato']:checked ~ section .vegetable:nth-child(4)
 {
     z-index: 3;
-    transform: perspective(800px) rotateY(25deg) translateX(-300px);
+    transform: perspective(800px) rotateY(25deg) translateX(-225px);
 }
 
 input[id='onion']:checked ~ section .vegetable:nth-child(1),
@@ -370,7 +373,7 @@ input[id='cabbage']:checked ~ section .vegetable:nth-child(4),
 input[id='tomato']:checked ~ section .vegetable:nth-child(5)
 {
     z-index: 4;
-    transform: perspective(700px) rotateY(25deg) translateX(-200px);
+    transform: perspective(700px) rotateY(25deg) translateX(-150px);
 }
 
 input[id='squash']:checked ~ section .vegetable:nth-child(1),
@@ -381,7 +384,7 @@ input[id='cabbage']:checked ~ section .vegetable:nth-child(5),
 input[id='tomato']:checked ~ section .vegetable:nth-child(6)
 {
     z-index: 5;
-    transform: perspective(600px) rotateY(25deg) translateX(-100px);
+    transform: perspective(600px) rotateY(25deg) translateX(-75px);
 }
 
 input[id='broccoli']:checked ~ section .vegetable:nth-child(1),
@@ -404,7 +407,7 @@ input[id='redis']:checked ~ section .vegetable:nth-child(6),
 input[id='cabbage']:checked ~ section .vegetable:nth-child(7)
 {
     z-index: 5;
-    transform: perspective(600px) rotateY(-25deg) translateX(100px);
+    transform: perspective(600px) rotateY(-25deg) translateX(75px);
 }
 
 input[id='broccoli']:checked ~ section .vegetable:nth-child(3),
@@ -414,7 +417,7 @@ input[id='cucumbers']:checked ~ section .vegetable:nth-child(6),
 input[id='redis']:checked ~ section .vegetable:nth-child(7)
 {
     z-index: 4;
-    transform: perspective(700px) rotateY(-25deg) translateX(200px);
+    transform: perspective(700px) rotateY(-25deg) translateX(150px);
 }
 
 input[id='broccoli']:checked ~ section .vegetable:nth-child(4),
@@ -423,7 +426,7 @@ input[id='onion']:checked ~ section .vegetable:nth-child(6),
 input[id='cucumbers']:checked ~ section .vegetable:nth-child(7)
 {
     z-index: 3;
-    transform: perspective(800px) rotateY(-25deg) translateX(300px);
+    transform: perspective(800px) rotateY(-25deg) translateX(225px);
 }
 
 input[id='broccoli']:checked ~ section .vegetable:nth-child(5),
@@ -431,18 +434,18 @@ input[id='squash']:checked ~ section .vegetable:nth-child(6),
 input[id='onion']:checked ~ section .vegetable:nth-child(7)
 {
     z-index: 2;
-    transform: perspective(900px) rotateY(-25deg) translateX(400px);
+    transform: perspective(900px) rotateY(-25deg) translateX(300px);
 }
 
 input[id='broccoli']:checked ~ section .vegetable:nth-child(6),
 input[id='squash']:checked ~ section .vegetable:nth-child(7)
 {
     z-index: 1;
-    transform: perspective(1000px) rotateY(-25deg) translateX(500px);
+    transform: perspective(1000px) rotateY(-25deg) translateX(375px);
 }
 
 input[id='broccoli']:checked ~ section .vegetable:nth-child(7)
 {
     z-index: 0;
-    transform: perspective(1100px) rotateY(-25deg) translateX(600px);
+    transform: perspective(1100px) rotateY(-25deg) translateX(450px);
 }
