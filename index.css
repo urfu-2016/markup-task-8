@@ -14,21 +14,24 @@
 {
     0%
     {
-        transform: scale(1.5) rotateX(45deg);
+        transform: perspective(0) scale(1.5) rotateX(45deg);
     }
     50%
     {
-        transform: scale(2.5) rotateX(90deg);
+        transform: perspective(800px) scale(2.5) rotateX(90deg);
+        -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
     }
     55%
     {
+        -webkit-backface-visibility: visible;
         backface-visibility: visible;
     }
     to
     {
+        -webkit-backface-visibility: visible;
         backface-visibility: visible;
-        transform: scale(2.5) rotateX(180deg);
+        transform: perspective(600px) scale(2.5) rotateX(180deg);
     }
 }
 
@@ -36,20 +39,22 @@
 {
     from
     {
-        transform: rotateX(-180deg);
+        transform: perspective(600px) scale(2.5) rotateX(180deg);
     }
-    25%
+    45%
     {
-        transform: scale(1.5) rotateX(-90deg);
+        overflow: visible;
     }
-    90%
+    50%
     {
-        overflow: hidden;
+        transform: perspective(800px) scale(2.5) rotateX(90deg);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
     }
     to
     {
         overflow: hidden;
-        transform: scale(1.2) rotateX(0deg);
+        transform: perspective(0) scale(1.2) rotateX(0deg);
     }
 }
 
@@ -76,6 +81,28 @@ input[id='tomato']:checked ~ section :nth-child(7):hover .receipt
 {
     display: block;
     z-index: 11;
+}
+
+input[id='broccoli-receipt']:checked ~ section .broccoli:hover .receipt,
+input[id='squash-receipt']:checked ~ section .squash:hover .receipt,
+input[id='onion-receipt']:checked ~ section .onion:hover .receipt,
+input[id='cucumbers-receipt']:checked ~ section .cucumbers:hover .receipt,
+input[id='redis-receipt']:checked ~ section .redis:hover .receipt,
+input[id='cabbage-receipt']:checked ~ section .cabbage:hover .receipt,
+input[id='tomato-receipt']:checked ~ section .tomato:hover .receipt
+{
+    display: none;
+}
+
+input[id='broccoli-receipt']:checked ~ section .broccoli:hover .shadow,
+input[id='squash-receipt']:checked ~ section .squash:hover .shadow,
+input[id='onion-receipt']:checked ~ section .onion:hover .shadow,
+input[id='cucumbers-receipt']:checked ~ section .cucumbers:hover .shadow,
+input[id='redis-receipt']:checked ~ section .redis:hover .shadow,
+input[id='cabbage-receipt']:checked ~ section .cabbage:hover .shadow,
+input[id='tomato-receipt']:checked ~ section .tomato:hover .shadow
+{
+    display: none;
 }
 
 input[id='broccoli-close']:checked ~ section .broccoli,
@@ -167,23 +194,26 @@ input[id='tomato-receipt']:checked ~ section .tomato
     margin-bottom: 0;
     font-size: 18px;
     color: #ccc;
-    width: 100%;
+    width: 95%;
     border-bottom: 1px solid #ccc;
 }
 
 .wrapper
 {
     display: flex;
+    -ms-flex-pack: justify;
     justify-content: space-between;
 }
 
 .ingredients
 {
+    -ms-flex: 1 20%;
     flex: 1 20%;
 }
 
 .description
 {
+    -ms-flex: 1 50%;
     flex: 1 50%;
 }
 
@@ -215,6 +245,7 @@ input[id='tomato-receipt']:checked ~ section .tomato
 .front-side,
 .back-side 
 {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     transition-property: transform;
     transition-duration: 3000ms;
@@ -245,11 +276,7 @@ input[id='tomato-receipt']:checked ~ section .tomato
 
 .front-side
 {
-    z-index: 12;
-}
-
-.front-side
-{
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     width: 200px;
     height: 150px;
@@ -257,6 +284,7 @@ input[id='tomato-receipt']:checked ~ section .tomato
 
 .back-side
 {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     width: 200px;
     height: 150px;
