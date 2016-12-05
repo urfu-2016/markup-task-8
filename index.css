@@ -7,9 +7,23 @@ html
 
 .radio,
 .smog,
-.item-label
+.item-label,
+.view-type
 {
     display: none;
+}
+
+.view-type-label
+{
+    position: absolute;
+    z-index: 6;
+}
+
+.view-type-label:hover,
+.view-type:checked ~ .view-type-label
+{
+    color: #fff;
+    background-color: #000;
 }
 
 .item-label
@@ -242,16 +256,16 @@ html
 {
     from
     {
+        z-index: 0;
+        visibility: visible;
         background: #f0f0f0;
-        transform: rotateX(180deg);
-    }
-    50%
-    {
-        transform: translateY(calc(80vw / 7)) scale(1);
+        transform: rotateX(180deg) scale(1);
     }
     to
     {
+        visibility: visible;
         transform: rotateX(0deg) scale(3, 2.5);
+        z-index: 10;
     }
 }
 
@@ -276,14 +290,16 @@ html
 {
     from
     {
+        z-index: 10;
+        visibility: visible;
         background: #f0f0f0;
-        transform: rotateX(0deg);
-        z-index: 6;
+        transform: rotateX(0deg) scale(1);
     }
-    50%
+    to
     {
         z-index: 0;
-        transform: translateY(calc(80vw / 7)) rotateX(180deg);
+        visibility: visible;
+        transform: rotateX(180deg) scale(3, 2.5);
     }
 }
 
