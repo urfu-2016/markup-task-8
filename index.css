@@ -1,0 +1,640 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&subset=cyrillic');
+
+body
+{
+    background-color: #e1e1e1;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+html,
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+main,
+.entries
+{
+    height: 100%;
+    width: 100%;
+}
+
+label[for]
+{
+    cursor: pointer;
+}
+
+.hidden,
+.recipe-show
+{
+    display: none;
+}
+
+.entries
+{
+    overflow: hidden;
+    position: relative;
+    -webkit-perspective: 2000px;
+    -moz-perspective: 2000px;
+    perspective: 2000px;
+}
+
+.entry
+{
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    -webkit-perspective: 600px;
+    -moz-perspective: 600px;
+    perspective: 600px;
+    position: absolute;
+    -webkit-transition: transform .4s ease-in-out;
+    -moz-transition: transform .4s ease-in-out;
+    -o-transition: transform .4s ease-in-out;
+    transition: transform .4s ease-in-out;
+    width: 320px;
+    z-index: 7;
+}
+
+.card-selected-1:checked ~ .entries .entry-2,
+.card-selected-2:checked ~ .entries .entry-3,
+.card-selected-3:checked ~ .entries .entry-4,
+.card-selected-4:checked ~ .entries .entry-5,
+.card-selected-5:checked ~ .entries .entry-6,
+.card-selected-6:checked ~ .entries .entry-7
+{
+    -webkit-transform: translateX(52%) scale(.9) rotateY(-60deg);
+    -moz-transform: translateX(52%) scale(.9) rotateY(-60deg);
+    -ms-transform: translateX(52%) scale(.9) rotateY(-60deg);
+    -o-transform: translateX(52%) scale(.9) rotateY(-60deg);
+    transform: translateX(52%) scale(.9) rotateY(-60deg);
+}
+
+.card-selected-1:checked ~ .entries .entry-3,
+.card-selected-2:checked ~ .entries .entry-4,
+.card-selected-3:checked ~ .entries .entry-5,
+.card-selected-4:checked ~ .entries .entry-6,
+.card-selected-5:checked ~ .entries .entry-7
+{
+    -webkit-transform: translateX(70%) scale(.85) rotateY(-50deg);
+    -moz-transform: translateX(70%) scale(.85) rotateY(-50deg);
+    -ms-transform: translateX(70%) scale(.85) rotateY(-50deg);
+    -o-transform: translateX(70%) scale(.85) rotateY(-50deg);
+    transform: translateX(70%) scale(.85) rotateY(-50deg);
+}
+
+.card-selected-1:checked ~ .entries .entry-4,
+.card-selected-2:checked ~ .entries .entry-5,
+.card-selected-3:checked ~ .entries .entry-6,
+.card-selected-4:checked ~ .entries .entry-7
+{
+    -webkit-transform: translateX(87%) scale(.8) rotateY(-40deg);
+    -moz-transform: translateX(87%) scale(.8) rotateY(-40deg);
+    -ms-transform: translateX(87%) scale(.8) rotateY(-40deg);
+    -o-transform: translateX(87%) scale(.8) rotateY(-40deg);
+    transform: translateX(87%) scale(.8) rotateY(-40deg);
+}
+
+.card-selected-1:checked ~ .entries .entry-5,
+.card-selected-2:checked ~ .entries .entry-6,
+.card-selected-3:checked ~ .entries .entry-7
+{
+    -webkit-transform: translateX(102%) scale(.75) rotateY(-30deg);
+    -moz-transform: translateX(102%) scale(.75) rotateY(-30deg);
+    -ms-transform: translateX(102%) scale(.75) rotateY(-30deg);
+    -o-transform: translateX(102%) scale(.75) rotateY(-30deg);
+    transform: translateX(102%) scale(.75) rotateY(-30deg);
+}
+
+.card-selected-1:checked ~ .entries .entry-6,
+.card-selected-2:checked ~ .entries .entry-7
+{
+    -webkit-transform: translateX(118%) scale(.7) rotateY(-20deg);
+    -moz-transform: translateX(118%) scale(.7) rotateY(-20deg);
+    -ms-transform: translateX(118%) scale(.7) rotateY(-20deg);
+    -o-transform: translateX(118%) scale(.7) rotateY(-20deg);
+    transform: translateX(118%) scale(.7) rotateY(-20deg);
+}
+
+.card-selected-1:checked ~ .entries .entry-7
+{
+    -webkit-transform: translateX(134%) scale(.65) rotateY(-10deg);
+    -moz-transform: translateX(134%) scale(.65) rotateY(-10deg);
+    -ms-transform: translateX(134%) scale(.65) rotateY(-10deg);
+    -o-transform: translateX(134%) scale(.65) rotateY(-10deg);
+    transform: translateX(134%) scale(.65) rotateY(-10deg);
+}
+
+.card-selected-2:checked ~ .entries .entry-1,
+.card-selected-3:checked ~ .entries .entry-2,
+.card-selected-4:checked ~ .entries .entry-3,
+.card-selected-5:checked ~ .entries .entry-4,
+.card-selected-6:checked ~ .entries .entry-5,
+.card-selected-7:checked ~ .entries .entry-6
+{
+    -webkit-transform: translateX(-52%) scale(.9) rotateY(60deg);
+    -moz-transform: translateX(-52%) scale(.9) rotateY(60deg);
+    -ms-transform: translateX(-52%) scale(.9) rotateY(60deg);
+    -o-transform: translateX(-52%) scale(.9) rotateY(60deg);
+    transform: translateX(-52%) scale(.9) rotateY(60deg);
+}
+
+.card-selected-3:checked ~ .entries .entry-1,
+.card-selected-4:checked ~ .entries .entry-2,
+.card-selected-5:checked ~ .entries .entry-3,
+.card-selected-6:checked ~ .entries .entry-4,
+.card-selected-7:checked ~ .entries .entry-5
+{
+    -webkit-transform: translateX(-70%) scale(.85) rotateY(50deg);
+    -moz-transform: translateX(-70%) scale(.85) rotateY(50deg);
+    -ms-transform: translateX(-70%) scale(.85) rotateY(50deg);
+    -o-transform: translateX(-70%) scale(.85) rotateY(50deg);
+    transform: translateX(-70%) scale(.85) rotateY(50deg);
+}
+
+.card-selected-4:checked ~ .entries .entry-1,
+.card-selected-5:checked ~ .entries .entry-2,
+.card-selected-6:checked ~ .entries .entry-3,
+.card-selected-7:checked ~ .entries .entry-4
+{
+    -webkit-transform: translateX(-87%) scale(.8) rotateY(40deg);
+    -moz-transform: translateX(-87%) scale(.8) rotateY(40deg);
+    -ms-transform: translateX(-87%) scale(.8) rotateY(40deg);
+    -o-transform: translateX(-87%) scale(.8) rotateY(40deg);
+    transform: translateX(-87%) scale(.8) rotateY(40deg);
+}
+
+.card-selected-5:checked ~ .entries .entry-1,
+.card-selected-6:checked ~ .entries .entry-2,
+.card-selected-7:checked ~ .entries .entry-3
+{
+    -webkit-transform: translateX(-102%) scale(.75) rotateY(30deg);
+    -moz-transform: translateX(-102%) scale(.75) rotateY(30deg);
+    -ms-transform: translateX(-102%) scale(.75) rotateY(30deg);
+    -o-transform: translateX(-102%) scale(.75) rotateY(30deg);
+    transform: translateX(-102%) scale(.75) rotateY(30deg);
+}
+
+.card-selected-6:checked ~ .entries .entry-1,
+.card-selected-7:checked ~ .entries .entry-2
+{
+    -webkit-transform: translateX(-118%) scale(.7) rotateY(20deg);
+    -moz-transform: translateX(-118%) scale(.7) rotateY(20deg);
+    -ms-transform: translateX(-118%) scale(.7) rotateY(20deg);
+    -o-transform: translateX(-118%) scale(.7) rotateY(20deg);
+    transform: translateX(-118%) scale(.7) rotateY(20deg);
+}
+
+.card-selected-7:checked ~ .entries .entry-1
+{
+    -webkit-transform: translateX(-134%) scale(.65) rotateY(10deg);
+    -moz-transform: translateX(-134%) scale(.65) rotateY(10deg);
+    -ms-transform: translateX(-134%) scale(.65) rotateY(10deg);
+    -o-transform: translateX(-134%) scale(.65) rotateY(10deg);
+    transform: translateX(-134%) scale(.65) rotateY(10deg);
+}
+
+.card-selected-1:checked ~ .entries .entry-2
+{
+    z-index: 6;
+}
+
+.card-selected-1:checked ~ .entries .entry-3,
+.card-selected-2:checked ~ .entries .entry-3
+{
+    z-index: 5;
+}
+
+.card-selected-1:checked ~ .entries .entry-4,
+.card-selected-2:checked ~ .entries .entry-4,
+.card-selected-3:checked ~ .entries .entry-4
+{
+    z-index: 4;
+}
+
+.card-selected-1:checked ~ .entries .entry-5,
+.card-selected-2:checked ~ .entries .entry-5,
+.card-selected-3:checked ~ .entries .entry-5,
+.card-selected-4:checked ~ .entries .entry-5
+{
+    z-index: 3;
+}
+
+.card-selected-1:checked ~ .entries .entry-6,
+.card-selected-2:checked ~ .entries .entry-6,
+.card-selected-3:checked ~ .entries .entry-6,
+.card-selected-4:checked ~ .entries .entry-6,
+.card-selected-5:checked ~ .entries .entry-6
+{
+    z-index: 2;
+}
+
+.card-selected-1:checked ~ .entries .entry-7,
+.card-selected-2:checked ~ .entries .entry-7,
+.card-selected-3:checked ~ .entries .entry-7,
+.card-selected-4:checked ~ .entries .entry-7,
+.card-selected-5:checked ~ .entries .entry-7,
+.card-selected-6:checked ~ .entries .entry-7
+{
+    z-index: 1;
+}
+
+.card-selected-1:checked ~ .entries .entry-1,
+.card-selected-2:checked ~ .entries .entry-2,
+.card-selected-3:checked ~ .entries .entry-3,
+.card-selected-4:checked ~ .entries .entry-4,
+.card-selected-5:checked ~ .entries .entry-5,
+.card-selected-6:checked ~ .entries .entry-6,
+.card-selected-7:checked ~ .entries .entry-7
+{
+    z-index: 10;
+}
+
+.card-selected-1:checked ~ .entries .entry-1 .recipe-show-button,
+.card-selected-2:checked ~ .entries .entry-2 .recipe-show-button,
+.card-selected-3:checked ~ .entries .entry-3 .recipe-show-button,
+.card-selected-4:checked ~ .entries .entry-4 .recipe-show-button,
+.card-selected-5:checked ~ .entries .entry-5 .recipe-show-button,
+.card-selected-6:checked ~ .entries .entry-6 .recipe-show-button,
+.card-selected-7:checked ~ .entries .entry-7 .recipe-show-button
+{
+    z-index: 1;
+}
+
+.card-selected-1:checked ~ .entries .entry-1 .card:hover .recipe-show-button,
+.card-selected-2:checked ~ .entries .entry-2 .card:hover .recipe-show-button,
+.card-selected-3:checked ~ .entries .entry-3 .card:hover .recipe-show-button,
+.card-selected-4:checked ~ .entries .entry-4 .card:hover .recipe-show-button,
+.card-selected-5:checked ~ .entries .entry-5 .card:hover .recipe-show-button,
+.card-selected-6:checked ~ .entries .entry-6 .card:hover .recipe-show-button,
+.card-selected-7:checked ~ .entries .entry-7 .card:hover .recipe-show-button
+{
+    opacity: 1;
+}
+
+.card
+{
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-color: #fff;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, .2);
+    height: 240px;
+    margin: auto 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: transform .25s ease-out .4s;
+    -moz-transition: transform .25s ease-out .4s;
+    -o-transition: transform .25s ease-out .4s;
+    transition: transform .25s ease-out .4s;
+    width: 100%;
+}
+
+.recipe-show-1:checked ~ .entries .entry-1 .card,
+.recipe-show-2:checked ~ .entries .entry-2 .card,
+.recipe-show-3:checked ~ .entries .entry-3 .card,
+.recipe-show-4:checked ~ .entries .entry-4 .card,
+.recipe-show-5:checked ~ .entries .entry-5 .card,
+.recipe-show-6:checked ~ .entries .entry-6 .card,
+.recipe-show-7:checked ~ .entries .entry-7 .card
+{
+    -webkit-transition: transform .3s ease-in;
+    -moz-transition: transform .3s ease-in;
+    -o-transition: transform .3s ease-in;
+    transition: transform .3s ease-in;
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    -ms-transform: rotateX(-90deg);
+    -o-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+}
+
+.recipe-show-button
+{
+    -webkit-animation: prevent-opacity-on-pageload .1s;
+    -moz-animation: prevent-opacity-on-pageload .1s;
+    -o-animation: prevent-opacity-on-pageload .1s;
+    animation: prevent-opacity-on-pageload .1s;
+    background: rgba(0, 0, 0, .65);
+    display: block;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    -webkit-transition: opacity .2s ease-in-out;
+    -moz-transition: opacity .2s ease-in-out;
+    -o-transition: opacity .2s ease-in-out;
+    transition: opacity .2s ease-in-out;
+    width: 100%;
+}
+
+.recipe-show-1:checked ~ .entries .entry-1 .recipe-show-button,
+.recipe-show-2:checked ~ .entries .entry-2 .recipe-show-button,
+.recipe-show-3:checked ~ .entries .entry-3 .recipe-show-button,
+.recipe-show-4:checked ~ .entries .entry-4 .recipe-show-button,
+.recipe-show-5:checked ~ .entries .entry-5 .recipe-show-button,
+.recipe-show-6:checked ~ .entries .entry-6 .recipe-show-button,
+.recipe-show-7:checked ~ .entries .entry-7 .recipe-show-button
+{
+    display: none;
+}
+
+.recipe-show-button-text
+{
+    border: 3px solid #fff;
+    display: block;
+    height: 110px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    width: 110px;
+}
+
+.recipe-show-button-text span
+{
+    color: #fff;
+    display: block;
+    font-size: 1.43em;
+    line-height: 110px;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.card-image-container
+{
+    display: block;
+    line-height: 240px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.card-image-container img
+{
+    margin: auto;
+    max-width: 90%;
+    max-height: 90%;
+    vertical-align: middle;
+}
+
+.recipe-bg
+{
+    -webkit-animation: prevent-opacity-on-pageload .1s;
+    -moz-animation: prevent-opacity-on-pageload .1s;
+    -o-animation: prevent-opacity-on-pageload .1s;
+    animation: prevent-opacity-on-pageload .1s;
+    background: rgba(0, 0, 0, .75);
+    height: 100%;
+    opacity: 0;
+    position: fixed;
+    -webkit-transition: opacity .4s;
+    -moz-transition: opacity .4s;
+    -o-transition: opacity .4s;
+    transition: opacity .4s;
+    width: 100%;
+    z-index: -1;
+}
+
+.recipe-show:checked ~ .entries .recipe-bg
+{
+    opacity: 1;
+    z-index: 9;
+}
+
+.recipe-card
+{
+    -webkit-animation: prevent-transform-on-pageload .1s;
+    -moz-animation: prevent-transform-on-pageload .1s;
+    -o-animation: prevent-transform-on-pageload .1s;
+    animation: prevent-transform-on-pageload .1s;
+    -webkit-align-content: flex-start;
+    align-content: flex-start;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-color: #fff;
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, .2);
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    height: 384px;
+    margin: auto;
+    overflow-y: auto;
+    position: absolute;
+    -webkit-transition: transform .4s ease-in;
+    -moz-transition: transform .4s ease-in;
+    -o-transition: transform .4s ease-in;
+    transition: transform .4s ease-in;
+    -webkit-transform: rotateX(90deg) scale(.5, .66);
+    -moz-transform: rotateX(90deg) scale(.5, .66);
+    -ms-transform: rotateX(90deg) scale(.5, .66);
+    -o-transform: rotateX(90deg) scale(.5, .66);
+    transform: rotateX(90deg) scale(.5, .66);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: -50%;
+    width: 200%;
+    z-index: 2;
+}
+
+.recipe-show-1:checked ~ .entries .entry-1 .recipe-card,
+.recipe-show-2:checked ~ .entries .entry-2 .recipe-card,
+.recipe-show-3:checked ~ .entries .entry-3 .recipe-card,
+.recipe-show-4:checked ~ .entries .entry-4 .recipe-card,
+.recipe-show-5:checked ~ .entries .entry-5 .recipe-card,
+.recipe-show-6:checked ~ .entries .entry-6 .recipe-card,
+.recipe-show-7:checked ~ .entries .entry-7 .recipe-card
+{
+    -webkit-transition: transform .4s ease-out .3s;
+    -moz-transition: transform .4s ease-out .3s;
+    -o-transition: transform .4s ease-out .3s;
+    transition: transform .4s ease-out .3s;
+    -webkit-transform: rotateX(0deg) scale(1, 1);
+    -moz-transform: rotateX(0deg) scale(1, 1);
+    -ms-transform: rotateX(0deg) scale(1, 1);
+    -o-transform: rotateX(0deg) scale(1, 1);
+    transform: rotateX(0deg) scale(1, 1);
+}
+
+.recipe-card .header
+{
+    background-color: #3f51b5;
+    color: #fff;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.recipe-card .header h3
+{
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    -webkit-flex-shrink: 1;
+    flex-shrink: 1;
+    font-size: 1.43em;
+    font-weight: 400;
+    margin: 0;
+    padding: 15px 24px;
+}
+
+.hide-recipe-button:before
+{
+    content: ' ';
+    -webkit-animation: ripple-fade-out-animation .3s;
+    -moz-animation: ripple-fade-out-animation .3s;
+    -o-animation: ripple-fade-out-animation .3s;
+    animation: ripple-fade-out-animation .3s;
+    background-color: rgba(0, 0, 0, .15);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    display: inline-block;
+    height: 48px;
+    opacity: 0;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 48px;
+}
+
+.hide-recipe-button:hover:before
+{
+    -webkit-animation: ripple-animation .25s;
+    -moz-animation: ripple-animation .25s;
+    -o-animation: ripple-animation .25s;
+    animation: ripple-animation .25s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.hide-recipe-button
+{
+    background: url('img/ic_close.svg') no-repeat 50% 50%;
+    -webkit-background-size: 24px 24px;
+    -moz-background-size: 24px 24px;
+    -o-background-size: 24px 24px;
+    background-size: 24px 24px;
+    display: block;
+    -webkit-flex-basis: 56px;
+    flex-basis: 56px;
+    min-width: 56px;
+    height: 56px;
+}
+
+.recipe-card h6
+{
+    color: #616161;
+    font-size: 1em;
+    margin: 2em 24px 1em;
+}
+
+.recipe-card .ingredients
+{
+    -webkit-align-self: flex-start;
+    align-self: flex-start;
+    -webkit-flex-basis: 40%;
+    flex-basis: 40%;
+}
+
+.recipe-card .cooking-method
+{
+    -webkit-align-self: flex-start;
+    align-self: flex-start;
+    -webkit-flex-basis: 60%;
+    flex-basis: 60%;
+}
+
+.recipe-card ul li,
+.recipe-card ol li
+{
+    padding: 4px 16px 4px 0;
+}
+
+@keyframes ripple-animation
+{
+    from
+    {
+        opacity: 0;
+        -webkit-transform: scale(.33);
+        -moz-transform: scale(.33);
+        -ms-transform: scale(.33);
+        -o-transform: scale(.33);
+        transform: scale(.33);
+    }
+    to
+    {
+        opacity: 1;
+        -webkit-transform: scale(1.5);
+        -moz-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+        -o-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+}
+
+@keyframes ripple-fade-out-animation
+{
+    from
+    {
+        opacity: 1;
+        -webkit-transform: scale(1.5);
+        -moz-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+        -o-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+    to
+    {
+        opacity: 0;
+        -webkit-transform: scale(1.5);
+        -moz-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+        -o-transform: scale(1.5);
+        transform: scale(1.5);
+    }
+}
+
+@keyframes prevent-transform-on-pageload
+{
+    from
+    {
+        -webkit-transform: rotateX(90deg) scale(.5, .66);
+        -moz-transform: rotateX(90deg) scale(.5, .66);
+        -ms-transform: rotateX(90deg) scale(.5, .66);
+        -o-transform: rotateX(90deg) scale(.5, .66);
+        transform: rotateX(90deg) scale(.5, .66);
+    }
+}
+
+@keyframes prevent-opacity-on-pageload
+{
+    from
+    {
+        opacity: 0;
+    }
+}
