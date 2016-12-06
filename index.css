@@ -45,6 +45,7 @@
     45%
     {
         overflow: visible;
+        backface-visibility: hidden;
     }
     50%
     {
@@ -67,7 +68,6 @@ input[id='redis']:checked ~ section :nth-child(5):hover .shadow,
 input[id='cabbage']:checked ~ section :nth-child(6):hover .shadow,
 input[id='tomato']:checked ~ section :nth-child(7):hover .shadow
 {
-    z-index: 10;
     opacity: .5;
     background-color: #000;
 }
@@ -127,7 +127,7 @@ input[id='redis-close']:checked ~ section .redis ~ .background-shadow,
 input[id='cabbage-close']:checked ~ section .cabbage ~ .background-shadow,
 input[id='tomato-close']:checked ~ section .tomato ~ .background-shadow
 {
-    background-color: #fff;
+    opacity: .2;
 }
 
 input[id='broccoli-close']:checked ~ section .broccoli .back-side .close,
@@ -148,8 +148,8 @@ input[id='tomato-close']:checked ~ section .tomato .back-side .close
     color: #fff;
     display: none;
     position: absolute;
-    bottom: 50%;
-    left: 33%;
+    bottom: 45%;
+    left: 28%;
     z-index: -2;
 }
 
@@ -173,7 +173,6 @@ input[id='cabbage-receipt']:checked ~ section .cabbage ~ .background-shadow,
 input[id='tomato-receipt']:checked ~ section .tomato ~ .background-shadow
 {
     z-index: 5;
-    opacity: .5;
     background-color: #ccc;
 }
 
@@ -223,7 +222,7 @@ input[id='tomato-receipt']:checked ~ section .tomato
 .description,
 .ingredients
 {
-    font-size: 5px;
+    font-size: 3px;
 }
 
 .product
@@ -281,16 +280,16 @@ input[id='tomato-receipt']:checked ~ section .tomato
 {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    width: 200px;
-    height: 150px;
+    width: 160px;
+    height: 120px;
 }
 
 .back-side
 {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    width: 200px;
-    height: 150px;
+    width: 160px;
+    height: 120px;
 }
 
 .vegetable .front-side
@@ -301,13 +300,14 @@ input[id='tomato-receipt']:checked ~ section .tomato
 .vegetable
 {
     position: absolute;
-    width: 200px;
-    height: 150px;
+    width: 160px;
+    height: 120px;
     transition: transform .8s ease;
 }
 
 .background-shadow
 {
+    opacity: .5;
     width: 100%;
     height: 100%;
     position: fixed;
@@ -323,8 +323,8 @@ input[id='tomato-receipt']:checked ~ section .tomato
 {
     z-index: -1;
     bottom: 0;
-    width: 200px;
-    height: 154px;
+    width: 160px;
+    height: 120px;
     position: absolute;
     transition-property: background-color, opacity;
     transition-duration: 3000ms;
@@ -332,21 +332,21 @@ input[id='tomato-receipt']:checked ~ section .tomato
 
 .img-vegetable
 {
-    width: 200px;
-    height: 150px;
+    width: 160px;
+    height: 120px;
 }
 
 input[id='tomato']:checked ~ section .vegetable:nth-child(1)
 {
     z-index: 0;
-    transform: perspective(1100px) rotateY(25deg) translateX(-450px);
+    transform: perspective(1100px) rotateY(5deg) translateX(-450px);
 }
 
 input[id='cabbage']:checked ~ section .vegetable:nth-child(1),
 input[id='tomato']:checked ~ section .vegetable:nth-child(2)
 {
     z-index: 1;
-    transform: perspective(1000px) rotateY(25deg) translateX(-375px);
+    transform: perspective(1000px) rotateY(10deg) translateX(-375px);
 }
 
 input[id='redis']:checked ~ section .vegetable:nth-child(1),
@@ -354,7 +354,7 @@ input[id='cabbage']:checked ~ section .vegetable:nth-child(2),
 input[id='tomato']:checked ~ section .vegetable:nth-child(3)
 {
     z-index: 2;
-    transform: perspective(900px) rotateY(25deg) translateX(-300px);
+    transform: perspective(900px) rotateY(15deg) translateX(-300px);
 }
 
 input[id='cucumbers']:checked ~ section .vegetable:nth-child(1),
@@ -363,7 +363,7 @@ input[id='cabbage']:checked ~ section .vegetable:nth-child(3),
 input[id='tomato']:checked ~ section .vegetable:nth-child(4)
 {
     z-index: 3;
-    transform: perspective(800px) rotateY(25deg) translateX(-225px);
+    transform: perspective(800px) rotateY(20deg) translateX(-225px);
 }
 
 input[id='onion']:checked ~ section .vegetable:nth-child(1),
@@ -384,7 +384,7 @@ input[id='cabbage']:checked ~ section .vegetable:nth-child(5),
 input[id='tomato']:checked ~ section .vegetable:nth-child(6)
 {
     z-index: 5;
-    transform: perspective(600px) rotateY(25deg) translateX(-75px);
+    transform: perspective(600px) rotateY(30deg) translateX(-75px);
 }
 
 input[id='broccoli']:checked ~ section .vegetable:nth-child(1),
@@ -407,7 +407,7 @@ input[id='redis']:checked ~ section .vegetable:nth-child(6),
 input[id='cabbage']:checked ~ section .vegetable:nth-child(7)
 {
     z-index: 5;
-    transform: perspective(600px) rotateY(-25deg) translateX(75px);
+    transform: perspective(600px) rotateY(-30deg) translateX(75px);
 }
 
 input[id='broccoli']:checked ~ section .vegetable:nth-child(3),
@@ -426,7 +426,7 @@ input[id='onion']:checked ~ section .vegetable:nth-child(6),
 input[id='cucumbers']:checked ~ section .vegetable:nth-child(7)
 {
     z-index: 3;
-    transform: perspective(800px) rotateY(-25deg) translateX(225px);
+    transform: perspective(800px) rotateY(-20deg) translateX(225px);
 }
 
 input[id='broccoli']:checked ~ section .vegetable:nth-child(5),
@@ -434,18 +434,18 @@ input[id='squash']:checked ~ section .vegetable:nth-child(6),
 input[id='onion']:checked ~ section .vegetable:nth-child(7)
 {
     z-index: 2;
-    transform: perspective(900px) rotateY(-25deg) translateX(300px);
+    transform: perspective(900px) rotateY(-15deg) translateX(300px);
 }
 
 input[id='broccoli']:checked ~ section .vegetable:nth-child(6),
 input[id='squash']:checked ~ section .vegetable:nth-child(7)
 {
     z-index: 1;
-    transform: perspective(1000px) rotateY(-25deg) translateX(375px);
+    transform: perspective(1000px) rotateY(-10deg) translateX(375px);
 }
 
 input[id='broccoli']:checked ~ section .vegetable:nth-child(7)
 {
     z-index: 0;
-    transform: perspective(1100px) rotateY(-25deg) translateX(450px);
+    transform: perspective(1100px) rotateY(-5deg) translateX(450px);
 }
