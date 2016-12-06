@@ -1,0 +1,801 @@
+/* stylelint-disable  selector-combinator-space-before */
+/* stylelint-disable  selector-combinator-space-after */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body
+{
+    background: url('img/bg.png');
+    overflow-x: hidden;
+    font: 12px 'Roboto', sans-serif;
+    margin: 0;
+    overflow: hidden;
+}
+
+header
+{
+    border-bottom: 1px solid black;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1::first-letter,
+h2::first-letter,
+h3::first-letter
+{
+    color: #f00;
+}
+
+.content
+{
+    margin-top: 100px;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transform: rotateX(-5deg);
+}
+
+.gallery-container
+{
+    position: relative;
+    transform-style: preserve-3d;
+    transition-property: transform;
+    transition-duration: .5s;
+    transform-origin: 50% 50% -700px;
+    perspective: 100000px;
+
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ .gallery-container
+{
+    transform-origin: 50% 50% 0;
+}
+
+.item-container .item
+{
+    display: block;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition-property: transform;
+    transition-duration: 1s;
+    transform: rotateX(0deg);
+    transform-origin: 50% 25% 100px;
+    width: 400px;
+    height: 300px;
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ .gallery-container .item
+{
+    transform-origin: 50% 50% 0;
+}
+
+.item-container
+{
+    z-index: -100;
+    /*background-color: green;*/
+}
+
+.item-rotation
+{
+    z-index: 100;
+    transform-style: preserve-3d;
+}
+
+.item-label
+{
+    cursor: pointer;
+    opacity: 0;
+    background: red;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    z-index: 200;
+    transform: translateZ(1px);
+}
+
+input[type='checkbox'][id='simple-check']:not(:checked)
+~ div .item-label
+{
+    transform: translateZ(1px);
+}
+
+.item img
+{
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+}
+
+.black
+{
+    transform-style: preserve-3d;
+    transform-origin: 50% 50% -700px;
+    transition-property: transform;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: -500px;
+    left: -10%;
+    right: 0;
+    margin: 0 auto;
+    width: 120%;
+    height: 2000px;
+    
+    cursor: default;
+}
+
+.black-z
+{
+    transform-style: preserve-3d;
+    display: block;
+    opacity: 0;
+    position: absolute;
+    z-index: 200;
+    transform: translateZ(0);
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ div .black-z
+{
+    transform: translateZ(100px);
+}
+
+input[type='radio'].show-recepie
+{
+    display: none;
+}
+
+div[id='img1']
+{
+    transform: rotateY(-1deg);
+}
+
+div[id='img2']
+{
+    transform: rotateY(45deg);
+}
+
+div[id='img3']
+{
+    transform: rotateY(90deg);
+}
+
+div[id='img4']
+{
+    transform: rotateY(135deg);
+}
+
+div[id='img5']
+{
+    transform: rotateY(-180deg);
+}
+
+div[id='img6']
+{
+    transform: rotateY(-135deg);
+}
+
+div[id='img7']
+{
+    transform: rotateY(-90deg);
+}
+
+div[id='img8']
+{
+    transform: rotateY(-45deg);
+}
+
+input[type='radio'][id='item1'].show-recepie:checked ~ .gallery-container,
+input[type='radio'][id='item1'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: rotateY(-1deg) ;
+}
+
+.item-rotation
+{
+    transform: translateZ(10px);
+}
+
+input[type='radio'][id='item2'].show-recepie:checked ~ .gallery-container,
+input[type='radio'][id='item8'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: rotateY(-45deg);
+}
+
+input[type='radio'][id='item3'].show-recepie:checked ~ .gallery-container,
+input[type='radio'][id='item7'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: rotateY(-90deg);
+}
+
+input[type='radio'][id='item4'].show-recepie:checked ~ .gallery-container,
+input[type='radio'][id='item6'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: rotateY(-135deg);
+}
+
+input[type='radio'][id='item5'].show-recepie:checked ~ .gallery-container,
+input[type='radio'][id='item5'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: rotateY(-180deg);
+}
+
+input[type='radio'][id='item6'].show-recepie:checked ~ .gallery-container,
+input[type='radio'][id='item4'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: rotateY(135deg);
+}
+
+input[type='radio'][id='item7'].show-recepie:checked ~ .gallery-container,
+input[type='radio'][id='item3'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: rotateY(90deg);
+}
+
+input[type='radio'][id='item8'].show-recepie:checked ~ .gallery-container,
+input[type='radio'][id='item2'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: rotateY(45deg);
+}
+
+input[type='checkbox'][id='simple-check']:checked
+~ div .item-rotation
+{
+    transform: translateZ(100px);
+}
+
+input[type='checkbox'][id='simple-check']:checked
+~ div div[id='img1']
+{
+    transform: translateX(-200px) rotateY(20deg);
+}
+
+input[type='checkbox'][id='simple-check']:checked
+~ div div[id='img2']
+{
+    transform: translateX(0) rotateY(20deg);
+}
+
+input[type='checkbox'][id='simple-check']:checked
+~ div div[id='img3']
+{
+    transform: translateX(200px) rotateY(20deg);
+}
+
+input[type='checkbox'][id='simple-check']:checked
+~ div div[id='img4']
+{
+    transform: translateX(400px) rotateY(20deg);
+}
+
+input[type='checkbox'][id='simple-check']:checked
+~ div div[id='img5']
+{
+    transform: translateX(-1000px) rotateY(20deg);
+}
+
+input[type='checkbox'][id='simple-check']:checked
+~ div div[id='img6']
+{
+    transform: translateX(-800px) rotateY(20deg);
+}
+
+input[type='checkbox'][id='simple-check']:checked
+~ div div[id='img7']
+{
+    transform: translateX(-600px) rotateY(20deg);
+}
+
+input[type='checkbox'][id='simple-check']:checked 
+~ div div[id='img8']
+{
+    transform: translateX(-400px) rotateY(20deg);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item1']:checked
+~ .gallery-container div.item-container[id='img1']
+{
+    transform: rotate(0deg) translateX(0);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item1']:checked
+~ .gallery-container div.item-container[id='img1'] .item-rotation
+{
+    transform: translateZ(100px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item5']:checked
+~ .gallery-container div.item-container[id='img6'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item5']:checked
+~ .gallery-container div.item-container[id='img7'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item5']:checked
+~ .gallery-container div.item-container[id='img8'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item5']:checked
+~ .gallery-container div.item-container[id='img1'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item5']:checked
+~ .gallery-container div.item-container[id='img2'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item5']:checked
+~ .gallery-container div.item-container[id='img3'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item5']:checked
+~ .gallery-container div.item-container[id='img4'] .item-rotation
+{
+    transform: rotateY(-40deg) translateZ(100px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item6']:checked
+~ .gallery-container div.item-container[id='img7'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item6']:checked
+~ .gallery-container div.item-container[id='img8'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item6']:checked
+~ .gallery-container div.item-container[id='img1'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item6']:checked
+~ .gallery-container div.item-container[id='img2'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item6']:checked
+~ .gallery-container div.item-container[id='img3'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item6']:checked
+~ .gallery-container div.item-container[id='img4'] .item-rotation
+{
+    transform: rotateY(-40deg) translateZ(100px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item7']:checked
+~ .gallery-container div.item-container[id='img8'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item7']:checked
+~ .gallery-container div.item-container[id='img1'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item7']:checked
+~ .gallery-container div.item-container[id='img2'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item7']:checked
+~ .gallery-container div.item-container[id='img3'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item7']:checked
+~ .gallery-container div.item-container[id='img4'] .item-rotation
+{
+    transform: rotateY(-40deg) translateZ(100px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item8']:checked
+~ .gallery-container div.item-container[id='img1'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item8']:checked
+~ .gallery-container div.item-container[id='img2'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item8']:checked
+~ .gallery-container div.item-container[id='img3'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item8']:checked
+~ .gallery-container div.item-container[id='img4'] .item-rotation
+{
+    transform: rotateY(-40deg) translateZ(100px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item1']:checked
+~ .gallery-container div.item-container[id='img2'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item1']:checked
+~ .gallery-container div.item-container[id='img3'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item1']:checked
+~ .gallery-container div.item-container[id='img4'] .item-rotation
+{
+    transform: rotateY(-40deg) translateZ(100px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item2']:checked
+~ .gallery-container div.item-container[id='img3'] .item-rotation,
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item2']:checked
+~ .gallery-container div.item-container[id='img4'] .item-rotation
+{
+    transform: rotateY(-40deg) translateZ(100px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item3']:checked
+~ .gallery-container div.item-container[id='img4'] .item-rotation
+{
+    transform: rotateY(-40deg) translateZ(100px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item2']:checked
+~ .gallery-container div.item-container[id='img2']
+{
+    transform: rotate(0deg) translateX(200px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item3']:checked
+~ .gallery-container div.item-container[id='img3']
+{
+    transform: rotate(0deg) translateX(400px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item4']:checked
+~ .gallery-container div.item-container[id='img4']
+{
+    transform: rotate(0deg) translateX(600px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item5']:checked
+~ .gallery-container div.item-container[id='img5']
+{
+    transform: rotate(0deg) translateX(-800px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item6']:checked
+~ .gallery-container div.item-container[id='img6']
+{
+    transform: rotate(0deg) translateX(-600px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item7']:checked
+~ .gallery-container div.item-container[id='img7']
+{
+    transform: rotate(0deg) translateX(-400px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ 
+input[type='radio'][id='item8']:checked
+~ .gallery-container div.item-container[id='img8']
+{
+    transform: rotate(0deg) translateX(-200px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item1'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(0);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item2'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(-200px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item3'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(-400px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item4'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(-600px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item5'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(800px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item6'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(600px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item7'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(400px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item8'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(200px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item1'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(0);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item2'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(-200px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item3'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(-400px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item4'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(-600px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item5'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(800px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item6'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(600px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item7'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(400px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item8'].show-recepie:checked ~ .gallery-container
+{
+    transform: translateX(200px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item1'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: translateX(0) translateZ(60px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item2'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: translateX(200px) translateZ(60px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item3'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: translateX(400px) translateZ(60px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item4'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: translateX(600px) translateZ(60px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item5'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: translateX(-800px) translateZ(60px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item6'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: translateX(-600px) translateZ(60px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item7'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: translateX(-400px) translateZ(60px);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~
+input[type='radio'][id='item8'].show-recepie:checked ~ .gallery-container .black
+{
+    transform: translateX(-200px) translateZ(60px);
+}
+
+.item-container
+{
+    transform-origin: 50% 50% -700px;
+    transform-style: preserve-3d;
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    transition-duration: .5s;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input[type='checkbox'][id='simple-check']:checked
+~ div input[type='checkbox'][id='simple-check']:checked
+~ .gallery-container .item-container
+{
+    transform-origin: 50% 50% 0;
+}
+
+label.recepie-show
+{
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+}
+
+input[type='radio'][id='item1']:checked
+~ .gallery-container div.item-container[id='img1']:hover .recepie-show,
+input[type='radio'][id='item2']:checked
+~ .gallery-container div.item-container[id='img2']:hover .recepie-show,
+input[type='radio'][id='item3']:checked
+~ .gallery-container div.item-container[id='img3']:hover .recepie-show,
+input[type='radio'][id='item4']:checked
+~ .gallery-container div.item-container[id='img4']:hover .recepie-show,
+input[type='radio'][id='item5']:checked
+~ .gallery-container div.item-container[id='img5']:hover .recepie-show,
+input[type='radio'][id='item6']:checked
+~ .gallery-container div.item-container[id='img6']:hover .recepie-show,
+input[type='radio'][id='item7']:checked
+~ .gallery-container div.item-container[id='img7']:hover .recepie-show,
+input[type='radio'][id='item8']:checked
+~ .gallery-container div.item-container[id='img8']:hover .recepie-show
+{
+    display: block;
+    z-index: 200;
+}
+
+input[type='radio'][id='item1']:checked
+~ .gallery-container div.item-container[id='img1']:hover .item-label,
+input[type='radio'][id='item2']:checked
+~ .gallery-container div.item-container[id='img2']:hover .item-label,
+input[type='radio'][id='item3']:checked
+~ .gallery-container div.item-container[id='img3']:hover .item-label,
+input[type='radio'][id='item4']:checked
+~ .gallery-container div.item-container[id='img4']:hover .item-label,
+input[type='radio'][id='item5']:checked
+~ .gallery-container div.item-container[id='img5']:hover .item-label,
+input[type='radio'][id='item6']:checked
+~ .gallery-container div.item-container[id='img6']:hover .item-label,
+input[type='radio'][id='item7']:checked
+~ .gallery-container div.item-container[id='img7']:hover .item-label,
+input[type='radio'][id='item8']:checked
+~ .gallery-container div.item-container[id='img8']:hover .item-label
+{
+    display: none;
+}
+
+input[type='checkbox'].recepie-check:checked ~ .black,
+input[type='checkbox'].recepie-check:checked ~ .black .black-z
+{
+    transition-delay: .5s;
+    transition-duration: .5s;
+    opacity: 1;
+    visibility: visible;
+    z-index: 0;
+}
+
+input[type='checkbox'].recepie-check:checked
++ div.item-container .recepie
+{
+    opacity: 1;
+    transition-duration: 0s;
+}
+
+input[type='checkbox'].recepie-check:checked + div.item-container .item
+{
+    transform: rotateX(-180deg) perspective(250px) translateY(-200px) scale(2);
+     
+    font-size: 12px;
+}
+
+input[type='checkbox'][id='simple-check']:checked 
+~ div input[type='checkbox'].recepie-check:checked + div.item-container .item
+{
+    transform: rotateX(180deg) scale(1.5)
+        translateY(25px) translateZ(-180px);
+}
+
+.recepie-check
+{
+    display: none;
+}
+
+.recepie
+{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background: white;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg) rotateZ(180deg)
+        translateX(-850px) translateY(150px) translateZ(2px) scale(.5);
+    width: calc(200% - 27px);
+    height: calc(200% - 27px);
+    font-size: 25px;
+    padding: 15px;
+    top: 0;
+    left: 650px;
+    cursor: default;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 2s;
+
+}
+
+.recepie h3
+{
+    color: #ababab;
+    border-bottom: 2px solid #ababab;
+}
+
+.recepie .description
+{
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+}
+
+.recepie .ingredients
+{
+    flex: 0 0 30%;
+    text-indent: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.recepie .instruction
+{
+    flex: 1 0 70%;
+}
+
+.instruction h2
+{
+    color: red;
+    font-size: 20px;
+}
+
+.instruction p
+{
+    border-top: 2px solid #ababab;
+    text-indent: 10px;
+    color: #ababab;
+    font-size: 20px;
+}
+
+.exit
+{
+    position: absolute;
+    font-size: 40px;
+    color: #000;
+    top: 0;
+    right: 10px;
+    z-index: 1;
+    cursor: pointer;
+}
+
