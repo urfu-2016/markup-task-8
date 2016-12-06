@@ -111,6 +111,7 @@ input[type='checkbox'][id='simple-check']:not(:checked)
 {
     transform-style: preserve-3d;
     transform-origin: 50% 50% -700px;
+    transition-property: transform;
     display: block;
     visibility: hidden;
     opacity: 0;
@@ -121,9 +122,27 @@ input[type='checkbox'][id='simple-check']:not(:checked)
     margin: 0 auto;
     width: 120%;
     height: 2000px;
-    background: rgba(0, 0, 0, .6);
-    overflow: hidden;
+    
     cursor: default;
+}
+
+.black-z
+{
+    transform-style: preserve-3d;
+    display: block;
+    opacity: 0;
+    position: absolute;
+    z-index: 200;
+    transform: translateZ(0);
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .6);
+}
+
+input[type='checkbox'][id='simple-check']:checked ~ div .black-z
+{
+    transform: translateZ(100px);
 }
 
 input[type='radio'].show-recepie
@@ -133,7 +152,7 @@ input[type='radio'].show-recepie
 
 div[id='img1']
 {
-    transform: rotateY(0deg);
+    transform: rotateY(-1deg);
 }
 
 div[id='img2']
@@ -171,10 +190,10 @@ div[id='img8']
     transform: rotateY(-45deg);
 }
 
-input[type='radio'][id='item1'].show-recepie:checked ~ .gallery-container
+input[type='radio'][id='item1'].show-recepie:checked ~ .gallery-container,
+input[type='radio'][id='item1'].show-recepie:checked ~ .gallery-container .black
 {
-    transform: rotateY(0deg) ;
-
+    transform: rotateY(-1deg) ;
 }
 
 .item-rotation
@@ -671,12 +690,14 @@ input[type='radio'][id='item8']:checked
     display: none;
 }
 
-input[type='checkbox'].recepie-check:checked ~ .black
+input[type='checkbox'].recepie-check:checked ~ .black,
+input[type='checkbox'].recepie-check:checked ~ .black .black-z
 {
     transition-delay: .5s;
     transition-duration: .5s;
     opacity: 1;
     visibility: visible;
+    z-index: 0;
 }
 
 input[type='checkbox'].recepie-check:checked
@@ -703,12 +724,6 @@ input[type='checkbox'][id='simple-check']:checked
 .recepie-check
 {
     display: none;
-}
-
-input[type='checkbox'].recepie-check:checked ~ .black
-{
-    opacity: 1;
-    z-index: 0;
 }
 
 .recepie
