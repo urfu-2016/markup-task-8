@@ -33,10 +33,21 @@ a
     position: absolute;
 }
 
-.imgVegetable
+.img-vegetable
 {
     width: 225px;
     height: 150px;
+}
+
+.img1:checked ~ .vegetable,
+.img2:checked ~ .vegetable,
+.img3:checked ~ .vegetable,
+.img4:checked ~ .vegetable,
+.img5:checked ~ .vegetable,
+.img6:checked ~ .vegetable,
+.img7:checked ~ .vegetable
+{
+    transition: transform .5s linear;
 }
 
 .img1:checked ~ .cabbage,
@@ -47,303 +58,234 @@ a
 .img6:checked ~ .pepper,
 .img7:checked ~ .tomato
 {
-
     z-index: 10;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(0) scale(1.1) rotateY(0);
 }
 
 .img1:checked ~ .carrot
 {
     z-index: 6;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(60%) rotateY(-70deg);
 }
 
 .img1:checked ~ .cucumber
 {
     z-index: 5;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(85%) rotateY(-65deg);
 }
 
 .img1:checked ~ .eggplant
 {
     z-index: 4;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(110%) rotateY(-60deg);
 }
 
 .img1:checked ~ .garlic
 {
     z-index: 3;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(135%) rotateY(-55deg);
 }
 
 .img1:checked ~ .pepper
 {
     z-index: 2;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(160%) rotateY(-50deg);
 }
 
 .img1:checked ~ .tomato
 {
     z-index: 1;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(185%) rotateY(-45deg);
 }
 
-.img2:checked ~ .cabbage
+.img2:checked ~ .cabbage,
+.img6:checked ~ .garlic
 {
     z-index: 5;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(-60%) rotateY(65deg);
 }
 
-.img2:checked ~ .cucumber
+.img2:checked ~ .cucumber,
+.img6:checked ~ .tomato
 {
     z-index: 5;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(60%) rotateY(-65deg);
 }
 
 .img2:checked ~ .eggplant
 {
     z-index: 4;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(85%) rotateY(-60deg);
 }
 
 .img2:checked ~ .garlic
 {
     z-index: 3;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(110%) rotateY(-55deg);
 }
 
 .img2:checked ~ .pepper
 {
     z-index: 2;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(135%) rotateY(-50deg);
 }
 
 .img2:checked ~ .tomato
 {
     z-index: 1;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(160%) rotateY(-45deg);
 }
 
-.img3:checked ~ .cabbage
+.img3:checked ~ .cabbage,
+.img5:checked ~ .cucumber
 {
     z-index: 3;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(-85%) rotateY(55deg);
 }
 
-.img3:checked ~ .carrot
+.img3:checked ~ .carrot,
+.img5:checked ~ .eggplant
 {
     z-index: 4;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(-60%) rotateY(60deg);
 }
 
-.img3:checked ~ .eggplant
+.img3:checked ~ .eggplant,
+.img5:checked ~ .pepper
 {
     z-index: 4;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(60%) rotateY(-60deg);
 }
 
 .img3:checked ~ .garlic
 {
     z-index: 3;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(85%) rotateY(-55deg);
 }
 
 .img3:checked ~ .pepper
 {
     z-index: 2;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(110%) rotateY(-50deg);
 }
 
 .img3:checked ~ .tomato
 {
     z-index: 1;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(135%) rotateY(-45deg);
 }
 
 .img4:checked ~ .cabbage
 {
     z-index: 1;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(-110%) rotateY(45deg);
 }
 
 .img4:checked ~ .carrot
 {
     z-index: 2;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(-85%) rotateY(50deg);
 }
 
 .img4:checked ~ .cucumber
 {
     z-index: 3;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(-60%) rotateY(55deg);
 }
 
 .img4:checked ~ .garlic
 {
     z-index: 3;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(60%) rotateY(-55deg);
 }
 
 .img4:checked ~ .pepper
 {
     z-index: 2;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(85%) rotateY(-50deg);
 }
 
 .img4:checked ~ .tomato
 {
     z-index: 1;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(110%) rotateY(-45deg);
 }
 
 .img5:checked ~ .cabbage
 {
     z-index: 1;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(-135%) rotateY(45deg);
 }
 
 .img5:checked ~ .carrot
 {
     z-index: 2;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(-110%) rotateY(50deg);
-}
-
-.img5:checked ~ .cucumber
-{
-    z-index: 3;
-    transition: transform .5s linear;
-    transform: perspective(700px) translateX(-85%) rotateY(55deg);
-}
-
-.img5:checked ~ .eggplant
-{
-    z-index: 4;
-    transition: transform .5s linear;
-    transform: perspective(700px) translateX(-60%) rotateY(60deg);
-}
-
-.img5:checked ~ .pepper
-{
-    z-index: 4;
-    transition: transform .5s linear;
-    transform: perspective(700px) translateX(60%) rotateY(-60deg);
 }
 
 .img5:checked ~ .tomato
 {
     z-index: 3;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(85%) rotateY(-65deg);
 }
 
 .img6:checked ~ .cabbage
 {
     z-index: 1;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(-160%) rotateY(45deg);
 }
 
 .img6:checked ~ .carrot
 {
     z-index: 2;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(-135%) rotateY(50deg);
 }
 
 .img6:checked ~ .cucumber
 {
     z-index: 3;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(-110%) rotateY(55deg);
 }
 
 .img6:checked ~ .eggplant
 {
     z-index: 4;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(-85%) rotateY(60deg);
-}
-
-.img6:checked ~ .garlic
-{
-    z-index: 5;
-    transition: transform .5s linear;
-    transform: perspective(700px) translateX(-60%) rotateY(65deg);
-}
-
-.img6:checked ~ .tomato
-{
-    z-index: 5;
-    transition: transform .5s linear;
-    transform: perspective(700px) translateX(60%) rotateY(-65deg);
 }
 
 .img7:checked ~ .cabbage
 {
     z-index: 1;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(-185%) rotateY(45deg);
 }
 
 .img7:checked ~ .carrot
 {
     z-index: 2;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(-160%) rotateY(50deg);
 }
 
 .img7:checked ~ .cucumber
 {
     z-index: 3;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(-135%) rotateY(55deg);
 }
 
 .img7:checked ~ .eggplant
 {
     z-index: 4;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(-110%) rotateY(60deg);
 }
 
 .img7:checked ~ .garlic
 {
     z-index: 5;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(-85%) rotateY(65deg);
 }
 
 .img7:checked ~ .pepper
 {
     z-index: 6;
-    transition: transform .5s linear;
     transform: perspective(700px) translateX(-60%) rotateY(70deg);
 }
 
@@ -357,7 +299,7 @@ a
     position: absolute;
     top: 0;
     left: 0;
-    display: none;
+    opacity: 0;
 }
 
 .circle
@@ -385,6 +327,8 @@ a
 .img7:checked ~ .tomato:hover .recipe
 {
     display: flex;
+    transition: opacity 1s;
+    opacity: 1;
 }
 
 .front
@@ -419,7 +363,7 @@ a
     text-align: center;
 }
 
-.miniImg
+.mini-img
 {
     width: 30px;
     height: 30px;
@@ -443,7 +387,7 @@ a
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    transform: perspective(700px) rotateX(-90deg) scale(1.3);
+    transform: perspective(0) rotateX(-90deg) scale(1.3);
     transition: transform .5s linear .5s;
 }
 
@@ -482,7 +426,7 @@ a
 .img7:checked ~ .tomato:target .back
 {
     transition: transform .5s linear .5s;
-    transform: perspective(600px) scale(1.5) rotateX(0deg);
+    transform: perspective(0) scale(1.5) rotateX(0);
 }
 
 .img1:checked ~ .cabbage:target .front,
@@ -494,7 +438,7 @@ a
 .img7:checked ~ .tomato:target .front
 {
     transition: transform .5s linear;
-    transform: perspective(700px) scale(1.5) rotateX(90deg);
+    transform: perspective(0) scale(1.5) rotateX(90deg);
     backface-visibility: hidden;
 }
 
@@ -508,5 +452,5 @@ a
 {
     z-index: 20;
     transition: transform .5s linear;
-    transform: perspective(700px) scale(1.5) rotateX(0);
+    transform: perspective(0) scale(1.5) rotateX(0);
 }
