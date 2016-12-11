@@ -9,6 +9,11 @@ main
     position: relative;
 }
 
+input
+{
+    display: none;
+}
+
 .fruits
 {
     bottom: 0;
@@ -27,9 +32,8 @@ input.fourth-fruit:checked ~ .fruits .fruit:nth-of-type(5),
 input.fifth-fruit:checked ~ .fruits .fruit:nth-of-type(6),
 input.six-fruit:checked ~ .fruits .fruit:nth-of-type(7)
 {
-    transform: perspective(600px) translateZ(-50px) rotateY(-30deg);
+    transform: perspective(600px) translate3D(100px, 0, -50px) rotateY(-30deg);
     z-index: 6;
-    left: 60%;
 }
 
 input.first-fruit:checked ~ .fruits .fruit:nth-of-type(3),
@@ -38,9 +42,8 @@ input.third-fruit:checked ~ .fruits .fruit:nth-of-type(5),
 input.fourth-fruit:checked ~ .fruits .fruit:nth-of-type(6),
 input.fifth-fruit:checked ~ .fruits .fruit:nth-of-type(7)
 {
-    transform: perspective(600px) translateZ(-60px) rotateY(-20deg);
+    transform: perspective(600px) translate3D(150px, 0, -60px) rotateY(-20deg);
     z-index: 5;
-    left: 65%;
 }
 
 input.first-fruit:checked ~ .fruits .fruit:nth-of-type(4),
@@ -48,33 +51,29 @@ input.second-fruit:checked ~ .fruits .fruit:nth-of-type(5),
 input.third-fruit:checked ~ .fruits .fruit:nth-of-type(6),
 input.fourth-fruit:checked ~ .fruits .fruit:nth-of-type(7)
 {
-    transform: perspective(600px) translateZ(-70px) rotateY(-15deg);
+    transform: perspective(600px) translate3D(200px, 0, -70px) rotateY(-15deg);
     z-index: 4;
-    left: 70%;
 }
 
 input.first-fruit:checked ~ .fruits .fruit:nth-of-type(5),
 input.second-fruit:checked ~ .fruits .fruit:nth-of-type(6),
 input.third-fruit:checked ~ .fruits .fruit:nth-of-type(7)
 {
-    transform: perspective(600px) translateZ(-80px) rotateY(-10deg);
+    transform: perspective(600px) translate3D(250px, 0, -80px) rotateY(-10deg);
     z-index: 3;
-    left: 75%;
 }
 
 input.first-fruit:checked ~ .fruits .fruit:nth-of-type(6),
 input.second-fruit:checked ~ .fruits .fruit:nth-of-type(7)
 {
-    transform: perspective(600px) translateZ(-90px) rotateY(-5deg);
+    transform: perspective(600px) translate3D(300px, 0, -90px) rotateY(-5deg);
     z-index: 2;
-    left: 80%;
 }
 
 input.first-fruit:checked ~ .fruits .fruit:nth-of-type(7)
 {
-    transform: perspective(600px) translateZ(-100px);
+    transform: perspective(600px) translate3D(350px, 0, -100px);
     z-index: 1;
-    left: 85%;
 }
 
 input.second-fruit:checked ~ .fruits .fruit:nth-of-type(1),
@@ -84,9 +83,8 @@ input.fifth-fruit:checked ~ .fruits .fruit:nth-of-type(4),
 input.six-fruit:checked ~ .fruits .fruit:nth-of-type(5),
 input.seventh-fruit:checked ~ .fruits .fruit:nth-of-type(6)
 {
-    transform: perspective(600px) translateZ(-50px) rotateY(30deg);
+    transform: perspective(600px) translate3D(-100px, 0, -50px) rotateY(30deg);
     z-index: 6;
-    left: 40%;
 }
 
 input.third-fruit:checked ~ .fruits .fruit:nth-of-type(1),
@@ -95,9 +93,8 @@ input.fifth-fruit:checked ~ .fruits .fruit:nth-of-type(3),
 input.six-fruit:checked ~ .fruits .fruit:nth-of-type(4),
 input.seventh-fruit:checked ~ .fruits .fruit:nth-of-type(5)
 {
-    transform: perspective(600px) translateZ(-60px) rotateY(20deg);
+    transform: perspective(600px) translate3D(-150px, 0, -60px) rotateY(20deg);
     z-index: 5;
-    left: 35%;
 }
 
 input.fourth-fruit:checked ~ .fruits .fruit:nth-of-type(1),
@@ -105,33 +102,29 @@ input.fifth-fruit:checked ~ .fruits .fruit:nth-of-type(2),
 input.six-fruit:checked ~ .fruits .fruit:nth-of-type(3),
 input.seventh-fruit:checked ~ .fruits .fruit:nth-of-type(4)
 {
-    transform: perspective(600px) translateZ(-70px) rotateY(15deg);
+    transform: perspective(600px) translate3D(-200px, 0, -70px) rotateY(15deg);
     z-index: 4;
-    left: 30%;
 }
 
 input.fifth-fruit:checked ~ .fruits .fruit:nth-of-type(1),
 input.six-fruit:checked ~ .fruits .fruit:nth-of-type(2),
 input.seventh-fruit:checked ~ .fruits .fruit:nth-of-type(3)
 {
-    transform: perspective(600px) translateZ(-80px) rotateY(10deg);
+    transform: perspective(600px) translate3D(-250px,0, -80px) rotateY(10deg);
     z-index: 3;
-    left: 25%;
 }
 
 input.six-fruit:checked ~ .fruits .fruit:nth-of-type(1),
 input.seventh-fruit:checked ~ .fruits .fruit:nth-of-type(2)
 {
-    transform: perspective(600px) translateZ(-90px) rotateY(5deg);
+    transform: perspective(600px) translate3D(-300px, 0, -90px) rotateY(5deg);
     z-index: 2;
-    left: 20%;
 }
 
 input.seventh-fruit:checked ~ .fruits .fruit:nth-of-type(1)
 {
-    transform: perspective(600px) translateZ(-100px);
+    transform: perspective(600px) translate3D(-350px, 0, -100px);
     z-index: 1;
-    left: 15%;
 }
 
 .fruits .fruit
@@ -161,6 +154,7 @@ input.seventh-fruit:checked ~ .fruits .fruit:nth-of-type(1)
     height: 175px;
     cursor: pointer;
     overflow: hidden;
+    text-decoration: none;
 }
 
 .open-recipe span
@@ -189,22 +183,12 @@ input.seventh-fruit:checked ~ .fruits .seventh-fruit:hover .open-recipe
     animation-fill-mode: forwards;
 }
 
-input.first-fruit:checked ~ .fruits .first-fruit,
-input.second-fruit:checked ~ .fruits .second-fruit,
-input.third-fruit:checked ~ .fruits .third-fruit,
-input.fourth-fruit:checked ~ .fruits .fourth-fruit,
-input.fifth-fruit:checked ~ .fruits .fifth-fruit,
-input.six-fruit:checked ~ .fruits .six-fruit,
-input.seventh-fruit:checked ~ .fruits .seventh-fruit
-{
-    cursor: pointer;
-}
-
 .fruit-image
 {
     overflow: hidden;
     position: relative;
     height: 250px;
+    cursor: pointer;
 }
 
 .fruit-image img
@@ -230,7 +214,7 @@ input.seventh-fruit:checked ~ .fruits .seventh-fruit
 
 .recipe h2
 {
-    font-size: 1em;
+    font-size: 1.3em;
     display: inline-block;
     margin: 0;
     border-bottom: solid 2px;
@@ -246,7 +230,7 @@ input.seventh-fruit:checked ~ .fruits .seventh-fruit
 
 .description .ingredients
 {
-    font-size: .7em;
+    font-size: .8em;
 }
 
 .description .cook
@@ -254,7 +238,7 @@ input.seventh-fruit:checked ~ .fruits .seventh-fruit
     width: 55%;
     position: relative;
     right: 0;
-    font-size: .7em;
+    font-size: .8em;
 }
 
 .ingredients ul
@@ -293,31 +277,12 @@ input.seventh-fruit:checked ~ .fruits .seventh-fruit
     z-index: 500;
 }
 
-input[type='checkbox']:checked ~ .fruits .modal
-{
-    animation: content-visible-delay 1s;
-    animation-fill-mode: forwards;
-}
-
-input[id='open-recipe-1']:checked ~ .fruits .first-fruit .open-recipe,
-input[id='open-recipe-2']:checked ~ .fruits .second-fruit .open-recipe,
-input[id='open-recipe-3']:checked ~ .fruits .third-fruit .open-recipe,
-input[id='open-recipe-4']:checked ~ .fruits .fourth-fruit .open-recipe,
-input[id='open-recipe-5']:checked ~ .fruits .fifth-fruit .open-recipe,
-input[id='open-recipe-6']:checked ~ .fruits .six-fruit .open-recipe,
-input[id='open-recipe-7']:checked ~ .fruits .seventh-fruit .open-recipe,
-input
+.fruit:target .open-recipe
 {
     display: none;
 }
 
-input[id='open-recipe-1']:checked ~ .fruits .first-fruit,
-input[id='open-recipe-2']:checked ~ .fruits .second-fruit,
-input[id='open-recipe-3']:checked ~ .fruits .third-fruit,
-input[id='open-recipe-4']:checked ~ .fruits .fourth-fruit,
-input[id='open-recipe-5']:checked ~ .fruits .fifth-fruit,
-input[id='open-recipe-6']:checked ~ .fruits .six-fruit,
-input[id='open-recipe-7']:checked ~ .fruits .seventh-fruit
+.fruit:target
 {
     transform: rotateX(180deg);
     cursor: default;
@@ -326,17 +291,17 @@ input[id='open-recipe-7']:checked ~ .fruits .seventh-fruit
     margin-left: -200px;
 }
 
-input[id='open-recipe-1']:checked ~ .fruits .first-fruit .recipe,
-input[id='open-recipe-2']:checked ~ .fruits .second-fruit .recipe,
-input[id='open-recipe-3']:checked ~ .fruits .third-fruit .recipe,
-input[id='open-recipe-4']:checked ~ .fruits .fourth-fruit .recipe,
-input[id='open-recipe-5']:checked ~ .fruits .fifth-fruit .recipe,
-input[id='open-recipe-6']:checked ~ .fruits .six-fruit .recipe,
-input[id='open-recipe-7']:checked ~ .fruits .seventh-fruit .recipe
+.fruit:target .recipe
 {
     opacity: 1;
     visibility: visible;
     transform: rotateX(180deg);
+}
+
+.fruit:target ~ .modal
+{
+    animation: content-visible-delay 1s;
+    animation-fill-mode: forwards;
 }
 
 @keyframes content-visible-delay
