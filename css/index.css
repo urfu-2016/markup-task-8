@@ -14,6 +14,7 @@ input[name='carusel-3d-recipe']
     position: absolute;
     left: 40px;
     z-index: 100;
+    display: block;
 }
 
 .toggle-1,
@@ -37,7 +38,15 @@ input[name='carusel-3d-recipe']
 .toggle-1:checked ~ .carusel-2,
 .toggle-2:checked ~ .carusel-1
 {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+}
+
+.toggle-1:checked ~ .carusel-1,
+.toggle-2:checked ~ .carusel-2,
+{
+    opacity: 1;
 }
 
 /* Базовые стили для слайдеров */
@@ -87,8 +96,6 @@ input[name='carusel-3d-recipe']
     width: 194%;
     height: 100%;
     margin-left: -47%;
-    box-shadow: 0 0 4px rgba(0,0,0,.2);
-    background-color: #fff;
     position: relative;
     transform-style: preserve-3d;
     transition: width 1s ease-in-out
@@ -165,6 +172,7 @@ input[name='carusel-3d-recipe']
     display: flex;
     justify-content: space-between;
     font-size: .7em;
+    overflow: hidden;
 }
 
 .instruction__text--l,
@@ -175,13 +183,15 @@ input[name='carusel-3d-recipe']
 
 .instruction__text--l
 {
-    width: 40%;
+    width: 200px;
+    float: left;
     padding-left: 0;
 }
 
 .instruction__text--r
 {
-    width: 60%;
+    width: 300px;
+    float: right;
     padding-right: 0;
 }
 
@@ -425,29 +435,42 @@ input[name='carusel-3d-recipe']
     visibility: visible;
 }
 
-.recipe-1-i:checked ~ .carusel-1 .slider-1-l .slider-item,
-.recipe-2-i:checked ~ .carusel-1 .slider-2-l .slider-item,
-.recipe-3-i:checked ~ .carusel-1 .slider-3-l .slider-item,
-.recipe-4-i:checked ~ .carusel-1 .slider-4-l .slider-item,
-.recipe-5-i:checked ~ .carusel-1 .slider-5-l .slider-item,
-.recipe-6-i:checked ~ .carusel-1 .slider-6-l .slider-item,
-.recipe-7-i:checked ~ .carusel-1 .slider-7-l .slider-item
+.slider-item > div
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    background: #fff;
+    transition: width 1s ease-in-out
+        , margin 1s ease-in-out
+        , height 1s ease-in-out
+        , transform .2s ease-in-out;
+}
+
+.recipe-1-i:checked ~ .carusel-1 .slider-1-l .slider-item > div,
+.recipe-2-i:checked ~ .carusel-1 .slider-2-l .slider-item > div,
+.recipe-3-i:checked ~ .carusel-1 .slider-3-l .slider-item > div,
+.recipe-4-i:checked ~ .carusel-1 .slider-4-l .slider-item > div,
+.recipe-5-i:checked ~ .carusel-1 .slider-5-l .slider-item > div,
+.recipe-6-i:checked ~ .carusel-1 .slider-6-l .slider-item > div,
+.recipe-7-i:checked ~ .carusel-1 .slider-7-l .slider-item > div
 {
     animation: recipe 1s linear 0s;
     animation-fill-mode: forwards;
-    width: 400%;
-    height: 200%;
-    margin-left: -150%;
-    margin-top: -70%;
+    width: 600px;
+    height: 180%;
+    margin-left: -200px;
+    margin-top: -30%;
 }
 
-.cross-1-i:checked ~ .carusel-1 .slider-1-l .slider-item,
-.cross-2-i:checked ~ .carusel-1 .slider-2-l .slider-item,
-.cross-3-i:checked ~ .carusel-1 .slider-3-l .slider-item,
-.cross-4-i:checked ~ .carusel-1 .slider-4-l .slider-item,
-.cross-5-i:checked ~ .carusel-1 .slider-5-l .slider-item,
-.cross-6-i:checked ~ .carusel-1 .slider-6-l .slider-item,
-.cross-7-i:checked ~ .carusel-1 .slider-7-l .slider-item
+.cross-1-i:checked ~ .carusel-1 .slider-1-l .slider-item > div,
+.cross-2-i:checked ~ .carusel-1 .slider-2-l .slider-item > div,
+.cross-3-i:checked ~ .carusel-1 .slider-3-l .slider-item > div,
+.cross-4-i:checked ~ .carusel-1 .slider-4-l .slider-item > div,
+.cross-5-i:checked ~ .carusel-1 .slider-5-l .slider-item > div,
+.cross-6-i:checked ~ .carusel-1 .slider-6-l .slider-item > div,
+.cross-7-i:checked ~ .carusel-1 .slider-7-l .slider-item > div
 {
     animation: recipe-back 1s linear 0s;
     animation-fill-mode: forwards;
@@ -521,7 +544,7 @@ input[name='carusel-3d-recipe']
     position: absolute;
     left: 30%;
     box-sizing: border-box;
-    transform-origin: 50% 50% -400px;
+    transform-origin: 50% 50% -430px;
 }
 
 .carusel__perspective
@@ -599,7 +622,7 @@ input[name='carusel-3d-recipe']
 
 .slider-1-i:checked ~ .carusel-2 .figure
 {
-    transform: rotateY(0deg);
+    transform: rotateY(-0deg);
 }
 
 .slider-2-i:checked ~ .carusel-2 .figure
