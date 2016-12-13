@@ -2,7 +2,211 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
+    <title>Анимированный огород</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <main>
+        <input type="radio" name="fruit" class="first-fruit" id="first-fruit">
+        <input type="radio" name="fruit" class="second-fruit" id="second-fruit">
+        <input type="radio" name="fruit" class="third-fruit" id="third-fruit">
+        <input type="radio" name="fruit" class="fourth-fruit" id="fourth-fruit" checked>
+        <input type="radio" name="fruit" class="fifth-fruit" id="fifth-fruit">
+        <input type="radio" name="fruit" class="six-fruit" id="six-fruit">
+        <input type="radio" name="fruit" class="seventh-fruit" id="seventh-fruit">
+        <div class="fruits">
+            <div class="fruit first-fruit" id="tomato">
+                <label for="first-fruit" class="fruit-image">
+                    <img src="img/1.jpg" title="Томат" alt="Томат" height="404" width="587">
+                </label>
+                <a href="#tomato" class="open-recipe"><span>Рецепт</span></a>
+                <div class="recipe">
+                    <a href="#" class="close"></a>
+                    <h2>Томатный сок</h2>
+                    <div class="description">
+                        <div class="ingredients">
+                            <h3>Ингредиенты</h3>
+                            <ul>
+                                <li>Томаты 1кг.</li>
+                                <li>Вода 1л</li>
+                            </ul>
+                        </div>
+                        <div class="cook">
+                            <h3>Способ приготовления</h3>
+                            Разрезанные помидоры выложите в соковыжималку, если ее нет,
+                            то пропустите помидоры через мясорубку,
+                            а затем полученную массу протрите через сито.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fruit second-fruit" id="cucumber">
+                <label for="second-fruit" class="fruit-image">
+                    <img src="img/2.jpg" title="Огурец" alt="Огурец" height="413" width="594">
+                </label>
+                <a href="#cucumber" class="open-recipe">
+                    <span>Рецепт</span>
+                </a>
+                <div class="recipe">
+                    <a href="#" class="close"></a>
+                    <h2>Огуречный сок</h2>
+                    <div class="description">
+                        <div class="ingredients">
+                            <h3>Ингредиенты</h3>
+                            <ul>
+                                <li>Огурцы 1кг.</li>
+                                <li>Сахар 300г.</li>
+                            </ul>
+                        </div>
+                        <div class="cook">
+                            <h3>Способ приготовления</h3>
+                            Натереть на терке. Добавить соль и кориандр
+                            (можно и другие специи, на ваш вкус).
+                            Фото приготовления рецепта: Смузи овощной
+                            (разгрузочная диета) - шаг №3
+                            Тщательно пюрировать блендером
+                            (7-10 минут на высоких оборотах).
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fruit third-fruit" id="apple">
+                <label for="third-fruit" class="fruit-image">
+                    <img src="img/3.jpg" title="Яблоко" alt="Яблоко" height="373" width="495">
+                </label>
+                <a href="#apple" class="open-recipe">
+                    <span>Рецепт</span>
+                </a>
+                <div class="recipe">
+                    <a href="#" class="close"></a>
+                    <h2>Яблочный сок</h2>
+                    <div class="description">
+                        <div class="ingredients">
+                            <h3>Ингредиенты</h3>
+                            <ul>
+                                <li>Яблоки 1кг.</li>
+                                <li>Сахар 300г.</li>
+                            </ul>
+                        </div>
+                        <div class="cook">
+                            <h3>Способ приготовления</h3>
+                            Отдели яблочный сок от мякоти, процедив его в чистую эмалированную
+                            кастрюлю через несколько слоев марли. Поставь кастрюлю на огонь
+                            и по вкусу добавь сахар.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fruit fourth-fruit" id="orange">
+                <label for="fourth-fruit" class="fruit-image">
+                    <img src="img/4.jpg" title="Апельсин" alt="Апельсин" width="415" height="415">
+                </label>
+                <a href="#orange" class="open-recipe"><span>Рецепт</span></a>
+                <div class="recipe">
+                    <a href="#" class="close"></a>
+                    <h2>Апельсиновый сок</h2>
+                    <div class="description">
+                        <div class="ingredients">
+                            <h3>Ингредиенты</h3>
+                            <ul>
+                                <li>Апельсин 4шт.</li>
+                                <li>Сахар 1кг.</li>
+                            </ul>
+                        </div>
+                        <div class="cook">
+                            <h3>Способ приготовления</h3>
+                            4 апельсина вымыть, обдать кипятком (чтобы снять воск и убрать горечь),
+                            насухо вытереть, положить на 2 часа в  морозилку, а лучше на ночь. Порезать
+                            и пропустить через мясорубку. Залить получившуюся массу тремя литрами
+                            холодной кипяченой воды (можно использовать воду из фильтра),
+                            дать настояться около 10 минут.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fruit fifth-fruit" id="banana">
+                <label for="fifth-fruit" class="fruit-image">
+                    <img src="img/5.jpg" alt="Банан" title="Банан" width="611" height="406">
+                </label>
+                <a href="#banana" class="open-recipe">
+                    <span>Рецепт</span>
+                </a>
+                <div class="recipe">
+                    <a href="#" class="close"></a>
+                    <h2>Банановый сок</h2>
+                    <div class="description">
+                        <div class="ingredients">
+                            <h3>Ингредиенты</h3>
+                            <ul>
+                                <li>Бананы 1кг.</li>
+                                <li>Иной сок 300г.</li>
+                            </ul>
+                        </div>
+                        <div class="cook">
+                            <h3>Способ приготовления</h3>
+                            Поможет сделать сок из банана блендер. В него помещают мелкие
+                            кусочки спелого фрукта,
+                            перемешивают, добавляют в тягучее пюре иной фруктовый сок,
+                            чаще яблочный или клубничный.
+                            Назвать соком такой напиток нельзя, скорее это смузи.
+                            Но благодаря введенному компоненту со своими полезными свойствами,
+                            польза от употребления напитка только увеличивается.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fruit six-fruit" id="fennel">
+                <label for="six-fruit" class="fruit-image">
+                    <img src="img/6.jpg" title="Укроп" alt="Укроп" height="277" width="485">
+                </label>
+                <a href="#fennel" class="open-recipe">
+                    <span>Рецепт</span>
+                </a>
+                <div class="recipe">
+                    <a href="#" class="close"></a>
+                    <h2>Сок из укропа</h2>
+                    <div class="description">
+                        <div class="ingredients">
+                            <h3>Ингредиенты</h3>
+                            <ul>
+                                <li>Клубника 1кг.</li>
+                                <li>Сахар 300г.</li>
+                            </ul>
+                        </div>
+                        <div class="cook">
+                            <h3>Способ приготовления</h3>
+                            Растолочь клубнику. Засыпать сахаром. Залить водой.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fruit seventh-fruit" id="strawberry">
+                <label for="seventh-fruit" class="fruit-image">
+                    <img src="img/7.jpg" title="Клубника" alt="Клубника" height="500" width="684">
+                </label>
+                <a href="#strawberry" class="open-recipe">
+                    <span>Рецепт</span>
+                </a>
+                <div class="recipe">
+                    <a href="#" class="close"></a>
+                    <h2>Клубничный сок</h2>
+                    <div class="description">
+                        <div class="ingredients">
+                            <h3>Ингредиенты</h3>
+                            <ul>
+                                <li>Клубника 1кг.</li>
+                                <li>Сахар 300г.</li>
+                            </ul>
+                        </div>
+                        <div class="cook">
+                            <h3>Способ приготовления</h3>
+                            Растолочь клубнику. Засыпать сахаром. Залить водой.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal"></div>
+        </div>
+    </main>
 </body>
 </html>

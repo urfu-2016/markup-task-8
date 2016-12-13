@@ -1,0 +1,324 @@
+body
+{
+    background: #d3d3d3;
+}
+
+main
+{
+    height: 50vh;
+    position: relative;
+}
+
+input
+{
+    display: none;
+}
+
+.fruits
+{
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    height: 200px;
+    opacity: 0;
+    animation: content-visible-delay .6s;
+    animation-fill-mode: forwards;
+}
+
+input.first-fruit:checked ~ .fruits .fruit:nth-of-type(2),
+input.second-fruit:checked ~ .fruits .fruit:nth-of-type(3),
+input.third-fruit:checked ~ .fruits .fruit:nth-of-type(4),
+input.fourth-fruit:checked ~ .fruits .fruit:nth-of-type(5),
+input.fifth-fruit:checked ~ .fruits .fruit:nth-of-type(6),
+input.six-fruit:checked ~ .fruits .fruit:nth-of-type(7)
+{
+    transform: perspective(600px) translate3D(100px, 0, -50px) rotateY(-30deg);
+    z-index: 6;
+}
+
+input.first-fruit:checked ~ .fruits .fruit:nth-of-type(3),
+input.second-fruit:checked ~ .fruits .fruit:nth-of-type(4),
+input.third-fruit:checked ~ .fruits .fruit:nth-of-type(5),
+input.fourth-fruit:checked ~ .fruits .fruit:nth-of-type(6),
+input.fifth-fruit:checked ~ .fruits .fruit:nth-of-type(7)
+{
+    transform: perspective(600px) translate3D(150px, 0, -60px) rotateY(-20deg);
+    z-index: 5;
+}
+
+input.first-fruit:checked ~ .fruits .fruit:nth-of-type(4),
+input.second-fruit:checked ~ .fruits .fruit:nth-of-type(5),
+input.third-fruit:checked ~ .fruits .fruit:nth-of-type(6),
+input.fourth-fruit:checked ~ .fruits .fruit:nth-of-type(7)
+{
+    transform: perspective(600px) translate3D(200px, 0, -70px) rotateY(-15deg);
+    z-index: 4;
+}
+
+input.first-fruit:checked ~ .fruits .fruit:nth-of-type(5),
+input.second-fruit:checked ~ .fruits .fruit:nth-of-type(6),
+input.third-fruit:checked ~ .fruits .fruit:nth-of-type(7)
+{
+    transform: perspective(600px) translate3D(250px, 0, -80px) rotateY(-10deg);
+    z-index: 3;
+}
+
+input.first-fruit:checked ~ .fruits .fruit:nth-of-type(6),
+input.second-fruit:checked ~ .fruits .fruit:nth-of-type(7)
+{
+    transform: perspective(600px) translate3D(300px, 0, -90px) rotateY(-5deg);
+    z-index: 2;
+}
+
+input.first-fruit:checked ~ .fruits .fruit:nth-of-type(7)
+{
+    transform: perspective(600px) translate3D(350px, 0, -100px);
+    z-index: 1;
+}
+
+input.second-fruit:checked ~ .fruits .fruit:nth-of-type(1),
+input.third-fruit:checked ~ .fruits .fruit:nth-of-type(2),
+input.fourth-fruit:checked ~ .fruits .fruit:nth-of-type(3),
+input.fifth-fruit:checked ~ .fruits .fruit:nth-of-type(4),
+input.six-fruit:checked ~ .fruits .fruit:nth-of-type(5),
+input.seventh-fruit:checked ~ .fruits .fruit:nth-of-type(6)
+{
+    transform: perspective(600px) translate3D(-100px, 0, -50px) rotateY(30deg);
+    z-index: 6;
+}
+
+input.third-fruit:checked ~ .fruits .fruit:nth-of-type(1),
+input.fourth-fruit:checked ~ .fruits .fruit:nth-of-type(2),
+input.fifth-fruit:checked ~ .fruits .fruit:nth-of-type(3),
+input.six-fruit:checked ~ .fruits .fruit:nth-of-type(4),
+input.seventh-fruit:checked ~ .fruits .fruit:nth-of-type(5)
+{
+    transform: perspective(600px) translate3D(-150px, 0, -60px) rotateY(20deg);
+    z-index: 5;
+}
+
+input.fourth-fruit:checked ~ .fruits .fruit:nth-of-type(1),
+input.fifth-fruit:checked ~ .fruits .fruit:nth-of-type(2),
+input.six-fruit:checked ~ .fruits .fruit:nth-of-type(3),
+input.seventh-fruit:checked ~ .fruits .fruit:nth-of-type(4)
+{
+    transform: perspective(600px) translate3D(-200px, 0, -70px) rotateY(15deg);
+    z-index: 4;
+}
+
+input.fifth-fruit:checked ~ .fruits .fruit:nth-of-type(1),
+input.six-fruit:checked ~ .fruits .fruit:nth-of-type(2),
+input.seventh-fruit:checked ~ .fruits .fruit:nth-of-type(3)
+{
+    transform: perspective(600px) translate3D(-250px,0, -80px) rotateY(10deg);
+    z-index: 3;
+}
+
+input.six-fruit:checked ~ .fruits .fruit:nth-of-type(1),
+input.seventh-fruit:checked ~ .fruits .fruit:nth-of-type(2)
+{
+    transform: perspective(600px) translate3D(-300px, 0, -90px) rotateY(5deg);
+    z-index: 2;
+}
+
+input.seventh-fruit:checked ~ .fruits .fruit:nth-of-type(1)
+{
+    transform: perspective(600px) translate3D(-350px, 0, -100px);
+    z-index: 1;
+}
+
+.fruits .fruit
+{
+    transform: perspective(600px);
+    background: #fff;
+    width: 20%;
+    height: 250px;
+    left: 50%;
+    margin-left: -10%;
+    z-index: 7;
+    box-shadow: 0 1px 18px -3px #000;
+    position: absolute;
+    transition: left .6s linear, transform .6s linear, width .6s linear
+        , margin .6s linear;
+}
+
+.fruit .open-recipe
+{
+    visibility: hidden;
+    background: rgba(0, 0, 0, .6);
+    width: 100%;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    text-align: center;
+    padding-top: 75px;
+    height: 175px;
+    cursor: pointer;
+    overflow: hidden;
+    text-decoration: none;
+    transition: opacity .6s ease-out, visibility .6s ease-out;
+}
+
+.open-recipe span
+{
+    position: relative;
+    color: white;
+    font-size: 2em;
+    padding: 20px;
+    border: solid 5px;
+    border-radius: 30px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input.first-fruit:checked ~ .fruits .first-fruit:hover .open-recipe,
+input.second-fruit:checked ~ .fruits .second-fruit:hover .open-recipe,
+input.third-fruit:checked ~ .fruits .third-fruit:hover .open-recipe,
+input.fourth-fruit:checked ~ .fruits .fourth-fruit:hover .open-recipe,
+input.fifth-fruit:checked ~ .fruits .fifth-fruit:hover .open-recipe,
+input.six-fruit:checked ~ .fruits .six-fruit:hover .open-recipe,
+input.seventh-fruit:checked ~ .fruits .seventh-fruit:hover .open-recipe
+{
+    visibility: visible;
+    opacity: 1;
+}
+
+.fruit-image
+{
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.fruit-image img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.recipe
+{
+    visibility: hidden;
+    width: 100%;
+    height: 250px;
+    opacity: 0;
+    transition: opacity .3s step-end, visibility .3s step-end
+        , transform .3s step-end;
+    background: rgba(255, 255, 255, 1);
+    padding: 20px 10px;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+}
+
+.recipe h2
+{
+    font-size: 1.3em;
+    display: inline-block;
+    margin: 0;
+    border-bottom: solid 2px;
+    color: #add8e6;
+}
+
+.recipe .description
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.description .ingredients
+{
+    font-size: .8em;
+}
+
+.description .cook
+{
+    width: 55%;
+    position: relative;
+    right: 0;
+    font-size: .8em;
+}
+
+.ingredients ul
+{
+    padding: 0;
+    margin-left: 20px;
+}
+
+.close
+{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    background: url(close.svg) no-repeat;
+    background-size: 15px;
+    width: 16px;
+    height: 16px;
+    opacity: .5;
+}
+
+.close:hover
+{
+    opacity: 1;
+}
+
+.modal
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(100, 100, 100, .7);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 500;
+}
+
+.fruit:target .open-recipe
+{
+    display: none;
+}
+
+.fruit:target
+{
+    transform: rotateX(180deg);
+    cursor: default;
+    z-index: 1000;
+    width: 400px;
+    margin-left: -200px;
+}
+
+.fruit:target .recipe
+{
+    opacity: 1;
+    visibility: visible;
+    transform: rotateX(180deg);
+}
+
+.fruit:target ~ .modal
+{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease-out, visibility 1s ease-out;
+}
+
+@keyframes content-visible-delay
+{
+    99%
+    {
+        visibility: hidden;
+        opacity: 0;
+    }
+    100%
+    {
+        visibility: visible;
+        opacity: 1;
+    }
+}
