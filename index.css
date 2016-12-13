@@ -21,7 +21,7 @@ input
     position: absolute;
     height: 200px;
     opacity: 0;
-    animation: content-visible-delay2 .6s;
+    animation: content-visible-delay .6s;
     animation-fill-mode: forwards;
 }
 
@@ -150,12 +150,14 @@ input.seventh-fruit:checked ~ .fruits .fruit:nth-of-type(1)
     z-index: 100;
     position: absolute;
     top: 0;
+    opacity: 0;
     text-align: center;
     padding-top: 75px;
     height: 175px;
     cursor: pointer;
     overflow: hidden;
     text-decoration: none;
+    transition: opacity .6s ease-out, visibility .6s ease-out;
 }
 
 .open-recipe span
@@ -180,8 +182,8 @@ input.fifth-fruit:checked ~ .fruits .fifth-fruit:hover .open-recipe,
 input.six-fruit:checked ~ .fruits .six-fruit:hover .open-recipe,
 input.seventh-fruit:checked ~ .fruits .seventh-fruit:hover .open-recipe
 {
-    animation: content-visible-delay 1s;
-    animation-fill-mode: forwards;
+    visibility: visible;
+    opacity: 1;
 }
 
 .fruit-image
@@ -204,12 +206,13 @@ input.seventh-fruit:checked ~ .fruits .seventh-fruit:hover .open-recipe
     width: 100%;
     height: 250px;
     opacity: 0;
-    transition: all .3s step-end;
+    transition: opacity .3s step-end, visibility .3s step-end
+        , transform .3s step-end;
     background: rgba(255, 255, 255, 1);
     padding: 20px 10px;
     position: absolute;
     top: 0;
-    z-index: 1;
+    z-index: 1000;
 }
 
 .recipe h2
@@ -274,6 +277,7 @@ input.seventh-fruit:checked ~ .fruits .seventh-fruit:hover .open-recipe
     left: 0;
     background: rgba(100, 100, 100, .7);
     visibility: hidden;
+    opacity: 0;
     z-index: 500;
 }
 
@@ -300,25 +304,12 @@ input.seventh-fruit:checked ~ .fruits .seventh-fruit:hover .open-recipe
 
 .fruit:target ~ .modal
 {
-    animation: content-visible-delay 1s;
-    animation-fill-mode: forwards;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease-out, visibility 1s ease-out;
 }
 
 @keyframes content-visible-delay
-{
-    30%
-    {
-        visibility: hidden;
-        opacity: 0;
-    }
-    100%
-    {
-        visibility: visible;
-        opacity: 1;
-    }
-}
-
-@keyframes content-visible-delay2
 {
     99%
     {
