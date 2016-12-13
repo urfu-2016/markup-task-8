@@ -1,8 +1,653 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>markup-test-8</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <main class="main">
+        <input type="radio" name="toggle" class="toggle-i toggle-1" id="toggle-1"
+        checked="checked">
+        <input type="radio" name="toggle" class="toggle-i toggle-2" id="toggle-2">
+        <label for="toggle-1" class="toggle-l toggle-1-l">Карусель 1</label>
+        <label for="toggle-2" class="toggle-l toggle-2-l">Карусель 2</label>
+
+        <input type="radio" name="slider" class="slider-i slider-1-i" id="slider-1-i">
+        <input type="radio" name="slider" class="slider-i slider-2-i" id="slider-2-i">
+        <input type="radio" name="slider" class="slider-i slider-3-i" id="slider-3-i">
+        <input type="radio" name="slider" class="slider-i slider-4-i" id="slider-4-i"
+    checked="checked">
+        <input type="radio" name="slider" class="slider-i slider-5-i" id="slider-5-i">
+        <input type="radio" name="slider" class="slider-i slider-6-i" id="slider-6-i">
+        <input type="radio" name="slider" class="slider-i slider-7-i" id="slider-7-i">
+
+        <input type="radio" name="recipe" class="recipe-i recipe-1-i" id="recipe-1-i">
+        <input type="radio" name="recipe" class="cross-i cross-1-i" id="cross-1-i">
+        <input type="radio" name="recipe" class="recipe-i recipe-2-i" id="recipe-2-i">
+        <input type="radio" name="recipe" class="cross-i cross-2-i" id="cross-2-i">
+        <input type="radio" name="recipe" class="recipe-i recipe-3-i" id="recipe-3-i">
+        <input type="radio" name="recipe" class="cross-i cross-3-i" id="cross-3-i">
+        <input type="radio" name="recipe" class="recipe-i recipe-4-i" id="recipe-4-i">
+        <input type="radio" name="recipe" class="cross-i cross-4-i" id="cross-4-i">
+        <input type="radio" name="recipe" class="recipe-i recipe-5-i" id="recipe-5-i">
+        <input type="radio" name="recipe" class="cross-i cross-5-i" id="cross-5-i">
+        <input type="radio" name="recipe" class="recipe-i recipe-6-i" id="recipe-6-i">
+        <input type="radio" name="recipe" class="cross-i cross-6-i" id="cross-6-i">
+        <input type="radio" name="recipe" class="recipe-i recipe-7-i" id="recipe-7-i">
+        <input type="radio" name="recipe" class="cross-i cross-7-i" id="cross-7-i">
+
+        <section class="carusel carusel-1">
+            <div class="carusel__shadow"></div>
+            <div class="slider">
+                <div class="slider-l slider-1-l">
+                <div class="slider-item">
+                    <div>
+                        <label for="slider-1-i">
+                            <img src="img/fruit_1.jpg" alt="офощи" title="офощи">
+                        </label>
+                        <div class="recipe">
+                            <label for="recipe-1-i">РЕЦЕПТ</label>
+                        </div>
+                        <div class="instruction">
+                            <label for="cross-1-i"><svg height="18" width="18">
+                                <line x1="0" y1="0" x2="18" y2="18"></line>
+                                <line x1="18" y1="0" x2="0" y2="18"></line>
+                            </svg></label>
+                            <h1>Some title</h1>
+                            <div class="instruction__text">
+                                <div class="instruction__text--l">
+                                    <ul>
+                                        <li><strong>Product 1:</strong> product item</li>
+                                        <li><strong>Product 2:</strong> product item</li>
+                                        <li><strong>Product 3:</strong> product item</li>
+                                    </ul>
+                                </div>
+                                <div class="instruction__text--r">
+                                    <h3>Instruction:</h3>
+                                    <ol>
+                                        <li>Lorem ipsum dolor sit amet, consectetur
+                                            adipisicing elit. Neque, maiores.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur
+                                                adipisicing elit. Asperiores minus est quo,
+                                                facilis praesentium cum libero nobis
+                                                nesciunt exercitationem voluptatibus?</li>
+                                                <li>Lorem ipsum dolor sit amet, consectetur
+                                                    adipisicing elit. Placeat, porro!</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-l slider-2-l">
+                <div class="slider-item">
+                    <div>
+                        <label for="slider-2-i">
+                            <img src="img/fruit_2.jpg" alt="офощи" title="офощи">
+                        </label>
+                        <div class="recipe">
+                            <label for="recipe-2-i">РЕЦЕПТ</label>
+                        </div>
+                        <div class="instruction">
+                            <label for="cross-2-i"><svg height="18" width="18">
+                                <line x1="0" y1="0" x2="18" y2="18"></line>
+                                <line x1="18" y1="0" x2="0" y2="18"></line>
+                            </svg></label>
+                            <h1>Some title</h1>
+                            <div class="instruction__text">
+                                <div class="instruction__text--l">
+                                    <ul>
+                                        <li><strong>Product 1:</strong> product item</li>
+                                        <li><strong>Product 2:</strong> product item</li>
+                                        <li><strong>Product 3:</strong> product item</li>
+                                    </ul>
+                                </div>
+                                <div class="instruction__text--r">
+                                    <h3>Instruction:</h3>
+                                    <ol>
+                                        <li>Lorem ipsum dolor sit amet, consectetur
+                                            adipisicing elit. Neque, maiores.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur
+                                                adipisicing elit. Asperiores minus est quo,
+                                                facilis praesentium cum libero nobis
+                                                nesciunt exercitationem voluptatibus?</li>
+                                                <li>Lorem ipsum dolor sit amet, consectetur
+                                                    adipisicing elit. Placeat, porro!</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-l slider-3-l">
+                <div class="slider-item">
+                    <div>
+                        <label for="slider-3-i">
+                            <img src="img/fruit_3.jpg" alt="офощи" title="офощи">
+                        </label>
+                        <div class="recipe">
+                            <label for="recipe-3-i">РЕЦЕПТ</label>
+                        </div>
+                        <div class="instruction">
+                            <label for="cross-3-i"><svg height="18" width="18">
+                                <line x1="0" y1="0" x2="18" y2="18"></line>
+                                <line x1="18" y1="0" x2="0" y2="18"></line>
+                            </svg></label>
+                            <h1>Some title</h1>
+                            <div class="instruction__text">
+                                <div class="instruction__text--l">
+                                    <ul>
+                                        <li><strong>Product 1:</strong> product item</li>
+                                        <li><strong>Product 2:</strong> product item</li>
+                                        <li><strong>Product 3:</strong> product item</li>
+                                    </ul>
+                                </div>
+                                <div class="instruction__text--r">
+                                    <h3>Instruction:</h3>
+                                    <ol>
+                                        <li>Lorem ipsum dolor sit amet, consectetur
+                                            adipisicing elit. Neque, maiores.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur
+                                                adipisicing elit. Asperiores minus est quo,
+                                                facilis praesentium cum libero nobis
+                                                nesciunt exercitationem voluptatibus?</li>
+                                                <li>Lorem ipsum dolor sit amet, consectetur
+                                                    adipisicing elit. Placeat, porro!</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-l slider-4-l">
+                    <div class="slider-item">
+                        <div>
+                            <label for="slider-4-i">
+                                <img src="img/fruit_4.jpg" alt="офощи" title="офощи">
+                            </label>
+                            <div class="recipe">
+                            <label for="recipe-4-i">РЕЦЕПТ</label>
+                            </div>
+                            <div class="instruction">
+                                <label for="cross-4-i"><svg height="18" width="18">
+                                    <line x1="0" y1="0" x2="18" y2="18"></line>
+                                    <line x1="18" y1="0" x2="0" y2="18"></line>
+                                </svg></label>
+                                <h1>Some title</h1>
+                                <div class="instruction__text">
+                                <div class="instruction__text--l">
+                                    <ul>
+                                        <li><strong>Product 1:</strong> product item</li>
+                                        <li><strong>Product 2:</strong> product item</li>
+                                        <li><strong>Product 3:</strong> product item</li>
+                                    </ul>
+                                </div>
+                                <div class="instruction__text--r">
+                                    <h3>Instruction:</h3>
+                                    <ol>
+                                        <li>Lorem ipsum dolor sit amet, consectetur
+                                            adipisicing elit. Neque, maiores.</li>
+                                        <li>Lorem ipsum dolor sit amet, consectetur
+                                            adipisicing elit. Asperiores minus est quo,
+                                            facilis praesentium cum libero nobis
+                                            nesciunt exercitationem voluptatibus?</li>
+                                        <li>Lorem ipsum dolor sit amet, consectetur
+                                            adipisicing elit. Placeat, porro!</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-l slider-5-l">
+                <div class="slider-item">
+                    <div>
+                        <label for="slider-5-i">
+                            <img src="img/fruit_5.jpg" alt="офощи" title="офощи">
+                        </label>
+                        <div class="recipe">
+                            <label for="recipe-5-i">РЕЦЕПТ</label>
+                        </div>
+                        <div class="instruction">
+                            <label for="cross-5-i"><svg height="18" width="18">
+                                <line x1="0" y1="0" x2="18" y2="18"></line>
+                                <line x1="18" y1="0" x2="0" y2="18"></line>
+                            </svg></label>
+                            <h1>Some title</h1>
+                            <div class="instruction__text">
+                                <div class="instruction__text--l">
+                                    <ul>
+                                        <li><strong>Product 1:</strong> product item</li>
+                                        <li><strong>Product 2:</strong> product item</li>
+                                        <li><strong>Product 3:</strong> product item</li>
+                                    </ul>
+                                </div>
+                                <div class="instruction__text--r">
+                                    <h3>Instruction:</h3>
+                                    <ol>
+                                        <li>Lorem ipsum dolor sit amet, consectetur
+                                            adipisicing elit. Neque, maiores.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur
+                                                adipisicing elit. Asperiores minus est quo,
+                                                facilis praesentium cum libero nobis
+                                                nesciunt exercitationem voluptatibus?</li>
+                                                <li>Lorem ipsum dolor sit amet, consectetur
+                                                    adipisicing elit. Placeat, porro!</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-l slider-6-l">
+                <div class="slider-item">
+                    <div>
+                        <label for="slider-6-i">
+                            <img src="img/fruit_6.jpg" alt="офощи" title="офощи">
+                        </label>
+                        <div class="recipe">
+                            <label for="recipe-6-i">РЕЦЕПТ</label>
+                        </div>
+                        <div class="instruction">
+                            <label for="cross-6-i"><svg height="18" width="18">
+                                <line x1="0" y1="0" x2="18" y2="18"></line>
+                                <line x1="18" y1="0" x2="0" y2="18"></line>
+                            </svg></label>
+                            <h1>Some title</h1>
+                            <div class="instruction__text">
+                                <div class="instruction__text--l">
+                                    <ul>
+                                        <li><strong>Product 1:</strong> product item</li>
+                                        <li><strong>Product 2:</strong> product item</li>
+                                        <li><strong>Product 3:</strong> product item</li>
+                                    </ul>
+                                </div>
+                                <div class="instruction__text--r">
+                                    <h3>Instruction:</h3>
+                                    <ol>
+                                        <li>Lorem ipsum dolor sit amet, consectetur
+                                            adipisicing elit. Neque, maiores.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur
+                                                adipisicing elit. Asperiores minus est quo,
+                                                facilis praesentium cum libero nobis
+                                                nesciunt exercitationem voluptatibus?</li>
+                                                <li>Lorem ipsum dolor sit amet, consectetur
+                                                    adipisicing elit. Placeat, porro!</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-l slider-7-l">
+                <div class="slider-item">
+                    <div>
+                        <label for="slider-7-i">
+                            <img src="img/fruit_7.jpg" alt="офощи" title="офощи">
+                        </label>
+                        <div class="recipe">
+                            <label for="recipe-7-i">РЕЦЕПТ</label>
+                        </div>
+                        <div class="instruction">
+                            <label for="cross-7-i"><svg height="18" width="18">
+                                <line x1="0" y1="0" x2="18" y2="18"></line>
+                                <line x1="18" y1="0" x2="0" y2="18"></line>
+                            </svg></label>
+                            <h1>Some title</h1>
+                            <div class="instruction__text">
+                                <div class="instruction__text--l">
+                                    <ul>
+                                        <li><strong>Product 1:</strong> product item</li>
+                                        <li><strong>Product 2:</strong> product item</li>
+                                        <li><strong>Product 3:</strong> product item</li>
+                                    </ul>
+                                </div>
+                                <div class="instruction__text--r">
+                                    <h3>Instruction:</h3>
+                                    <ol>
+                                        <li>Lorem ipsum dolor sit amet, consectetur
+                                            adipisicing elit. Neque, maiores.</li>
+                                            <li>Lorem ipsum dolor sit amet, consectetur
+                                                adipisicing elit. Asperiores minus est quo,
+                                                facilis praesentium cum libero nobis
+                                                nesciunt exercitationem voluptatibus?</li>
+                                                <li>Lorem ipsum dolor sit amet, consectetur
+                                                    adipisicing elit. Placeat, porro!</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="carusel carusel-2">
+            <div class="slider">
+                <div class="figure">
+                    <div class="carusel__item carusel__item-1">
+                        <div class="carusel__perspective">
+                            <div class="carusel__rotate">
+                                <div>
+                                    <img src="img/fruit_1.jpg" alt="овощи" title="овощи">
+                                </div>
+                                <label for="slider-1-i"></label>
+                                <div class="recipe">
+                                    <label for="recipe-1-i">РЕЦЕПТ</label>
+                                </div>
+                                <div class="instruction">
+                                    <label for="cross-1-i"><svg height="18" width="18">
+                                        <line x1="0" y1="0" x2="18" y2="18"></line>
+                                        <line x1="18" y1="0" x2="0" y2="18"></line>
+                                    </svg></label>
+                                    <h1>Some title</h1>
+                                    <div class="instruction__text">
+                                        <div class="instruction__text--l">
+                                            <ul>
+                                                <li><strong>Product 1:</strong>
+                                                    product item</li>
+                                                <li><strong>Product 2:</strong>
+                                                    product item</li>
+                                                <li><strong>Product 3:</strong>
+                                                    product item</li>
+                                            </ul>
+                                        </div>
+                                        <div class="instruction__text--r">
+                                            <h3>Instruction:</h3>
+                                            <ol>
+                                    <li>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Neque, maiores.</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Asperiores minus est quo,
+                                        facilis praesentium cum libero nobis
+                                        nesciunt exercitationem voluptatibus?</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Placeat, porro!</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="carusel__item carusel__item-2">
+                        <div class="carusel__perspective">
+                            <div class="carusel__rotate">
+                                <div>
+                                    <img src="img/fruit_2.jpg" alt="овощи" title="овощи">
+                                </div>
+                                <label for="slider-2-i"></label>
+                                <div class="recipe">
+                                    <label for="recipe-2-i">РЕЦЕПТ</label>
+                                </div>
+                                <div class="instruction">
+                                    <label for="cross-2-i"><svg height="18" width="18">
+                                        <line x1="0" y1="0" x2="18" y2="18"></line>
+                                        <line x1="18" y1="0" x2="0" y2="18"></line>
+                                    </svg></label>
+                                    <h1>Some title</h1>
+                                    <div class="instruction__text">
+                                        <div class="instruction__text--l">
+                                            <ul>
+                                                <li><strong>Product 1:</strong>
+                                                    product item</li>
+                                                <li><strong>Product 2:</strong>
+                                                    product item</li>
+                                                <li><strong>Product 3:</strong>
+                                                    product item</li>
+                                            </ul>
+                                        </div>
+                                        <div class="instruction__text--r">
+                                            <h3>Instruction:</h3>
+                                            <ol>
+                                    <li>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Neque, maiores.</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Asperiores minus est quo,
+                                        facilis praesentium cum libero nobis
+                                        nesciunt exercitationem voluptatibus?</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Placeat, porro!</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="carusel__item carusel__item-3">
+                        <div class="carusel__perspective">
+                            <div class="carusel__rotate">
+                                <div>
+                                    <img src="img/fruit_3.jpg" alt="овощи" title="овощи">
+                                </div>
+                                <label for="slider-3-i"></label>
+                                <div class="recipe">
+                                    <label for="recipe-3-i">РЕЦЕПТ</label>
+                                </div>
+                                <div class="instruction">
+                                    <label for="cross-3-i"><svg height="18" width="18">
+                                        <line x1="0" y1="0" x2="18" y2="18"></line>
+                                        <line x1="18" y1="0" x2="0" y2="18"></line>
+                                    </svg></label>
+                                    <h1>Some title</h1>
+                                    <div class="instruction__text">
+                                        <div class="instruction__text--l">
+                                            <ul>
+                                                <li><strong>Product 1:</strong>
+                                                    product item</li>
+                                                <li><strong>Product 2:</strong>
+                                                    product item</li>
+                                                <li><strong>Product 3:</strong>
+                                                    product item</li>
+                                            </ul>
+                                        </div>
+                                        <div class="instruction__text--r">
+                                            <h3>Instruction:</h3>
+                                            <ol>
+                                    <li>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Neque, maiores.</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Asperiores minus est quo,
+                                        facilis praesentium cum libero nobis
+                                        nesciunt exercitationem voluptatibus?</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Placeat, porro!</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="carusel__item carusel__item-4">
+                        <div class="carusel__perspective">
+                            <div class="carusel__rotate">
+                                <div>
+                                    <img src="img/fruit_4.jpg" alt="овощи" title="овощи">
+                                </div>
+                                <label for="slider-4-i"></label>
+                                <div class="recipe">
+                                    <label for="recipe-4-i">РЕЦЕПТ</label>
+                                </div>
+                                <div class="instruction">
+                                    <label for="cross-4-i"><svg height="18" width="18">
+                                        <line x1="0" y1="0" x2="18" y2="18"></line>
+                                        <line x1="18" y1="0" x2="0" y2="18"></line>
+                                    </svg></label>
+                                    <h1>Some title</h1>
+                                    <div class="instruction__text">
+                                        <div class="instruction__text--l">
+                                            <ul>
+                                                <li><strong>Product 1:</strong>
+                                                    product item</li>
+                                                <li><strong>Product 2:</strong>
+                                                    product item</li>
+                                                <li><strong>Product 3:</strong>
+                                                    product item</li>
+                                            </ul>
+                                        </div>
+                                        <div class="instruction__text--r">
+                                            <h3>Instruction:</h3>
+                                            <ol>
+                                    <li>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Neque, maiores.</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Asperiores minus est quo,
+                                        facilis praesentium cum libero nobis
+                                        nesciunt exercitationem voluptatibus?</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Placeat, porro!</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="carusel__item carusel__item-5">
+                        <div class="carusel__perspective">
+                            <div class="carusel__rotate">
+                                <div>
+                                    <img src="img/fruit_5.jpg" alt="овощи" title="овощи">
+                                </div>
+                                <label for="slider-5-i"></label>
+                                <div class="recipe">
+                                    <label for="recipe-5-i">РЕЦЕПТ</label>
+                                </div>
+                                <div class="instruction">
+                                    <label for="cross-5-i"><svg height="18" width="18">
+                                        <line x1="0" y1="0" x2="18" y2="18"></line>
+                                        <line x1="18" y1="0" x2="0" y2="18"></line>
+                                    </svg></label>
+                                    <h1>Some title</h1>
+                                    <div class="instruction__text">
+                                        <div class="instruction__text--l">
+                                            <ul>
+                                                <li><strong>Product 1:</strong>
+                                                    product item</li>
+                                                <li><strong>Product 2:</strong>
+                                                    product item</li>
+                                                <li><strong>Product 3:</strong>
+                                                    product item</li>
+                                            </ul>
+                                        </div>
+                                        <div class="instruction__text--r">
+                                            <h3>Instruction:</h3>
+                                            <ol>
+                                    <li>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Neque, maiores.</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Asperiores minus est quo,
+                                        facilis praesentium cum libero nobis
+                                        nesciunt exercitationem voluptatibus?</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Placeat, porro!</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="carusel__item carusel__item-6">
+                        <div class="carusel__perspective">
+                            <div class="carusel__rotate">
+                                <div>
+                                    <img src="img/fruit_6.jpg" alt="овощи" title="овощи">
+                                </div>
+                                <label for="slider-6-i"></label>
+                                <div class="recipe">
+                                    <label for="recipe-6-i">РЕЦЕПТ</label>
+                                </div>
+                                <div class="instruction">
+                                    <label for="cross-6-i"><svg height="18" width="18">
+                                        <line x1="0" y1="0" x2="18" y2="18"></line>
+                                        <line x1="18" y1="0" x2="0" y2="18"></line>
+                                    </svg></label>
+                                    <h1>Some title</h1>
+                                    <div class="instruction__text">
+                                        <div class="instruction__text--l">
+                                            <ul>
+                                                <li><strong>Product 1:</strong>
+                                                    product item</li>
+                                                <li><strong>Product 2:</strong>
+                                                    product item</li>
+                                                <li><strong>Product 3:</strong>
+                                                    product item</li>
+                                            </ul>
+                                        </div>
+                                        <div class="instruction__text--r">
+                                            <h3>Instruction:</h3>
+                                            <ol>
+                                    <li>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Neque, maiores.</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Asperiores minus est quo,
+                                        facilis praesentium cum libero nobis
+                                        nesciunt exercitationem voluptatibus?</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Placeat, porro!</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="carusel__item carusel__item-7">
+                        <div class="carusel__perspective">
+                            <div class="carusel__rotate">
+                                <div>
+                                    <img src="img/fruit_7.jpg" alt="овощи" title="овощи">
+                                </div>
+                                <label for="slider-7-i"></label>
+                                <div class="recipe">
+                                    <label for="recipe-7-i">РЕЦЕПТ</label>
+                                </div>
+                                <div class="instruction">
+                                    <label for="cross-7-i"><svg height="18" width="18">
+                                        <line x1="0" y1="0" x2="18" y2="18"></line>
+                                        <line x1="18" y1="0" x2="0" y2="18"></line>
+                                    </svg></label>
+                                    <h1>Some title</h1>
+                                    <div class="instruction__text">
+                                        <div class="instruction__text--l">
+                                            <ul>
+                                                <li><strong>Product 1:</strong>
+                                                    product item</li>
+                                                <li><strong>Product 2:</strong>
+                                                    product item</li>
+                                                <li><strong>Product 3:</strong>
+                                                    product item</li>
+                                            </ul>
+                                        </div>
+                                        <div class="instruction__text--r">
+                                            <h3>Instruction:</h3>
+                                            <ol>
+                                    <li>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Neque, maiores.</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Asperiores minus est quo,
+                                        facilis praesentium cum libero nobis
+                                        nesciunt exercitationem voluptatibus?</li>
+                                    <li>Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. Placeat, porro!</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

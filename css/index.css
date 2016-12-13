@@ -1,0 +1,697 @@
+/* Переключение между слайдерами */
+
+input[name='slider'],
+input[name='recipe'],
+input[name='carusel-3d'],
+input[name='carusel-3d-recipe']
+{
+    display: none;
+}
+
+.toggle-i,
+.toggle-l
+{
+    position: absolute;
+    left: 40px;
+    z-index: 100;
+    display: block;
+}
+
+.toggle-1,
+.toggle-1-l
+{
+    top: 20px;
+}
+
+.toggle-2,
+.toggle-2-l
+{
+    top: 40px;
+}
+
+.toggle-1-l,
+.toggle-2-l
+{
+    left: 80px;
+}
+
+.toggle-1:checked ~ .carusel-2,
+.toggle-2:checked ~ .carusel-1
+{
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+}
+
+.toggle-1:checked ~ .carusel-1,
+.toggle-2:checked ~ .carusel-2,
+{
+    opacity: 1;
+}
+
+/* Базовые стили для слайдеров */
+
+.carusel-1
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider
+{
+    width: 80%;
+    height: 50%;
+    display: flex;
+}
+
+.carusel-2 .slider
+{
+    perspective: 1200px;
+}
+
+.carusel-1 .slider-l
+{
+    width: calc(100% / 7);
+    height: 180px;
+    display: inline-block;
+    vertical-align: top;
+    perspective: 700px;
+    position: relative;
+    z-index: 10;
+    transition: all .2s ease-in-out;
+}
+
+.slider-l:nth-child(1)
+{
+    margin-left: 0;
+}
+
+.slider-item
+{
+    transform: rotateY(40deg);
+    width: 194%;
+    height: 100%;
+    margin-left: -47%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: width 1s ease-in-out
+        , margin 1s ease-in-out
+        , height 1s ease-in-out
+        , transform .2s ease-in-out;
+}
+
+.slider-item > label
+{
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    transform: translateZ(0);
+}
+
+.slider-l img
+{
+    max-width: 80%;
+    max-height: 80%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.instruction
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    transform: translateZ(-1px) scaleY(-1);
+    font-size: 20px;
+    color: #777;
+}
+
+.instruction label
+{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 1010;
+}
+
+.instruction svg line
+{
+    stroke: #777;
+    stroke-width: 2;
+}
+
+.instruction h1
+{
+    font-size: 1.1em;
+    margin: 0;
+    padding: 10px 0;
+    border-bottom: 2px solid #777;
+    text-align: center;
+}
+
+.instruction__text
+{
+    display: flex;
+    justify-content: space-between;
+    font-size: .7em;
+    overflow: hidden;
+}
+
+.instruction__text--l,
+.instruction__text--r
+{
+    padding: 20px;
+}
+
+.instruction__text--l
+{
+    width: 200px;
+    float: left;
+    padding-left: 0;
+}
+
+.instruction__text--r
+{
+    width: 300px;
+    float: right;
+    padding-right: 0;
+}
+
+.instruction__text--r h3
+{
+    font-size: 1.2em;
+}
+
+.instruction__text--r ol
+{
+    list-style-type: decimal;
+}
+
+.instruction__text--l li,
+.instruction__text--r li
+{
+    padding: 6px 0;
+}
+
+.carusel__shadow
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0;
+    z-index: 0;
+}
+
+.slider-1-i:checked ~ .carusel-1 .slider-1-l,
+.slider-2-i:checked ~ .carusel-1 .slider-2-l,
+.slider-3-i:checked ~ .carusel-1 .slider-3-l,
+.slider-4-i:checked ~ .carusel-1 .slider-4-l,
+.slider-5-i:checked ~ .carusel-1 .slider-5-l,
+.slider-6-i:checked ~ .carusel-1 .slider-6-l,
+.slider-7-i:checked ~ .carusel-1 .slider-7-l
+{
+    z-index: 1010;
+    transform: scale(1.1);
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+.slider-1-i:checked ~ .carusel-1 .slider-1-l .slider-item,
+.slider-2-i:checked ~ .carusel-1 .slider-2-l .slider-item,
+.slider-3-i:checked ~ .carusel-1 .slider-3-l .slider-item,
+.slider-4-i:checked ~ .carusel-1 .slider-4-l .slider-item,
+.slider-5-i:checked ~ .carusel-1 .slider-5-l .slider-item,
+.slider-6-i:checked ~ .carusel-1 .slider-6-l .slider-item,
+.slider-7-i:checked ~ .carusel-1 .slider-7-l .slider-item
+{
+    transform: rotateY(0deg);
+    width: 194%;
+    margin-left: -47%;
+}
+
+.slider-1-i:checked ~ .carusel-1 .slider-1-l ~ .slider-l .slider-item,
+.slider-2-i:checked ~ .carusel-1 .slider-2-l ~ .slider-l .slider-item,
+.slider-3-i:checked ~ .carusel-1 .slider-3-l ~ .slider-l .slider-item,
+.slider-4-i:checked ~ .carusel-1 .slider-4-l ~ .slider-l .slider-item,
+.slider-5-i:checked ~ .carusel-1 .slider-5-l ~ .slider-l .slider-item,
+.slider-6-i:checked ~ .carusel-1 .slider-6-l ~ .slider-l .slider-item,
+.slider-7-i:checked ~ .carusel-1 .slider-7-l ~ .slider-l .slider-item
+{
+    transform: rotateY(-40deg);
+}
+
+/* z-index */
+
+.slider-1-i:checked ~ .carusel-1 .slider-2-l
+{
+    z-index: 76;
+}
+
+.slider-1-i:checked ~ .carusel-1 .slider-3-l,
+.slider-2-i:checked ~ .carusel-1 .slider-3-l
+{
+    z-index: 65;
+}
+
+.slider-1-i:checked ~ .carusel-1 .slider-4-l,
+.slider-2-i:checked ~ .carusel-1 .slider-4-l,
+.slider-3-i:checked ~ .carusel-1 .slider-4-l
+{
+    z-index: 54;
+}
+
+.slider-1-i:checked ~ .carusel-1 .slider-5-l,
+.slider-2-i:checked ~ .carusel-1 .slider-5-l,
+.slider-3-i:checked ~ .carusel-1 .slider-5-l,
+.slider-4-i:checked ~ .carusel-1 .slider-5-l
+{
+    z-index: 43;
+}
+
+.slider-1-i:checked ~ .carusel-1 .slider-6-l,
+.slider-2-i:checked ~ .carusel-1 .slider-6-l,
+.slider-3-i:checked ~ .carusel-1 .slider-6-l,
+.slider-4-i:checked ~ .carusel-1 .slider-6-l,
+.slider-5-i:checked ~ .carusel-1 .slider-6-l
+{
+    z-index: 32;
+}
+
+.slider-1-i:checked ~ .carusel-1 .slider-7-l,
+.slider-2-i:checked ~ .carusel-1 .slider-7-l,
+.slider-3-i:checked ~ .carusel-1 .slider-7-l,
+.slider-4-i:checked ~ .carusel-1 .slider-7-l,
+.slider-5-i:checked ~ .carusel-1 .slider-7-l
+{
+    z-index: 22;
+}
+
+/* angle of negative rotation */
+
+.main .slider-1-i:checked ~ .carusel-1 .slider-3-l .slider-item,
+.main .slider-2-i:checked ~ .carusel-1 .slider-4-l .slider-item,
+.main .slider-3-i:checked ~ .carusel-1 .slider-5-l .slider-item,
+.main .slider-4-i:checked ~ .carusel-1 .slider-6-l .slider-item
+{
+    transform: rotateY(-35deg);
+}
+
+.main .slider-1-i:checked ~ .carusel-1 .slider-4-l .slider-item,
+.main .slider-2-i:checked ~ .carusel-1 .slider-5-l .slider-item,
+.main .slider-3-i:checked ~ .carusel-1 .slider-6-l .slider-item,
+.main .slider-4-i:checked ~ .carusel-1 .slider-7-l .slider-item
+{
+    transform: rotateY(-30deg);
+}
+
+.main .slider-1-i:checked ~ .carusel-1 .slider-5-l .slider-item,
+.main .slider-2-i:checked ~ .carusel-1 .slider-6-l .slider-item,
+.main .slider-3-i:checked ~ .carusel-1 .slider-7-l .slider-item
+{
+    transform: rotateY(-25deg);
+}
+
+.main .slider-1-i:checked ~ .carusel-1 .slider-6-l .slider-item,
+.main .slider-2-i:checked ~ .carusel-1 .slider-7-l .slider-item
+{
+    transform: rotateY(-20deg);
+}
+
+.main .slider-1-i:checked ~ .carusel-1 .slider-7-l .slider-item
+{
+    transform: rotateY(-15deg);
+}
+
+/* angle of positive rotation */
+
+.slider-7-i:checked ~ .carusel-1 .slider-5-l .slider-item,
+.slider-6-i:checked ~ .carusel-1 .slider-4-l .slider-item,
+.slider-5-i:checked ~ .carusel-1 .slider-3-l .slider-item,
+.slider-4-i:checked ~ .carusel-1 .slider-2-l .slider-item
+{
+    transform: rotateY(35deg);
+}
+
+.slider-7-i:checked ~ .carusel-1 .slider-4-l .slider-item,
+.slider-6-i:checked ~ .carusel-1 .slider-3-l .slider-item,
+.slider-5-i:checked ~ .carusel-1 .slider-2-l .slider-item,
+.slider-4-i:checked ~ .carusel-1 .slider-1-l .slider-item
+{
+    transform: rotateY(30deg);
+}
+
+.slider-7-i:checked ~ .carusel-1 .slider-3-l .slider-item,
+.slider-6-i:checked ~ .carusel-1 .slider-2-l .slider-item,
+.slider-5-i:checked ~ .carusel-1 .slider-1-l .slider-item
+{
+    transform: rotateY(25deg);
+}
+
+.slider-7-i:checked ~ .carusel-1 .slider-2-l .slider-item,
+.slider-6-i:checked ~ .carusel-1 .slider-1-l .slider-item
+{
+    transform: rotateY(20deg);
+}
+
+.slider-7-i:checked ~ .carusel-1 .slider-1-l .slider-item
+{
+    transform: rotateY(15deg);
+}
+
+/* recipe */
+
+.recipe
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 20;
+
+    opacity: 0;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    transform: scale(.7);
+    transition: opacity .1s linear, transform .1s linear;
+}
+
+.recipe > label
+{
+    width: 120px;
+    height: 120px;
+    display: block;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 120px;
+    cursor: pointer;
+}
+
+.recipe-i:checked ~ .carusel .carusel__shadow
+{
+    opacity: .5;
+    z-index: 1000;
+}
+
+.slider-1-i:checked ~ .carusel-1 .slider-1-l:hover .recipe,
+.slider-2-i:checked ~ .carusel-1 .slider-2-l:hover .recipe,
+.slider-3-i:checked ~ .carusel-1 .slider-3-l:hover .recipe,
+.slider-4-i:checked ~ .carusel-1 .slider-4-l:hover .recipe,
+.slider-5-i:checked ~ .carusel-1 .slider-5-l:hover .recipe,
+.slider-6-i:checked ~ .carusel-1 .slider-6-l:hover .recipe,
+.slider-7-i:checked ~ .carusel-1 .slider-7-l:hover .recipe
+{
+    opacity: .4;
+    transform: scale(1);
+    visibility: visible;
+}
+
+.slider-item > div
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    background: #fff;
+    transition: width 1s ease-in-out
+        , margin 1s ease-in-out
+        , height 1s ease-in-out
+        , transform .2s ease-in-out;
+}
+
+.recipe-1-i:checked ~ .carusel-1 .slider-1-l .slider-item > div,
+.recipe-2-i:checked ~ .carusel-1 .slider-2-l .slider-item > div,
+.recipe-3-i:checked ~ .carusel-1 .slider-3-l .slider-item > div,
+.recipe-4-i:checked ~ .carusel-1 .slider-4-l .slider-item > div,
+.recipe-5-i:checked ~ .carusel-1 .slider-5-l .slider-item > div,
+.recipe-6-i:checked ~ .carusel-1 .slider-6-l .slider-item > div,
+.recipe-7-i:checked ~ .carusel-1 .slider-7-l .slider-item > div
+{
+    animation: recipe 1s linear 0s;
+    animation-fill-mode: forwards;
+    width: 600px;
+    height: 180%;
+    margin-left: -200px;
+    margin-top: -30%;
+}
+
+.cross-1-i:checked ~ .carusel-1 .slider-1-l .slider-item > div,
+.cross-2-i:checked ~ .carusel-1 .slider-2-l .slider-item > div,
+.cross-3-i:checked ~ .carusel-1 .slider-3-l .slider-item > div,
+.cross-4-i:checked ~ .carusel-1 .slider-4-l .slider-item > div,
+.cross-5-i:checked ~ .carusel-1 .slider-5-l .slider-item > div,
+.cross-6-i:checked ~ .carusel-1 .slider-6-l .slider-item > div,
+.cross-7-i:checked ~ .carusel-1 .slider-7-l .slider-item > div
+{
+    animation: recipe-back 1s linear 0s;
+    animation-fill-mode: forwards;
+}
+
+.recipe-i:checked ~ .carusel-1 .slider-l .recipe
+{
+    display: none;
+}
+
+@keyframes recipe
+{
+    0%
+    {
+        transform: translateY(0) rotateX(0deg);
+    }
+    50%
+    {
+        transform: translateY(-100px) rotateX(-90deg);
+    }
+    100%
+    {
+        transform: translateY(0) rotateX(-180deg);
+    }
+}
+
+@keyframes recipe-back
+{
+    0%
+    {
+        transform: translateY(0) rotateX(-180deg);
+    }
+    50%
+    {
+        transform: translateY(-100px) rotateX(-90deg);
+    }
+    100%
+    {
+        transform: translateY(0) rotateX(0deg);
+    }
+}
+
+/* carusel 2 */
+
+.carusel-2
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carusel .figure
+{
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform-origin: 50% 50% -400px;
+    transition: 1s;
+}
+
+.carusel__item
+{
+    width: calc(100% / 3);
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    position: absolute;
+    left: 30%;
+    box-sizing: border-box;
+    transform-origin: 50% 50% -430px;
+}
+
+.carusel__perspective
+{
+    width: 100%;
+    height: 100%;
+    perspective: 500px;
+}
+
+.carusel__rotate
+{
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border: 2px solid #777;
+    transform-style: preserve-3d;
+    transition: all 1s ease-in-out;
+}
+
+.carusel__rotate > label
+{
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    z-index: 10;
+}
+
+.carusel__item img
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.carusel__item:nth-child(1)
+{
+    transform: rotateY(0deg);
+}
+
+.carusel__item:nth-child(2)
+{
+    transform: rotateY(51.4deg);
+}
+
+.carusel__item:nth-child(3)
+{
+    transform: rotateY(102.8deg);
+}
+
+.carusel__item:nth-child(4)
+{
+    transform: rotateY(154.2deg);
+}
+
+.carusel__item:nth-child(5)
+{
+    transform: rotateY(205.6deg);
+}
+
+.carusel__item:nth-child(6)
+{
+    transform: rotateY(257deg);
+}
+
+.carusel__item:nth-child(7)
+{
+    transform: rotateY(308.4deg);
+}
+
+.slider-1-i:checked ~ .carusel-2 .figure
+{
+    transform: rotateY(-0deg);
+}
+
+.slider-2-i:checked ~ .carusel-2 .figure
+{
+    transform: rotateY(-51.4deg);
+}
+
+.slider-3-i:checked ~ .carusel-2 .figure
+{
+    transform: rotateY(-102.8deg);
+}
+
+.slider-4-i:checked ~ .carusel-2 .figure
+{
+    transform: rotateY(-154.2deg);
+}
+
+.slider-5-i:checked ~ .carusel-2 .figure
+{
+    transform: rotateY(-205.6deg);
+}
+
+.slider-6-i:checked ~ .carusel-2 .figure
+{
+    transform: rotateY(-257deg);
+}
+
+.slider-7-i:checked ~ .carusel-2 .figure
+{
+    transform: rotateY(-308.4deg);
+}
+
+.slider-1-i:checked ~ .carusel-2 .carusel__item-1:hover .recipe,
+.slider-2-i:checked ~ .carusel-2 .carusel__item-2:hover .recipe,
+.slider-3-i:checked ~ .carusel-2 .carusel__item-3:hover .recipe,
+.slider-4-i:checked ~ .carusel-2 .carusel__item-4:hover .recipe,
+.slider-5-i:checked ~ .carusel-2 .carusel__item-5:hover .recipe,
+.slider-6-i:checked ~ .carusel-2 .carusel__item-6:hover .recipe,
+.slider-7-i:checked ~ .carusel-2 .carusel__item-7:hover .recipe
+{
+    visibility: visible;
+    opacity: .7;
+    transform: scale(1);
+}
+
+.recipe-1-i:checked ~ .carusel-2 .carusel__item-1 .carusel__rotate,
+.recipe-2-i:checked ~ .carusel-2 .carusel__item-2 .carusel__rotate,
+.recipe-3-i:checked ~ .carusel-2 .carusel__item-3 .carusel__rotate,
+.recipe-4-i:checked ~ .carusel-2 .carusel__item-4 .carusel__rotate,
+.recipe-5-i:checked ~ .carusel-2 .carusel__item-5 .carusel__rotate,
+.recipe-6-i:checked ~ .carusel-2 .carusel__item-6 .carusel__rotate,
+.recipe-7-i:checked ~ .carusel-2 .carusel__item-7 .carusel__rotate
+{
+    animation: recipe 1s linear 0s;
+    animation-fill-mode: forwards;
+    width: 200%;
+    height: 160%;
+    margin-left: -50%;
+    margin-top: -20%;
+}
+
+.cross-1-i:checked ~ .carusel-2 .carusel__item-1 .carusel__rotate,
+.cross-2-i:checked ~ .carusel-2 .carusel__item-2 .carusel__rotate,
+.cross-3-i:checked ~ .carusel-2 .carusel__item-3 .carusel__rotate,
+.cross-4-i:checked ~ .carusel-2 .carusel__item-4 .carusel__rotate,
+.cross-5-i:checked ~ .carusel-2 .carusel__item-5 .carusel__rotate,
+.cross-6-i:checked ~ .carusel-2 .carusel__item-6 .carusel__rotate,
+.cross-7-i:checked ~ .carusel-2 .carusel__item-7 .carusel__rotate
+{
+    animation: recipe-back 1s linear 0s;
+    animation-fill-mode: forwards;
+}
