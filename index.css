@@ -1,0 +1,397 @@
+html,
+body
+{
+    height: 100%;
+}
+
+body
+{
+    margin: 0;
+    text-align: center;
+    line-height: 100vh;
+    background-color: #eee;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.fullscreen-bg
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    transition: background-color 1s;
+    top: 0;
+}
+
+.checkbox-hidden:checked ~ .fullscreen-bg
+{
+    background-color: #555;
+}
+
+main
+{
+    width: 80rem;
+    display: inline-block;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 40rem;
+}
+
+.radio-hidden,
+.checkbox-hidden
+{
+    display: none;
+}
+
+.photos
+{
+    transform-style: preserve-3d;
+    perspective-origin: 50% 7rem;
+}
+
+.photo
+{
+    display: inline-block;
+    position: absolute;
+    vertical-align: middle;
+    width: 14rem;
+    height: 14rem;
+    top: -7rem;
+    transition: left 1s, transform 1s;
+    box-shadow: 0 .5rem 1rem -0.2rem rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-position: center center;
+    backface-visibility: hidden;
+}
+
+.photo:nth-child(1)
+{
+    background-image: url("res/cucumber1_0.jpg");
+}
+
+.photo:nth-child(2)
+{
+    background-image: url("res/images.lady.mail.jpg");
+}
+
+.photo:nth-child(3)
+{
+
+    background-image: url("res/imgres.jpg");
+}
+
+.photo:nth-child(4)
+{
+    background-image: url("res/kk4.jpg");
+}
+
+.photo:nth-child(5)
+{
+    background-image: url("res/ya.jpg");
+}
+
+.shadow
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.checkbox-hidden:checked ~ main .shadow
+{
+    opacity: 1;
+}
+
+.lock
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.checkbox-hidden:checked ~ main .lock
+{
+    display: block;
+}
+
+.show-link
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+#button-5:checked ~ main .photo:nth-child(1)
+{
+    left: calc(50% - 41rem);
+    transform: translateZ(-8rem) rotateY(30deg);
+}
+
+#button-4:checked ~ main .photo:nth-child(1),
+#button-5:checked ~ main .photo:nth-child(2)
+{
+    left: calc(50% - 33rem);
+    transform: translateZ(-8rem) rotateY(40deg);
+}
+
+#button-3:checked ~ main .photo:nth-child(1),
+#button-4:checked ~ main .photo:nth-child(2),
+#button-5:checked ~ main .photo:nth-child(3)
+
+{
+    left: calc(50% - 25rem);
+    transform: translateZ(-8rem) rotateY(50deg);
+}
+
+#button-2:checked ~ main .photo:nth-child(1),
+#button-3:checked ~ main .photo:nth-child(2),
+#button-4:checked ~ main .photo:nth-child(3),
+#button-5:checked ~ main .photo:nth-child(4)
+{
+    left: calc(50% - 17rem);
+    transform: translateZ(-8rem) rotateY(60deg);
+}
+
+#button-1:checked ~ main .photo:nth-child(1),
+#button-2:checked ~ main .photo:nth-child(2),
+#button-3:checked ~ main .photo:nth-child(3),
+#button-4:checked ~ main .photo:nth-child(4),
+#button-5:checked ~ main .photo:nth-child(5)
+{
+    left: calc(50% - 7rem);
+    transform: translateZ(0rem) rotateY(0deg);
+}
+
+#button-1:checked ~ main .photo:nth-child(2),
+#button-2:checked ~ main .photo:nth-child(3),
+#button-3:checked ~ main .photo:nth-child(4),
+#button-4:checked ~ main .photo:nth-child(5)
+{
+    left: calc(50% + 3rem);
+    transform: translateZ(-8rem) rotateY(-60deg);
+}
+
+#button-1:checked ~ main .photo:nth-child(3),
+#button-2:checked ~ main .photo:nth-child(4),
+#button-3:checked ~ main .photo:nth-child(5)
+{
+    left: calc(50% + 11rem);
+    transform: translateZ(-8rem) rotateY(-50deg);
+}
+
+#button-1:checked ~ main .photo:nth-child(4),
+#button-2:checked ~ main .photo:nth-child(5)
+{
+    left: calc(50% + 19rem);
+    transform: translateZ(-8rem) rotateY(-40deg);
+}
+
+#button-1:checked ~ main .photo:nth-child(5)
+{
+    left: calc(50% + 27rem);
+    transform: translateZ(-8rem) rotateY(-30deg);
+}
+
+/*Красивенько даже получилось сверху*/
+
+.recipe-link
+{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.photo:hover .recipe-link
+{
+    opacity: 1;
+}
+
+.fullscreen-link
+{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+#button-1:checked ~ main .photo:nth-child(1) .recipe-link,
+#button-1:checked ~ main .photo:nth-child(1) .fullscreen-link,
+#button-2:checked ~ main .photo:nth-child(2) .recipe-link,
+#button-2:checked ~ main .photo:nth-child(2) .fullscreen-link,
+#button-3:checked ~ main .photo:nth-child(3) .recipe-link,
+#button-3:checked ~ main .photo:nth-child(3) .fullscreen-link,
+#button-4:checked ~ main .photo:nth-child(4) .recipe-link,
+#button-4:checked ~ main .photo:nth-child(4) .fullscreen-link,
+#button-5:checked ~ main .photo:nth-child(5) .recipe-link,
+#button-5:checked ~ main .photo:nth-child(5) .fullscreen-link
+{
+    display: flex;
+}
+
+.circle
+{
+    display: flex;
+    margin: auto;
+    width: 10rem;
+    height: 10rem;
+    border: 0.5rem solid #fff;
+    border-radius: 50%;
+    font-size: 2rem;
+    color: #fff;
+    line-height: initial;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1.5);
+    transition: transform .3s;
+}
+
+.photo:hover .circle
+{
+    transform: scale(1);
+}
+
+#fullscreen-1:checked ~ main .photo:nth-child(1),
+#fullscreen-2:checked ~ main .photo:nth-child(2),
+#fullscreen-3:checked ~ main .photo:nth-child(3),
+#fullscreen-4:checked ~ main .photo:nth-child(4),
+#fullscreen-5:checked ~ main .photo:nth-child(5)
+{
+    z-index: 300;
+    transform: rotateX(181deg) translateZ(-20rem) scaleX(1.5);
+    box-shadow: none;
+}
+
+.backsides
+{
+    transform: translateZ(10rem);
+    backface-visibility: hidden;
+        display: none;
+    transform-style: preserve-3d;
+    transition: display 0.5s 0s;
+    perspective: 40rem;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+body .backsides
+{
+    display: block;
+}
+
+.backside
+{
+    position: absolute;
+    width: 42rem;
+    line-height: initial;
+    height: 28rem;
+    left: calc(-21rem);
+    top: calc(-14rem);
+    background-color: white;
+    backface-visibility: hidden;
+    transform: translateZ(-20rem) rotateX(179deg) scaleX(0.66);
+    transition: transform 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-sizing: border-box;
+    padding: 1rem 1.5rem 1.5rem;
+    text-align: left;
+}
+
+header
+{
+    font-size: 2.5rem;
+    color: #aeaeae
+}
+
+.content
+{
+
+    font-size: 1.2rem;
+    display: flex;
+}
+
+.made-of
+{
+    width: 13rem;
+    flex-shrink: 0;
+}
+
+span
+{
+    font-weight: bold;
+}
+
+.instruction:first-line
+{
+    color: #ed2d2b;
+}
+
+hr
+{
+    background-color: #aeaeae;
+    height: .3rem;
+    width: 100%;
+    margin: 0.5rem 0 0.7rem;
+    border-radius: .25rem;
+}
+
+ol
+{
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+}
+
+li
+{
+    margin-top: 0.5rem;
+}
+
+#fullscreen-1:checked ~ .backsides .backside-1,
+#fullscreen-2:checked ~ .backsides .backside-2,
+#fullscreen-3:checked ~ .backsides .backside-3,
+#fullscreen-4:checked ~ .backsides .backside-4,
+#fullscreen-5:checked ~ .backsides .backside-5
+{
+    transform: translateZ(0rem) rotateX(0deg) scale(1, 1);
+}
+
+.cross
+{
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: url('res/cross.png');
+    background-size: cover;
+}
+
+aside
+{
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: #aeaeae;
+    border-top: 0.1rem solid currentcolor;
+}
