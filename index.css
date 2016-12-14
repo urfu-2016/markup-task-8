@@ -28,11 +28,11 @@ label
 
 .cont
 {
-    position: relative;
     perspective: 600px;
+    position: relative;
     top: 200px;
-    left: 25%;
-    width: auto;
+    left: 20%;
+    width: 1000px;
     height: auto;
 }
 
@@ -48,7 +48,7 @@ label
 
 .gallery
 {
-    width: auto;
+    width: 800px;
     height: auto;
 }
 
@@ -79,23 +79,88 @@ label
 .gallery > .pic3 > .middle_pic
 {
     background-size: 150px 150px;
-    transform: rotateY(90deg);
+    transform: rotateY(65deg);
 }
 
 .gallery > .pic4 > .first_r_pic,
 .gallery > .pic5 > .second_r_pic
 {
     background-size: 150px 150px;
-    transform: rotateY(145deg);
+    transform: rotateY(150deg);
 }
 
-.one:checked ~ .cont > .gallery > .pic > .first_l_pic,
-.two:checked ~ .cont > .gallery > .pic2 > .second_l_pic,
-.three:checked ~ .cont > .gallery > .pic3 > .middle_pic,
-.four:checked ~ .cont > .gallery > .pic4 > .first_r_pic,
+.one:checked ~ .cont > .gallery > .pic > .first_l_pic
+{
+    transform: translateY(0px) translateX(300px);
+}
+
+.two:checked ~ .cont > .gallery > .pic2 > .second_l_pic
+{
+    transform: translateY(0px) translateX(150px);
+}
+
+.three:checked ~ .cont > .gallery > .pic3 > .middle_pic
+{
+    transform: translateY(0px);
+}
+
+.four:checked ~ .cont > .gallery > .pic4 > .first_r_pic
+{
+    transform: translateY(0px) translateX(-150px);
+}
+
 .five:checked ~ .cont > .gallery > .pic5 > .second_r_pic
 {
-    transform: rotateY(0deg);
+    transform: translateY(0px) translateX(-300px);
+}
+
+.one:checked ~ .cont > .gallery > .pic2 > .second_l_pic,
+.one:checked ~ .cont > .gallery > .pic3 > .middle_pic,
+.one:checked ~ .cont > .gallery > .pic4 > .first_r_pic,
+.one:checked ~ .cont > .gallery > .pic5 > .second_r_pic
+{
+    transform: translateX(300px) rotateY(150deg);
+}
+
+.two:checked ~ .cont > .gallery > .pic > .first_l_pic
+{
+    transform: translateX(150px) rotateY(65deg);
+}
+
+.two:checked ~ .cont > .gallery > .pic3 > .middle_pic,
+.two:checked ~ .cont > .gallery > .pic4 > .first_r_pic,
+.two:checked ~ .cont > .gallery > .pic5 > .second_r_pic
+{
+    transform: translateX(150px) rotateY(150deg);
+}
+
+.four:checked ~ .cont > .gallery > .pic2 > .second_l_pic,
+.four:checked ~ .cont > .gallery > .pic3 > .middle_pic,
+.four:checked ~ .cont > .gallery > .pic > .first_l_pic
+{
+    transform: translateX(-150px) rotateY(65deg);
+}
+
+.four:checked ~ .cont > .gallery > .pic5 > .second_r_pic
+{
+    transform: translateX(-150px) rotateY(150deg);
+}
+
+.five:checked ~ .cont > .gallery > .pic2 > .second_l_pic,
+.five:checked ~ .cont > .gallery > .pic3 > .middle_pic,
+.five:checked ~ .cont > .gallery > .pic4 > .first_r_pic,
+.five:checked ~ .cont > .gallery > .pic > .first_l_pic
+{
+    transform: translateX(-300px) rotateY(65deg);
+}
+
+.one:checked ~ .cont > .gallery > .pic2 > .second_text,
+.two:checked ~ .cont > .gallery > .pic3 > .third_text,
+.three:checked ~ .cont > .gallery > .pic4 > .four_text,
+.four:checked ~ .cont > .gallery > .pic5 > .fifth_text,
+.five:checked ~ .cont > .gallery > .pic > .first_text
+{
+    left: 300px;
 }
 
 .one:checked ~ .cont > .gallery > .pic > .first_l_pic:hover > .first_pic,
@@ -154,6 +219,16 @@ label
     background-image: url(img/Клубника.jpg);
 }
 
+.first_l_pic,
+.second_l_pic,
+.middle_pic,
+.first_r_pic,
+.second_r_pic
+{
+    transform-style: preserve-3d;
+    transition: 1s;
+}
+
 .first_text,
 .second_text,
 .third_text,
@@ -164,62 +239,22 @@ label
     background-color: azure;
 }
 
-.first_text
-{
-    transform: rotateY(180deg);
-}
-
-.second_text
-{
-    transform: rotateY(180deg);
-    left: 150px;
-}
-
-.third_text
-{
-    transform: rotateY(180deg);
-    left: 300px;
-}
-
-.fourth_text
-{
-    transform: rotateY(180deg);
-    left: 450px;
-}
-
+.first_text,
+.second_text,
+.third_text,
+.fourth_text,
 .fifth_text
 {
     transform: rotateY(180deg);
-    left: 600px;
 }
 
-.text5:checked ~ .cont > .gallery > .pic5
-{
-    transform: rotateY(180deg) translateX(300px) scale(2);
-    z-index: 20;
-}
-
-.text4:checked ~ .cont > .gallery > .pic4
-{
-    transform: rotateY(180deg) translateX(600px) scale(2);
-    z-index: 20;
-}
-
+.text5:checked ~ .cont > .gallery > .pic5,
+.text4:checked ~ .cont > .gallery > .pic4,
+.text3:checked ~ .cont > .gallery > .pic3,
+.text2:checked ~ .cont > .gallery > .pic2,
 .text1:checked ~ .cont > .gallery > .pic
 {
-    transform: rotateY(180deg) translateX(1500px) scale(2);
-    z-index: 20;
-}
-
-.text2:checked ~ .cont > .gallery > .pic2
-{
-    transform: rotateY(180deg) translateX(1200px) scale(2);
-    z-index: 20;
-}
-
-.text3:checked ~ .cont > .gallery > .pic3
-{
-    transform: rotateY(180deg) translateX(900px) scale(2);
+    transform: rotateY(180deg) translateX(650px) scale(2);
     z-index: 20;
 }
 
