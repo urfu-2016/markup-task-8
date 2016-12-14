@@ -131,7 +131,6 @@ main
     left: 0;
 }
 
-
 .radio-hidden:nth-child(5):checked ~ main .photo:nth-child(1)
 {
     left: calc(50% - 41rem);
@@ -321,7 +320,7 @@ body .backsides
 header
 {
     font-size: 2.5rem;
-    color: #aeaeae
+    color: #aeaeae;
 }
 
 .content
@@ -374,7 +373,7 @@ li
 .checkbox-hidden:nth-child(9):checked ~ .backsides .backside-4,
 .checkbox-hidden:nth-child(10):checked ~ .backsides .backside-5
 {
-    transform: translateZ(0rem) rotateX(0deg) scale(1, 1);
+    transform: translateZ(0) rotateX(0deg) scale(1, 1);
 }
 
 .cross
