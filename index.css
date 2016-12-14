@@ -1,0 +1,478 @@
+body
+{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+main
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input
+{
+    display: none;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+.vegetable
+{
+    display: inline-block;
+    height: 150px;
+    width: 225px;
+    transition: transform .5s;
+    position: absolute;
+}
+
+.img-vegetable
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img1:checked ~ .vegetable,
+.img2:checked ~ .vegetable,
+.img3:checked ~ .vegetable,
+.img4:checked ~ .vegetable,
+.img5:checked ~ .vegetable,
+.img6:checked ~ .vegetable,
+.img7:checked ~ .vegetable
+{
+    transition: transform .5s linear;
+}
+
+.img1:checked ~ .vegetable:nth-of-type(1),
+.img2:checked ~ .vegetable:nth-of-type(2),
+.img3:checked ~ .vegetable:nth-of-type(3),
+.img4:checked ~ .vegetable:nth-of-type(4),
+.img5:checked ~ .vegetable:nth-of-type(5),
+.img6:checked ~ .vegetable:nth-of-type(6),
+.img7:checked ~ .vegetable:nth-of-type(7)
+{
+    z-index: 10;
+    transform: perspective(700px) translateX(0) scale(1.1) rotateY(0);
+}
+
+.img1:checked ~ .vegetable:nth-of-type(2)
+{
+    z-index: 6;
+    transform: perspective(700px) translateX(60%) rotateY(-70deg);
+}
+
+.img1:checked ~ .vegetable:nth-of-type(3)
+{
+    z-index: 5;
+    transform: perspective(700px) translateX(85%) rotateY(-65deg);
+}
+
+.img1:checked ~ .vegetable:nth-of-type(4)
+{
+    z-index: 4;
+    transform: perspective(700px) translateX(110%) rotateY(-60deg);
+}
+
+.img1:checked ~ .vegetable:nth-of-type(5)
+{
+    z-index: 3;
+    transform: perspective(700px) translateX(135%) rotateY(-55deg);
+}
+
+.img1:checked ~ .vegetable:nth-of-type(6)
+{
+    z-index: 2;
+    transform: perspective(700px) translateX(160%) rotateY(-50deg);
+}
+
+.img1:checked ~ .vegetable:nth-of-type(7)
+{
+    z-index: 1;
+    transform: perspective(700px) translateX(185%) rotateY(-45deg);
+}
+
+.img2:checked ~ .vegetable:nth-of-type(1),
+.img6:checked ~ .vegetable:nth-of-type(5)
+{
+    z-index: 5;
+    transform: perspective(700px) translateX(-60%) rotateY(65deg);
+}
+
+.img2:checked ~ .vegetable:nth-of-type(3),
+.img6:checked ~ .vegetable:nth-of-type(7)
+{
+    z-index: 5;
+    transform: perspective(700px) translateX(60%) rotateY(-65deg);
+}
+
+.img2:checked ~ .vegetable:nth-of-type(4)
+{
+    z-index: 4;
+    transform: perspective(700px) translateX(85%) rotateY(-60deg);
+}
+
+.img2:checked ~ .vegetable:nth-of-type(5)
+{
+    z-index: 3;
+    transform: perspective(700px) translateX(110%) rotateY(-55deg);
+}
+
+.img2:checked ~ .vegetable:nth-of-type(6)
+{
+    z-index: 2;
+    transform: perspective(700px) translateX(135%) rotateY(-50deg);
+}
+
+.img2:checked ~ .vegetable:nth-of-type(7)
+{
+    z-index: 1;
+    transform: perspective(700px) translateX(160%) rotateY(-45deg);
+}
+
+.img3:checked ~ .vegetable:nth-of-type(1),
+.img5:checked ~ .vegetable:nth-of-type(3)
+{
+    z-index: 3;
+    transform: perspective(700px) translateX(-85%) rotateY(55deg);
+}
+
+.img3:checked ~ .vegetable:nth-of-type(2),
+.img5:checked ~ .vegetable:nth-of-type(4)
+{
+    z-index: 4;
+    transform: perspective(700px) translateX(-60%) rotateY(60deg);
+}
+
+.img3:checked ~ .vegetable:nth-of-type(4),
+.img5:checked ~ .vegetable:nth-of-type(6)
+{
+    z-index: 4;
+    transform: perspective(700px) translateX(60%) rotateY(-60deg);
+}
+
+.img3:checked ~ .vegetable:nth-of-type(5)
+{
+    z-index: 3;
+    transform: perspective(700px) translateX(85%) rotateY(-55deg);
+}
+
+.img3:checked ~ .vegetable:nth-of-type(6)
+{
+    z-index: 2;
+    transform: perspective(700px) translateX(110%) rotateY(-50deg);
+}
+
+.img3:checked ~ .vegetable:nth-of-type(7)
+{
+    z-index: 1;
+    transform: perspective(700px) translateX(135%) rotateY(-45deg);
+}
+
+.img4:checked ~ .vegetable:nth-of-type(1)
+{
+    z-index: 1;
+    transform: perspective(700px) translateX(-110%) rotateY(45deg);
+}
+
+.img4:checked ~ .vegetable:nth-of-type(2)
+{
+    z-index: 2;
+    transform: perspective(700px) translateX(-85%) rotateY(50deg);
+}
+
+.img4:checked ~ .vegetable:nth-of-type(3)
+{
+    z-index: 3;
+    transform: perspective(700px) translateX(-60%) rotateY(55deg);
+}
+
+.img4:checked ~ .vegetable:nth-of-type(5)
+{
+    z-index: 3;
+    transform: perspective(700px) translateX(60%) rotateY(-55deg);
+}
+
+.img4:checked ~ .vegetable:nth-of-type(6)
+{
+    z-index: 2;
+    transform: perspective(700px) translateX(85%) rotateY(-50deg);
+}
+
+.img4:checked ~ .vegetable:nth-of-type(7)
+{
+    z-index: 1;
+    transform: perspective(700px) translateX(110%) rotateY(-45deg);
+}
+
+.img5:checked ~ .vegetable:nth-of-type(1)
+{
+    z-index: 1;
+    transform: perspective(700px) translateX(-135%) rotateY(45deg);
+}
+
+.img5:checked ~ .vegetable:nth-of-type(2)
+{
+    z-index: 2;
+    transform: perspective(700px) translateX(-110%) rotateY(50deg);
+}
+
+.img5:checked ~ .vegetable:nth-of-type(7)
+{
+    z-index: 3;
+    transform: perspective(700px) translateX(85%) rotateY(-65deg);
+}
+
+.img6:checked ~ .vegetable:nth-of-type(1)
+{
+    z-index: 1;
+    transform: perspective(700px) translateX(-160%) rotateY(45deg);
+}
+
+.img6:checked ~ .vegetable:nth-of-type(2)
+{
+    z-index: 2;
+    transform: perspective(700px) translateX(-135%) rotateY(50deg);
+}
+
+.img6:checked ~ .vegetable:nth-of-type(3)
+{
+    z-index: 3;
+    transform: perspective(700px) translateX(-110%) rotateY(55deg);
+}
+
+.img6:checked ~ .vegetable:nth-of-type(4)
+{
+    z-index: 4;
+    transform: perspective(700px) translateX(-85%) rotateY(60deg);
+}
+
+.img7:checked ~ .vegetable:nth-of-type(1)
+{
+    z-index: 1;
+    transform: perspective(700px) translateX(-185%) rotateY(45deg);
+}
+
+.img7:checked ~ .vegetable:nth-of-type(2)
+{
+    z-index: 2;
+    transform: perspective(700px) translateX(-160%) rotateY(50deg);
+}
+
+.img7:checked ~ .vegetable:nth-of-type(3)
+{
+    z-index: 3;
+    transform: perspective(700px) translateX(-135%) rotateY(55deg);
+}
+
+.img7:checked ~ .vegetable:nth-of-type(4)
+{
+    z-index: 4;
+    transform: perspective(700px) translateX(-110%) rotateY(60deg);
+}
+
+.img7:checked ~ .vegetable:nth-of-type(5)
+{
+    z-index: 5;
+    transform: perspective(700px) translateX(-85%) rotateY(65deg);
+}
+
+.img7:checked ~ .vegetable:nth-of-type(6)
+{
+    z-index: 6;
+    transform: perspective(700px) translateX(-60%) rotateY(70deg);
+}
+
+/*Обратная сторона*/
+
+.recipe
+{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(124, 124, 115, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.circle
+{
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border: 2px solid white;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    margin: auto;
+    line-height: 100px;
+    color: white;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.img1:checked ~ .cabbage:hover .recipe,
+.img2:checked ~ .carrot:hover .recipe,
+.img3:checked ~ .cucumber:hover .recipe,
+.img4:checked ~ .eggplant:hover .recipe,
+.img5:checked ~ .garlic:hover .recipe,
+.img6:checked ~ .pepper:hover .recipe,
+.img7:checked ~ .tomato:hover .recipe
+{
+    display: flex;
+    transition: opacity 1s;
+    opacity: 1;
+}
+
+.front
+{
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 30px #9aec81;
+    transition: transform .5s linear 1s;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+.description
+{
+    white-space: normal;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    padding: 5px;
+}
+
+.description h1
+{
+    font-size: .7em;
+    text-align: center;
+}
+
+.description p
+{
+    font-size: .6em;
+    text-align: center;
+}
+
+.close
+{
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url('close.png');
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-decoration: none;
+    transform: scale(.5);
+}
+
+.back
+{
+    background: #ceffbf;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: perspective(700px) scale(1.3) rotateX(-90deg);
+    -moz-transform: perspective(700px) scale(1.3) rotateX(-90deg);
+    transition: transform .5s linear .5s;
+}
+
+.background
+{
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, .5);
+    width: 100%;
+    opacity: 0;
+    height: 0;
+    z-index: 11;
+    transition: opacity .5s;
+}
+
+.img1:checked ~ .cabbage:target ~ .background,
+.img2:checked ~ .carrot:target ~ .background,
+.img3:checked ~ .cucumber:target ~ .background,
+.img4:checked ~ .eggplant:target ~ .background,
+.img5:checked ~ .garlic:target ~ .background,
+.img6:checked ~ .pepper:target ~ .background,
+.img7:checked ~ .tomato:target ~ .background
+{
+    opacity: .5;
+    transition: opacity .5s;
+    height: 100%;
+}
+
+.img1:checked ~ .cabbage:target .back,
+.img2:checked ~ .carrot:target .back,
+.img3:checked ~ .cucumber:target .back,
+.img4:checked ~ .eggplant:target .back,
+.img5:checked ~ .garlic:target .back,
+.img6:checked ~ .pepper:target .back,
+.img7:checked ~ .tomato:target .back
+{
+    transition: transform .5s linear .5s;
+    transform: scale(1.5) rotateX(0);
+    -moz-transform: scale(1.5) rotateX(0);
+}
+
+.img1:checked ~ .cabbage:target .front,
+.img2:checked ~ .carrot:target .front,
+.img3:checked ~ .cucumber:target .front,
+.img4:checked ~ .eggplant:target .front,
+.img5:checked ~ .garlic:target .front,
+.img6:checked ~ .pepper:target .front,
+.img7:checked ~ .tomato:target .front
+{
+    transition: transform .5s linear;
+    transform: scale(1.5) rotateX(90deg);
+    backface-visibility: hidden;
+}
+
+.img1:checked ~ .cabbage:target,
+.img2:checked ~ .carrot:target,
+.img3:checked ~ .cucumber:target,
+.img4:checked ~ .eggplant:target,
+.img5:checked ~ .garlic:target,
+.img6:checked ~ .pepper:target,
+.img7:checked ~ .tomato:target
+{
+    z-index: 20;
+    transition: transform .5s linear;
+    transform: scale(1.5) rotateX(0);
+}
+
+.img1:checked ~ .cabbage:target .close,
+.img2:checked ~ .carrot:target .close,
+.img3:checked ~ .cucumber:target .close,
+.img4:checked ~ .eggplant:target .close,
+.img5:checked ~ .garlic:target .close,
+.img6:checked ~ .pepper:target .close,
+.img7:checked ~ .tomato:target .close
+{
+    transform: scale(.5);
+}
+
+.vegetable p:after
+{
+    content: ' ';
+    display: block;
+    background-image: url('miniImg.png');
+    height: 30px;
+    width: 30px;
+    margin: 0 auto;
+    transform: scale(.5);
+}
