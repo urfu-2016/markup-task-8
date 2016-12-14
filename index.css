@@ -91,27 +91,27 @@ label
 
 .one:checked ~ .cont > .gallery > .pic > .first_l_pic
 {
-    transform: translateY(0px) translateX(300px);
+    transform: translateY(0) translateX(300px);
 }
 
 .two:checked ~ .cont > .gallery > .pic2 > .second_l_pic
 {
-    transform: translateY(0px) translateX(150px);
+    transform: translateY(0) translateX(150px);
 }
 
 .three:checked ~ .cont > .gallery > .pic3 > .middle_pic
 {
-    transform: translateY(0px);
+    transform: translateY(0);
 }
 
 .four:checked ~ .cont > .gallery > .pic4 > .first_r_pic
 {
-    transform: translateY(0px) translateX(-150px);
+    transform: translateY(0) translateX(-150px);
 }
 
 .five:checked ~ .cont > .gallery > .pic5 > .second_r_pic
 {
-    transform: translateY(0px) translateX(-300px);
+    transform: translateY(0) translateX(-300px);
 }
 
 .one:checked ~ .cont > .gallery > .pic2 > .second_l_pic,
