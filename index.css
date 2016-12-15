@@ -168,7 +168,7 @@ label
 {
     position: relative;
     left: 40%;
-    top: 40%
+    top: 40%;
 }
 
 .one:checked ~ .cont > .gallery > .pic > .first_l_pic:hover > .first_pic,
